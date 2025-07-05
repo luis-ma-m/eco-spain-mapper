@@ -1,3 +1,4 @@
+
 import React, { useMemo, useState } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Tooltip, ZoomControl, useMapEvents } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -130,7 +131,6 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) =>
         <MapContainer
           center={center}
           zoom={zoom}
-          whenCreated={(m) => setZoom(m.getZoom())}
           zoomControl={false}
           className="w-full h-full"
           scrollWheelZoom
@@ -139,7 +139,6 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) =>
           <ZoomListener onZoom={setZoom} />
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution="&copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors"
           />
           {spanishRegions.map((region) => {
             const emission = regionEmissions[region.name] || 0;
@@ -150,10 +149,14 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) =>
               <CircleMarker
                 key={region.name}
                 center={region.coords as [number, number]}
-                radius={getRadius(emission)}
-                pathOptions={{ color: '#333', fillColor: color, fillOpacity: 0.8 }}
+                pathOptions={{ 
+                  color: '#333', 
+                  fillColor: color, 
+                  fillOpacity: 0.8,
+                  radius: getRadius(emission)
+                }}
               >
-                <Tooltip direction="top" offset={[0, -10]} permanent>
+                <Tooltip permanent>
                   <div className="text-center">
                     <div className="text-xs font-medium" dangerouslySetInnerHTML={{ __html: sanitizedRegionName }} />
                     {emission > 0 && (

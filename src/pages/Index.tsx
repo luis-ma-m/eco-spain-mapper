@@ -95,10 +95,12 @@ const Index: React.FC = () => {
   });
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [statusMsg, setStatusMsg] = useState<string>('');
 
-  const handleDataLoaded = (loadedData: CO2Data[]) => {
-    setData(loadedData);
-  };
+const handleDataLoaded = (loadedData: CO2Data[]) => {
+  setData(loadedData);
+  setStatusMsg(`Loaded ${loadedData.length} records from upload`);
+};
 
   const handleFiltersChange = (newFilters: FilterState) => {
     setFilters(newFilters);
@@ -110,6 +112,7 @@ const Index: React.FC = () => {
     const loadData = async () => {
       setIsLoading(true);
       setError(null);
+      setStatusMsg(`Fetching default data from ${url}`);
 
       try {
         const url = `${import.meta.env.BASE_URL}climatetrace_aggregated.csv`;
@@ -121,14 +124,29 @@ const Index: React.FC = () => {
         }
 
         const text = await res.text();
-        const parsed = parseCSV(text);
-        console.log(`Loaded ${parsed.length} records`);
-        setData(parsed);
-      } catch (err: any) {
-        if (err.name !== 'AbortError') {
-          console.error('Error loading CSV:', err);
-          setError(err.message || 'Unknown error');
+     jv2608-codex/buscar-errores-de-arranque-del-sitio-web
+
+        let parsedData: CO2Data[];
+        try {
+          parsedData = parseCSV(text);
+        } catch (parseErr) {
+          const msg = parseErr instanceof Error ? parseErr.message : String(parseErr);
+          console.error('CSV parse error:', msg);
+          setStatusMsg(`CSV parse error: ${msg}`);
+          throw parseErr;
         }
+
+        setData(parsedData);
+        const msgLoaded = `Loaded ${parsedData.length} records from default CSV`;
+        console.log(msgLoaded);
+        setStatusMsg(msgLoaded);
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : String(err);
+        console.error('Error loading CSV:', msg);
+        setError(msg);
+        setStatusMsg(`Error loading CSV: ${msg}`);
+        throw err;
+        main
       } finally {
         setIsLoading(false);
       }
@@ -196,6 +214,7 @@ const Index: React.FC = () => {
               </SheetContent>
             </Sheet>
           </div>
+         main
         </main>
       </div>
     </ErrorBoundary>

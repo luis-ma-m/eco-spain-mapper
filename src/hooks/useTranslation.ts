@@ -53,13 +53,21 @@ export const useTranslation = () => {
 
   const changeLanguage = (lang: Language) => {
     setLanguage(lang);
-    localStorage.setItem('language', lang);
+    try {
+      localStorage.setItem('language', lang);
+    } catch (error) {
+      console.warn('Unable to store language preference:', error);
+    }
   };
 
   useEffect(() => {
-    const savedLang = localStorage.getItem('language') as Language;
-    if (savedLang && ['es', 'en'].includes(savedLang)) {
-      setLanguage(savedLang);
+    try {
+      const savedLang = localStorage.getItem('language') as Language;
+      if (savedLang && ['es', 'en'].includes(savedLang)) {
+        setLanguage(savedLang);
+      }
+    } catch (error) {
+      console.warn('Unable to access localStorage:', error);
     }
   }, []);
 

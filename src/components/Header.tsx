@@ -34,7 +34,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenDataModal }) => {
           <nav className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-gray-700 hover:text-green-600 font-medium transition-colors">
               {t('nav.home')}
-            </a>
+            </Link>
             <button
               type="button"
               onClick={onOpenDataModal}
@@ -42,8 +42,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenDataModal }) => {
             >
               {t('nav.data')}
             </button>
-            <a href="#" className="text-gray-700 hover:text-green-600 font-medium transition-colors">
-main
+            <Link to="/about" className="text-gray-700 hover:text-green-600 font-medium transition-colors">
               {t('nav.about')}
             </Link>
           </nav>

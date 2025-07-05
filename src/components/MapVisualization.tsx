@@ -5,6 +5,7 @@ import 'leaflet/dist/leaflet.css';
 import { useTranslation } from '../hooks/useTranslation';
 import { CO2Data } from './DataUpload';
 import { FilterState } from './FilterPanel';
+import { sanitizeHtml, sanitizeString } from '../utils/security';
 
 interface MapVisualizationProps {
   data: CO2Data[];
@@ -25,43 +26,63 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) =>
   const [zoom, setZoom] = useState(6);
   const center: [number, number] = [40.4165, -3.7026];
 
-  // Filter data based on current filters
+  // Filter data with validation
   const filteredData = useMemo(() => {
     return data.filter(item => {
-      if (filters.region && item.region !== filters.region) return false;
+      // Validate item structure
+      if (!item || typeof item !== 'object') return false;
+      if (!item.region || !item.year || typeof item.emissions !== 'number') return false;
+      if (item.emissions < 0 || !isFinite(item.emissions)) return false;
+      
+      // Apply filters
+      if (filters.region && sanitizeString(item.region) !== sanitizeString(filters.region)) return false;
       if (filters.year && item.year !== filters.year) return false;
-      if (filters.sector && item.sector !== filters.sector) return false;
+      if (filters.sector && sanitizeString(item.sector) !== sanitizeString(filters.sector)) return false;
+      
       return true;
     });
   }, [data, filters]);
 
-  // Calculate aggregated emissions by region
+  // Calculate aggregated emissions by region with validation
   const regionEmissions = useMemo(() => {
     const emissions: { [region: string]: number } = {};
+    
     filteredData.forEach(item => {
-      if (!emissions[item.region]) {
-        emissions[item.region] = 0;
+      const region = sanitizeString(item.region);
+      if (!region) return;
+      
+      if (!emissions[region]) {
+        emissions[region] = 0;
       }
-      emissions[item.region] += item.emissions;
+      
+      const itemEmissions = Math.max(0, item.emissions || 0);
+      if (isFinite(itemEmissions)) {
+        emissions[region] += itemEmissions;
+      }
     });
+    
     return emissions;
   }, [filteredData]);
 
-  // Get max emission value for color scaling
+  // Get max emission value for color scaling with safety check
   const maxEmission = useMemo(() => {
-    return Math.max(...Object.values(regionEmissions), 1);
+    const values = Object.values(regionEmissions).filter(v => isFinite(v) && v > 0);
+    return values.length > 0 ? Math.max(...values) : 1;
   }, [regionEmissions]);
 
-  // Color scale function
+  // Color scale function with input validation
   const getEmissionColor = (emission: number): string => {
-    const intensity = Math.min(emission / maxEmission, 1);
+    if (!isFinite(emission) || emission < 0) return '#e5e7eb';
+    
+    const intensity = Math.min(Math.max(emission / maxEmission, 0), 1);
     const red = Math.floor(255 * intensity);
     const green = Math.floor(255 * (1 - intensity * 0.8));
     const blue = Math.floor(100 * (1 - intensity));
+    
     return `rgb(${red}, ${green}, ${blue})`;
   };
 
-  // Spanish regions with approximate coordinates (simplified for demo)
+  // Spanish regions with validation
   const spanishRegions = [
     { name: 'Andalucía', coords: [37.7749, -4.7324] },
     { name: 'Aragón', coords: [41.5868, -0.8296] },
@@ -82,12 +103,26 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) =>
     { name: 'La Rioja', coords: [42.2871, -2.5396] }
   ];
 
-  const getRadius = (emission: number) => Math.max(8, Math.sqrt(emission / 1000)) * (zoom / 6);
+  const getRadius = (emission: number) => {
+    if (!isFinite(emission) || emission <= 0) return 8;
+    return Math.max(8, Math.min(50, Math.sqrt(emission / 1000))) * (zoom / 6);
+  };
+
+  // Safe number formatting
+  const formatNumber = (num: number): string => {
+    if (!isFinite(num)) return '0';
+    return (num / 1000).toFixed(1);
+  };
+
+  const formatTotalEmissions = (num: number): string => {
+    if (!isFinite(num)) return '0.00';
+    return (num / 1000000).toFixed(2);
+  };
 
   return (
     <div className="w-full h-full bg-gray-50 overflow-hidden">
       <div className="bg-white p-4 border-b border-gray-200">
-        <h3 className="text-lg font-semibold text-gray-900">{t('map.title')}</h3>
+        <h3 className="text-lg font-semibold text-gray-900">{sanitizeHtml(t('map.title'))}</h3>
         <p className="text-sm text-gray-600">
           {filteredData.length} registros • {Object.keys(regionEmissions).length} regiones
         </p>
@@ -110,6 +145,8 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) =>
           {spanishRegions.map((region) => {
             const emission = regionEmissions[region.name] || 0;
             const color = emission > 0 ? getEmissionColor(emission) : '#e5e7eb';
+            const sanitizedRegionName = sanitizeHtml(region.name);
+            
             return (
               <CircleMarker
                 key={region.name}
@@ -119,10 +156,10 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) =>
               >
                 <Tooltip direction="top" offset={[0, -10]} permanent>
                   <div className="text-center">
-                    <div className="text-xs font-medium">{region.name}</div>
+                    <div className="text-xs font-medium" dangerouslySetInnerHTML={{ __html: sanitizedRegionName }} />
                     {emission > 0 && (
                       <div className="text-xs">
-                        {(emission / 1000).toFixed(1)}k {t('map.unit')}
+                        {formatNumber(emission)}k {sanitizeHtml(t('map.unit'))}
                       </div>
                     )}
                   </div>
@@ -133,7 +170,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) =>
         </MapContainer>
 
         <div className="absolute bottom-4 left-4 bg-white p-3 rounded-lg shadow-lg">
-          <h4 className="text-sm font-semibold mb-2">{t('map.legend')}</h4>
+          <h4 className="text-sm font-semibold mb-2">{sanitizeHtml(t('map.legend'))}</h4>
           <div className="space-y-1">
             <div className="flex items-center space-x-2">
               <div className="w-4 h-4 rounded-full bg-red-500"></div>
@@ -154,16 +191,16 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) =>
           <div className="text-sm">
             <div className="font-semibold">Total Emisiones</div>
             <div className="text-2xl font-bold text-green-600">
-              {(Object.values(regionEmissions).reduce((a, b) => a + b, 0) / 1000000).toFixed(2)}M
+              {formatTotalEmissions(Object.values(regionEmissions).reduce((a, b) => a + b, 0))}M
             </div>
-            <div className="text-xs text-gray-600">{t('map.unit')}</div>
+            <div className="text-xs text-gray-600">{sanitizeHtml(t('map.unit'))}</div>
           </div>
         </div>
 
         {filteredData.length === 0 && (
           <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-90">
             <div className="text-center">
-              <p className="text-gray-600">{t('data.noData')}</p>
+              <p className="text-gray-600">{sanitizeHtml(t('data.noData'))}</p>
             </div>
           </div>
         )}

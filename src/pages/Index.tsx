@@ -1,3 +1,4 @@
+
 // pages/index.tsx
 import React, { useEffect, useState, useMemo } from 'react';
 import Papa from 'papaparse';
@@ -99,11 +100,11 @@ const Index: React.FC = () => {
   const [statusMsg, setStatusMsg] = useState<string>('');
   const [isDataModalOpen, setDataModalOpen] = useState(false);
 
-const handleDataLoaded = (loadedData: CO2Data[]) => {
-  setData(loadedData);
-  setStatusMsg(`Loaded ${loadedData.length} records from upload`);
-  setDataModalOpen(false);
-};
+  const handleDataLoaded = (loadedData: CO2Data[]) => {
+    setData(loadedData);
+    setStatusMsg(`Loaded ${loadedData.length} records from upload`);
+    setDataModalOpen(false);
+  };
 
   const handleFiltersChange = (newFilters: FilterState) => {
     setFilters(newFilters);
@@ -115,12 +116,12 @@ const handleDataLoaded = (loadedData: CO2Data[]) => {
     const loadData = async () => {
       setIsLoading(true);
       setError(null);
-      const url = `${import.meta.env.BASE_URL}climatetrace_aggregated.csv`;
-      setStatusMsg(`Fetching default data from ${url}`);
+      const dataUrl = `${import.meta.env.BASE_URL}climatetrace_aggregated.csv`;
+      setStatusMsg(`Fetching default data from ${dataUrl}`);
 
       try {
-        console.info(`Fetching data from ${url}`);
-        const res = await fetch(url, { signal: controller.signal });
+        console.info(`Fetching data from ${dataUrl}`);
+        const res = await fetch(dataUrl, { signal: controller.signal });
 
         if (!res.ok) {
           throw new Error(`Failed to load data: ${res.status} ${res.statusText}`);

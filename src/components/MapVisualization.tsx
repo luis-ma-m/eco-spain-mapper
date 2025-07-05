@@ -1,5 +1,5 @@
 
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Tooltip, ZoomControl, useMapEvents } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useTranslation } from '../hooks/useTranslation';
@@ -23,7 +23,15 @@ const ZoomListener: React.FC<{ onZoom: (z: number) => void }> = ({ onZoom }) => 
 const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) => {
   const { t } = useTranslation();
   const [zoom, setZoom] = useState(6);
+  const [screenHeight, setScreenHeight] = useState<number>(typeof window !== 'undefined' ? window.innerHeight : 800);
   const center: [number, number] = [40.4165, -3.7026];
+
+  useEffect(() => {
+    const updateHeight = () => setScreenHeight(window.innerHeight);
+    updateHeight();
+    window.addEventListener('resize', updateHeight);
+    return () => window.removeEventListener('resize', updateHeight);
+  }, []);
 
   // Filter data based on current filters
   const filteredData = useMemo(() => {
@@ -92,7 +100,10 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) =>
           {filteredData.length} registros • {Object.keys(regionEmissions).length} regiones
         </p>
       </div>
-      <div className="relative w-full h-full min-h-[400px]">
+      <div
+        className="relative w-full h-full"
+        style={{ minHeight: Math.max(screenHeight - 120, 400) }}
+      >
         <MapContainer
           center={center}
           zoom={zoom}

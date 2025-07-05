@@ -243,7 +243,7 @@ const Index: React.FC = () => {
             statusMessage={statusMsg}
           />
 
-          <div className="absolute bottom-4 right-4 z-10 flex flex-col space-y-2">
+          <div className="absolute bottom-4 right-4 z-[1000] flex flex-col space-y-2">
             <Sheet>
               <SheetTrigger asChild>
                 <Button size="icon">

@@ -1,5 +1,7 @@
 
-import React, { useRef, useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
+import { MapContainer, TileLayer, CircleMarker, Tooltip, ZoomControl, useMapEvents } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
 import { useTranslation } from '../hooks/useTranslation';
 import { CO2Data } from './DataUpload';
 import { FilterState } from './FilterPanel';
@@ -9,9 +11,19 @@ interface MapVisualizationProps {
   filters: FilterState;
 }
 
+const ZoomListener: React.FC<{ onZoom: (z: number) => void }> = ({ onZoom }) => {
+  useMapEvents({
+    zoomend(e) {
+      onZoom(e.target.getZoom());
+    },
+  });
+  return null;
+};
+
 const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) => {
   const { t } = useTranslation();
-  const mapRef = useRef<HTMLDivElement>(null);
+  const [zoom, setZoom] = useState(6);
+  const center: [number, number] = [40.4165, -3.7026];
 
   // Filter data based on current filters
   const filteredData = useMemo(() => {
@@ -70,72 +82,56 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) =>
     { name: 'La Rioja', coords: [42.2871, -2.5396] }
   ];
 
+  const getRadius = (emission: number) => Math.max(8, Math.sqrt(emission / 1000)) * (zoom / 6);
+
   return (
     <div className="w-full h-full bg-gray-50 overflow-hidden">
-      {/* Map Header */}
       <div className="bg-white p-4 border-b border-gray-200">
         <h3 className="text-lg font-semibold text-gray-900">{t('map.title')}</h3>
         <p className="text-sm text-gray-600">
           {filteredData.length} registros • {Object.keys(regionEmissions).length} regiones
         </p>
       </div>
-
-      {/* Map Content */}
-      <div ref={mapRef} className="relative w-full h-full bg-blue-50">
-        {/* SVG Map Placeholder - Spain outline */}
-        <svg 
-          viewBox="0 0 800 600" 
+      <div className="relative w-full h-full">
+        <MapContainer
+          center={center}
+          zoom={zoom}
+          whenCreated={(m) => setZoom(m.getZoom())}
+          zoomControl={false}
           className="w-full h-full"
-          style={{ background: 'linear-gradient(to bottom, #e6f3ff, #b3d9ff)' }}
+          scrollWheelZoom
         >
-          {/* Simplified Spain regions */}
+          <ZoomControl position="topright" />
+          <ZoomListener onZoom={setZoom} />
+          <TileLayer
+            attribution="&copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors"
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
           {spanishRegions.map((region) => {
             const emission = regionEmissions[region.name] || 0;
             const color = emission > 0 ? getEmissionColor(emission) : '#e5e7eb';
-            const x = (region.coords[1] + 10) * 40; // Longitude to X
-            const y = (50 - region.coords[0]) * 12; // Latitude to Y (inverted)
-            
             return (
-              <g key={region.name}>
-                {/* Region circle */}
-                <circle
-                  cx={x}
-                  cy={y}
-                  r={Math.max(8, Math.sqrt(emission / 1000))}
-                  fill={color}
-                  stroke="#333"
-                  strokeWidth="1"
-                  opacity="0.8"
-                  className="hover:opacity-100 cursor-pointer transition-opacity"
-                />
-                {/* Region label */}
-                <text
-                  x={x}
-                  y={y + Math.max(8, Math.sqrt(emission / 1000)) + 15}
-                  textAnchor="middle"
-                  className="text-xs font-medium fill-gray-700"
-                  style={{ fontSize: '10px' }}
-                >
-                  {region.name}
-                </text>
-                {/* Emission value */}
-                {emission > 0 && (
-                  <text
-                    x={x}
-                    y={y + Math.max(8, Math.sqrt(emission / 1000)) + 28}
-                    textAnchor="middle"
-                    className="text-xs fill-gray-600"
-                    style={{ fontSize: '8px' }}
-                  >
-                    {(emission / 1000).toFixed(1)}k {t('map.unit')}
-                  </text>
-                )}
-              </g>
+              <CircleMarker
+                key={region.name}
+                center={region.coords as [number, number]}
+                radius={getRadius(emission)}
+                pathOptions={{ color: '#333', fillColor: color, fillOpacity: 0.8 }}
+              >
+                <Tooltip direction="top" offset={[0, -10]} permanent>
+                  <div className="text-center">
+                    <div className="text-xs font-medium">{region.name}</div>
+                    {emission > 0 && (
+                      <div className="text-xs">
+                        {(emission / 1000).toFixed(1)}k {t('map.unit')}
+                      </div>
+                    )}
+                  </div>
+                </Tooltip>
+              </CircleMarker>
             );
           })}
-        </svg>
+        </MapContainer>
 
-        {/* Legend */}
         <div className="absolute bottom-4 left-4 bg-white p-3 rounded-lg shadow-lg">
           <h4 className="text-sm font-semibold mb-2">{t('map.legend')}</h4>
           <div className="space-y-1">
@@ -154,7 +150,6 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) =>
           </div>
         </div>
 
-        {/* Data Summary */}
         <div className="absolute top-4 right-4 bg-white p-3 rounded-lg shadow-lg">
           <div className="text-sm">
             <div className="font-semibold">Total Emisiones</div>
@@ -164,16 +159,15 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) =>
             <div className="text-xs text-gray-600">{t('map.unit')}</div>
           </div>
         </div>
-      </div>
 
-      {/* No data message */}
-      {filteredData.length === 0 && (
-        <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-90">
-          <div className="text-center">
-            <p className="text-gray-600">{t('data.noData')}</p>
+        {filteredData.length === 0 && (
+          <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-90">
+            <div className="text-center">
+              <p className="text-gray-600">{t('data.noData')}</p>
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };

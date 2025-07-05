@@ -19,6 +19,8 @@ export interface FilterState {
   sector: string | null;
 }
 
+const ALL_VALUE = '__all__'
+
 const FilterPanel: React.FC<FilterPanelProps> = ({
   onFiltersChange,
   availableRegions,
@@ -58,15 +60,17 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
           <label className="block text-sm font-medium text-gray-700 mb-2">
             {t('filters.region')}
           </label>
-          <Select 
-            value={filters.region || ""} 
-            onValueChange={(value) => handleFilterChange('region', value || null)}
+          <Select
+            value={filters.region || ""}
+            onValueChange={(value) =>
+              handleFilterChange('region', value === ALL_VALUE ? null : value)
+            }
           >
             <SelectTrigger>
               <SelectValue placeholder={`${t('filters.region')}...`} />
             </SelectTrigger>
             <SelectContent className="bg-white z-50">
-              <SelectItem value="">Todas las regiones</SelectItem>
+              <SelectItem value={ALL_VALUE}>Todas las regiones</SelectItem>
               {availableRegions.map((region) => (
                 <SelectItem key={region} value={region}>
                   {region}
@@ -81,15 +85,18 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
           <label className="block text-sm font-medium text-gray-700 mb-2">
             {t('filters.year')}
           </label>
-          <Select 
-            value={filters.year?.toString() || ""} 
-            onValueChange={(value) => handleFilterChange('year', value ? parseInt(value) : null)}
+          <Select
+            value={filters.year?.toString() || ""}
+            onValueChange={(value) =>
+              handleFilterChange('year',
+                value === ALL_VALUE ? null : value ? parseInt(value) : null)
+            }
           >
             <SelectTrigger>
               <SelectValue placeholder={`${t('filters.year')}...`} />
             </SelectTrigger>
             <SelectContent className="bg-white z-50">
-              <SelectItem value="">Todos los años</SelectItem>
+              <SelectItem value={ALL_VALUE}>Todos los años</SelectItem>
               {availableYears.sort((a, b) => b - a).map((year) => (
                 <SelectItem key={year} value={year.toString()}>
                   {year}
@@ -104,15 +111,17 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
           <label className="block text-sm font-medium text-gray-700 mb-2">
             {t('filters.sector')}
           </label>
-          <Select 
-            value={filters.sector || ""} 
-            onValueChange={(value) => handleFilterChange('sector', value || null)}
+          <Select
+            value={filters.sector || ""}
+            onValueChange={(value) =>
+              handleFilterChange('sector', value === ALL_VALUE ? null : value)
+            }
           >
             <SelectTrigger>
               <SelectValue placeholder={`${t('filters.sector')}...`} />
             </SelectTrigger>
             <SelectContent className="bg-white z-50">
-              <SelectItem value="">Todos los sectores</SelectItem>
+              <SelectItem value={ALL_VALUE}>Todos los sectores</SelectItem>
               {availableSectors.map((sector) => (
                 <SelectItem key={sector} value={sector}>
                   {sector}

@@ -67,10 +67,12 @@ const Index = () => {
   const [filters, setFilters] = useState<FilterState>({ region: null, year: null, sector: null });
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [statusMsg, setStatusMsg] = useState<string>('');
 
-  const handleDataLoaded = (loadedData: CO2Data[]) => {
-    setData(loadedData);
-  };
+const handleDataLoaded = (loadedData: CO2Data[]) => {
+  setData(loadedData);
+  setStatusMsg(`Loaded ${loadedData.length} records from upload`);
+};
 
   const handleFiltersChange = (newFilters: FilterState) => {
     setFilters(newFilters);
@@ -81,6 +83,7 @@ const Index = () => {
       const url = `${import.meta.env.BASE_URL}climatetrace_aggregated.csv`;
       console.info(`Fetching default data from ${url}`);
       setError(null);
+      setStatusMsg(`Fetching default data from ${url}`);
 
       try {
         const res = await fetch(url);
@@ -98,15 +101,19 @@ const Index = () => {
         } catch (parseErr) {
           const msg = parseErr instanceof Error ? parseErr.message : String(parseErr);
           console.error('CSV parse error:', msg);
+          setStatusMsg(`CSV parse error: ${msg}`);
           throw parseErr;
         }
 
         setData(parsedData);
-        console.log(`Loaded ${parsedData.length} records from default CSV`);
+        const msgLoaded = `Loaded ${parsedData.length} records from default CSV`;
+        console.log(msgLoaded);
+        setStatusMsg(msgLoaded);
       } catch (err) {
         const msg = err instanceof Error ? err.message : String(err);
         console.error('Error loading CSV:', msg);
         setError(msg);
+        setStatusMsg(`Error loading CSV: ${msg}`);
         throw err;
       } finally {
         setIsLoading(false);
@@ -132,21 +139,13 @@ const Index = () => {
             availableYears={availableYears}
             availableSectors={availableSectors}
           />
-          {isLoading ? (
-            <div className="flex items-center justify-center h-full text-gray-600">
-              {t('data.loading')}
-            </div>
-          ) : error ? (
-            <div className="flex items-center justify-center h-full text-red-600">
-              {t('data.error')}: {error}
-            </div>
-          ) : data.length > 0 ? (
-            <MapVisualization data={data} filters={filters} />
-          ) : (
-            <div className="flex items-center justify-center h-full text-gray-600">
-              No hay datos disponibles
-            </div>
-          )}
+          <MapVisualization
+            data={data}
+            filters={filters}
+            isLoading={isLoading}
+            error={error}
+            statusMessage={statusMsg}
+          />
         </main>
       </div>
     </ErrorBoundary>

@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
+import { humanizeLabel } from '@/utils/humanize';
 import { Filter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -70,7 +71,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
               <SelectValue placeholder={`${t('filters.region')}...`} />
             </SelectTrigger>
             <SelectContent className="bg-white z-50">
-              <SelectItem value={ALL_VALUE}>Todas las regiones</SelectItem>
+              <SelectItem value={ALL_VALUE}>{t('filters.allRegions')}</SelectItem>
               {availableRegions.map((region) => (
                 <SelectItem key={region} value={region}>
                   {region}
@@ -96,7 +97,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
               <SelectValue placeholder={`${t('filters.year')}...`} />
             </SelectTrigger>
             <SelectContent className="bg-white z-50">
-              <SelectItem value={ALL_VALUE}>Todos los años</SelectItem>
+              <SelectItem value={ALL_VALUE}>{t('filters.allYears')}</SelectItem>
               {availableYears.sort((a, b) => b - a).map((year) => (
                 <SelectItem key={year} value={year.toString()}>
                   {year}
@@ -121,10 +122,10 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
               <SelectValue placeholder={`${t('filters.sector')}...`} />
             </SelectTrigger>
             <SelectContent className="bg-white z-50">
-              <SelectItem value={ALL_VALUE}>Todos los sectores</SelectItem>
+              <SelectItem value={ALL_VALUE}>{t('filters.allSectors')}</SelectItem>
               {availableSectors.map((sector) => (
                 <SelectItem key={sector} value={sector}>
-                  {sector}
+                  {humanizeLabel(sector)}
                 </SelectItem>
               ))}
             </SelectContent>

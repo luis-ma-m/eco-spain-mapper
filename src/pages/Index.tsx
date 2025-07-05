@@ -1,4 +1,3 @@
-
 // pages/index.tsx
 import React, { useEffect, useState, useMemo } from 'react';
 import Papa from 'papaparse';
@@ -25,7 +24,7 @@ const parseCSV = (csvText: string): CO2Data[] => {
     header: true,
     skipEmptyLines: true,
     transformHeader: header => sanitizeString(header.replace(/"/g, '')),
-    transform: (value: string) => value.trim().replace(/"/g, ''),
+    transform: value => value.trim().replace(/"/g, ''),
   });
 
   if (errors.length > 0) {
@@ -37,7 +36,7 @@ const parseCSV = (csvText: string): CO2Data[] => {
       const sanitizedRow: Record<string, unknown> = {};
       for (const [key, value] of Object.entries(row)) {
         const cleanKey = sanitizeString(key);
-        if (value === undefined || value === '') continue;
+        if (!value) continue;
         if (!isNaN(Number(value))) {
           sanitizedRow[cleanKey] = sanitizeNumber(value);
         } else {
@@ -53,11 +52,7 @@ const parseCSV = (csvText: string): CO2Data[] => {
         ''
       );
 
-      const yearRaw =
-        sanitizedRow.year ||
-        sanitizedRow.Year ||
-        sanitizedRow.año ||
-        '';
+      const yearRaw = sanitizedRow.year || sanitizedRow.Year || sanitizedRow.año || '';
       const year = sanitizeNumber(yearRaw) || 0;
 
       const sector = sanitizeString(
@@ -68,7 +63,7 @@ const parseCSV = (csvText: string): CO2Data[] => {
         ''
       );
 
-      const emissionsRaw =
+      const emissionsRaw = 
         sanitizedRow.emissions ||
         sanitizedRow.Emissions ||
         sanitizedRow.emisiones ||
@@ -144,14 +139,16 @@ const Index: React.FC = () => {
     setFilters(newFilters);
   };
 
+  // Persist selection
   useEffect(() => {
     try {
       localStorage.setItem('selectedMetrics', JSON.stringify(selectedMetrics));
     } catch {
-      /* ignore */
+      // ignore
     }
   }, [selectedMetrics]);
 
+  // Load default CSV on mount
   useEffect(() => {
     const controller = new AbortController();
 
@@ -162,15 +159,11 @@ const Index: React.FC = () => {
       setStatusMsg(`Fetching default data from ${dataUrl}`);
 
       try {
-        console.info(`Fetching data from ${dataUrl}`);
         const res = await fetch(dataUrl, { signal: controller.signal });
-
         if (!res.ok) {
           throw new Error(`Failed to load data: ${res.status} ${res.statusText}`);
         }
-
         const text = await res.text();
-
         let parsedData: CO2Data[];
         try {
           parsedData = parseCSV(text);
@@ -180,30 +173,24 @@ const Index: React.FC = () => {
           setStatusMsg(`CSV parse error: ${msg}`);
           throw parseErr;
         }
-
         setData(parsedData);
         const msgLoaded = `Loaded ${parsedData.length} records from default CSV`;
-        console.log(msgLoaded);
         setStatusMsg(msgLoaded);
       } catch (err) {
         const msg = err instanceof Error ? err.message : String(err);
         console.error('Error loading CSV:', msg);
         setError(msg);
         setStatusMsg(`Error loading CSV: ${msg}`);
-        throw err;
       } finally {
         setIsLoading(false);
       }
     };
 
     loadData();
-
-    return () => {
-      controller.abort();
-    };
+    return () => { controller.abort(); };
   }, []);
 
-  // Memoize filter options so we only recompute when `data` changes
+  // Memoize filter options
   const availableRegions = useMemo(
     () => Array.from(new Set(data.map(d => d.region))).sort(),
     [data]
@@ -217,15 +204,12 @@ const Index: React.FC = () => {
     [data]
   );
 
+  // Discover numeric fields for metrics
   const availableMetrics = useMemo(() => {
     const metrics = new Set<string>();
     data.forEach(record => {
       Object.entries(record).forEach(([k, v]) => {
-        if (
-          typeof v === 'number' &&
-          isFinite(v) &&
-          !['year', 'lat', 'lng'].includes(k)
-        ) {
+        if (typeof v === 'number' && isFinite(v) && !['year', 'lat', 'lng'].includes(k)) {
           metrics.add(k);
         }
       });
@@ -233,6 +217,7 @@ const Index: React.FC = () => {
     return Array.from(metrics).sort();
   }, [data]);
 
+  // Adjust selectedMetrics if needed
   useEffect(() => {
     if (availableMetrics.length === 0) return;
     setSelectedMetrics(prev => {
@@ -255,6 +240,7 @@ const Index: React.FC = () => {
             onMetricsChange={setSelectedMetrics}
             isLoading={isLoading}
             error={error}
+            statusMessage={statusMsg}
           />
 
           <div className="absolute bottom-4 right-4 z-10 flex flex-col space-y-2">

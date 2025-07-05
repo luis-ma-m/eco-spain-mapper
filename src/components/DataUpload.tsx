@@ -27,7 +27,7 @@ export interface CO2Data {
 }
 
 const DataUpload: React.FC<DataUploadProps> = ({ onDataLoaded }) => {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
   const [processingProgress, setProcessingProgress] = useState(0);
 
@@ -119,11 +119,19 @@ const DataUpload: React.FC<DataUploadProps> = ({ onDataLoaded }) => {
       const parsed = await parseCSV(text);
       
       onDataLoaded(parsed);
-      toast.success(`Datos cargados exitosamente: ${parsed.length} registros`);
+      toast.success(
+        language === 'es'
+          ? `Datos cargados exitosamente: ${parsed.length} registros`
+          : `Data loaded successfully: ${parsed.length} records`
+      );
     } catch (error) {
       console.error('Error loading default data:', error);
-      const errorMessage = error instanceof Error ? error.message : 'Error desconocido';
-      toast.error(`Error al cargar datos predefinidos: ${errorMessage}`);
+      const errorMessage = error instanceof Error ? error.message : language === 'es' ? 'Error desconocido' : 'Unknown error';
+      toast.error(
+        language === 'es'
+          ? `Error al cargar datos predefinidos: ${errorMessage}`
+          : `Error loading default data: ${errorMessage}`
+      );
     } finally {
       setIsLoading(false);
       setProcessingProgress(0);
@@ -136,12 +144,22 @@ const DataUpload: React.FC<DataUploadProps> = ({ onDataLoaded }) => {
 
     // Enhanced file validation
     if (!file.name.toLowerCase().endsWith('.csv')) {
-      toast.error('Por favor, selecciona un archivo CSV válido');
+      toast.error(
+        language === 'es'
+          ? 'Por favor, selecciona un archivo CSV válido'
+          : 'Please select a valid CSV file'
+      );
       return;
     }
 
     if (!validateFileSize(file)) {
-      toast.error(`El archivo es demasiado grande. Tamaño máximo: ${Math.round(MAX_FILE_SIZE / (1024 * 1024))}MB`);
+      toast.error(
+        language === 'es'
+          ? `El archivo es demasiado grande. Tamaño máximo: ${Math.round(
+              MAX_FILE_SIZE / (1024 * 1024)
+            )}MB`
+          : `File is too large. Max size: ${Math.round(MAX_FILE_SIZE / (1024 * 1024))}MB`
+      );
       return;
     }
 
@@ -153,16 +171,29 @@ const DataUpload: React.FC<DataUploadProps> = ({ onDataLoaded }) => {
       const parsedData = await parseCSV(text);
       
       if (parsedData.length === 0) {
-        throw new Error('No se encontraron datos válidos en el archivo CSV');
+        throw new Error(
+          language === 'es'
+            ? 'No se encontraron datos válidos en el archivo CSV'
+            : 'No valid data found in the CSV file'
+        );
       }
 
       console.log(`Loaded ${parsedData.length} records from CSV`);
       onDataLoaded(parsedData);
-      toast.success(`Datos cargados exitosamente: ${parsedData.length} registros`);
+      toast.success(
+        language === 'es'
+          ? `Datos cargados exitosamente: ${parsedData.length} registros`
+          : `Data loaded successfully: ${parsedData.length} records`
+      );
       
     } catch (error) {
       console.error('Error parsing CSV:', error);
-      const errorMessage = error instanceof Error ? error.message : 'Error desconocido al procesar CSV';
+      const errorMessage =
+        error instanceof Error
+          ? error.message
+          : language === 'es'
+          ? 'Error desconocido al procesar CSV'
+          : 'Unknown error processing CSV';
       toast.error(errorMessage);
     } finally {
       setIsLoading(false);
@@ -214,19 +245,29 @@ const DataUpload: React.FC<DataUploadProps> = ({ onDataLoaded }) => {
                 />
               </div>
               <p className="text-sm text-gray-600 text-center">
-                Procesando... {processingProgress}%
+                {t('upload.processing')} {processingProgress}%
               </p>
             </div>
           )}
           
           <div className="text-sm text-gray-600 space-y-2">
-            <p><strong>Formato esperado del CSV:</strong></p>
+            <p>
+              <strong>{t('upload.instructionsTitle')}</strong>
+            </p>
             <ul className="list-disc list-inside space-y-1 text-xs">
-              <li>Columnas: region, year, sector, emissions</li>
-              <li>Opcionalmente: lat, lng para coordenadas</li>
-              <li>Primera fila debe contener los encabezados</li>
-              <li>Tamaño máximo: {Math.round(MAX_FILE_SIZE / (1024 * 1024))}MB</li>
-              <li>Máximo {MAX_CSV_ROWS.toLocaleString()} filas</li>
+              <li>{t('upload.instruction.columns')}</li>
+              <li>{t('upload.instruction.optional')}</li>
+              <li>{t('upload.instruction.headers')}</li>
+              <li>
+                {language === 'es'
+                  ? `Tamaño máximo: ${Math.round(MAX_FILE_SIZE / (1024 * 1024))}MB`
+                  : `Max size: ${Math.round(MAX_FILE_SIZE / (1024 * 1024))}MB`}
+              </li>
+              <li>
+                {language === 'es'
+                  ? `Máximo ${MAX_CSV_ROWS.toLocaleString()} filas`
+                  : `Maximum ${MAX_CSV_ROWS.toLocaleString()} rows`}
+              </li>
             </ul>
           </div>
         </div>

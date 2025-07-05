@@ -1,50 +1,30 @@
 // components/MapVisualization.tsx
-import React, { useMemo, useState } from 'react';
-import {
-  MapContainer,
-  TileLayer,
-  CircleMarker,
-  Tooltip,
-  ZoomControl,
-  useMapEvents
-} from 'react-leaflet';
+import React, { useMemo } from 'react';
+import { MapContainer, TileLayer, CircleMarker, Popup } from 'react-leaflet';
 import type { LatLngExpression } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
 import { useTranslation } from '../hooks/useTranslation';
-import { CO2Data } from './DataUpload';
-import { FilterState } from './FilterPanel';
-import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+import { humanizeLabel } from '@/utils/humanize';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
-import { sanitizeHtml, sanitizeString } from '../utils/security';
+import { Badge } from '@/components/ui/badge';
+import { Loader2, MapPin } from 'lucide-react';
+
+import type { CO2Data } from './DataUpload';
+import type { FilterState } from './FilterPanel';
 
 interface MapVisualizationProps {
   data: CO2Data[];
   filters: FilterState;
   selectedMetrics: string[];
   availableMetrics: string[];
-  onMetricsChange: (m: string[]) => void;
-  isLoading?: boolean;
-  error?: string | null;
-  statusMessage?: string;
+  onMetricsChange: (metrics: string[]) => void;
+  isLoading: boolean;
+  error: string | null;
+  statusMessage: string;
 }
-
-const ZoomListener: React.FC<{ onZoom: (z: number) => void }> = ({ onZoom }) => {
-  useMapEvents({
-    zoomend(e) {
-      onZoom(e.target.getZoom());
-    },
-  });
-  return null;
-};
 
 const MapVisualization: React.FC<MapVisualizationProps> = ({
   data,
@@ -52,250 +32,252 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
   selectedMetrics,
   availableMetrics,
   onMetricsChange,
-  isLoading = false,
-  error = null,
+  isLoading,
+  error,
   statusMessage,
 }) => {
   const { t } = useTranslation();
-  const [zoom, setZoom] = useState(6);
-  const centerCoords: LatLngExpression = [40.4165, -3.7026];
 
-  // Filter out any invalid rows and apply user‐selected filters
-  const filteredData = useMemo(() => {
-    return data.filter(item => {
-      if (!item || typeof item !== 'object') return false;
-      if (!item.region || !item.year || typeof item.emissions !== 'number') return false;
-      if (item.emissions < 0 || !isFinite(item.emissions)) return false;
+  // Apply filters to data
+  const filteredData = useMemo(
+    () =>
+      data.filter(item => {
+        if (filters.region && item.region !== filters.region) return false;
+        if (filters.year && item.year !== filters.year) return false;
+        if (filters.sector && item.sector !== filters.sector) return false;
+        return true;
+      }),
+    [data, filters]
+  );
 
-      if (filters.region && sanitizeString(item.region) !== sanitizeString(filters.region)) return false;
-      if (filters.year && item.year !== filters.year) return false;
-      if (filters.sector && sanitizeString(item.sector) !== sanitizeString(filters.sector)) return false;
-
-      return true;
-    });
-  }, [data, filters]);
-
-  const groupedMetrics = useMemo(() => {
-    const groups: Record<string, string[]> = {};
-    availableMetrics.forEach(m => {
-      const prefix = m.includes('_') ? m.split('_')[0] : 'metrics';
-      if (!groups[prefix]) groups[prefix] = [];
-      groups[prefix].push(m);
-    });
-    return groups;
-  }, [availableMetrics]);
-
-  // Sum selected metrics by region
-  const regionEmissions = useMemo(() => {
-    const map: Record<string, number> = {};
+  // Aggregate values per region/coords
+  const aggregatedData = useMemo(() => {
+    const map = new Map<string, CO2Data & { count: number }>();
     filteredData.forEach(item => {
-      const region = sanitizeString(item.region);
-      if (!region) return;
-      const val = selectedMetrics.reduce((sum, key) => {
-        const raw = item[key];
-        return typeof raw === 'number' ? sum + Math.max(0, raw) : sum;
-      }, 0);
-      if (!isFinite(val)) return;
-      map[region] = (map[region] || 0) + val;
+      const key = item.coordinates
+        ? `${item.coordinates[0]},${item.coordinates[1]}`
+        : item.region;
+      if (map.has(key)) {
+        const existing = map.get(key)!;
+        selectedMetrics.forEach(metric => {
+          const raw = item[metric];
+          if (typeof raw === 'number' && typeof existing[metric] === 'number') {
+            existing[metric] = (existing[metric] as number) + raw;
+          }
+        });
+        existing.count++;
+      } else {
+        map.set(key, { ...item, count: 1 });
+      }
     });
-    return map;
+    return Array.from(map.values());
   }, [filteredData, selectedMetrics]);
 
-  // Determine min/max for scaling
-  const { minEmission, maxEmission } = useMemo(() => {
-    const vals = Object.values(regionEmissions).filter(v => isFinite(v) && v > 0);
-    if (vals.length === 0) return { minEmission: 0, maxEmission: 1 };
-    return { minEmission: Math.min(...vals), maxEmission: Math.max(...vals) };
-  }, [regionEmissions]);
+  // Compute min/max for each selected metric
+  const metricRanges = useMemo(() => {
+    const ranges: Record<string, { min: number; max: number }> = {};
+    selectedMetrics.forEach(metric => {
+      const vals = aggregatedData
+        .map(item => item[metric] as number)
+        .filter(v => typeof v === 'number' && isFinite(v));
+      if (vals.length) {
+        ranges[metric] = { min: Math.min(...vals), max: Math.max(...vals) };
+      }
+    });
+    return ranges;
+  }, [aggregatedData, selectedMetrics]);
 
-  // Color scale from green (low) to red (high)
-  const getEmissionColor = (em: number): string => {
-    if (!isFinite(em) || em < 0) return '#e5e7eb';
-    const intensity = Math.min(Math.max(em / maxEmission, 0), 1);
-    const red = Math.floor(255 * intensity);
-    const green = Math.floor(255 * (1 - intensity * 0.8));
-    const blue = Math.floor(100 * (1 - intensity));
-    return `rgb(${red}, ${green}, ${blue})`;
+  // Determine marker color based on metric value
+  const getMarkerColor = (item: CO2Data, metric: string): string => {
+    const val = item[metric] as number;
+    const range = metricRanges[metric];
+    if (!range || !isFinite(val)) return '#6b7280'; // gray
+    const norm = (val - range.min) / (range.max - range.min);
+    if (norm > 0.7) return '#dc2626';
+    if (norm > 0.4) return '#f59e0b';
+    return '#16a34a';
   };
 
-  // Static centroids for each Comunidad
-  const spanishRegions = [
-    { name: 'Andalucía', coords: [37.7749, -4.7324] },
-    { name: 'Aragón', coords: [41.5868, -0.8296] },
-    { name: 'Asturias', coords: [43.3619, -5.8494] },
-    { name: 'Baleares', coords: [39.6953, 3.0176] },
-    { name: 'Canarias', coords: [28.2916, -16.6291] },
-    { name: 'Cantabria', coords: [43.1828, -3.9878] },
-    { name: 'Castilla-La Mancha', coords: [39.5663, -2.9908] },
-    { name: 'Castilla y León', coords: [41.6523, -4.7245] },
-    { name: 'Cataluña', coords: [41.8019, 1.8734] },
-    { name: 'Comunidad Valenciana', coords: [39.4840, -0.7532] },
-    { name: 'Extremadura', coords: [39.1622, -6.3432] },
-    { name: 'Galicia', coords: [42.5751, -8.1339] },
-    { name: 'Madrid', coords: [40.4165, -3.7026] },
-    { name: 'Murcia', coords: [37.9922, -1.1307] },
-    { name: 'Navarra', coords: [42.6954, -1.6761] },
-    { name: 'País Vasco', coords: [43.2630, -2.9340] },
-    { name: 'La Rioja', coords: [42.2871, -2.5396] }
-  ];
-
-  const getRadius = (em: number) => {
-    if (!isFinite(em) || em <= 0) return 8 * (zoom / 6);
-    if (maxEmission === minEmission) return 20 * (zoom / 6);
-    const norm = (em - minEmission) / (maxEmission - minEmission);
-    const size = 8 + norm * (50 - 8);
-    return size * (zoom / 6);
+  // Determine marker size based on metric value
+  const getMarkerSize = (item: CO2Data, metric: string): number => {
+    const val = item[metric] as number;
+    const range = metricRanges[metric];
+    if (!range || !isFinite(val)) return 5;
+    const norm = (val - range.min) / (range.max - range.min);
+    return Math.max(5, Math.min(20, 5 + norm * 15));
   };
 
-  const formatNumber = (n: number) =>
-    isFinite(n) ? (n / 1_000_000).toFixed(2) : '0.00';
+  // Default map center (Spain)
+  const centerCoords: LatLngExpression = [40.4168, -3.7038];
 
-  const totalMetric = Object.values(regionEmissions).reduce((a, b) => a + b, 0);
+  // Loading state
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center h-96">
+        <div className="text-center">
+          <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4 text-green-600" />
+          <p className="text-gray-600">{t('data.loading')}</p>
+          {statusMessage && (
+            <p className="text-sm text-gray-500 mt-2">{statusMessage}</p>
+          )}
+        </div>
+      </div>
+    );
+  }
+
+  // Error state
+  if (error) {
+    return (
+      <div className="flex items-center justify-center h-96">
+        <div className="text-center">
+          <p className="text-red-600 mb-2">{t('data.error')}</p>
+          <p className="text-sm text-gray-500">{error}</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div className="relative w-full" style={{ height: 'calc(100vh - 4rem)' }}>
+    <div
+      className="relative w-full"
+      style={{ height: 'calc(100vh - 4rem)' }}
+    >
+      {/* Controls Panel */}
+      <Card className="absolute top-4 left-4 z-10 w-80 bg-white/95 backdrop-blur-sm">
+        <CardHeader className="pb-3">
+          <CardTitle className="flex items-center space-x-2 text-lg">
+            <MapPin className="h-5 w-5 text-green-600" />
+            <span>{t('map.title')}</span>
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          {/* Metric Selector */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              {t('map.selectMetrics')}
+            </label>
+            <Select
+              value={selectedMetrics[0] || ''}
+              onValueChange={value => onMetricsChange([value])}
+            >
+              <SelectTrigger>
+                <SelectValue placeholder="Select metric…" />
+              </SelectTrigger>
+              <SelectContent className="bg-white z-50">
+                {availableMetrics.map(metric => (
+                  <SelectItem key={metric} value={metric}>
+                    {humanizeLabel(metric)}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* Legend */}
+          <div>
+            <h4 className="text-sm font-medium text-gray-700 mb-2">
+              {t('map.legend')}
+            </h4>
+            <div className="space-y-1">
+              <div className="flex items-center space-x-2">
+                <div className="w-4 h-4 rounded-full bg-red-600" />
+                <span className="text-xs text-gray-600">{t('map.high')}</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-4 h-4 rounded-full bg-orange-500" />
+                <span className="text-xs text-gray-600">{t('map.medium')}</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-4 h-4 rounded-full bg-green-600" />
+                <span className="text-xs text-gray-600">{t('map.low')}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Stats */}
+          <div className="pt-2 border-t">
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-gray-600">{t('map.total')}:</span>
+              <Badge variant="secondary">
+                {aggregatedData.length} regions
+              </Badge>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* The Map */}
       <MapContainer
         center={centerCoords}
-        zoom={zoom}
+        zoom={6}
         zoomControl={false}
         className="w-full h-full"
         scrollWheelZoom
       >
-        <ZoomControl position="topright" />
-        <ZoomListener onZoom={setZoom} />
-        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-
-        {spanishRegions.map(region => {
-          const em = regionEmissions[region.name] || 0;
-          return (
-            <CircleMarker
-              key={region.name}
-              center={region.coords as [number, number]}
-              pathOptions={{
-                color: '#333',
-                fillColor: em > 0 ? getEmissionColor(em) : '#e5e7eb',
-                fillOpacity: 0.8,
-              }}
-              radius={getRadius(em)}
-            >
-              <Tooltip>
-                <div className="text-center">
-                  <div
-                    className="text-xs font-medium"
-                    dangerouslySetInnerHTML={{ __html: sanitizeHtml(region.name) }}
-                  />
-                  {em > 0 && (
-                    <div className="text-xs">
-                      {formatNumber(em)} M {sanitizeHtml(t('map.unit'))}
-                    </div>
-                  )}
-                </div>
-              </Tooltip>
-            </CircleMarker>
-          );
-        })}
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        />
+        {selectedMetrics.length > 0 &&
+          aggregatedData.map((item, idx) => {
+            const coords =
+              item.coordinates ??
+              [
+                centerCoords[0] + Math.random() * 0.1 - 0.05,
+                centerCoords[1] + Math.random() * 0.1 - 0.05,
+              ];
+            const metric = selectedMetrics[0];
+            return (
+              <CircleMarker
+                key={`${item.region}-${idx}`}
+                center={coords as LatLngExpression}
+                radius={getMarkerSize(item, metric)}
+                pathOptions={{
+                  fillColor: getMarkerColor(item, metric),
+                  color: 'white',
+                  weight: 2,
+                  opacity: 0.8,
+                  fillOpacity: 0.6,
+                }}
+              >
+                <Popup>
+                  <div className="p-2">
+                    <h3 className="font-semibold text-gray-900 mb-1">
+                      {item.region}
+                    </h3>
+                    {selectedMetrics.map(m => (
+                      <div key={m} className="text-sm text-gray-600">
+                        <span className="font-medium">{humanizeLabel(m)}:</span>{' '}
+                        {typeof item[m] === 'number'
+                          ? (item[m] as number).toLocaleString()
+                          : 'N/A'}{' '}
+                        {t('map.unit')}
+                      </div>
+                    ))}
+                    {item.sector && (
+                      <div className="text-sm text-gray-600">
+                        <span className="font-medium">Sector:</span>{' '}
+                        {item.sector}
+                      </div>
+                    )}
+                    {item.year && (
+                      <div className="text-sm text-gray-600">
+                        <span className="font-medium">Year:</span> {item.year}
+                      </div>
+                    )}
+                  </div>
+                </Popup>
+              </CircleMarker>
+            );
+          })}
       </MapContainer>
 
-      {/* Title & counts */}
-      <div className="absolute top-4 left-4 z-[1200] bg-white p-4 rounded-lg shadow">
-        <h3 className="text-lg font-semibold text-gray-900">
-          {sanitizeHtml(t('map.title'))}
-        </h3>
-        <p className="text-sm text-gray-600">
-          {filteredData.length} registros • {Object.keys(regionEmissions).length} regiones
-        </p>
-      </div>
-
-      {/* Legend */}
-      <div className="absolute bottom-4 left-4 z-[1200] bg-white p-3 rounded-lg shadow-lg">
-        <h4 className="text-sm font-semibold mb-2">
-          {sanitizeHtml(t('map.legend'))}
-        </h4>
-        <div className="space-y-1">
-          <div className="flex items-center space-x-2">
-            <div className="w-4 h-4 rounded-full bg-red-500" />
-            <span className="text-xs">Alta emisión</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-4 h-4 rounded-full bg-yellow-500" />
-            <span className="text-xs">Media emisión</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-4 h-4 rounded-full bg-green-500" />
-            <span className="text-xs">Baja emisión</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Metric selection */}
-      <div className="absolute top-4 right-4 z-[1200] bg-white p-3 rounded-lg shadow-lg space-y-2">
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="w-40 truncate">
-              {selectedMetrics.length > 0 ? selectedMetrics.join(', ') : 'Metricos'}
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="max-h-60 overflow-y-auto">
-            {Object.entries(groupedMetrics).map(([group, metrics], gi, arr) => (
-              <DropdownMenuGroup key={group}>
-                {arr.length > 1 && (
-                  <DropdownMenuLabel className="capitalize">
-                    {group}
-                  </DropdownMenuLabel>
-                )}
-                {metrics.map(m => (
-                  <DropdownMenuCheckboxItem
-                    key={m}
-                    checked={selectedMetrics.includes(m)}
-                    onCheckedChange={checked => {
-                      if (checked) {
-                        onMetricsChange([...selectedMetrics, m]);
-                      } else {
-                        onMetricsChange(selectedMetrics.filter(x => x !== m));
-                      }
-                    }}
-                    className="capitalize"
-                  >
-                    {m}
-                  </DropdownMenuCheckboxItem>
-                ))}
-                {gi < arr.length - 1 && <DropdownMenuSeparator />}
-              </DropdownMenuGroup>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
-        <div className="text-center text-sm">
-          <div className="text-2xl font-bold text-green-600">
-            {formatNumber(totalMetric)} M
-          </div>
-          <div className="text-xs text-gray-600">{sanitizeHtml(t('map.unit'))}</div>
-        </div>
-      </div>
-
-      {/* Loading / error / no-data overlay */}
-      {(isLoading || error || filteredData.length === 0) && (
-        <div className="pointer-events-none absolute inset-0 z-[1200] flex items-center justify-center">
-          <div className="bg-white bg-opacity-80 px-4 py-2 rounded">
-            <p className="text-gray-600 text-center">
-              {sanitizeHtml(
-                isLoading
-                  ? t('data.loading')
-                  : error
-                  ? `${t('data.error')}: ${error}`
-                  : t('data.noData')
-              )}
-            </p>
-          </div>
-        </div>
-      )}
-
-      {/* Status message */}
+      {/* Status Message */}
       {statusMessage && (
-        <div className="pointer-events-none absolute top-2 left-2 z-[1200] bg-white bg-opacity-70 rounded px-2 py-1 shadow">
-          <p
-            className="text-xs text-gray-700"
-            dangerouslySetInnerHTML={{ __html: sanitizeHtml(statusMessage) }}
-          />
+        <div className="absolute bottom-4 left-4 z-10">
+          <Badge variant="outline" className="bg-white/95 backdrop-blur-sm">
+            {statusMessage}
+          </Badge>
         </div>
       )}
     </div>

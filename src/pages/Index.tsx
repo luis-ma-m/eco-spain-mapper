@@ -186,6 +186,7 @@ const Index: React.FC = () => {
             filters={filters}
             isLoading={isLoading}
             error={error}
+            statusMessage={statusMsg}
           />
 
           <div className="absolute bottom-4 right-4 z-10 flex flex-col space-y-2">

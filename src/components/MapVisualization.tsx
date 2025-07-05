@@ -184,7 +184,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
               <SelectTrigger>
                 <SelectValue placeholder="Select metric…" />
               </SelectTrigger>
-              <SelectContent className="bg-white z-50">
+              <SelectContent className="bg-white">
                 {availableMetrics.map(metric => (
                   <SelectItem key={metric} value={metric}>
                     {humanizeLabel(metric)}

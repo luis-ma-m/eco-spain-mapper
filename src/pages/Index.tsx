@@ -24,7 +24,7 @@ const parseCSV = (csvText: string): CO2Data[] => {
     header: true,
     skipEmptyLines: true,
     transformHeader: header => sanitizeString(header.replace(/"/g, '')),
-    transform: (value: string) => value.trim().replace(/"/g, ''),
+    transform: value => value.trim().replace(/"/g, ''),
   });
 
   if (errors.length > 0) {
@@ -36,7 +36,7 @@ const parseCSV = (csvText: string): CO2Data[] => {
       const sanitizedRow: Record<string, unknown> = {};
       for (const [key, value] of Object.entries(row)) {
         const cleanKey = sanitizeString(key);
-        if (value === undefined || value === '') continue;
+        if (!value) continue;
         if (!isNaN(Number(value))) {
           sanitizedRow[cleanKey] = sanitizeNumber(value);
         } else {
@@ -52,11 +52,7 @@ const parseCSV = (csvText: string): CO2Data[] => {
         ''
       );
 
-      const yearRaw =
-        sanitizedRow.year ||
-        sanitizedRow.Year ||
-        sanitizedRow.año ||
-        '';
+      const yearRaw = sanitizedRow.year || sanitizedRow.Year || sanitizedRow.año || '';
       const year = sanitizeNumber(yearRaw) || 0;
 
       const sector = sanitizeString(
@@ -67,7 +63,7 @@ const parseCSV = (csvText: string): CO2Data[] => {
         ''
       );
 
-      const emissionsRaw =
+      const emissionsRaw = 
         sanitizedRow.emissions ||
         sanitizedRow.Emissions ||
         sanitizedRow.emisiones ||
@@ -143,6 +139,7 @@ const Index: React.FC = () => {
     setFilters(newFilters);
   };
 
+  // Persist selection
   useEffect(() => {
     try {
       localStorage.setItem('selectedMetrics', JSON.stringify(selectedMetrics));
@@ -151,6 +148,7 @@ const Index: React.FC = () => {
     }
   }, [selectedMetrics]);
 
+  // Load default CSV on mount
   useEffect(() => {
     const controller = new AbortController();
 
@@ -161,12 +159,10 @@ const Index: React.FC = () => {
       setStatusMsg(`Fetching default data from ${dataUrl}`);
 
       try {
-        console.info(`Fetching data from ${dataUrl}`);
         const res = await fetch(dataUrl, { signal: controller.signal });
         if (!res.ok) {
           throw new Error(`Failed to load data: ${res.status} ${res.statusText}`);
         }
-
         const text = await res.text();
         let parsedData: CO2Data[];
         try {
@@ -177,10 +173,8 @@ const Index: React.FC = () => {
           setStatusMsg(`CSV parse error: ${msg}`);
           throw parseErr;
         }
-
         setData(parsedData);
         const msgLoaded = `Loaded ${parsedData.length} records from default CSV`;
-        console.log(msgLoaded);
         setStatusMsg(msgLoaded);
       } catch (err) {
         const msg = err instanceof Error ? err.message : String(err);
@@ -223,7 +217,7 @@ const Index: React.FC = () => {
     return Array.from(metrics).sort();
   }, [data]);
 
-  // Ensure selectedMetrics stay valid as data changes
+  // Adjust selectedMetrics if needed
   useEffect(() => {
     if (availableMetrics.length === 0) return;
     setSelectedMetrics(prev => {
@@ -252,7 +246,9 @@ const Index: React.FC = () => {
           <div className="absolute bottom-4 right-4 z-10 flex flex-col space-y-2">
             <Sheet>
               <SheetTrigger asChild>
-                <Button size="icon"><Upload className="w-4 h-4" /></Button>
+                <Button size="icon">
+                  <Upload className="w-4 h-4" />
+                </Button>
               </SheetTrigger>
               <SheetContent side="right" className="sm:w-96">
                 <DataUpload onDataLoaded={handleDataLoaded} />
@@ -261,7 +257,9 @@ const Index: React.FC = () => {
 
             <Sheet>
               <SheetTrigger asChild>
-                <Button size="icon"><FilterIcon className="w-4 h-4" /></Button>
+                <Button size="icon">
+                  <FilterIcon className="w-4 h-4" />
+                </Button>
               </SheetTrigger>
               <SheetContent side="right" className="sm:w-80">
                 <FilterPanel

@@ -38,17 +38,19 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
 }) => {
   const { t } = useTranslation();
 
-  // Filter data based on active filters
-  const filteredData = useMemo(() => {
-    return data.filter(item => {
-      if (filters.region && item.region !== filters.region) return false;
-      if (filters.year && item.year !== filters.year) return false;
-      if (filters.sector && item.sector !== filters.sector) return false;
-      return true;
-    });
-  }, [data, filters]);
+  // Apply filters to data
+  const filteredData = useMemo(
+    () =>
+      data.filter(item => {
+        if (filters.region && item.region !== filters.region) return false;
+        if (filters.year && item.year !== filters.year) return false;
+        if (filters.sector && item.sector !== filters.sector) return false;
+        return true;
+      }),
+    [data, filters]
+  );
 
-  // Aggregate data by region/coordinates
+  // Aggregate values per region/coords
   const aggregatedData = useMemo(() => {
     const map = new Map<string, CO2Data & { count: number }>();
     filteredData.forEach(item => {
@@ -71,7 +73,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
     return Array.from(map.values());
   }, [filteredData, selectedMetrics]);
 
-  // Compute min/max per metric for color/size scales
+  // Compute min/max for each selected metric
   const metricRanges = useMemo(() => {
     const ranges: Record<string, { min: number; max: number }> = {};
     selectedMetrics.forEach(metric => {
@@ -85,6 +87,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
     return ranges;
   }, [aggregatedData, selectedMetrics]);
 
+  // Determine marker color based on metric value
   const getMarkerColor = (item: CO2Data, metric: string): string => {
     const val = item[metric] as number;
     const range = metricRanges[metric];
@@ -95,6 +98,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
     return '#16a34a';
   };
 
+  // Determine marker size based on metric value
   const getMarkerSize = (item: CO2Data, metric: string): number => {
     const val = item[metric] as number;
     const range = metricRanges[metric];
@@ -103,9 +107,10 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
     return Math.max(5, Math.min(20, 5 + norm * 15));
   };
 
-  // Default view center
+  // Default map center (Spain)
   const centerCoords: LatLngExpression = [40.4168, -3.7038];
 
+  // Loading state
   if (isLoading) {
     return (
       <div className="flex items-center justify-center h-96">
@@ -120,6 +125,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
     );
   }
 
+  // Error state
   if (error) {
     return (
       <div className="flex items-center justify-center h-96">
@@ -200,7 +206,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
         </CardContent>
       </Card>
 
-      {/* Map */}
+      {/* The Map */}
       <MapContainer
         center={centerCoords}
         zoom={6}
@@ -250,7 +256,8 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
                     ))}
                     {item.sector && (
                       <div className="text-sm text-gray-600">
-                        <span className="font-medium">Sector:</span> {humanizeLabel(item.sector)}
+                        <span className="font-medium">Sector:</span>{' '}
+                        {item.sector}
                       </div>
                     )}
                     {item.year && (

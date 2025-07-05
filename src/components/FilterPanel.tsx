@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
+import { humanizeLabel } from '@/utils/humanize';
 import { Filter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -124,7 +125,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
               <SelectItem value={ALL_VALUE}>{t('filters.allSectors')}</SelectItem>
               {availableSectors.map((sector) => (
                 <SelectItem key={sector} value={sector}>
-                  {sector}
+                  {humanizeLabel(sector)}
                 </SelectItem>
               ))}
             </SelectContent>

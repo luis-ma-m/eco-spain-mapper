@@ -5,6 +5,7 @@ import type { LatLngExpression } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
 import { useTranslation } from '../hooks/useTranslation';
+import { humanizeLabel } from '@/utils/humanize';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
@@ -156,7 +157,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
               <SelectContent className="bg-white z-50">
                 {availableMetrics.map(metric => (
                   <SelectItem key={metric} value={metric}>
-                    {metric}
+                    {humanizeLabel(metric)}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -237,7 +238,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
                     </h3>
                     {selectedMetrics.map(m => (
                       <div key={m} className="text-sm text-gray-600">
-                        <span className="font-medium">{m}:</span>{' '}
+                        <span className="font-medium">{humanizeLabel(m)}:</span>{' '}
                         {typeof item[m] === 'number'
                           ? (item[m] as number).toLocaleString()
                           : 'N/A'}{' '}
@@ -246,7 +247,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
                     ))}
                     {item.sector && (
                       <div className="text-sm text-gray-600">
-                        <span className="font-medium">Sector:</span> {item.sector}
+                        <span className="font-medium">Sector:</span> {humanizeLabel(item.sector)}
                       </div>
                     )}
                     {item.year && (

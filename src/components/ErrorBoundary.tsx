@@ -2,9 +2,11 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from '../hooks/useTranslation';
 
 interface Props {
   children: ReactNode;
+  t: (key: string) => string;
 }
 
 interface State {
@@ -12,7 +14,7 @@ interface State {
   error?: Error;
 }
 
-class ErrorBoundary extends Component<Props, State> {
+class ErrorBoundaryBase extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = { hasError: false };
@@ -43,12 +45,12 @@ class ErrorBoundary extends Component<Props, State> {
           <Card className="w-full max-w-md">
             <CardHeader>
               <CardTitle className="text-center text-red-600">
-                Error de aplicación
+                {this.props.t('errorBoundary.title')}
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-center text-gray-600">
-                Ha ocurrido un error inesperado. Por favor, recarga la página.
+                {this.props.t('errorBoundary.message')}
               </p>
               {this.state.error?.message && (
                 <p className="text-center text-red-600 text-sm">
@@ -56,18 +58,17 @@ class ErrorBoundary extends Component<Props, State> {
                 </p>
               )}
               <p className="text-center text-gray-500 text-sm">
-                Revisa la consola del navegador para ver el seguimiento completo
-                del error.
+                {this.props.t('errorBoundary.console')}
               </p>
               <div className="flex justify-center space-x-2">
                 <Button onClick={this.handleReload} variant="default">
-                  Recargar página
+                  {this.props.t('errorBoundary.reload')}
                 </Button>
                 <Button 
                   onClick={() => this.setState({ hasError: false })} 
                   variant="outline"
                 >
-                  Intentar de nuevo
+                  {this.props.t('errorBoundary.retry')}
                 </Button>
               </div>
             </CardContent>
@@ -79,5 +80,10 @@ class ErrorBoundary extends Component<Props, State> {
     return this.props.children;
   }
 }
+
+const ErrorBoundary: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const { t } = useTranslation();
+  return <ErrorBoundaryBase t={t}>{children}</ErrorBoundaryBase>;
+};
 
 export default ErrorBoundary;

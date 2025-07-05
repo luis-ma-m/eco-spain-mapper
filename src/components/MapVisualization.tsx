@@ -92,7 +92,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) =>
           {filteredData.length} registros • {Object.keys(regionEmissions).length} regiones
         </p>
       </div>
-      <div className="relative w-full h-full">
+      <div className="relative w-full h-full min-h-[400px]">
         <MapContainer
           center={center}
           zoom={zoom}

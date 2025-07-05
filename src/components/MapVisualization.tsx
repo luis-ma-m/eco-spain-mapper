@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Tooltip, ZoomControl, useMapEvents } from 'react-leaflet';
+import type { LatLngExpression } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useTranslation } from '../hooks/useTranslation';
 import { CO2Data } from './DataUpload';
@@ -32,7 +33,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
 }) => {
   const { t } = useTranslation();
   const [zoom, setZoom] = useState(6);
-  const centerCoords: [number, number] = [40.4165, -3.7026];
+  const centerCoords: LatLngExpression = [40.4165, -3.7026];
 
   const filteredData = useMemo(() => {
     return data.filter(item => {
@@ -50,7 +51,6 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
     });
   }, [data, filters]);
 
-  // Calculate aggregated emissions by region with validation
   const regionEmissions = useMemo(() => {
     const emissions: { [region: string]: number } = {};
     
@@ -71,14 +71,12 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
     return emissions;
   }, [filteredData]);
 
-  // Get min and max emission values for scaling with safety check
   const { minEmission, maxEmission } = useMemo(() => {
     const values = Object.values(regionEmissions).filter(v => isFinite(v) && v > 0);
     if (values.length === 0) return { minEmission: 0, maxEmission: 1 };
     return { minEmission: Math.min(...values), maxEmission: Math.max(...values) };
   }, [regionEmissions]);
 
-  // Color scale function with input validation
   const getEmissionColor = (emission: number): string => {
     if (!isFinite(emission) || emission < 0) return '#e5e7eb';
     
@@ -90,7 +88,6 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
     return `rgb(${red}, ${green}, ${blue})`;
   };
 
-  // Spanish regions with validation
   const spanishRegions = [
     { name: 'Andalucía', coords: [37.7749, -4.7324] },
     { name: 'Aragón', coords: [41.5868, -0.8296] },
@@ -122,7 +119,6 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
     return radius * (zoom / 6);
   };
 
-  // Safe number formatting in millions
   const formatNumber = (num: number): string => {
     if (!isFinite(num)) return '0';
     return (num / 1_000_000).toFixed(2);

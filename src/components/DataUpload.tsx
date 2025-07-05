@@ -15,7 +15,7 @@ export interface CO2Data {
   sector: string;
   emissions: number;
   coordinates?: [number, number]; // [lat, lng]
-  [key: string]: any; // Allow for additional CSV columns
+  [key: string]: unknown; // Allow for additional CSV columns
 }
 
 const DataUpload: React.FC<DataUploadProps> = ({ onDataLoaded }) => {
@@ -52,7 +52,7 @@ const DataUpload: React.FC<DataUploadProps> = ({ onDataLoaded }) => {
       const values = lines[i].split(',').map(v => v.trim().replace(/"/g, ''));
       if (values.length !== headers.length) continue;
 
-      const row: any = {};
+      const row: Record<string, string | number | undefined> = {};
       headers.forEach((header, index) => {
         const value = values[index];
         

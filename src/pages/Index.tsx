@@ -14,7 +14,7 @@ const parseCSV = (csvText: string): CO2Data[] => {
   for (let i = 1; i < lines.length; i++) {
     const values = lines[i].split(',').map(v => v.trim().replace(/"/g, ''));
     if (values.length !== headers.length) continue;
-    const row: any = {};
+    const row: Record<string, string | number | undefined> = {};
     headers.forEach((header, idx) => {
       const value = values[idx];
       row[header] = isNaN(Number(value)) || value === '' ? value : Number(value);

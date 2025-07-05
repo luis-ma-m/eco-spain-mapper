@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef, useMemo } from 'react';
+import React, { useRef, useMemo } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
 import { CO2Data } from './DataUpload';
 import { FilterState } from './FilterPanel';

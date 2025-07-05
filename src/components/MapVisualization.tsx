@@ -1,7 +1,7 @@
-
+// components/MapVisualization.tsx
 import React, { useMemo } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Popup } from 'react-leaflet';
-import { LatLngExpression } from 'leaflet';
+import type { LatLngExpression } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
 import { useTranslation } from '../hooks/useTranslation';
@@ -47,76 +47,62 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
     });
   }, [data, filters]);
 
-  // Aggregate data by region and coordinates
+  // Aggregate data by region/coordinates
   const aggregatedData = useMemo(() => {
-    const aggregated = new Map<string, CO2Data & { count: number }>();
-
+    const map = new Map<string, CO2Data & { count: number }>();
     filteredData.forEach(item => {
-      const key = item.coordinates ? `${item.coordinates[0]},${item.coordinates[1]}` : item.region;
-      
-      if (aggregated.has(key)) {
-        const existing = aggregated.get(key)!;
+      const key = item.coordinates
+        ? `${item.coordinates[0]},${item.coordinates[1]}`
+        : item.region;
+      if (map.has(key)) {
+        const existing = map.get(key)!;
         selectedMetrics.forEach(metric => {
-          if (typeof item[metric] === 'number' && typeof existing[metric] === 'number') {
-            existing[metric] = (existing[metric] as number) + (item[metric] as number);
+          const raw = item[metric];
+          if (typeof raw === 'number' && typeof existing[metric] === 'number') {
+            existing[metric] = (existing[metric] as number) + raw;
           }
         });
         existing.count++;
       } else {
-        const newItem: CO2Data & { count: number } = { ...item, count: 1 };
-        aggregated.set(key, newItem);
+        map.set(key, { ...item, count: 1 });
       }
     });
-
-    return Array.from(aggregated.values());
+    return Array.from(map.values());
   }, [filteredData, selectedMetrics]);
 
-  // Calculate metric ranges for color scaling
+  // Compute min/max per metric for color/size scales
   const metricRanges = useMemo(() => {
     const ranges: Record<string, { min: number; max: number }> = {};
-    
     selectedMetrics.forEach(metric => {
-      const values = aggregatedData
+      const vals = aggregatedData
         .map(item => item[metric] as number)
-        .filter(val => typeof val === 'number' && isFinite(val));
-      
-      if (values.length > 0) {
-        ranges[metric] = {
-          min: Math.min(...values),
-          max: Math.max(...values)
-        };
+        .filter(v => typeof v === 'number' && isFinite(v));
+      if (vals.length) {
+        ranges[metric] = { min: Math.min(...vals), max: Math.max(...vals) };
       }
     });
-    
     return ranges;
   }, [aggregatedData, selectedMetrics]);
 
-  // Get color based on metric value
   const getMarkerColor = (item: CO2Data, metric: string): string => {
-    const value = item[metric] as number;
+    const val = item[metric] as number;
     const range = metricRanges[metric];
-    
-    if (!range || !isFinite(value)) return '#6b7280'; // gray for invalid data
-    
-    const normalized = (value - range.min) / (range.max - range.min);
-    
-    if (normalized > 0.7) return '#dc2626'; // red for high
-    if (normalized > 0.4) return '#f59e0b'; // orange for medium
-    return '#16a34a'; // green for low
+    if (!range || !isFinite(val)) return '#6b7280'; // gray
+    const norm = (val - range.min) / (range.max - range.min);
+    if (norm > 0.7) return '#dc2626';
+    if (norm > 0.4) return '#f59e0b';
+    return '#16a34a';
   };
 
-  // Get marker size based on metric value
   const getMarkerSize = (item: CO2Data, metric: string): number => {
-    const value = item[metric] as number;
+    const val = item[metric] as number;
     const range = metricRanges[metric];
-    
-    if (!range || !isFinite(value)) return 5;
-    
-    const normalized = (value - range.min) / (range.max - range.min);
-    return Math.max(5, Math.min(20, 5 + normalized * 15));
+    if (!range || !isFinite(val)) return 5;
+    const norm = (val - range.min) / (range.max - range.min);
+    return Math.max(5, Math.min(20, 5 + norm * 15));
   };
 
-  // Default center coordinates for Spain
+  // Default view center
   const centerCoords: LatLngExpression = [40.4168, -3.7038];
 
   if (isLoading) {
@@ -155,20 +141,20 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          {/* Metrics Selector */}
+          {/* Metric Selector */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               {t('map.selectMetrics')}
             </label>
             <Select
               value={selectedMetrics[0] || ''}
-              onValueChange={(value) => onMetricsChange([value])}
+              onValueChange={value => onMetricsChange([value])}
             >
               <SelectTrigger>
-                <SelectValue placeholder="Select metric..." />
+                <SelectValue placeholder="Select metric…" />
               </SelectTrigger>
               <SelectContent className="bg-white z-50">
-                {availableMetrics.map((metric) => (
+                {availableMetrics.map(metric => (
                   <SelectItem key={metric} value={metric}>
                     {metric}
                   </SelectItem>
@@ -184,15 +170,15 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
             </h4>
             <div className="space-y-1">
               <div className="flex items-center space-x-2">
-                <div className="w-4 h-4 rounded-full bg-red-600"></div>
+                <div className="w-4 h-4 rounded-full bg-red-600" />
                 <span className="text-xs text-gray-600">{t('map.high')}</span>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="w-4 h-4 rounded-full bg-orange-500"></div>
+                <div className="w-4 h-4 rounded-full bg-orange-500" />
                 <span className="text-xs text-gray-600">{t('map.medium')}</span>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="w-4 h-4 rounded-full bg-green-600"></div>
+                <div className="w-4 h-4 rounded-full bg-green-600" />
                 <span className="text-xs text-gray-600">{t('map.low')}</span>
               </div>
             </div>
@@ -201,9 +187,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
           {/* Stats */}
           <div className="pt-2 border-t">
             <div className="flex items-center justify-between">
-              <span className="text-sm text-gray-600">
-                {t('map.total')}:
-              </span>
+              <span className="text-sm text-gray-600">{t('map.total')}:</span>
               <Badge variant="secondary">
                 {aggregatedData.length} regions
               </Badge>
@@ -218,56 +202,63 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
         zoom={6}
         zoomControl={false}
         className="w-full h-full"
-        scrollWheelZoom={true}
+        scrollWheelZoom
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
-        
-        {selectedMetrics.length > 0 && aggregatedData.map((item, index) => {
-          const coords = item.coordinates || [40.4168 + Math.random() * 10 - 5, -3.7038 + Math.random() * 10 - 5];
-          const metric = selectedMetrics[0];
-          
-          return (
-            <CircleMarker
-              key={`${item.region}-${index}`}
-              center={coords as LatLngExpression}
-              radius={getMarkerSize(item, metric)}
-              fillColor={getMarkerColor(item, metric)}
-              color="white"
-              weight={2}
-              opacity={0.8}
-              fillOpacity={0.6}
-            >
-              <Popup>
-                <div className="p-2">
-                  <h3 className="font-semibold text-gray-900 mb-1">
-                    {item.region}
-                  </h3>
-                  {selectedMetrics.map(m => (
-                    <div key={m} className="text-sm text-gray-600">
-                      <span className="font-medium">{m}:</span>{' '}
-                      {typeof item[m] === 'number' 
-                        ? (item[m] as number).toLocaleString() 
-                        : 'N/A'} {t('map.unit')}
-                    </div>
-                  ))}
-                  {item.sector && (
-                    <div className="text-sm text-gray-600">
-                      <span className="font-medium">Sector:</span> {item.sector}
-                    </div>
-                  )}
-                  {item.year && (
-                    <div className="text-sm text-gray-600">
-                      <span className="font-medium">Year:</span> {item.year}
-                    </div>
-                  )}
-                </div>
-              </Popup>
-            </CircleMarker>
-          );
-        })}
+        {selectedMetrics.length > 0 &&
+          aggregatedData.map((item, idx) => {
+            const coords =
+              item.coordinates ??
+              [
+                centerCoords[0] + Math.random() * 0.1 - 0.05,
+                centerCoords[1] + Math.random() * 0.1 - 0.05,
+              ];
+            const metric = selectedMetrics[0];
+            return (
+              <CircleMarker
+                key={`${item.region}-${idx}`}
+                center={coords as LatLngExpression}
+                radius={getMarkerSize(item, metric)}
+                pathOptions={{
+                  fillColor: getMarkerColor(item, metric),
+                  color: 'white',
+                  weight: 2,
+                  opacity: 0.8,
+                  fillOpacity: 0.6,
+                }}
+              >
+                <Popup>
+                  <div className="p-2">
+                    <h3 className="font-semibold text-gray-900 mb-1">
+                      {item.region}
+                    </h3>
+                    {selectedMetrics.map(m => (
+                      <div key={m} className="text-sm text-gray-600">
+                        <span className="font-medium">{m}:</span>{' '}
+                        {typeof item[m] === 'number'
+                          ? (item[m] as number).toLocaleString()
+                          : 'N/A'}{' '}
+                        {t('map.unit')}
+                      </div>
+                    ))}
+                    {item.sector && (
+                      <div className="text-sm text-gray-600">
+                        <span className="font-medium">Sector:</span> {item.sector}
+                      </div>
+                    )}
+                    {item.year && (
+                      <div className="text-sm text-gray-600">
+                        <span className="font-medium">Year:</span> {item.year}
+                      </div>
+                    )}
+                  </div>
+                </Popup>
+              </CircleMarker>
+            );
+          })}
       </MapContainer>
 
       {/* Status Message */}

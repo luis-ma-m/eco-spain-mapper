@@ -4,6 +4,21 @@
 
 **URL**: https://lovable.dev/projects/b3b94dab-e094-4d58-8d8b-851311c03e0d
 
+## Quick start
+
+1. Ensure Node.js 18 or higher is installed. Vite requires Node >=18.
+2. Install dependencies before running any npm scripts:
+
+```sh
+npm install
+```
+
+3. Start the development server:
+
+```sh
+npm run dev
+```
+
 ## How can I edit this code?
 
 There are several ways of editing your application.
@@ -18,7 +33,7 @@ Changes made via Lovable will be committed automatically to this repo.
 
 If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+The only requirement is having Node.js (version 18 or higher recommended for Vite) & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
 Follow these steps:
 

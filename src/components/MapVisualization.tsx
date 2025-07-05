@@ -32,7 +32,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
 }) => {
   const { t } = useTranslation();
   const [zoom, setZoom] = useState(6);
-  const center: [number, number] = [40.4165, -3.7026];
+  const centerCoords: [number, number] = [40.4165, -3.7026];
 
   const filteredData = useMemo(() => {
     return data.filter(item => {
@@ -136,7 +136,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
   return (
     <div className="relative w-full" style={{ height: 'calc(100vh - 4rem)' }}>
       <MapContainer
-        center={center}
+        center={centerCoords}
         zoom={zoom}
         zoomControl={false}
         className="w-full h-full"

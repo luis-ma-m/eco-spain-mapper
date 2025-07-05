@@ -1,4 +1,3 @@
-
 import React, { useMemo, useState } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Tooltip, ZoomControl, useMapEvents } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -34,8 +33,6 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
   const { t } = useTranslation();
   const [zoom, setZoom] = useState(6);
   const center: [number, number] = [40.4165, -3.7026];
-
-  // Filter data based on current filters
 
   const filteredData = useMemo(() => {
     return data.filter(item => {

@@ -41,6 +41,7 @@ const translations: Translations = {
   'upload.title': { es: 'Subir Archivo CSV', en: 'Upload CSV File' },
   'upload.button': { es: 'Seleccionar archivo', en: 'Select file' },
   'upload.processing': { es: 'Procesando...', en: 'Processing...' },
+  'upload.default': { es: 'Cargar datos ClimateTrace', en: 'Load ClimateTrace data' },
 };
 
 export const useTranslation = () => {

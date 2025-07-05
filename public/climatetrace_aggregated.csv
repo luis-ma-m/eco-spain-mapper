@@ -1,0 +1,2807 @@
+region,year,sector,emissions
+Galicia,2021,agriculture:cropland-fires,879.778267048125
+Galicia,2022,agriculture:cropland-fires,750.8014745531077
+Galicia,2023,agriculture:cropland-fires,750.8014745531077
+Galicia,2024,agriculture:cropland-fires,750.8014745531077
+Galicia,2025,agriculture:cropland-fires,243.79037551462667
+España,2021,agriculture:cropland-fires,2372.952746461497
+España,2022,agriculture:cropland-fires,1875.4397112881888
+España,2023,agriculture:cropland-fires,1875.4397112881888
+España,2024,agriculture:cropland-fires,1875.4397112881888
+España,2025,agriculture:cropland-fires,608.9681053731736
+Murcia,2021,agriculture:cropland-fires,3760.3931431074175
+Murcia,2022,agriculture:cropland-fires,2959.856629671869
+Murcia,2023,agriculture:cropland-fires,2959.856629671869
+Murcia,2024,agriculture:cropland-fires,2959.856629671869
+Murcia,2025,agriculture:cropland-fires,961.0856979824986
+Asturias,2021,agriculture:cropland-fires,2091.01342888066
+Asturias,2022,agriculture:cropland-fires,1620.2623129915987
+Asturias,2023,agriculture:cropland-fires,1620.2623129915987
+Asturias,2024,agriculture:cropland-fires,1620.2623129915987
+Asturias,2025,agriculture:cropland-fires,526.1102583096738
+Extremadura,2021,agriculture:cropland-fires,4903.70161498049
+Extremadura,2022,agriculture:cropland-fires,3991.4152238738607
+Extremadura,2023,agriculture:cropland-fires,3991.4152238738607
+Extremadura,2024,agriculture:cropland-fires,3991.4152238738607
+Extremadura,2025,agriculture:cropland-fires,1296.0398310914297
+Baleares,2021,agriculture:cropland-fires,274.4382427825703
+Baleares,2022,agriculture:cropland-fires,218.3728247595954
+Baleares,2023,agriculture:cropland-fires,218.3728247595954
+Baleares,2024,agriculture:cropland-fires,218.3728247595954
+Baleares,2025,agriculture:cropland-fires,70.90715023171657
+Cataluña,2021,agriculture:cropland-fires,2964.883774404326
+Cataluña,2022,agriculture:cropland-fires,2421.4282819076197
+Cataluña,2023,agriculture:cropland-fires,2421.4282819076197
+Cataluña,2024,agriculture:cropland-fires,2421.4282819076197
+Cataluña,2025,agriculture:cropland-fires,786.2543297206054
+Cantabria,2021,agriculture:cropland-fires,2728.782218522699
+Cantabria,2022,agriculture:cropland-fires,2104.1178204280204
+Cantabria,2023,agriculture:cropland-fires,2104.117820428021
+Cantabria,2024,agriculture:cropland-fires,2104.117820428021
+Cantabria,2025,agriculture:cropland-fires,683.2214519483881
+Comunidad Valenciana,2021,agriculture:cropland-fires,627.4544530005937
+Comunidad Valenciana,2022,agriculture:cropland-fires,534.8765094286783
+Comunidad Valenciana,2023,agriculture:cropland-fires,534.8765094286783
+Comunidad Valenciana,2024,agriculture:cropland-fires,534.8765094286783
+Comunidad Valenciana,2025,agriculture:cropland-fires,173.67806205386805
+Andalucía,2021,agriculture:cropland-fires,8066.8761945416345
+Andalucía,2022,agriculture:cropland-fires,6236.71355787662
+Andalucía,2023,agriculture:cropland-fires,6236.71355787662
+Andalucía,2024,agriculture:cropland-fires,6236.71355787662
+Andalucía,2025,agriculture:cropland-fires,2025.1035617063862
+Castilla-La Mancha,2021,agriculture:cropland-fires,4991.508404553813
+Castilla-La Mancha,2022,agriculture:cropland-fires,3892.3863368971115
+Castilla-La Mancha,2023,agriculture:cropland-fires,3892.3863368971115
+Castilla-La Mancha,2024,agriculture:cropland-fires,3892.3863368971115
+Castilla-La Mancha,2025,agriculture:cropland-fires,1263.8844739682609
+Madrid,2021,agriculture:cropland-fires,4496.722697373529
+Madrid,2022,agriculture:cropland-fires,3514.4711168015774
+Madrid,2023,agriculture:cropland-fires,3514.4711168015774
+Madrid,2024,agriculture:cropland-fires,3514.4711168015774
+Madrid,2025,agriculture:cropland-fires,1141.1728164363917
+Navarra,2021,agriculture:cropland-fires,1835.921065564612
+Navarra,2022,agriculture:cropland-fires,1422.2487691505808
+Navarra,2023,agriculture:cropland-fires,1422.2487691505808
+Navarra,2024,agriculture:cropland-fires,1422.2487691505808
+Navarra,2025,agriculture:cropland-fires,461.81390588346517
+Aragón,2021,agriculture:cropland-fires,7745.3456741805285
+Aragón,2022,agriculture:cropland-fires,6095.431767653165
+Aragón,2023,agriculture:cropland-fires,6095.431767653165
+Aragón,2024,agriculture:cropland-fires,6095.431767653165
+Aragón,2025,agriculture:cropland-fires,1979.2283978190799
+La Rioja,2021,agriculture:cropland-fires,3298.805287027155
+La Rioja,2022,agriculture:cropland-fires,2535.800622987354
+La Rioja,2023,agriculture:cropland-fires,2535.800622987354
+La Rioja,2024,agriculture:cropland-fires,2535.800622987354
+La Rioja,2025,agriculture:cropland-fires,823.391811365686
+Canarias,2021,agriculture:cropland-fires,17.574054180238203
+Canarias,2022,agriculture:cropland-fires,15.435899508165553
+Canarias,2023,agriculture:cropland-fires,15.435899508165553
+Canarias,2024,agriculture:cropland-fires,15.435899508165553
+Canarias,2025,agriculture:cropland-fires,5.012142177453247
+Castilla y León,2021,agriculture:cropland-fires,12364.915928200044
+Castilla y León,2022,agriculture:cropland-fires,9562.762078234364
+Castilla y León,2023,agriculture:cropland-fires,9562.762078234364
+Castilla y León,2024,agriculture:cropland-fires,9562.762078234364
+Castilla y León,2025,agriculture:cropland-fires,3105.09427195442
+País Vasco,2021,agriculture:cropland-fires,349.0207341607872
+País Vasco,2022,agriculture:cropland-fires,264.5969940758964
+País Vasco,2023,agriculture:cropland-fires,264.5969940758964
+País Vasco,2024,agriculture:cropland-fires,264.5969940758964
+País Vasco,2025,agriculture:cropland-fires,85.91645425869689
+Galicia,2021,agriculture:crop-residues,22455.576871100307
+Galicia,2022,agriculture:crop-residues,19521.184454870745
+Galicia,2023,agriculture:crop-residues,18191.55443535
+Galicia,2024,agriculture:crop-residues,18191.55443535
+Galicia,2025,agriculture:crop-residues,6063.604109369519
+España,2021,agriculture:crop-residues,68708.3902276258
+España,2022,agriculture:crop-residues,57121.422649946886
+España,2023,agriculture:crop-residues,53080.47522937623
+España,2024,agriculture:crop-residues,53080.37953252354
+España,2025,agriculture:crop-residues,17692.734674258743
+Murcia,2021,agriculture:crop-residues,59634.593722804064
+Murcia,2022,agriculture:crop-residues,49759.09439288205
+Murcia,2023,agriculture:crop-residues,45196.13712877566
+Murcia,2024,agriculture:crop-residues,45196.13254829253
+Murcia,2025,agriculture:crop-residues,15064.761380662438
+Asturias,2021,agriculture:crop-residues,42534.48113218979
+Asturias,2022,agriculture:crop-residues,37050.91252361069
+Asturias,2023,agriculture:crop-residues,34188.320461270996
+Asturias,2024,agriculture:crop-residues,34188.320461270996
+Asturias,2025,agriculture:crop-residues,11395.639930985748
+Extremadura,2021,agriculture:crop-residues,168545.28468439585
+Extremadura,2022,agriculture:crop-residues,130777.60205938059
+Extremadura,2023,agriculture:crop-residues,128151.14993992957
+Extremadura,2024,agriculture:crop-residues,128151.14993992957
+Extremadura,2025,agriculture:crop-residues,42715.240068144216
+Baleares,2021,agriculture:crop-residues,0
+Baleares,2022,agriculture:crop-residues,0
+Baleares,2023,agriculture:crop-residues,0
+Baleares,2024,agriculture:crop-residues,0
+Baleares,2025,agriculture:crop-residues,0
+Cataluña,2021,agriculture:crop-residues,69225.25352155768
+Cataluña,2022,agriculture:crop-residues,58565.66300698304
+Cataluña,2023,agriculture:crop-residues,52891.37669489207
+Cataluña,2024,agriculture:crop-residues,52891.37669489207
+Cataluña,2025,agriculture:crop-residues,17629.699283112343
+Cantabria,2021,agriculture:crop-residues,53344.65117484194
+Cantabria,2022,agriculture:crop-residues,46303.031607345845
+Cantabria,2023,agriculture:crop-residues,43088.00193382405
+Cantabria,2024,agriculture:crop-residues,43088.00193382405
+Cantabria,2025,agriculture:crop-residues,14362.078690023944
+Comunidad Valenciana,2021,agriculture:crop-residues,8909.893691927655
+Comunidad Valenciana,2022,agriculture:crop-residues,6937.140078423664
+Comunidad Valenciana,2023,agriculture:crop-residues,6757.918893575255
+Comunidad Valenciana,2024,agriculture:crop-residues,6757.918893575255
+Comunidad Valenciana,2025,agriculture:crop-residues,2252.5486014595795
+Andalucía,2021,agriculture:crop-residues,327619.7795496175
+Andalucía,2022,agriculture:crop-residues,255376.6349054218
+Andalucía,2023,agriculture:crop-residues,259117.66459923246
+Andalucía,2024,agriculture:crop-residues,259117.5490254277
+Andalucía,2025,agriculture:crop-residues,86368.96491052769
+Castilla-La Mancha,2021,agriculture:crop-residues,148453.9944494825
+Castilla-La Mancha,2022,agriculture:crop-residues,123764.78842504967
+Castilla-La Mancha,2023,agriculture:crop-residues,111000.06338131192
+Castilla-La Mancha,2024,agriculture:crop-residues,111000.06338131192
+Castilla-La Mancha,2025,agriculture:crop-residues,36998.506360155145
+Madrid,2021,agriculture:crop-residues,121037.0729830518
+Madrid,2022,agriculture:crop-residues,100644.83663033161
+Madrid,2023,agriculture:crop-residues,90152.92556819705
+Madrid,2024,agriculture:crop-residues,90152.92556819705
+Madrid,2025,agriculture:crop-residues,30049.74716005558
+Navarra,2021,agriculture:crop-residues,40051.43913841958
+Navarra,2022,agriculture:crop-residues,35170.94120778054
+Navarra,2023,agriculture:crop-residues,30850.243321524926
+Navarra,2024,agriculture:crop-residues,30850.243321524926
+Navarra,2025,agriculture:crop-residues,10282.9928625401
+Aragón,2021,agriculture:crop-residues,153383.54763245015
+Aragón,2022,agriculture:crop-residues,130939.29065000976
+Aragón,2023,agriculture:crop-residues,111907.94652695039
+Aragón,2024,agriculture:crop-residues,111907.94652695039
+Aragón,2025,agriculture:crop-residues,37301.12187919919
+La Rioja,2021,agriculture:crop-residues,55024.81432269559
+La Rioja,2022,agriculture:crop-residues,47842.7682854218
+La Rioja,2023,agriculture:crop-residues,44457.456746175754
+La Rioja,2024,agriculture:crop-residues,44457.456746175754
+La Rioja,2025,agriculture:crop-residues,14818.543391283576
+Canarias,2021,agriculture:crop-residues,0
+Canarias,2022,agriculture:crop-residues,0
+Canarias,2023,agriculture:crop-residues,0
+Canarias,2024,agriculture:crop-residues,0
+Canarias,2025,agriculture:crop-residues,0
+Castilla y León,2021,agriculture:crop-residues,226088.11478468482
+Castilla y León,2022,agriculture:crop-residues,195092.92175114533
+Castilla y León,2023,agriculture:crop-residues,180090.10074831528
+Castilla y León,2024,agriculture:crop-residues,180090.10074831528
+Castilla y León,2025,agriculture:crop-residues,60027.57463500593
+País Vasco,2021,agriculture:crop-residues,11592.122996049982
+País Vasco,2022,agriculture:crop-residues,10185.890967829451
+País Vasco,2023,agriculture:crop-residues,10026.472818048667
+País Vasco,2024,agriculture:crop-residues,10026.472818048667
+País Vasco,2025,agriculture:crop-residues,3342.020778480505
+Galicia,2021,agriculture:enteric-fermentation-cattle-pasture,350322.84837000014
+Galicia,2022,agriculture:enteric-fermentation-cattle-pasture,348734.2612499999
+Galicia,2023,agriculture:enteric-fermentation-cattle-pasture,349534.4281200004
+Galicia,2024,agriculture:enteric-fermentation-cattle-pasture,349534.4281200004
+Galicia,2025,agriculture:enteric-fermentation-cattle-pasture,116511.47603999996
+España,2021,agriculture:enteric-fermentation-cattle-pasture,223346.27258999977
+España,2022,agriculture:enteric-fermentation-cattle-pasture,222351.62741999968
+España,2023,agriculture:enteric-fermentation-cattle-pasture,222848.19710999983
+España,2024,agriculture:enteric-fermentation-cattle-pasture,222848.19710999983
+España,2025,agriculture:enteric-fermentation-cattle-pasture,74282.73237000003
+Murcia,2021,agriculture:enteric-fermentation-cattle-pasture,247596.91766999988
+Murcia,2022,agriculture:enteric-fermentation-cattle-pasture,246476.37230999986
+Murcia,2023,agriculture:enteric-fermentation-cattle-pasture,247033.20734999987
+Murcia,2024,agriculture:enteric-fermentation-cattle-pasture,247033.20734999987
+Murcia,2025,agriculture:enteric-fermentation-cattle-pasture,82344.40244999997
+Asturias,2021,agriculture:enteric-fermentation-cattle-pasture,415217.97909000004
+Asturias,2022,agriculture:enteric-fermentation-cattle-pasture,413347.3648199996
+Asturias,2023,agriculture:enteric-fermentation-cattle-pasture,414278.72927999956
+Asturias,2024,agriculture:enteric-fermentation-cattle-pasture,414278.72927999956
+Asturias,2025,agriculture:enteric-fermentation-cattle-pasture,138092.90975999995
+Extremadura,2021,agriculture:enteric-fermentation-cattle-pasture,618791.60115
+Extremadura,2022,agriculture:enteric-fermentation-cattle-pasture,615991.8685499995
+Extremadura,2023,agriculture:enteric-fermentation-cattle-pasture,617380.1523900002
+Extremadura,2024,agriculture:enteric-fermentation-cattle-pasture,617380.1523900002
+Extremadura,2025,agriculture:enteric-fermentation-cattle-pasture,205793.38412999985
+Baleares,2021,agriculture:enteric-fermentation-cattle-pasture,2799.440999999999
+Baleares,2022,agriculture:enteric-fermentation-cattle-pasture,2791.745999999999
+Baleares,2023,agriculture:enteric-fermentation-cattle-pasture,2793.2849999999985
+Baleares,2024,agriculture:enteric-fermentation-cattle-pasture,2793.2849999999985
+Baleares,2025,agriculture:enteric-fermentation-cattle-pasture,931.0949999999996
+Cataluña,2021,agriculture:enteric-fermentation-cattle-pasture,140227.29746999993
+Cataluña,2022,agriculture:enteric-fermentation-cattle-pasture,139593.46923000002
+Cataluña,2023,agriculture:enteric-fermentation-cattle-pasture,139906.79450999992
+Cataluña,2024,agriculture:enteric-fermentation-cattle-pasture,139906.79450999992
+Cataluña,2025,agriculture:enteric-fermentation-cattle-pasture,46635.59816999996
+Cantabria,2021,agriculture:enteric-fermentation-cattle-pasture,388334.23271999974
+Cantabria,2022,agriculture:enteric-fermentation-cattle-pasture,386579.2011300001
+Cantabria,2023,agriculture:enteric-fermentation-cattle-pasture,387456.67196999985
+Cantabria,2024,agriculture:enteric-fermentation-cattle-pasture,387456.67196999985
+Cantabria,2025,agriculture:enteric-fermentation-cattle-pasture,129152.22398999995
+Comunidad Valenciana,2021,agriculture:enteric-fermentation-cattle-pasture,59687.020799999955
+Comunidad Valenciana,2022,agriculture:enteric-fermentation-cattle-pasture,59421.39371999999
+Comunidad Valenciana,2023,agriculture:enteric-fermentation-cattle-pasture,59563.55735999999
+Comunidad Valenciana,2024,agriculture:enteric-fermentation-cattle-pasture,59563.55735999999
+Comunidad Valenciana,2025,agriculture:enteric-fermentation-cattle-pasture,19854.519119999997
+Andalucía,2021,agriculture:enteric-fermentation-cattle-pasture,500739.33968999924
+Andalucía,2022,agriculture:enteric-fermentation-cattle-pasture,498440.79080999986
+Andalucía,2023,agriculture:enteric-fermentation-cattle-pasture,499587.83774999983
+Andalucía,2024,agriculture:enteric-fermentation-cattle-pasture,499587.83774999983
+Andalucía,2025,agriculture:enteric-fermentation-cattle-pasture,166529.27925
+Castilla-La Mancha,2021,agriculture:enteric-fermentation-cattle-pasture,232389.24786
+Castilla-La Mancha,2022,agriculture:enteric-fermentation-cattle-pasture,231341.5466099998
+Castilla-La Mancha,2023,agriculture:enteric-fermentation-cattle-pasture,231869.88827999978
+Castilla-La Mancha,2024,agriculture:enteric-fermentation-cattle-pasture,231869.88827999978
+Castilla-La Mancha,2025,agriculture:enteric-fermentation-cattle-pasture,77289.96275999998
+Madrid,2021,agriculture:enteric-fermentation-cattle-pasture,326909.98980000004
+Madrid,2022,agriculture:enteric-fermentation-cattle-pasture,325450.12949999986
+Madrid,2023,agriculture:enteric-fermentation-cattle-pasture,326159.5075199999
+Madrid,2024,agriculture:enteric-fermentation-cattle-pasture,326159.5075199999
+Madrid,2025,agriculture:enteric-fermentation-cattle-pasture,108719.83583999994
+Navarra,2021,agriculture:enteric-fermentation-cattle-pasture,202124.71160999994
+Navarra,2022,agriculture:enteric-fermentation-cattle-pasture,201223.33145999993
+Navarra,2023,agriculture:enteric-fermentation-cattle-pasture,201674.57975999996
+Navarra,2024,agriculture:enteric-fermentation-cattle-pasture,201674.57975999996
+Navarra,2025,agriculture:enteric-fermentation-cattle-pasture,67224.85991999997
+Aragón,2021,agriculture:enteric-fermentation-cattle-pasture,525369.1328100002
+Aragón,2022,agriculture:enteric-fermentation-cattle-pasture,522978.28334999975
+Aragón,2023,agriculture:enteric-fermentation-cattle-pasture,524169.13590000005
+Aragón,2024,agriculture:enteric-fermentation-cattle-pasture,524169.13590000005
+Aragón,2025,agriculture:enteric-fermentation-cattle-pasture,174723.0452999999
+La Rioja,2021,agriculture:enteric-fermentation-cattle-pasture,182238.35706
+La Rioja,2022,agriculture:enteric-fermentation-cattle-pasture,181422.51291
+La Rioja,2023,agriculture:enteric-fermentation-cattle-pasture,181824.9867899999
+La Rioja,2024,agriculture:enteric-fermentation-cattle-pasture,181824.9867899999
+La Rioja,2025,agriculture:enteric-fermentation-cattle-pasture,60608.328929999974
+Castilla y León,2021,agriculture:enteric-fermentation-cattle-pasture,662481.17676
+Castilla y León,2022,agriculture:enteric-fermentation-cattle-pasture,659510.3133
+Castilla y León,2023,agriculture:enteric-fermentation-cattle-pasture,661032.1456199989
+Castilla y León,2024,agriculture:enteric-fermentation-cattle-pasture,661032.1456199989
+Castilla y León,2025,agriculture:enteric-fermentation-cattle-pasture,220344.04853999993
+País Vasco,2021,agriculture:enteric-fermentation-cattle-pasture,92764.46429999996
+País Vasco,2022,agriculture:enteric-fermentation-cattle-pasture,92352.57362999997
+País Vasco,2023,agriculture:enteric-fermentation-cattle-pasture,92566.48301999999
+País Vasco,2024,agriculture:enteric-fermentation-cattle-pasture,92566.48301999999
+País Vasco,2025,agriculture:enteric-fermentation-cattle-pasture,30855.494339999994
+Galicia,2021,agriculture:manure-applied-to-soils,203245.13971256648
+Galicia,2022,agriculture:manure-applied-to-soils,217915.29136936515
+Galicia,2023,agriculture:manure-applied-to-soils,230250.7242892887
+Galicia,2024,agriculture:manure-applied-to-soils,233754.5593016846
+Galicia,2025,agriculture:manure-applied-to-soils,77915.03785103612
+España,2021,agriculture:manure-applied-to-soils,244125.64160986798
+España,2022,agriculture:manure-applied-to-soils,245605.54857028116
+España,2023,agriculture:manure-applied-to-soils,255156.73034227497
+España,2024,agriculture:manure-applied-to-soils,259040.29079575257
+España,2025,agriculture:manure-applied-to-soils,86343.25352203813
+Murcia,2021,agriculture:manure-applied-to-soils,252194.40662849837
+Murcia,2022,agriculture:manure-applied-to-soils,251634.14154527299
+Murcia,2023,agriculture:manure-applied-to-soils,255740.2012421032
+Murcia,2024,agriculture:manure-applied-to-soils,259635.43397346503
+Murcia,2025,agriculture:manure-applied-to-soils,86541.62382667264
+Asturias,2021,agriculture:manure-applied-to-soils,112400.46159271261
+Asturias,2022,agriculture:manure-applied-to-soils,118427.40273243285
+Asturias,2023,agriculture:manure-applied-to-soils,119912.54998444453
+Asturias,2024,agriculture:manure-applied-to-soils,121738.9365337605
+Asturias,2025,agriculture:manure-applied-to-soils,40577.99678800659
+Extremadura,2021,agriculture:manure-applied-to-soils,373074.20606434456
+Extremadura,2022,agriculture:manure-applied-to-soils,342740.30988756346
+Extremadura,2023,agriculture:manure-applied-to-soils,371447.7735636045
+Extremadura,2024,agriculture:manure-applied-to-soils,377096.12888982025
+Extremadura,2025,agriculture:manure-applied-to-soils,125693.41489649059
+Baleares,2021,agriculture:manure-applied-to-soils,28486.29314967522
+Baleares,2022,agriculture:manure-applied-to-soils,29085.370493275983
+Baleares,2023,agriculture:manure-applied-to-soils,30481.64011104447
+Baleares,2024,agriculture:manure-applied-to-soils,30945.90559040526
+Baleares,2025,agriculture:manure-applied-to-soils,10314.883853563515
+Cataluña,2021,agriculture:manure-applied-to-soils,183044.07055218244
+Cataluña,2022,agriculture:manure-applied-to-soils,186397.21139573478
+Cataluña,2023,agriculture:manure-applied-to-soils,186234.10724262774
+Cataluña,2024,agriculture:manure-applied-to-soils,189068.6850515879
+Cataluña,2025,agriculture:manure-applied-to-soils,63020.20662459656
+Cantabria,2021,agriculture:manure-applied-to-soils,123065.27767783438
+Cantabria,2022,agriculture:manure-applied-to-soils,130647.0670314119
+Cantabria,2023,agriculture:manure-applied-to-soils,135778.2583732248
+Cantabria,2024,agriculture:manure-applied-to-soils,137846.29532861078
+Cantabria,2025,agriculture:manure-applied-to-soils,45946.89814862865
+Comunidad Valenciana,2021,agriculture:manure-applied-to-soils,102507.35740989039
+Comunidad Valenciana,2022,agriculture:manure-applied-to-soils,96354.88352996828
+Comunidad Valenciana,2023,agriculture:manure-applied-to-soils,104176.11684761434
+Comunidad Valenciana,2024,agriculture:manure-applied-to-soils,105762.82198060615
+Comunidad Valenciana,2025,agriculture:manure-applied-to-soils,35252.84972566231
+Andalucía,2021,agriculture:manure-applied-to-soils,624826.5649201954
+Andalucía,2022,agriculture:manure-applied-to-soils,586574.3882073854
+Andalucía,2023,agriculture:manure-applied-to-soils,660319.1389374593
+Andalucía,2024,agriculture:manure-applied-to-soils,670376.6183553523
+Andalucía,2025,agriculture:manure-applied-to-soils,223449.69522964515
+Castilla-La Mancha,2021,agriculture:manure-applied-to-soils,238885.87545119002
+Castilla-La Mancha,2022,agriculture:manure-applied-to-soils,234784.2818393113
+Castilla-La Mancha,2023,agriculture:manure-applied-to-soils,223259.8184882179
+Castilla-La Mancha,2024,agriculture:manure-applied-to-soils,226660.28599176524
+Castilla-La Mancha,2025,agriculture:manure-applied-to-soils,75550.33752833279
+Madrid,2021,agriculture:manure-applied-to-soils,186701.53867894848
+Madrid,2022,agriculture:manure-applied-to-soils,185787.53952960568
+Madrid,2023,agriculture:manure-applied-to-soils,180856.94830584648
+Madrid,2024,agriculture:manure-applied-to-soils,183611.5782238908
+Madrid,2025,agriculture:manure-applied-to-soils,61201.35828128318
+Navarra,2021,agriculture:manure-applied-to-soils,67546.87708586859
+Navarra,2022,agriculture:manure-applied-to-soils,69440.2170914656
+Navarra,2023,agriculture:manure-applied-to-soils,64355.18301146575
+Navarra,2024,agriculture:manure-applied-to-soils,65328.60670669865
+Navarra,2025,agriculture:manure-applied-to-soils,21775.309488507362
+Aragón,2021,agriculture:manure-applied-to-soils,267891.55755055125
+Aragón,2022,agriculture:manure-applied-to-soils,272189.8536450373
+Aragón,2023,agriculture:manure-applied-to-soils,253747.67755389088
+Aragón,2024,agriculture:manure-applied-to-soils,257612.5041160488
+Aragón,2025,agriculture:manure-applied-to-soils,85867.31989357098
+La Rioja,2021,agriculture:manure-applied-to-soils,83403.69692454141
+La Rioja,2022,agriculture:manure-applied-to-soils,86281.31907236436
+La Rioja,2023,agriculture:manure-applied-to-soils,84589.56287349216
+La Rioja,2024,agriculture:manure-applied-to-soils,85877.94544783248
+La Rioja,2025,agriculture:manure-applied-to-soils,28624.8055988587
+Canarias,2021,agriculture:manure-applied-to-soils,25501.768123524616
+Canarias,2022,agriculture:manure-applied-to-soils,25925.333856968646
+Canarias,2023,agriculture:manure-applied-to-soils,30859.824986399748
+Canarias,2024,agriculture:manure-applied-to-soils,31329.85059486789
+Canarias,2025,agriculture:manure-applied-to-soils,10442.86412673177
+Castilla y León,2021,agriculture:manure-applied-to-soils,347852.1372410728
+Castilla y León,2022,agriculture:manure-applied-to-soils,361757.3787936455
+Castilla y León,2023,agriculture:manure-applied-to-soils,359611.7296151895
+Castilla y León,2024,agriculture:manure-applied-to-soils,365087.7413511905
+Castilla y León,2025,agriculture:manure-applied-to-soils,121690.93021929222
+País Vasco,2021,agriculture:manure-applied-to-soils,20141.306021979042
+País Vasco,2022,agriculture:manure-applied-to-soils,20667.05239683836
+País Vasco,2023,agriculture:manure-applied-to-soils,20641.97049130895
+País Vasco,2024,agriculture:manure-applied-to-soils,20956.368085735852
+País Vasco,2025,agriculture:manure-applied-to-soils,6985.170356912846
+Galicia,2021,agriculture:manure-left-on-pasture-cattle,124304.42003999994
+Galicia,2022,agriculture:manure-left-on-pasture-cattle,123740.74365000005
+Galicia,2023,agriculture:manure-left-on-pasture-cattle,124024.66409999997
+Galicia,2024,agriculture:manure-left-on-pasture-cattle,124024.66409999997
+Galicia,2025,agriculture:manure-left-on-pasture-cattle,41341.55469999998
+España,2021,agriculture:manure-left-on-pasture-cattle,79249.55241000024
+España,2022,agriculture:manure-left-on-pasture-cattle,78896.61533999992
+España,2023,agriculture:manure-left-on-pasture-cattle,79072.81865999983
+España,2024,agriculture:manure-left-on-pasture-cattle,79072.81865999983
+España,2025,agriculture:manure-left-on-pasture-cattle,26357.60622000001
+Murcia,2021,agriculture:manure-left-on-pasture-cattle,87854.36094
+Murcia,2022,agriculture:manure-left-on-pasture-cattle,87456.76349999994
+Murcia,2023,agriculture:manure-left-on-pasture-cattle,87654.34325999998
+Murcia,2024,agriculture:manure-left-on-pasture-cattle,87654.34325999998
+Murcia,2025,agriculture:manure-left-on-pasture-cattle,29218.11441999999
+Asturias,2021,agriculture:manure-left-on-pasture-cattle,147331.03599
+Asturias,2022,agriculture:manure-left-on-pasture-cattle,146667.29099999988
+Asturias,2023,agriculture:manure-left-on-pasture-cattle,146997.76622999995
+Asturias,2024,agriculture:manure-left-on-pasture-cattle,146997.76622999995
+Asturias,2025,agriculture:manure-left-on-pasture-cattle,48999.25540999998
+Extremadura,2021,agriculture:manure-left-on-pasture-cattle,219564.69488999996
+Extremadura,2022,agriculture:manure-left-on-pasture-cattle,218571.2727599999
+Extremadura,2023,agriculture:manure-left-on-pasture-cattle,219063.87251999992
+Extremadura,2024,agriculture:manure-left-on-pasture-cattle,219063.87251999992
+Extremadura,2025,agriculture:manure-left-on-pasture-cattle,73021.29083999999
+Baleares,2021,agriculture:manure-left-on-pasture-cattle,993.3217199999995
+Baleares,2022,agriculture:manure-left-on-pasture-cattle,990.5904899999996
+Baleares,2023,agriculture:manure-left-on-pasture-cattle,991.1361899999996
+Baleares,2024,agriculture:manure-left-on-pasture-cattle,991.1361899999996
+Baleares,2025,agriculture:manure-left-on-pasture-cattle,330.37872999999985
+Cataluña,2021,agriculture:manure-left-on-pasture-cattle,49756.597439999954
+Cataluña,2022,agriculture:manure-left-on-pasture-cattle,49531.69419
+Cataluña,2023,agriculture:manure-left-on-pasture-cattle,49642.87433999996
+Cataluña,2024,agriculture:manure-left-on-pasture-cattle,49642.87433999996
+Cataluña,2025,agriculture:manure-left-on-pasture-cattle,16547.62477999999
+Cantabria,2021,agriculture:manure-left-on-pasture-cattle,137791.9283999999
+Cantabria,2022,agriculture:manure-left-on-pasture-cattle,137169.19250999996
+Cantabria,2023,agriculture:manure-left-on-pasture-cattle,137480.54339999997
+Cantabria,2024,agriculture:manure-left-on-pasture-cattle,137480.54339999997
+Cantabria,2025,agriculture:manure-left-on-pasture-cattle,45826.847799999974
+Comunidad Valenciana,2021,agriculture:manure-left-on-pasture-cattle,21178.63575
+Comunidad Valenciana,2022,agriculture:manure-left-on-pasture-cattle,21084.385139999995
+Comunidad Valenciana,2023,agriculture:manure-left-on-pasture-cattle,21134.829119999984
+Comunidad Valenciana,2024,agriculture:manure-left-on-pasture-cattle,21134.829119999984
+Comunidad Valenciana,2025,agriculture:manure-left-on-pasture-cattle,7044.943039999997
+Andalucía,2021,agriculture:manure-left-on-pasture-cattle,177676.42680000016
+Andalucía,2022,agriculture:manure-left-on-pasture-cattle,176860.83335999984
+Andalucía,2023,agriculture:manure-left-on-pasture-cattle,177267.83894999992
+Andalucía,2024,agriculture:manure-left-on-pasture-cattle,177267.83894999992
+Andalucía,2025,agriculture:manure-left-on-pasture-cattle,59089.27964999998
+Castilla-La Mancha,2021,agriculture:manure-left-on-pasture-cattle,82458.25298999992
+Castilla-La Mancha,2022,agriculture:manure-left-on-pasture-cattle,82086.49799999996
+Castilla-La Mancha,2023,agriculture:manure-left-on-pasture-cattle,82273.97057999996
+Castilla-La Mancha,2024,agriculture:manure-left-on-pasture-cattle,82273.97057999996
+Castilla-La Mancha,2025,agriculture:manure-left-on-pasture-cattle,27424.656859999985
+Madrid,2021,agriculture:manure-left-on-pasture-cattle,115996.87542000005
+Madrid,2022,agriculture:manure-left-on-pasture-cattle,115478.87549999995
+Madrid,2023,agriculture:manure-left-on-pasture-cattle,115730.58326999992
+Madrid,2024,agriculture:manure-left-on-pasture-cattle,115730.58326999992
+Madrid,2025,agriculture:manure-left-on-pasture-cattle,38576.86109
+Navarra,2021,agriculture:manure-left-on-pasture-cattle,71719.54191
+Navarra,2022,agriculture:manure-left-on-pasture-cattle,71399.70755999997
+Navarra,2023,agriculture:manure-left-on-pasture-cattle,71559.82145999996
+Navarra,2024,agriculture:manure-left-on-pasture-cattle,71559.82145999996
+Navarra,2025,agriculture:manure-left-on-pasture-cattle,23853.27381999999
+Aragón,2021,agriculture:manure-left-on-pasture-cattle,186415.76843999996
+Aragón,2022,agriculture:manure-left-on-pasture-cattle,185567.43107999978
+Aragón,2023,agriculture:manure-left-on-pasture-cattle,185989.97985000006
+Aragón,2024,agriculture:manure-left-on-pasture-cattle,185989.97985000006
+Aragón,2025,agriculture:manure-left-on-pasture-cattle,61996.65994999999
+La Rioja,2021,agriculture:manure-left-on-pasture-cattle,64663.305329999945
+La Rioja,2022,agriculture:manure-left-on-pasture-cattle,64373.81927999998
+La Rioja,2023,agriculture:manure-left-on-pasture-cattle,64516.62656999998
+La Rioja,2024,agriculture:manure-left-on-pasture-cattle,64516.62656999998
+La Rioja,2025,agriculture:manure-left-on-pasture-cattle,21505.542189999993
+Castilla y León,2021,agriculture:manure-left-on-pasture-cattle,235066.98981000003
+Castilla y León,2022,agriculture:manure-left-on-pasture-cattle,234012.84216000012
+Castilla y León,2023,agriculture:manure-left-on-pasture-cattle,234552.82697999995
+Castilla y León,2024,agriculture:manure-left-on-pasture-cattle,234552.82697999995
+Castilla y León,2025,agriculture:manure-left-on-pasture-cattle,78184.27565999996
+País Vasco,2021,agriculture:manure-left-on-pasture-cattle,32915.44697999997
+País Vasco,2022,agriculture:manure-left-on-pasture-cattle,32769.29399999999
+País Vasco,2023,agriculture:manure-left-on-pasture-cattle,32845.19543999998
+País Vasco,2024,agriculture:manure-left-on-pasture-cattle,32845.19543999998
+País Vasco,2025,agriculture:manure-left-on-pasture-cattle,10948.398479999998
+Galicia,2021,agriculture:rice-cultivation,0
+Galicia,2022,agriculture:rice-cultivation,0
+Galicia,2023,agriculture:rice-cultivation,0
+Galicia,2024,agriculture:rice-cultivation,0
+Galicia,2025,agriculture:rice-cultivation,0
+España,2021,agriculture:rice-cultivation,102346.02325382302
+España,2022,agriculture:rice-cultivation,80847.06188496755
+Murcia,2021,agriculture:rice-cultivation,0
+Murcia,2022,agriculture:rice-cultivation,14547.457803457726
+Murcia,2023,agriculture:rice-cultivation,0
+Murcia,2024,agriculture:rice-cultivation,0
+Murcia,2025,agriculture:rice-cultivation,0
+Asturias,2021,agriculture:rice-cultivation,0
+Asturias,2022,agriculture:rice-cultivation,0
+Asturias,2023,agriculture:rice-cultivation,0
+Asturias,2024,agriculture:rice-cultivation,0
+Asturias,2025,agriculture:rice-cultivation,0
+Extremadura,2021,agriculture:rice-cultivation,278.47281613923644
+Extremadura,2022,agriculture:rice-cultivation,3539.4139185987074
+Extremadura,2023,agriculture:rice-cultivation,0
+Extremadura,2024,agriculture:rice-cultivation,0
+Extremadura,2025,agriculture:rice-cultivation,0
+Baleares,2021,agriculture:rice-cultivation,0
+Baleares,2022,agriculture:rice-cultivation,0
+Baleares,2023,agriculture:rice-cultivation,0
+Baleares,2024,agriculture:rice-cultivation,0
+Baleares,2025,agriculture:rice-cultivation,0
+Cataluña,2021,agriculture:rice-cultivation,215972.25080506614
+Cataluña,2022,agriculture:rice-cultivation,186117.7711707709
+Cataluña,2023,agriculture:rice-cultivation,215671.51400383576
+Cataluña,2024,agriculture:rice-cultivation,215671.51400383576
+Cataluña,2025,agriculture:rice-cultivation,7502.406111830167
+Cantabria,2021,agriculture:rice-cultivation,0
+Cantabria,2022,agriculture:rice-cultivation,0
+Cantabria,2023,agriculture:rice-cultivation,0
+Cantabria,2024,agriculture:rice-cultivation,0
+Cantabria,2025,agriculture:rice-cultivation,0
+Comunidad Valenciana,2021,agriculture:rice-cultivation,156520.42031117322
+Comunidad Valenciana,2022,agriculture:rice-cultivation,128523.51857436476
+Comunidad Valenciana,2023,agriculture:rice-cultivation,136147.27656574568
+Comunidad Valenciana,2024,agriculture:rice-cultivation,136147.27656574568
+Comunidad Valenciana,2025,agriculture:rice-cultivation,4736.055035055375
+Andalucía,2021,agriculture:rice-cultivation,412112.00915716594
+Andalucía,2022,agriculture:rice-cultivation,220709.4260933937
+Andalucía,2023,agriculture:rice-cultivation,0
+Andalucía,2024,agriculture:rice-cultivation,0
+Andalucía,2025,agriculture:rice-cultivation,0
+Castilla-La Mancha,2021,agriculture:rice-cultivation,0
+Castilla-La Mancha,2022,agriculture:rice-cultivation,7.236256665618129
+Castilla-La Mancha,2023,agriculture:rice-cultivation,0
+Castilla-La Mancha,2024,agriculture:rice-cultivation,0
+Castilla-La Mancha,2025,agriculture:rice-cultivation,0
+España,2023,agriculture:rice-cultivation,82778.50667365924
+España,2024,agriculture:rice-cultivation,82778.50667365924
+España,2025,agriculture:rice-cultivation,2879.5549438466414
+Madrid,2021,agriculture:rice-cultivation,0
+Madrid,2022,agriculture:rice-cultivation,0
+Madrid,2023,agriculture:rice-cultivation,0
+Madrid,2024,agriculture:rice-cultivation,0
+Madrid,2025,agriculture:rice-cultivation,0
+Navarra,2021,agriculture:rice-cultivation,0
+Navarra,2022,agriculture:rice-cultivation,0
+Navarra,2023,agriculture:rice-cultivation,0
+Navarra,2024,agriculture:rice-cultivation,0
+Navarra,2025,agriculture:rice-cultivation,0
+Aragón,2021,agriculture:rice-cultivation,0
+Aragón,2022,agriculture:rice-cultivation,1405.4663280157333
+Aragón,2023,agriculture:rice-cultivation,0
+Aragón,2024,agriculture:rice-cultivation,0
+Aragón,2025,agriculture:rice-cultivation,0
+La Rioja,2021,agriculture:rice-cultivation,0
+La Rioja,2022,agriculture:rice-cultivation,0
+La Rioja,2023,agriculture:rice-cultivation,0
+La Rioja,2024,agriculture:rice-cultivation,0
+La Rioja,2025,agriculture:rice-cultivation,0
+Canarias,2021,agriculture:rice-cultivation,0
+Canarias,2022,agriculture:rice-cultivation,0
+Canarias,2023,agriculture:rice-cultivation,0
+Canarias,2024,agriculture:rice-cultivation,0
+Canarias,2025,agriculture:rice-cultivation,0
+Castilla y León,2021,agriculture:rice-cultivation,0
+Castilla y León,2022,agriculture:rice-cultivation,0
+Castilla y León,2023,agriculture:rice-cultivation,0
+Castilla y León,2024,agriculture:rice-cultivation,0
+Castilla y León,2025,agriculture:rice-cultivation,0
+País Vasco,2021,agriculture:rice-cultivation,0
+País Vasco,2022,agriculture:rice-cultivation,0
+País Vasco,2023,agriculture:rice-cultivation,0
+País Vasco,2024,agriculture:rice-cultivation,0
+País Vasco,2025,agriculture:rice-cultivation,0
+Galicia,2021,agriculture:synthetic-fertilizer-application,315120.4946821677
+Galicia,2022,agriculture:synthetic-fertilizer-application,276055.1011945124
+Galicia,2023,agriculture:synthetic-fertilizer-application,237737.6288854695
+Galicia,2024,agriculture:synthetic-fertilizer-application,291428.8096091143
+Galicia,2025,agriculture:synthetic-fertilizer-application,97139.01103102317
+España,2021,agriculture:synthetic-fertilizer-application,352958.0046417328
+España,2022,agriculture:synthetic-fertilizer-application,283237.08226656227
+España,2023,agriculture:synthetic-fertilizer-application,250124.17855896975
+España,2024,agriculture:synthetic-fertilizer-application,250535.12298447386
+España,2025,agriculture:synthetic-fertilizer-application,83508.36693499285
+Murcia,2021,agriculture:synthetic-fertilizer-application,456569.82835068647
+Murcia,2022,agriculture:synthetic-fertilizer-application,360206.8357436935
+Murcia,2023,agriculture:synthetic-fertilizer-application,317240.60774940456
+Murcia,2024,agriculture:synthetic-fertilizer-application,305769.5727558544
+Murcia,2025,agriculture:synthetic-fertilizer-application,101919.07010984526
+Asturias,2021,agriculture:synthetic-fertilizer-application,149343.87152850215
+Asturias,2022,agriculture:synthetic-fertilizer-application,119276.37420409662
+Asturias,2023,agriculture:synthetic-fertilizer-application,108839.3170519994
+Asturias,2024,agriculture:synthetic-fertilizer-application,104534.79689277054
+Asturias,2025,agriculture:synthetic-fertilizer-application,34843.51283097635
+Extremadura,2021,agriculture:synthetic-fertilizer-application,496234.0224762049
+Extremadura,2022,agriculture:synthetic-fertilizer-application,427701.62232986925
+Extremadura,2023,agriculture:synthetic-fertilizer-application,354399.5896108983
+Extremadura,2024,agriculture:synthetic-fertilizer-application,402804.5108705229
+Extremadura,2025,agriculture:synthetic-fertilizer-application,134262.367869281
+Baleares,2021,agriculture:synthetic-fertilizer-application,58344.93161854714
+Baleares,2022,agriculture:synthetic-fertilizer-application,45376.24824112948
+Baleares,2023,agriculture:synthetic-fertilizer-application,41175.946803293074
+Baleares,2024,agriculture:synthetic-fertilizer-application,38103.719864768595
+Baleares,2025,agriculture:synthetic-fertilizer-application,12700.74617563307
+Cataluña,2021,agriculture:synthetic-fertilizer-application,294597.7067061705
+Cataluña,2022,agriculture:synthetic-fertilizer-application,239848.12546178242
+Cataluña,2023,agriculture:synthetic-fertilizer-application,210451.6468731441
+Cataluña,2024,agriculture:synthetic-fertilizer-application,203702.19626865437
+Cataluña,2025,agriculture:synthetic-fertilizer-application,67897.97632061373
+Cantabria,2021,agriculture:synthetic-fertilizer-application,135352.0028896632
+Cantabria,2022,agriculture:synthetic-fertilizer-application,108447.84936131162
+Cantabria,2023,agriculture:synthetic-fertilizer-application,98817.8032683094
+Cantabria,2024,agriculture:synthetic-fertilizer-application,89386.67285842473
+Cantabria,2025,agriculture:synthetic-fertilizer-application,29794.338981989047
+Comunidad Valenciana,2021,agriculture:synthetic-fertilizer-application,133689.58088930385
+Comunidad Valenciana,2022,agriculture:synthetic-fertilizer-application,105885.95888819607
+Comunidad Valenciana,2023,agriculture:synthetic-fertilizer-application,91066.97231859552
+Comunidad Valenciana,2024,agriculture:synthetic-fertilizer-application,90324.5079398466
+Comunidad Valenciana,2025,agriculture:synthetic-fertilizer-application,30106.994236655257
+Andalucía,2021,agriculture:synthetic-fertilizer-application,795659.9927639932
+Andalucía,2022,agriculture:synthetic-fertilizer-application,692995.9363744843
+Andalucía,2023,agriculture:synthetic-fertilizer-application,579440.1424525958
+Andalucía,2024,agriculture:synthetic-fertilizer-application,636483.0051446616
+Andalucía,2025,agriculture:synthetic-fertilizer-application,212152.30282136716
+Castilla-La Mancha,2021,agriculture:synthetic-fertilizer-application,502798.9729537109
+Castilla-La Mancha,2022,agriculture:synthetic-fertilizer-application,389974.8389555971
+Castilla-La Mancha,2023,agriculture:synthetic-fertilizer-application,357236.30056088284
+Castilla-La Mancha,2024,agriculture:synthetic-fertilizer-application,330323.80475038855
+Castilla-La Mancha,2025,agriculture:synthetic-fertilizer-application,110103.42798812439
+Madrid,2021,agriculture:synthetic-fertilizer-application,402550.4043414629
+Madrid,2022,agriculture:synthetic-fertilizer-application,314049.23631828785
+Madrid,2023,agriculture:synthetic-fertilizer-application,286452.3260648823
+Madrid,2024,agriculture:synthetic-fertilizer-application,266656.4013147666
+Madrid,2025,agriculture:synthetic-fertilizer-application,88881.83419497516
+Navarra,2021,agriculture:synthetic-fertilizer-application,115734.07608006868
+Navarra,2022,agriculture:synthetic-fertilizer-application,92227.36998817627
+Navarra,2023,agriculture:synthetic-fertilizer-application,83708.97202446887
+Navarra,2024,agriculture:synthetic-fertilizer-application,79415.57188818573
+Navarra,2025,agriculture:synthetic-fertilizer-application,26470.77103162577
+Aragón,2021,agriculture:synthetic-fertilizer-application,620855.3065852611
+Aragón,2022,agriculture:synthetic-fertilizer-application,487783.72880333936
+Aragón,2023,agriculture:synthetic-fertilizer-application,444240.8817678155
+Aragón,2024,agriculture:synthetic-fertilizer-application,425473.3925116182
+Aragón,2025,agriculture:synthetic-fertilizer-application,141818.65200051316
+La Rioja,2021,agriculture:synthetic-fertilizer-application,132620.1039372728
+La Rioja,2022,agriculture:synthetic-fertilizer-application,106237.70995066498
+La Rioja,2023,agriculture:synthetic-fertilizer-application,96449.32449512863
+La Rioja,2024,agriculture:synthetic-fertilizer-application,87980.19546911307
+La Rioja,2025,agriculture:synthetic-fertilizer-application,29325.527256139103
+Canarias,2021,agriculture:synthetic-fertilizer-application,17492.646316574028
+Canarias,2022,agriculture:synthetic-fertilizer-application,15134.79005787124
+Canarias,2023,agriculture:synthetic-fertilizer-application,12858.178403604823
+Canarias,2024,agriculture:synthetic-fertilizer-application,15506.85294992137
+Canarias,2025,agriculture:synthetic-fertilizer-application,5168.765690647521
+Castilla y León,2021,agriculture:synthetic-fertilizer-application,621207.6259303507
+Castilla y León,2022,agriculture:synthetic-fertilizer-application,487064.092962778
+Castilla y León,2023,agriculture:synthetic-fertilizer-application,448793.7478642507
+Castilla y León,2024,agriculture:synthetic-fertilizer-application,404758.05532718316
+Castilla y León,2025,agriculture:synthetic-fertilizer-application,134913.7784476148
+País Vasco,2021,agriculture:synthetic-fertilizer-application,26586.590444507667
+País Vasco,2022,agriculture:synthetic-fertilizer-application,21654.788877712675
+País Vasco,2023,agriculture:synthetic-fertilizer-application,19577.30160266953
+País Vasco,2024,agriculture:synthetic-fertilizer-application,18321.512845169535
+País Vasco,2025,agriculture:synthetic-fertilizer-application,6106.920539218688
+Galicia,2021,buildings:non-residential-onsite-fuel-usage,542166.9372300002
+Galicia,2022,buildings:non-residential-onsite-fuel-usage,567267.0434400004
+Galicia,2023,buildings:non-residential-onsite-fuel-usage,569810.2491599997
+Galicia,2024,buildings:non-residential-onsite-fuel-usage,569810.2491599997
+Galicia,2025,buildings:non-residential-onsite-fuel-usage,232783.15886000005
+España,2021,buildings:non-residential-onsite-fuel-usage,8135481.508469994
+España,2022,buildings:non-residential-onsite-fuel-usage,8453545.029690001
+España,2023,buildings:non-residential-onsite-fuel-usage,8481757.44863999
+España,2024,buildings:non-residential-onsite-fuel-usage,8481757.44863999
+España,2025,buildings:non-residential-onsite-fuel-usage,3575214.4059499963
+Murcia,2021,buildings:non-residential-onsite-fuel-usage,1083552.4585800006
+Murcia,2022,buildings:non-residential-onsite-fuel-usage,1145141.2877700003
+Murcia,2023,buildings:non-residential-onsite-fuel-usage,1151942.7210300004
+Murcia,2024,buildings:non-residential-onsite-fuel-usage,1151942.7210300004
+Murcia,2025,buildings:non-residential-onsite-fuel-usage,491552.65379
+Asturias,2021,buildings:non-residential-onsite-fuel-usage,388073.62184999994
+Asturias,2022,buildings:non-residential-onsite-fuel-usage,402678.80991
+Asturias,2023,buildings:non-residential-onsite-fuel-usage,403890.5891699998
+Asturias,2024,buildings:non-residential-onsite-fuel-usage,403890.5891699998
+Asturias,2025,buildings:non-residential-onsite-fuel-usage,162598.40262999997
+Extremadura,2021,buildings:non-residential-onsite-fuel-usage,278119.62242999993
+Extremadura,2022,buildings:non-residential-onsite-fuel-usage,294335.9526000001
+Extremadura,2023,buildings:non-residential-onsite-fuel-usage,297963.19143
+Extremadura,2024,buildings:non-residential-onsite-fuel-usage,297963.19143
+Extremadura,2025,buildings:non-residential-onsite-fuel-usage,124697.23125
+Baleares,2021,buildings:non-residential-onsite-fuel-usage,186628.74459000002
+Baleares,2022,buildings:non-residential-onsite-fuel-usage,196025.89091999995
+Baleares,2023,buildings:non-residential-onsite-fuel-usage,196858.49967
+Baleares,2024,buildings:non-residential-onsite-fuel-usage,196858.49967
+Baleares,2025,buildings:non-residential-onsite-fuel-usage,87036.32286
+Cataluña,2021,buildings:non-residential-onsite-fuel-usage,2141058.77094
+Cataluña,2022,buildings:non-residential-onsite-fuel-usage,2219066.1341099995
+Cataluña,2023,buildings:non-residential-onsite-fuel-usage,2225520.675839999
+Cataluña,2024,buildings:non-residential-onsite-fuel-usage,2225520.675839999
+Cataluña,2025,buildings:non-residential-onsite-fuel-usage,974067.30082
+Cantabria,2021,buildings:non-residential-onsite-fuel-usage,303775.9644299999
+Cantabria,2022,buildings:non-residential-onsite-fuel-usage,314635.1589299999
+Cantabria,2023,buildings:non-residential-onsite-fuel-usage,316027.54800000007
+Cantabria,2024,buildings:non-residential-onsite-fuel-usage,316027.54800000007
+Cantabria,2025,buildings:non-residential-onsite-fuel-usage,129800.79421
+Comunidad Valenciana,2021,buildings:non-residential-onsite-fuel-usage,921237.7352400001
+Comunidad Valenciana,2022,buildings:non-residential-onsite-fuel-usage,968737.09353
+Comunidad Valenciana,2023,buildings:non-residential-onsite-fuel-usage,972249.4232100002
+Comunidad Valenciana,2024,buildings:non-residential-onsite-fuel-usage,972249.4232100002
+Comunidad Valenciana,2025,buildings:non-residential-onsite-fuel-usage,435176.84903000004
+Andalucía,2021,buildings:non-residential-onsite-fuel-usage,1452284.0782499998
+Andalucía,2022,buildings:non-residential-onsite-fuel-usage,1524405.87699
+Andalucía,2023,buildings:non-residential-onsite-fuel-usage,1531505.4357000005
+Andalucía,2024,buildings:non-residential-onsite-fuel-usage,1531505.4357000005
+Andalucía,2025,buildings:non-residential-onsite-fuel-usage,639190.1362599999
+Castilla-La Mancha,2021,buildings:non-residential-onsite-fuel-usage,121969.62168000004
+Castilla-La Mancha,2022,buildings:non-residential-onsite-fuel-usage,127979.32422000005
+Castilla-La Mancha,2023,buildings:non-residential-onsite-fuel-usage,128974.80854999997
+Castilla-La Mancha,2024,buildings:non-residential-onsite-fuel-usage,128974.80854999997
+Castilla-La Mancha,2025,buildings:non-residential-onsite-fuel-usage,53432.27669000001
+Madrid,2021,buildings:non-residential-onsite-fuel-usage,1818891.6498600005
+Madrid,2022,buildings:non-residential-onsite-fuel-usage,1881501.80703
+Madrid,2023,buildings:non-residential-onsite-fuel-usage,1887720.773069999
+Madrid,2024,buildings:non-residential-onsite-fuel-usage,1887720.773069999
+Madrid,2025,buildings:non-residential-onsite-fuel-usage,773496.4637000002
+Navarra,2021,buildings:non-residential-onsite-fuel-usage,476732.8311900001
+Navarra,2022,buildings:non-residential-onsite-fuel-usage,492844.1690999999
+Navarra,2023,buildings:non-residential-onsite-fuel-usage,494985.27177000017
+Navarra,2024,buildings:non-residential-onsite-fuel-usage,494985.27177000017
+Navarra,2025,buildings:non-residential-onsite-fuel-usage,204028.77108000003
+Aragón,2021,buildings:non-residential-onsite-fuel-usage,365301.96869999997
+Aragón,2022,buildings:non-residential-onsite-fuel-usage,382380.9076499999
+Aragón,2023,buildings:non-residential-onsite-fuel-usage,384920.1617399999
+Aragón,2024,buildings:non-residential-onsite-fuel-usage,384920.1617399999
+Aragón,2025,buildings:non-residential-onsite-fuel-usage,162538.53128
+La Rioja,2021,buildings:non-residential-onsite-fuel-usage,123178.10364
+La Rioja,2022,buildings:non-residential-onsite-fuel-usage,127790.13261000004
+La Rioja,2023,buildings:non-residential-onsite-fuel-usage,128819.81093999997
+La Rioja,2024,buildings:non-residential-onsite-fuel-usage,128819.81093999997
+La Rioja,2025,buildings:non-residential-onsite-fuel-usage,52504.62277
+Canarias,2021,buildings:non-residential-onsite-fuel-usage,351859.89938999986
+Canarias,2022,buildings:non-residential-onsite-fuel-usage,374548.91588999995
+Canarias,2023,buildings:non-residential-onsite-fuel-usage,378532.5922499999
+Canarias,2024,buildings:non-residential-onsite-fuel-usage,378532.5922499999
+Canarias,2025,buildings:non-residential-onsite-fuel-usage,138679.64388
+Castilla y León,2021,buildings:non-residential-onsite-fuel-usage,346525.3510499997
+Castilla y León,2022,buildings:non-residential-onsite-fuel-usage,360587.97054000024
+Castilla y León,2023,buildings:non-residential-onsite-fuel-usage,362508.6523500001
+Castilla y León,2024,buildings:non-residential-onsite-fuel-usage,362508.6523500001
+Castilla y León,2025,buildings:non-residential-onsite-fuel-usage,145512.87664999996
+País Vasco,2021,buildings:non-residential-onsite-fuel-usage,536872.9917
+País Vasco,2022,buildings:non-residential-onsite-fuel-usage,554092.10763
+País Vasco,2023,buildings:non-residential-onsite-fuel-usage,555557.8588799998
+País Vasco,2024,buildings:non-residential-onsite-fuel-usage,555557.8588799998
+País Vasco,2025,buildings:non-residential-onsite-fuel-usage,230896.23482999994
+Galicia,2021,buildings:residential-onsite-fuel-usage,1708385.8010399996
+Galicia,2022,buildings:residential-onsite-fuel-usage,1800640.40619
+Galicia,2023,buildings:residential-onsite-fuel-usage,1806583.916489999
+Galicia,2024,buildings:residential-onsite-fuel-usage,1806583.916489999
+Galicia,2025,buildings:residential-onsite-fuel-usage,733737.6364799999
+España,2021,buildings:residential-onsite-fuel-usage,12560979.796440002
+España,2022,buildings:residential-onsite-fuel-usage,13063561.362989992
+España,2023,buildings:residential-onsite-fuel-usage,13110323.597820014
+España,2024,buildings:residential-onsite-fuel-usage,13110323.597820014
+España,2025,buildings:residential-onsite-fuel-usage,5502405.820800007
+Murcia,2021,buildings:residential-onsite-fuel-usage,2312082.35592
+Murcia,2022,buildings:residential-onsite-fuel-usage,2446891.93134
+Murcia,2023,buildings:residential-onsite-fuel-usage,2451228.485819999
+Murcia,2024,buildings:residential-onsite-fuel-usage,2451228.485819999
+Murcia,2025,buildings:residential-onsite-fuel-usage,1049051.88709
+Asturias,2021,buildings:residential-onsite-fuel-usage,921827.6426700002
+Asturias,2022,buildings:residential-onsite-fuel-usage,962384.25522
+Asturias,2023,buildings:residential-onsite-fuel-usage,962708.8788300001
+Asturias,2024,buildings:residential-onsite-fuel-usage,962708.8788300001
+Asturias,2025,buildings:residential-onsite-fuel-usage,385283.24173999997
+Extremadura,2021,buildings:residential-onsite-fuel-usage,1019018.0287200004
+Extremadura,2022,buildings:residential-onsite-fuel-usage,1078863.3849899995
+Extremadura,2023,buildings:residential-onsite-fuel-usage,1086049.6220700005
+Extremadura,2024,buildings:residential-onsite-fuel-usage,1086049.6220700005
+Extremadura,2025,buildings:residential-onsite-fuel-usage,454487.72139
+Baleares,2021,buildings:residential-onsite-fuel-usage,705191.51028
+Baleares,2022,buildings:residential-onsite-fuel-usage,745502.8182300001
+Baleares,2023,buildings:residential-onsite-fuel-usage,742095.5261999998
+Baleares,2024,buildings:residential-onsite-fuel-usage,742095.5261999998
+Baleares,2025,buildings:residential-onsite-fuel-usage,327006.37699
+Cataluña,2021,buildings:residential-onsite-fuel-usage,3350558.6641200017
+Cataluña,2022,buildings:residential-onsite-fuel-usage,3483470.059860001
+Cataluña,2023,buildings:residential-onsite-fuel-usage,3472822.9555800008
+Cataluña,2024,buildings:residential-onsite-fuel-usage,3472822.9555800008
+Cataluña,2025,buildings:residential-onsite-fuel-usage,1512842.8360099997
+Cantabria,2021,buildings:residential-onsite-fuel-usage,518471.59611
+Cantabria,2022,buildings:residential-onsite-fuel-usage,541572.23409
+Cantabria,2023,buildings:residential-onsite-fuel-usage,541374.55158
+Cantabria,2024,buildings:residential-onsite-fuel-usage,541374.55158
+Cantabria,2025,buildings:residential-onsite-fuel-usage,223208.77534
+Comunidad Valenciana,2021,buildings:residential-onsite-fuel-usage,1293284.6225100004
+Comunidad Valenciana,2022,buildings:residential-onsite-fuel-usage,1360292.90718
+Comunidad Valenciana,2023,buildings:residential-onsite-fuel-usage,1358529.34146
+Comunidad Valenciana,2024,buildings:residential-onsite-fuel-usage,1358529.34146
+Comunidad Valenciana,2025,buildings:residential-onsite-fuel-usage,605033.77397
+Andalucía,2021,buildings:residential-onsite-fuel-usage,3667189.9318200015
+Andalucía,2022,buildings:residential-onsite-fuel-usage,3861404.608739999
+Andalucía,2023,buildings:residential-onsite-fuel-usage,3863973.075720001
+Andalucía,2024,buildings:residential-onsite-fuel-usage,3863973.075720001
+Andalucía,2025,buildings:residential-onsite-fuel-usage,1610950.6842999998
+Castilla-La Mancha,2021,buildings:residential-onsite-fuel-usage,486370.27467000013
+Castilla-La Mancha,2022,buildings:residential-onsite-fuel-usage,511622.62953
+Castilla-La Mancha,2023,buildings:residential-onsite-fuel-usage,514675.54565999995
+Castilla-La Mancha,2024,buildings:residential-onsite-fuel-usage,514675.54565999995
+Castilla-La Mancha,2025,buildings:residential-onsite-fuel-usage,213147.90076
+Madrid,2021,buildings:residential-onsite-fuel-usage,3664703.265000002
+Madrid,2022,buildings:residential-onsite-fuel-usage,3801509.077410001
+Madrid,2023,buildings:residential-onsite-fuel-usage,3815155.218450001
+Madrid,2024,buildings:residential-onsite-fuel-usage,3815155.218450001
+Madrid,2025,buildings:residential-onsite-fuel-usage,1562302.20274
+Navarra,2021,buildings:residential-onsite-fuel-usage,583819.1720100001
+Navarra,2022,buildings:residential-onsite-fuel-usage,602674.6736099999
+Navarra,2023,buildings:residential-onsite-fuel-usage,602886.5322600001
+Navarra,2024,buildings:residential-onsite-fuel-usage,602886.5322600001
+Navarra,2025,buildings:residential-onsite-fuel-usage,248735.15377
+Aragón,2021,buildings:residential-onsite-fuel-usage,761914.0998899997
+Aragón,2022,buildings:residential-onsite-fuel-usage,799220.7533100001
+Aragón,2023,buildings:residential-onsite-fuel-usage,804175.1658600004
+Aragón,2024,buildings:residential-onsite-fuel-usage,804175.1658600004
+Aragón,2025,buildings:residential-onsite-fuel-usage,337343.64989
+La Rioja,2021,buildings:residential-onsite-fuel-usage,242573.03850000002
+La Rioja,2022,buildings:residential-onsite-fuel-usage,252437.56038000007
+La Rioja,2023,buildings:residential-onsite-fuel-usage,254198.81148000003
+La Rioja,2024,buildings:residential-onsite-fuel-usage,254198.81148000003
+La Rioja,2025,buildings:residential-onsite-fuel-usage,103225.28093
+Canarias,2021,buildings:residential-onsite-fuel-usage,1029086.6511300001
+Canarias,2022,buildings:residential-onsite-fuel-usage,1097653.16589
+Canarias,2023,buildings:residential-onsite-fuel-usage,1101916.3418999997
+Canarias,2024,buildings:residential-onsite-fuel-usage,1101916.3418999997
+Canarias,2025,buildings:residential-onsite-fuel-usage,403739.81175
+Castilla y León,2021,buildings:residential-onsite-fuel-usage,935238.3876300004
+Castilla y León,2022,buildings:residential-onsite-fuel-usage,981670.7331899998
+Castilla y León,2023,buildings:residential-onsite-fuel-usage,987334.9462199998
+Castilla y León,2024,buildings:residential-onsite-fuel-usage,987334.9462199998
+Castilla y León,2025,buildings:residential-onsite-fuel-usage,396318.14569000003
+País Vasco,2021,buildings:residential-onsite-fuel-usage,525594.0899100001
+País Vasco,2022,buildings:residential-onsite-fuel-usage,542716.0762499999
+País Vasco,2023,buildings:residential-onsite-fuel-usage,540946.25556
+País Vasco,2024,buildings:residential-onsite-fuel-usage,540946.25556
+País Vasco,2025,buildings:residential-onsite-fuel-usage,225038.90878999996
+Galicia,2021,forestry-and-land-use:forest-land-clearing,8105229.800000008
+Galicia,2022,forestry-and-land-use:forest-land-clearing,6721404.139999996
+Galicia,2023,forestry-and-land-use:forest-land-clearing,7304505.000030001
+Galicia,2024,forestry-and-land-use:forest-land-clearing,5417439.275999996
+Galicia,2025,forestry-and-land-use:forest-land-clearing,505064.9080199999
+España,2021,forestry-and-land-use:forest-land-clearing,1030767.3972049989
+España,2022,forestry-and-land-use:forest-land-clearing,898797.1635426813
+España,2023,forestry-and-land-use:forest-land-clearing,1159014.2685877825
+Murcia,2021,forestry-and-land-use:forest-land-clearing,120569.6179999999
+Murcia,2022,forestry-and-land-use:forest-land-clearing,111472.59599999984
+Murcia,2023,forestry-and-land-use:forest-land-clearing,129664.47299999998
+Murcia,2024,forestry-and-land-use:forest-land-clearing,105954.46599000006
+Murcia,2025,forestry-and-land-use:forest-land-clearing,49400.515020000006
+Asturias,2021,forestry-and-land-use:forest-land-clearing,1592602.3700000008
+Asturias,2022,forestry-and-land-use:forest-land-clearing,1270174.199999999
+Asturias,2023,forestry-and-land-use:forest-land-clearing,2054412.2000099998
+Asturias,2024,forestry-and-land-use:forest-land-clearing,2464511.83899
+Asturias,2025,forestry-and-land-use:forest-land-clearing,0
+Extremadura,2021,forestry-and-land-use:forest-land-clearing,825674.5699999997
+Extremadura,2022,forestry-and-land-use:forest-land-clearing,750314.0800000004
+Extremadura,2023,forestry-and-land-use:forest-land-clearing,1022028.0699900001
+Extremadura,2024,forestry-and-land-use:forest-land-clearing,919648.53798
+Extremadura,2025,forestry-and-land-use:forest-land-clearing,191587.53501
+Baleares,2021,forestry-and-land-use:forest-land-clearing,87420.40999999999
+Baleares,2022,forestry-and-land-use:forest-land-clearing,29363.429999999997
+Baleares,2023,forestry-and-land-use:forest-land-clearing,35508.38001000001
+Baleares,2024,forestry-and-land-use:forest-land-clearing,0
+Baleares,2025,forestry-and-land-use:forest-land-clearing,1439.66601
+Cataluña,2021,forestry-and-land-use:forest-land-clearing,590657.445
+Cataluña,2022,forestry-and-land-use:forest-land-clearing,614121.5579999996
+Cataluña,2023,forestry-and-land-use:forest-land-clearing,779422.9700099998
+Cataluña,2024,forestry-and-land-use:forest-land-clearing,165843.36605999988
+Cataluña,2025,forestry-and-land-use:forest-land-clearing,106086.54600000002
+Cantabria,2021,forestry-and-land-use:forest-land-clearing,716017.3600000001
+Cantabria,2022,forestry-and-land-use:forest-land-clearing,568424.1900000001
+Cantabria,2023,forestry-and-land-use:forest-land-clearing,812742.97998
+Cantabria,2024,forestry-and-land-use:forest-land-clearing,782094.32202
+Cantabria,2025,forestry-and-land-use:forest-land-clearing,0
+Comunidad Valenciana,2021,forestry-and-land-use:forest-land-clearing,120302.57800000004
+Comunidad Valenciana,2022,forestry-and-land-use:forest-land-clearing,76058.98699999996
+Comunidad Valenciana,2023,forestry-and-land-use:forest-land-clearing,293946.8300099999
+Comunidad Valenciana,2024,forestry-and-land-use:forest-land-clearing,79390.48203000001
+Comunidad Valenciana,2025,forestry-and-land-use:forest-land-clearing,20324.45001
+Andalucía,2021,forestry-and-land-use:forest-land-clearing,324000.25100000005
+Andalucía,2022,forestry-and-land-use:forest-land-clearing,481901.3543500001
+Andalucía,2023,forestry-and-land-use:forest-land-clearing,688089.4773600003
+Andalucía,2024,forestry-and-land-use:forest-land-clearing,651884.69604
+Andalucía,2025,forestry-and-land-use:forest-land-clearing,168389.62602000003
+Castilla-La Mancha,2021,forestry-and-land-use:forest-land-clearing,308147.33599999984
+Castilla-La Mancha,2022,forestry-and-land-use:forest-land-clearing,390042.3639999999
+Castilla-La Mancha,2023,forestry-and-land-use:forest-land-clearing,232666.96998000002
+Castilla-La Mancha,2024,forestry-and-land-use:forest-land-clearing,88194.20598000003
+Castilla-La Mancha,2025,forestry-and-land-use:forest-land-clearing,40783.57200000001
+Madrid,2021,forestry-and-land-use:forest-land-clearing,252904.5800000001
+Madrid,2022,forestry-and-land-use:forest-land-clearing,191475.23900000006
+Madrid,2023,forestry-and-land-use:forest-land-clearing,151677.56499000007
+Madrid,2024,forestry-and-land-use:forest-land-clearing,76809.44898000004
+Madrid,2025,forestry-and-land-use:forest-land-clearing,91812.20600999998
+Navarra,2021,forestry-and-land-use:forest-land-clearing,818920.16
+Navarra,2022,forestry-and-land-use:forest-land-clearing,811462.7900000005
+Navarra,2023,forestry-and-land-use:forest-land-clearing,785922.2900100003
+Navarra,2024,forestry-and-land-use:forest-land-clearing,372774.97296000004
+Navarra,2025,forestry-and-land-use:forest-land-clearing,67370.05500000001
+Aragón,2021,forestry-and-land-use:forest-land-clearing,268059.7869999998
+Aragón,2022,forestry-and-land-use:forest-land-clearing,271978.642
+Aragón,2023,forestry-and-land-use:forest-land-clearing,411969.30597
+Aragón,2024,forestry-and-land-use:forest-land-clearing,73313.50902000001
+Aragón,2025,forestry-and-land-use:forest-land-clearing,108661.13199000002
+La Rioja,2021,forestry-and-land-use:forest-land-clearing,391120.97000000003
+La Rioja,2022,forestry-and-land-use:forest-land-clearing,329141.59
+La Rioja,2023,forestry-and-land-use:forest-land-clearing,352003.04001
+La Rioja,2024,forestry-and-land-use:forest-land-clearing,128072.325
+La Rioja,2025,forestry-and-land-use:forest-land-clearing,62622.57300000001
+Canarias,2021,forestry-and-land-use:forest-land-clearing,24445.998360000005
+Canarias,2022,forestry-and-land-use:forest-land-clearing,14528.637759999996
+Canarias,2023,forestry-and-land-use:forest-land-clearing,181821.76103999995
+Canarias,2024,forestry-and-land-use:forest-land-clearing,0
+Canarias,2025,forestry-and-land-use:forest-land-clearing,0
+Castilla y León,2021,forestry-and-land-use:forest-land-clearing,762129.5059999997
+Castilla y León,2022,forestry-and-land-use:forest-land-clearing,463060.50499999995
+Castilla y León,2023,forestry-and-land-use:forest-land-clearing,642921.4930199997
+Castilla y León,2024,forestry-and-land-use:forest-land-clearing,246695.25996000005
+Castilla y León,2025,forestry-and-land-use:forest-land-clearing,290635.70298
+País Vasco,2021,forestry-and-land-use:forest-land-clearing,914789.7200000001
+País Vasco,2022,forestry-and-land-use:forest-land-clearing,749610.1959999995
+País Vasco,2023,forestry-and-land-use:forest-land-clearing,783894.9300000004
+País Vasco,2024,forestry-and-land-use:forest-land-clearing,588856.0829999999
+País Vasco,2025,forestry-and-land-use:forest-land-clearing,192200.41800000003
+Galicia,2021,forestry-and-land-use:forest-land-degradation,0
+Galicia,2022,forestry-and-land-use:forest-land-degradation,0
+Galicia,2023,forestry-and-land-use:forest-land-degradation,0
+Galicia,2024,forestry-and-land-use:forest-land-degradation,0
+Galicia,2025,forestry-and-land-use:forest-land-degradation,0
+Murcia,2021,forestry-and-land-use:forest-land-degradation,0
+Murcia,2022,forestry-and-land-use:forest-land-degradation,0
+Murcia,2023,forestry-and-land-use:forest-land-degradation,0
+Murcia,2024,forestry-and-land-use:forest-land-degradation,0
+Murcia,2025,forestry-and-land-use:forest-land-degradation,0
+Asturias,2021,forestry-and-land-use:forest-land-degradation,0
+Asturias,2022,forestry-and-land-use:forest-land-degradation,0
+Asturias,2023,forestry-and-land-use:forest-land-degradation,0
+Asturias,2024,forestry-and-land-use:forest-land-degradation,0
+Asturias,2025,forestry-and-land-use:forest-land-degradation,0
+Extremadura,2021,forestry-and-land-use:forest-land-degradation,0
+Extremadura,2022,forestry-and-land-use:forest-land-degradation,0
+Extremadura,2023,forestry-and-land-use:forest-land-degradation,0
+Extremadura,2024,forestry-and-land-use:forest-land-degradation,0
+Extremadura,2025,forestry-and-land-use:forest-land-degradation,0
+Baleares,2021,forestry-and-land-use:forest-land-degradation,0
+Baleares,2022,forestry-and-land-use:forest-land-degradation,0
+Baleares,2023,forestry-and-land-use:forest-land-degradation,0
+Baleares,2024,forestry-and-land-use:forest-land-degradation,0
+Baleares,2025,forestry-and-land-use:forest-land-degradation,0
+Cataluña,2021,forestry-and-land-use:forest-land-degradation,0
+Cataluña,2022,forestry-and-land-use:forest-land-degradation,0
+Cataluña,2023,forestry-and-land-use:forest-land-degradation,0
+Cataluña,2024,forestry-and-land-use:forest-land-degradation,0
+Cataluña,2025,forestry-and-land-use:forest-land-degradation,0
+Cantabria,2021,forestry-and-land-use:forest-land-degradation,0
+Cantabria,2022,forestry-and-land-use:forest-land-degradation,0
+Cantabria,2023,forestry-and-land-use:forest-land-degradation,0
+Cantabria,2024,forestry-and-land-use:forest-land-degradation,0
+Cantabria,2025,forestry-and-land-use:forest-land-degradation,0
+Comunidad Valenciana,2021,forestry-and-land-use:forest-land-degradation,0
+Comunidad Valenciana,2022,forestry-and-land-use:forest-land-degradation,0
+Comunidad Valenciana,2023,forestry-and-land-use:forest-land-degradation,0
+Comunidad Valenciana,2024,forestry-and-land-use:forest-land-degradation,0
+Comunidad Valenciana,2025,forestry-and-land-use:forest-land-degradation,0
+Andalucía,2021,forestry-and-land-use:forest-land-degradation,0
+Andalucía,2022,forestry-and-land-use:forest-land-degradation,0
+Andalucía,2023,forestry-and-land-use:forest-land-degradation,0
+Andalucía,2024,forestry-and-land-use:forest-land-degradation,0
+Andalucía,2025,forestry-and-land-use:forest-land-degradation,0
+Castilla-La Mancha,2021,forestry-and-land-use:forest-land-degradation,0
+Castilla-La Mancha,2022,forestry-and-land-use:forest-land-degradation,0
+Castilla-La Mancha,2023,forestry-and-land-use:forest-land-degradation,0
+Castilla-La Mancha,2024,forestry-and-land-use:forest-land-degradation,0
+Castilla-La Mancha,2025,forestry-and-land-use:forest-land-degradation,0
+Madrid,2021,forestry-and-land-use:forest-land-degradation,0
+Madrid,2022,forestry-and-land-use:forest-land-degradation,0
+Madrid,2023,forestry-and-land-use:forest-land-degradation,0
+Madrid,2024,forestry-and-land-use:forest-land-degradation,0
+Madrid,2025,forestry-and-land-use:forest-land-degradation,0
+Navarra,2021,forestry-and-land-use:forest-land-degradation,0
+Navarra,2022,forestry-and-land-use:forest-land-degradation,0
+Navarra,2023,forestry-and-land-use:forest-land-degradation,0
+Navarra,2024,forestry-and-land-use:forest-land-degradation,0
+Navarra,2025,forestry-and-land-use:forest-land-degradation,0
+Aragón,2021,forestry-and-land-use:forest-land-degradation,0
+Aragón,2022,forestry-and-land-use:forest-land-degradation,0
+Aragón,2023,forestry-and-land-use:forest-land-degradation,0
+Aragón,2024,forestry-and-land-use:forest-land-degradation,0
+Aragón,2025,forestry-and-land-use:forest-land-degradation,0
+La Rioja,2021,forestry-and-land-use:forest-land-degradation,0
+La Rioja,2022,forestry-and-land-use:forest-land-degradation,0
+La Rioja,2023,forestry-and-land-use:forest-land-degradation,0
+La Rioja,2024,forestry-and-land-use:forest-land-degradation,0
+La Rioja,2025,forestry-and-land-use:forest-land-degradation,0
+Canarias,2021,forestry-and-land-use:forest-land-degradation,0
+Canarias,2022,forestry-and-land-use:forest-land-degradation,0
+Canarias,2023,forestry-and-land-use:forest-land-degradation,0
+Canarias,2024,forestry-and-land-use:forest-land-degradation,0
+Canarias,2025,forestry-and-land-use:forest-land-degradation,0
+Castilla y León,2021,forestry-and-land-use:forest-land-degradation,0
+Castilla y León,2022,forestry-and-land-use:forest-land-degradation,0
+Castilla y León,2023,forestry-and-land-use:forest-land-degradation,0
+Castilla y León,2024,forestry-and-land-use:forest-land-degradation,0
+Castilla y León,2025,forestry-and-land-use:forest-land-degradation,0
+País Vasco,2021,forestry-and-land-use:forest-land-degradation,0
+País Vasco,2022,forestry-and-land-use:forest-land-degradation,0
+País Vasco,2023,forestry-and-land-use:forest-land-degradation,0
+País Vasco,2024,forestry-and-land-use:forest-land-degradation,0
+País Vasco,2025,forestry-and-land-use:forest-land-degradation,0
+Galicia,2021,forestry-and-land-use:forest-land-fires,214009.791
+Galicia,2022,forestry-and-land-use:forest-land-fires,1724330.6259999992
+Galicia,2023,forestry-and-land-use:forest-land-fires,119140.46187
+Galicia,2024,forestry-and-land-use:forest-land-fires,0
+Galicia,2025,forestry-and-land-use:forest-land-fires,22134.948989999994
+Murcia,2021,forestry-and-land-use:forest-land-fires,15723.817196999997
+Murcia,2022,forestry-and-land-use:forest-land-fires,199860.16249999998
+Murcia,2023,forestry-and-land-use:forest-land-fires,4495.59012
+Murcia,2024,forestry-and-land-use:forest-land-fires,0
+Murcia,2025,forestry-and-land-use:forest-land-fires,0.774
+España,2021,forestry-and-land-use:forest-land-fires,21083.35832541119
+España,2022,forestry-and-land-use:forest-land-fires,223970.93709162626
+España,2023,forestry-and-land-use:forest-land-fires,111083.69757634307
+Asturias,2021,forestry-and-land-use:forest-land-fires,136379.77199999988
+Asturias,2022,forestry-and-land-use:forest-land-fires,255141.46999999983
+Asturias,2023,forestry-and-land-use:forest-land-fires,1469694.3120000004
+Asturias,2024,forestry-and-land-use:forest-land-fires,9819.89901
+Asturias,2025,forestry-and-land-use:forest-land-fires,843324.66498
+Extremadura,2021,forestry-and-land-use:forest-land-fires,33571.17669999999
+Extremadura,2022,forestry-and-land-use:forest-land-fires,372344.4230999995
+Extremadura,2023,forestry-and-land-use:forest-land-fires,545275.2149999999
+Extremadura,2024,forestry-and-land-use:forest-land-fires,0
+Extremadura,2025,forestry-and-land-use:forest-land-fires,0
+Baleares,2021,forestry-and-land-use:forest-land-fires,303.1811199999998
+Baleares,2022,forestry-and-land-use:forest-land-fires,0
+Baleares,2023,forestry-and-land-use:forest-land-fires,0
+Baleares,2024,forestry-and-land-use:forest-land-fires,0
+Baleares,2025,forestry-and-land-use:forest-land-fires,0
+Cataluña,2021,forestry-and-land-use:forest-land-fires,113520.40419999999
+Cataluña,2022,forestry-and-land-use:forest-land-fires,129797.7149999999
+Cataluña,2023,forestry-and-land-use:forest-land-fires,53701.581000000006
+Cataluña,2024,forestry-and-land-use:forest-land-fires,0
+Cataluña,2025,forestry-and-land-use:forest-land-fires,4684.72299
+Cantabria,2021,forestry-and-land-use:forest-land-fires,90328.85669999999
+Cantabria,2022,forestry-and-land-use:forest-land-fires,99392.52399999996
+Cantabria,2023,forestry-and-land-use:forest-land-fires,49418.4552
+Cantabria,2024,forestry-and-land-use:forest-land-fires,46749.509009999994
+Cantabria,2025,forestry-and-land-use:forest-land-fires,11255.754990000001
+Comunidad Valenciana,2021,forestry-and-land-use:forest-land-fires,6904.509559999995
+Comunidad Valenciana,2022,forestry-and-land-use:forest-land-fires,435919.4699999999
+Comunidad Valenciana,2023,forestry-and-land-use:forest-land-fires,261656.59002
+Comunidad Valenciana,2024,forestry-and-land-use:forest-land-fires,0
+Comunidad Valenciana,2025,forestry-and-land-use:forest-land-fires,120342.85401000001
+Andalucía,2021,forestry-and-land-use:forest-land-fires,504543.55822999973
+Andalucía,2022,forestry-and-land-use:forest-land-fires,704095.8156999999
+Andalucía,2023,forestry-and-land-use:forest-land-fires,6517.78962
+Andalucía,2024,forestry-and-land-use:forest-land-fires,0
+Andalucía,2025,forestry-and-land-use:forest-land-fires,0
+Castilla-La Mancha,2021,forestry-and-land-use:forest-land-fires,14347.3163
+Castilla-La Mancha,2022,forestry-and-land-use:forest-land-fires,136282.52200000003
+Castilla-La Mancha,2023,forestry-and-land-use:forest-land-fires,0
+Castilla-La Mancha,2024,forestry-and-land-use:forest-land-fires,0
+Castilla-La Mancha,2025,forestry-and-land-use:forest-land-fires,0
+Madrid,2021,forestry-and-land-use:forest-land-fires,1387.2157299999997
+Madrid,2022,forestry-and-land-use:forest-land-fires,58216.39701599999
+Madrid,2023,forestry-and-land-use:forest-land-fires,11506.272509999999
+Madrid,2024,forestry-and-land-use:forest-land-fires,0
+Madrid,2025,forestry-and-land-use:forest-land-fires,0
+Navarra,2021,forestry-and-land-use:forest-land-fires,43977.74929999998
+Navarra,2022,forestry-and-land-use:forest-land-fires,476220.27999999985
+Navarra,2023,forestry-and-land-use:forest-land-fires,6905.2600200000015
+Navarra,2024,forestry-and-land-use:forest-land-fires,0
+Navarra,2025,forestry-and-land-use:forest-land-fires,85.53801
+Aragón,2021,forestry-and-land-use:forest-land-fires,10713.336699999998
+Aragón,2022,forestry-and-land-use:forest-land-fires,270506.1735
+Aragón,2023,forestry-and-land-use:forest-land-fires,23051.10354
+Aragón,2024,forestry-and-land-use:forest-land-fires,0
+Aragón,2025,forestry-and-land-use:forest-land-fires,6344.393009999999
+La Rioja,2021,forestry-and-land-use:forest-land-fires,12484.189859999991
+La Rioja,2022,forestry-and-land-use:forest-land-fires,0
+La Rioja,2023,forestry-and-land-use:forest-land-fires,0
+La Rioja,2024,forestry-and-land-use:forest-land-fires,0
+La Rioja,2025,forestry-and-land-use:forest-land-fires,0
+Canarias,2021,forestry-and-land-use:forest-land-fires,23264.133999999987
+Canarias,2022,forestry-and-land-use:forest-land-fires,39929.87999999998
+Canarias,2023,forestry-and-land-use:forest-land-fires,288039.8064
+Canarias,2024,forestry-and-land-use:forest-land-fires,0
+Canarias,2025,forestry-and-land-use:forest-land-fires,0
+Castilla y León,2021,forestry-and-land-use:forest-land-fires,178962.91710989995
+Castilla y León,2022,forestry-and-land-use:forest-land-fires,1653661.6365359991
+Castilla y León,2023,forestry-and-land-use:forest-land-fires,0
+Castilla y León,2024,forestry-and-land-use:forest-land-fires,0
+Castilla y León,2025,forestry-and-land-use:forest-land-fires,0
+País Vasco,2021,forestry-and-land-use:forest-land-fires,22.70864
+País Vasco,2022,forestry-and-land-use:forest-land-fires,11830.601499999993
+País Vasco,2023,forestry-and-land-use:forest-land-fires,0
+País Vasco,2024,forestry-and-land-use:forest-land-fires,0
+País Vasco,2025,forestry-and-land-use:forest-land-fires,0
+Galicia,2021,forestry-and-land-use:net-forest-land,764614.9999999981
+Galicia,2022,forestry-and-land-use:net-forest-land,-7573739.000000004
+Galicia,2023,forestry-and-land-use:net-forest-land,-4164259.9999999884
+Galicia,2024,forestry-and-land-use:net-forest-land,0
+Galicia,2025,forestry-and-land-use:net-forest-land,0
+España,2021,forestry-and-land-use:net-forest-land,2495015.9561431063
+España,2022,forestry-and-land-use:net-forest-land,-1656403.8057454717
+España,2023,forestry-and-land-use:net-forest-land,56860.38397113827
+España,2024,forestry-and-land-use:net-forest-land,0
+España,2025,forestry-and-land-use:net-forest-land,0
+Murcia,2021,forestry-and-land-use:net-forest-land,3221369.0145311896
+Murcia,2022,forestry-and-land-use:net-forest-land,-2074683.9854528527
+Murcia,2023,forestry-and-land-use:net-forest-land,1031299.9168911028
+Murcia,2024,forestry-and-land-use:net-forest-land,0
+Murcia,2025,forestry-and-land-use:net-forest-land,0
+Asturias,2021,forestry-and-land-use:net-forest-land,4263006.000000006
+Asturias,2022,forestry-and-land-use:net-forest-land,-5674606.000000023
+Asturias,2023,forestry-and-land-use:net-forest-land,-2645609.999999977
+Asturias,2024,forestry-and-land-use:net-forest-land,0
+Asturias,2025,forestry-and-land-use:net-forest-land,0
+Extremadura,2021,forestry-and-land-use:net-forest-land,13688673.000000007
+Extremadura,2022,forestry-and-land-use:net-forest-land,-10340516.000000007
+Extremadura,2023,forestry-and-land-use:net-forest-land,2595941
+Extremadura,2024,forestry-and-land-use:net-forest-land,0
+Extremadura,2025,forestry-and-land-use:net-forest-land,0
+Baleares,2021,forestry-and-land-use:net-forest-land,822358.0000000014
+Baleares,2022,forestry-and-land-use:net-forest-land,-499519.00000000274
+Baleares,2023,forestry-and-land-use:net-forest-land,420078.00000000006
+Baleares,2024,forestry-and-land-use:net-forest-land,0
+Baleares,2025,forestry-and-land-use:net-forest-land,0
+Cataluña,2021,forestry-and-land-use:net-forest-land,4631867.000000016
+Cataluña,2022,forestry-and-land-use:net-forest-land,-984061.0000000178
+Cataluña,2023,forestry-and-land-use:net-forest-land,1510311.0000000012
+Cataluña,2024,forestry-and-land-use:net-forest-land,0
+Cataluña,2025,forestry-and-land-use:net-forest-land,0
+Cantabria,2021,forestry-and-land-use:net-forest-land,2018107.0000000072
+Cantabria,2022,forestry-and-land-use:net-forest-land,-1485515.000000006
+Cantabria,2023,forestry-and-land-use:net-forest-land,-3901305
+Cantabria,2024,forestry-and-land-use:net-forest-land,0
+Cantabria,2025,forestry-and-land-use:net-forest-land,0
+Comunidad Valenciana,2021,forestry-and-land-use:net-forest-land,-224556.00000000017
+Comunidad Valenciana,2022,forestry-and-land-use:net-forest-land,106630.00000000207
+Comunidad Valenciana,2023,forestry-and-land-use:net-forest-land,1984656.9999999986
+Comunidad Valenciana,2024,forestry-and-land-use:net-forest-land,0
+Comunidad Valenciana,2025,forestry-and-land-use:net-forest-land,0
+Andalucía,2021,forestry-and-land-use:net-forest-land,18833313.266
+Andalucía,2022,forestry-and-land-use:net-forest-land,-13987543.121000022
+Andalucía,2023,forestry-and-land-use:net-forest-land,4352040.99
+Andalucía,2024,forestry-and-land-use:net-forest-land,0
+Andalucía,2025,forestry-and-land-use:net-forest-land,0
+Castilla-La Mancha,2021,forestry-and-land-use:net-forest-land,4347922.0000000065
+Castilla-La Mancha,2022,forestry-and-land-use:net-forest-land,-629720.0000000033
+Castilla-La Mancha,2023,forestry-and-land-use:net-forest-land,1214844.0000000033
+Castilla-La Mancha,2024,forestry-and-land-use:net-forest-land,0
+Castilla-La Mancha,2025,forestry-and-land-use:net-forest-land,0
+Madrid,2021,forestry-and-land-use:net-forest-land,843822.000000001
+Madrid,2022,forestry-and-land-use:net-forest-land,1358549.9999999942
+Madrid,2023,forestry-and-land-use:net-forest-land,1371847.000000003
+Madrid,2024,forestry-and-land-use:net-forest-land,0
+Madrid,2025,forestry-and-land-use:net-forest-land,0
+Navarra,2021,forestry-and-land-use:net-forest-land,1555237.9999999956
+Navarra,2022,forestry-and-land-use:net-forest-land,-1499482.999999998
+Navarra,2023,forestry-and-land-use:net-forest-land,-2081984.9999999965
+Navarra,2024,forestry-and-land-use:net-forest-land,0
+Navarra,2025,forestry-and-land-use:net-forest-land,0
+Aragón,2021,forestry-and-land-use:net-forest-land,-164978.9999999882
+Aragón,2022,forestry-and-land-use:net-forest-land,363242.00000000326
+Aragón,2023,forestry-and-land-use:net-forest-land,1128084.9999999919
+Aragón,2024,forestry-and-land-use:net-forest-land,0
+Aragón,2025,forestry-and-land-use:net-forest-land,0
+La Rioja,2021,forestry-and-land-use:net-forest-land,-1133299.000000001
+La Rioja,2022,forestry-and-land-use:net-forest-land,1960892.999999998
+La Rioja,2023,forestry-and-land-use:net-forest-land,281371.0000000001
+La Rioja,2024,forestry-and-land-use:net-forest-land,0
+La Rioja,2025,forestry-and-land-use:net-forest-land,0
+Canarias,2021,forestry-and-land-use:net-forest-land,180331.29999999958
+Canarias,2022,forestry-and-land-use:net-forest-land,-1567659.2999999989
+Canarias,2023,forestry-and-land-use:net-forest-land,206158.09999999905
+Canarias,2024,forestry-and-land-use:net-forest-land,0
+Canarias,2025,forestry-and-land-use:net-forest-land,0
+Castilla y León,2021,forestry-and-land-use:net-forest-land,534820.9999999985
+Castilla y León,2022,forestry-and-land-use:net-forest-land,2874516.000000005
+Castilla y León,2023,forestry-and-land-use:net-forest-land,456346.39999999874
+Castilla y León,2024,forestry-and-land-use:net-forest-land,0
+Castilla y León,2025,forestry-and-land-use:net-forest-land,0
+País Vasco,2021,forestry-and-land-use:net-forest-land,513804.00000000413
+País Vasco,2022,forestry-and-land-use:net-forest-land,-1052329.999999998
+País Vasco,2023,forestry-and-land-use:net-forest-land,-1589819.9999999995
+País Vasco,2024,forestry-and-land-use:net-forest-land,0
+País Vasco,2025,forestry-and-land-use:net-forest-land,0
+Galicia,2021,forestry-and-land-use:net-shrubgrass,-1354237.3000000003
+Galicia,2022,forestry-and-land-use:net-shrubgrass,102527.2999999993
+Galicia,2023,forestry-and-land-use:net-shrubgrass,-718867.4000000001
+Galicia,2024,forestry-and-land-use:net-shrubgrass,0
+Galicia,2025,forestry-and-land-use:net-shrubgrass,0
+España,2021,forestry-and-land-use:net-shrubgrass,1160886.437904875
+España,2022,forestry-and-land-use:net-shrubgrass,-952313.4281203497
+España,2023,forestry-and-land-use:net-shrubgrass,-114169.55623491644
+España,2024,forestry-and-land-use:net-shrubgrass,0
+España,2025,forestry-and-land-use:net-shrubgrass,0
+Murcia,2021,forestry-and-land-use:net-shrubgrass,2123480.398769999
+Murcia,2022,forestry-and-land-use:net-shrubgrass,-1757727.5870700022
+Murcia,2023,forestry-and-land-use:net-shrubgrass,-139021.77237000046
+Murcia,2024,forestry-and-land-use:net-shrubgrass,0
+Murcia,2025,forestry-and-land-use:net-shrubgrass,0
+Asturias,2021,forestry-and-land-use:net-shrubgrass,1036218.4999999994
+Asturias,2022,forestry-and-land-use:net-shrubgrass,-1188802.4999999981
+Asturias,2023,forestry-and-land-use:net-shrubgrass,-1051458.9999999993
+Asturias,2024,forestry-and-land-use:net-shrubgrass,0
+Asturias,2025,forestry-and-land-use:net-shrubgrass,0
+Extremadura,2021,forestry-and-land-use:net-shrubgrass,6793965.199999998
+Extremadura,2022,forestry-and-land-use:net-shrubgrass,-3804803.2
+Extremadura,2023,forestry-and-land-use:net-shrubgrass,-2532266.3999999985
+Extremadura,2024,forestry-and-land-use:net-shrubgrass,0
+Extremadura,2025,forestry-and-land-use:net-shrubgrass,0
+Baleares,2021,forestry-and-land-use:net-shrubgrass,157784.2
+Baleares,2022,forestry-and-land-use:net-shrubgrass,-107417.30000000018
+Baleares,2023,forestry-and-land-use:net-shrubgrass,844.6999999999998
+Baleares,2024,forestry-and-land-use:net-shrubgrass,0
+Baleares,2025,forestry-and-land-use:net-shrubgrass,0
+Cataluña,2021,forestry-and-land-use:net-shrubgrass,1060383.7000000002
+Cataluña,2022,forestry-and-land-use:net-shrubgrass,191608.90000000014
+Cataluña,2023,forestry-and-land-use:net-shrubgrass,-135499.4000000006
+Cataluña,2024,forestry-and-land-use:net-shrubgrass,0
+Cataluña,2025,forestry-and-land-use:net-shrubgrass,0
+Cantabria,2021,forestry-and-land-use:net-shrubgrass,781072.0000000007
+Cantabria,2022,forestry-and-land-use:net-shrubgrass,-413793.5000000005
+Cantabria,2023,forestry-and-land-use:net-shrubgrass,-1385867.8000000007
+Cantabria,2024,forestry-and-land-use:net-shrubgrass,0
+Cantabria,2025,forestry-and-land-use:net-shrubgrass,0
+Comunidad Valenciana,2021,forestry-and-land-use:net-shrubgrass,-462630.30000000005
+Comunidad Valenciana,2022,forestry-and-land-use:net-shrubgrass,41375.299999998475
+Comunidad Valenciana,2023,forestry-and-land-use:net-shrubgrass,64202.70000000182
+Comunidad Valenciana,2024,forestry-and-land-use:net-shrubgrass,0
+Comunidad Valenciana,2025,forestry-and-land-use:net-shrubgrass,0
+Andalucía,2021,forestry-and-land-use:net-shrubgrass,3783793.957999995
+Andalucía,2022,forestry-and-land-use:net-shrubgrass,-2728659.318999998
+Andalucía,2023,forestry-and-land-use:net-shrubgrass,-7327.702999999814
+Andalucía,2024,forestry-and-land-use:net-shrubgrass,0
+Andalucía,2025,forestry-and-land-use:net-shrubgrass,0
+Castilla-La Mancha,2021,forestry-and-land-use:net-shrubgrass,1384801.499999999
+Castilla-La Mancha,2022,forestry-and-land-use:net-shrubgrass,-747390.2000000008
+Castilla-La Mancha,2023,forestry-and-land-use:net-shrubgrass,-88904.79999999894
+Castilla-La Mancha,2024,forestry-and-land-use:net-shrubgrass,0
+Castilla-La Mancha,2025,forestry-and-land-use:net-shrubgrass,0
+Madrid,2021,forestry-and-land-use:net-shrubgrass,1086654.6000000003
+Madrid,2022,forestry-and-land-use:net-shrubgrass,-314749.20000000036
+Madrid,2023,forestry-and-land-use:net-shrubgrass,-359623.39999999956
+Madrid,2024,forestry-and-land-use:net-shrubgrass,0
+Madrid,2025,forestry-and-land-use:net-shrubgrass,0
+Navarra,2021,forestry-and-land-use:net-shrubgrass,414465.0999999999
+Navarra,2022,forestry-and-land-use:net-shrubgrass,-48498.59999999988
+Navarra,2023,forestry-and-land-use:net-shrubgrass,-477883.40000000026
+Navarra,2024,forestry-and-land-use:net-shrubgrass,0
+Navarra,2025,forestry-and-land-use:net-shrubgrass,0
+Aragón,2021,forestry-and-land-use:net-shrubgrass,466542.90000000095
+Aragón,2022,forestry-and-land-use:net-shrubgrass,691645.6999999987
+Aragón,2023,forestry-and-land-use:net-shrubgrass,-675812.5000000005
+Aragón,2024,forestry-and-land-use:net-shrubgrass,0
+Aragón,2025,forestry-and-land-use:net-shrubgrass,0
+La Rioja,2021,forestry-and-land-use:net-shrubgrass,369696.39999999985
+La Rioja,2022,forestry-and-land-use:net-shrubgrass,507474.0000000004
+La Rioja,2023,forestry-and-land-use:net-shrubgrass,-402051.49999999953
+La Rioja,2024,forestry-and-land-use:net-shrubgrass,0
+La Rioja,2025,forestry-and-land-use:net-shrubgrass,0
+Canarias,2021,forestry-and-land-use:net-shrubgrass,372712.59999999974
+Canarias,2022,forestry-and-land-use:net-shrubgrass,-379024.2000000001
+Canarias,2023,forestry-and-land-use:net-shrubgrass,-260172.99999999953
+Canarias,2024,forestry-and-land-use:net-shrubgrass,0
+Canarias,2025,forestry-and-land-use:net-shrubgrass,0
+Castilla y León,2021,forestry-and-land-use:net-shrubgrass,1644137.4500000007
+Castilla y León,2022,forestry-and-land-use:net-shrubgrass,-558534.1500000013
+Castilla y León,2023,forestry-and-land-use:net-shrubgrass,-1298670.999999998
+Castilla y León,2024,forestry-and-land-use:net-shrubgrass,0
+Castilla y León,2025,forestry-and-land-use:net-shrubgrass,0
+País Vasco,2021,forestry-and-land-use:net-shrubgrass,113578.69999999978
+País Vasco,2022,forestry-and-land-use:net-shrubgrass,-42272.899999999856
+País Vasco,2023,forestry-and-land-use:net-shrubgrass,-219151.2
+País Vasco,2024,forestry-and-land-use:net-shrubgrass,0
+País Vasco,2025,forestry-and-land-use:net-shrubgrass,0
+Galicia,2021,forestry-and-land-use:net-wetland,-2655.198999999899
+Galicia,2022,forestry-and-land-use:net-wetland,-7675.184999999902
+Galicia,2023,forestry-and-land-use:net-wetland,-12608.836000000105
+Galicia,2024,forestry-and-land-use:net-wetland,0
+Galicia,2025,forestry-and-land-use:net-wetland,0
+España,2021,forestry-and-land-use:net-wetland,11511.977064723462
+España,2022,forestry-and-land-use:net-wetland,-13971.42201927277
+España,2023,forestry-and-land-use:net-wetland,5463.3818835109405
+España,2024,forestry-and-land-use:net-wetland,0
+España,2025,forestry-and-land-use:net-wetland,0
+Murcia,2021,forestry-and-land-use:net-wetland,2502.993199999799
+Murcia,2022,forestry-and-land-use:net-wetland,-2728.8372999998987
+Murcia,2023,forestry-and-land-use:net-wetland,-499.81699999999864
+Murcia,2024,forestry-and-land-use:net-wetland,0
+Murcia,2025,forestry-and-land-use:net-wetland,0
+Asturias,2021,forestry-and-land-use:net-wetland,964.8429999999001
+Asturias,2022,forestry-and-land-use:net-wetland,-7747.744999999901
+Asturias,2023,forestry-and-land-use:net-wetland,1729.3010000000004
+Asturias,2024,forestry-and-land-use:net-wetland,0
+Asturias,2025,forestry-and-land-use:net-wetland,0
+Extremadura,2021,forestry-and-land-use:net-wetland,34095.2539999998
+Extremadura,2022,forestry-and-land-use:net-wetland,1410.0359999998993
+Extremadura,2023,forestry-and-land-use:net-wetland,-35634.98099999978
+Extremadura,2024,forestry-and-land-use:net-wetland,0
+Extremadura,2025,forestry-and-land-use:net-wetland,0
+Baleares,2021,forestry-and-land-use:net-wetland,-113.09999999999998
+Baleares,2022,forestry-and-land-use:net-wetland,-5718.212
+Baleares,2023,forestry-and-land-use:net-wetland,1975.7710000000004
+Baleares,2024,forestry-and-land-use:net-wetland,0
+Baleares,2025,forestry-and-land-use:net-wetland,0
+Cataluña,2021,forestry-and-land-use:net-wetland,7075.794000000005
+Cataluña,2022,forestry-and-land-use:net-wetland,-2366.2890000001
+Cataluña,2023,forestry-and-land-use:net-wetland,5781.517500000095
+Cataluña,2024,forestry-and-land-use:net-wetland,0
+Cataluña,2025,forestry-and-land-use:net-wetland,0
+Cantabria,2021,forestry-and-land-use:net-wetland,367.81900000000013
+Cantabria,2022,forestry-and-land-use:net-wetland,-404.478
+Cantabria,2023,forestry-and-land-use:net-wetland,-2569.915
+Cantabria,2024,forestry-and-land-use:net-wetland,0
+Cantabria,2025,forestry-and-land-use:net-wetland,0
+Comunidad Valenciana,2021,forestry-and-land-use:net-wetland,-20415.112999999987
+Comunidad Valenciana,2022,forestry-and-land-use:net-wetland,13156.5030000001
+Comunidad Valenciana,2023,forestry-and-land-use:net-wetland,1364.7909999999017
+Comunidad Valenciana,2024,forestry-and-land-use:net-wetland,0
+Comunidad Valenciana,2025,forestry-and-land-use:net-wetland,0
+Andalucía,2021,forestry-and-land-use:net-wetland,45064.31070000002
+Andalucía,2022,forestry-and-land-use:net-wetland,-44963.794659999774
+Andalucía,2023,forestry-and-land-use:net-wetland,-9614.878100000102
+Andalucía,2024,forestry-and-land-use:net-wetland,0
+Andalucía,2025,forestry-and-land-use:net-wetland,0
+Castilla-La Mancha,2021,forestry-and-land-use:net-wetland,2874.9729999998985
+Castilla-La Mancha,2022,forestry-and-land-use:net-wetland,-2317.2179999998984
+Castilla-La Mancha,2023,forestry-and-land-use:net-wetland,-740.7284999999995
+Castilla-La Mancha,2024,forestry-and-land-use:net-wetland,0
+Castilla-La Mancha,2025,forestry-and-land-use:net-wetland,0
+Madrid,2021,forestry-and-land-use:net-wetland,1366.0070000000017
+Madrid,2022,forestry-and-land-use:net-wetland,82.47099999979987
+Madrid,2023,forestry-and-land-use:net-wetland,-2054.7620000000006
+Madrid,2024,forestry-and-land-use:net-wetland,0
+Madrid,2025,forestry-and-land-use:net-wetland,0
+Navarra,2021,forestry-and-land-use:net-wetland,4481.778999999899
+Navarra,2022,forestry-and-land-use:net-wetland,-2533.0619999999003
+Navarra,2023,forestry-and-land-use:net-wetland,-1523.6949999999
+Navarra,2024,forestry-and-land-use:net-wetland,0
+Navarra,2025,forestry-and-land-use:net-wetland,0
+Aragón,2021,forestry-and-land-use:net-wetland,4712.648899999898
+Aragón,2022,forestry-and-land-use:net-wetland,1818.2225999999002
+Aragón,2023,forestry-and-land-use:net-wetland,-1511.2929999998
+Aragón,2024,forestry-and-land-use:net-wetland,0
+Aragón,2025,forestry-and-land-use:net-wetland,0
+La Rioja,2021,forestry-and-land-use:net-wetland,2247.269999999799
+La Rioja,2022,forestry-and-land-use:net-wetland,801.1090000000004
+La Rioja,2023,forestry-and-land-use:net-wetland,-606.5699999999997
+La Rioja,2024,forestry-and-land-use:net-wetland,0
+La Rioja,2025,forestry-and-land-use:net-wetland,0
+Canarias,2021,forestry-and-land-use:net-wetland,4926.2287
+Canarias,2022,forestry-and-land-use:net-wetland,-7078.308
+Canarias,2023,forestry-and-land-use:net-wetland,4531.580800000001
+Canarias,2024,forestry-and-land-use:net-wetland,0
+Canarias,2025,forestry-and-land-use:net-wetland,0
+Castilla y León,2021,forestry-and-land-use:net-wetland,11917.0206999997
+Castilla y León,2022,forestry-and-land-use:net-wetland,8556.034800000012
+Castilla y León,2023,forestry-and-land-use:net-wetland,-13303.4282
+Castilla y León,2024,forestry-and-land-use:net-wetland,0
+Castilla y León,2025,forestry-and-land-use:net-wetland,0
+País Vasco,2021,forestry-and-land-use:net-wetland,1158.9654999998
+País Vasco,2022,forestry-and-land-use:net-wetland,-578.9244999998997
+País Vasco,2023,forestry-and-land-use:net-wetland,-284.7093999999004
+País Vasco,2024,forestry-and-land-use:net-wetland,0
+País Vasco,2025,forestry-and-land-use:net-wetland,0
+Galicia,2021,forestry-and-land-use:removals,-8928190.423423002
+Galicia,2022,forestry-and-land-use:removals,-17279623.610229995
+Galicia,2023,forestry-and-land-use:removals,-12326815.957912998
+Galicia,2024,forestry-and-land-use:removals,0
+Galicia,2025,forestry-and-land-use:removals,0
+España,2021,forestry-and-land-use:removals,2611883.472876272
+España,2022,forestry-and-land-use:removals,-3931510.102940887
+España,2023,forestry-and-land-use:removals,-1333671.3285005866
+España,2024,forestry-and-land-use:removals,0
+España,2025,forestry-and-land-use:removals,0
+Murcia,2021,forestry-and-land-use:removals,5198058.756064197
+Murcia,2022,forestry-and-land-use:removals,-4434863.720805861
+Murcia,2023,forestry-and-land-use:removals,755047.9925610987
+Murcia,2024,forestry-and-land-use:removals,0
+Murcia,2025,forestry-and-land-use:removals,0
+Asturias,2021,forestry-and-land-use:removals,3536363.2304899977
+Asturias,2022,forestry-and-land-use:removals,-8653079.186700001
+Asturias,2023,forestry-and-land-use:removals,-7379224.508699992
+Asturias,2024,forestry-and-land-use:removals,0
+Asturias,2025,forestry-and-land-use:removals,0
+Extremadura,2021,forestry-and-land-use:removals,19641804.26600001
+Extremadura,2022,forestry-and-land-use:removals,-15657919.150500003
+Extremadura,2023,forestry-and-land-use:removals,-1549583.0295999995
+Extremadura,2024,forestry-and-land-use:removals,0
+Extremadura,2025,forestry-and-land-use:removals,0
+Baleares,2021,forestry-and-land-use:removals,891999.0881699998
+Baleares,2022,forestry-and-land-use:removals,-642017.9526
+Baleares,2023,forestry-and-land-use:removals,387389.89287000004
+Baleares,2024,forestry-and-land-use:removals,0
+Baleares,2025,forestry-and-land-use:removals,0
+Cataluña,2021,forestry-and-land-use:removals,4986239.229899995
+Cataluña,2022,forestry-and-land-use:removals,-1688009.1281999995
+Cataluña,2023,forestry-and-land-use:removals,534787.369249
+Cataluña,2024,forestry-and-land-use:removals,0
+Cataluña,2025,forestry-and-land-use:removals,0
+Cantabria,2021,forestry-and-land-use:removals,1973673.8395200002
+Cantabria,2022,forestry-and-land-use:removals,-2666221.7707900004
+Cantabria,2023,forestry-and-land-use:removals,-6164682.0430700015
+Cantabria,2024,forestry-and-land-use:removals,0
+Cantabria,2025,forestry-and-land-use:removals,0
+Comunidad Valenciana,2021,forestry-and-land-use:removals,-843735.7586999994
+Comunidad Valenciana,2022,forestry-and-land-use:removals,-891166.3355400006
+Comunidad Valenciana,2023,forestry-and-land-use:removals,1453710.10899
+Comunidad Valenciana,2024,forestry-and-land-use:removals,0
+Comunidad Valenciana,2025,forestry-and-land-use:removals,0
+Andalucía,2021,forestry-and-land-use:removals,21800618.43965203
+Andalucía,2022,forestry-and-land-use:removals,-18673166.044409983
+Andalucía,2023,forestry-and-land-use:removals,3639377.715951897
+Andalucía,2024,forestry-and-land-use:removals,0
+Andalucía,2025,forestry-and-land-use:removals,0
+Castilla-La Mancha,2021,forestry-and-land-use:removals,5408855.206400003
+Castilla-La Mancha,2022,forestry-and-land-use:removals,-2032490.6987739983
+Castilla-La Mancha,2023,forestry-and-land-use:removals,892530.2259299995
+Castilla-La Mancha,2024,forestry-and-land-use:removals,0
+Castilla-La Mancha,2025,forestry-and-land-use:removals,0
+Madrid,2021,forestry-and-land-use:removals,1674201.127928
+Madrid,2022,forestry-and-land-use:removals,716221.38788
+Madrid,2023,forestry-and-land-use:removals,846979.6183400006
+Madrid,2024,forestry-and-land-use:removals,0
+Madrid,2025,forestry-and-land-use:removals,0
+Navarra,2021,forestry-and-land-use:removals,1101793.9859799999
+Navarra,2022,forestry-and-land-use:removals,-3279862.439400002
+Navarra,2023,forestry-and-land-use:removals,-3356918.514180001
+Navarra,2024,forestry-and-land-use:removals,0
+Navarra,2025,forestry-and-land-use:removals,0
+Aragón,2021,forestry-and-land-use:removals,20648.773040000036
+Aragón,2022,forestry-and-land-use:removals,196033.57320000033
+Aragón,2023,forestry-and-land-use:removals,10691.651514000288
+Aragón,2024,forestry-and-land-use:removals,0
+Aragón,2025,forestry-and-land-use:removals,0
+La Rioja,2021,forestry-and-land-use:removals,-1169773.1417699996
+La Rioja,2022,forestry-and-land-use:removals,2139651.5846159994
+La Rioja,2023,forestry-and-land-use:removals,-473291.00603999995
+La Rioja,2024,forestry-and-land-use:removals,0
+La Rioja,2025,forestry-and-land-use:removals,0
+Canarias,2021,forestry-and-land-use:removals,506423.93520000036
+Canarias,2022,forestry-and-land-use:removals,-2008956.2678999999
+Canarias,2023,forestry-and-land-use:removals,-527142.5857149999
+Canarias,2024,forestry-and-land-use:removals,0
+Canarias,2025,forestry-and-land-use:removals,0
+Castilla y León,2021,forestry-and-land-use:removals,1170495.9146399999
+Castilla y León,2022,forestry-and-land-use:removals,-1595775.5975459975
+Castilla y León,2023,forestry-and-land-use:removals,-1498549.0581200006
+Castilla y León,2024,forestry-and-land-use:removals,0
+Castilla y León,2025,forestry-and-land-use:removals,0
+País Vasco,2021,forestry-and-land-use:removals,-286269.81978999975
+País Vasco,2022,forestry-and-land-use:removals,-1864892.04794
+País Vasco,2023,forestry-and-land-use:removals,-2593150.693435
+País Vasco,2024,forestry-and-land-use:removals,0
+País Vasco,2025,forestry-and-land-use:removals,0
+Galicia,2021,forestry-and-land-use:shrubgrass-fires,16680.518799999987
+Galicia,2022,forestry-and-land-use:shrubgrass-fires,1354824.0300000003
+Galicia,2023,forestry-and-land-use:shrubgrass-fires,7450.366170000001
+Galicia,2024,forestry-and-land-use:shrubgrass-fires,0
+Galicia,2025,forestry-and-land-use:shrubgrass-fires,708.0590100000001
+Murcia,2021,forestry-and-land-use:shrubgrass-fires,12607.744339999997
+Murcia,2022,forestry-and-land-use:shrubgrass-fires,288388.43
+Murcia,2023,forestry-and-land-use:shrubgrass-fires,2572.97289
+Murcia,2024,forestry-and-land-use:shrubgrass-fires,0
+Murcia,2025,forestry-and-land-use:shrubgrass-fires,0
+España,2021,forestry-and-land-use:shrubgrass-fires,3586.5033147996937
+España,2022,forestry-and-land-use:shrubgrass-fires,186069.21207998478
+España,2023,forestry-and-land-use:shrubgrass-fires,11725.98943772035
+Asturias,2021,forestry-and-land-use:shrubgrass-fires,34855.42099999998
+Asturias,2022,forestry-and-land-use:shrubgrass-fires,256615.6899999998
+Asturias,2023,forestry-and-land-use:shrubgrass-fires,159764.70098999995
+Asturias,2024,forestry-and-land-use:shrubgrass-fires,2447.8179900000005
+Asturias,2025,forestry-and-land-use:shrubgrass-fires,79926.57998999998
+Extremadura,2021,forestry-and-land-use:shrubgrass-fires,15677.339499999984
+Extremadura,2022,forestry-and-land-use:shrubgrass-fires,391352.5906999997
+Extremadura,2023,forestry-and-land-use:shrubgrass-fires,10320.544769999999
+Extremadura,2024,forestry-and-land-use:shrubgrass-fires,14534.93202
+Extremadura,2025,forestry-and-land-use:shrubgrass-fires,17.30301
+Baleares,2021,forestry-and-land-use:shrubgrass-fires,299.8530699999999
+Baleares,2022,forestry-and-land-use:shrubgrass-fires,0
+Baleares,2023,forestry-and-land-use:shrubgrass-fires,0
+Baleares,2024,forestry-and-land-use:shrubgrass-fires,0
+Baleares,2025,forestry-and-land-use:shrubgrass-fires,0
+Cataluña,2021,forestry-and-land-use:shrubgrass-fires,8899.451970000002
+Cataluña,2022,forestry-and-land-use:shrubgrass-fires,149287.91969999985
+Cataluña,2023,forestry-and-land-use:shrubgrass-fires,12670.018380000001
+Cataluña,2024,forestry-and-land-use:shrubgrass-fires,0
+Cataluña,2025,forestry-and-land-use:shrubgrass-fires,696.5129999999999
+Cantabria,2021,forestry-and-land-use:shrubgrass-fires,19522.747099999993
+Cantabria,2022,forestry-and-land-use:shrubgrass-fires,98691.00900000005
+Cantabria,2023,forestry-and-land-use:shrubgrass-fires,12783.92088
+Cantabria,2024,forestry-and-land-use:shrubgrass-fires,9153.10401
+Cantabria,2025,forestry-and-land-use:shrubgrass-fires,4134.6469799999995
+Comunidad Valenciana,2021,forestry-and-land-use:shrubgrass-fires,8906.41919999999
+Comunidad Valenciana,2022,forestry-and-land-use:shrubgrass-fires,540351.0799999997
+Comunidad Valenciana,2023,forestry-and-land-use:shrubgrass-fires,40883.61998999999
+Comunidad Valenciana,2024,forestry-and-land-use:shrubgrass-fires,0
+Comunidad Valenciana,2025,forestry-and-land-use:shrubgrass-fires,11659.128
+Andalucía,2021,forestry-and-land-use:shrubgrass-fires,32985.40670399998
+Andalucía,2022,forestry-and-land-use:shrubgrass-fires,725658.1765999987
+Andalucía,2023,forestry-and-land-use:shrubgrass-fires,1112.58759
+Andalucía,2024,forestry-and-land-use:shrubgrass-fires,0
+Andalucía,2025,forestry-and-land-use:shrubgrass-fires,0
+Castilla-La Mancha,2021,forestry-and-land-use:shrubgrass-fires,4246.601189999998
+Castilla-La Mancha,2022,forestry-and-land-use:shrubgrass-fires,126742.30759999999
+Castilla-La Mancha,2023,forestry-and-land-use:shrubgrass-fires,0
+Castilla-La Mancha,2024,forestry-and-land-use:shrubgrass-fires,0
+Castilla-La Mancha,2025,forestry-and-land-use:shrubgrass-fires,0
+Madrid,2021,forestry-and-land-use:shrubgrass-fires,3323.750670000001
+Madrid,2022,forestry-and-land-use:shrubgrass-fires,77970.38464000003
+Madrid,2023,forestry-and-land-use:shrubgrass-fires,3.4656600000000006
+Madrid,2024,forestry-and-land-use:shrubgrass-fires,0
+Madrid,2025,forestry-and-land-use:shrubgrass-fires,0.08499000000000001
+Navarra,2021,forestry-and-land-use:shrubgrass-fires,9486.177859999998
+Navarra,2022,forestry-and-land-use:shrubgrass-fires,441405.64999999973
+Navarra,2023,forestry-and-land-use:shrubgrass-fires,2701.87128
+Navarra,2024,forestry-and-land-use:shrubgrass-fires,0
+Navarra,2025,forestry-and-land-use:shrubgrass-fires,17.820990000000002
+Aragón,2021,forestry-and-land-use:shrubgrass-fires,6847.900399999999
+Aragón,2022,forestry-and-land-use:shrubgrass-fires,318182.04099999997
+Aragón,2023,forestry-and-land-use:shrubgrass-fires,5031.711810000002
+Aragón,2024,forestry-and-land-use:shrubgrass-fires,0
+Aragón,2025,forestry-and-land-use:shrubgrass-fires,1142.13903
+La Rioja,2021,forestry-and-land-use:shrubgrass-fires,4812.193200000001
+La Rioja,2022,forestry-and-land-use:shrubgrass-fires,375.0684599999998
+La Rioja,2023,forestry-and-land-use:shrubgrass-fires,0
+La Rioja,2024,forestry-and-land-use:shrubgrass-fires,0
+La Rioja,2025,forestry-and-land-use:shrubgrass-fires,0
+Canarias,2021,forestry-and-land-use:shrubgrass-fires,3047.0619999999994
+Canarias,2022,forestry-and-land-use:shrubgrass-fires,734.9186299999998
+Canarias,2023,forestry-and-land-use:shrubgrass-fires,7654.94271
+Canarias,2024,forestry-and-land-use:shrubgrass-fires,0
+Canarias,2025,forestry-and-land-use:shrubgrass-fires,0
+Castilla y León,2021,forestry-and-land-use:shrubgrass-fires,79271.99331199996
+Castilla y León,2022,forestry-and-land-use:shrubgrass-fires,1803415.8135899995
+Castilla y León,2023,forestry-and-land-use:shrubgrass-fires,0
+Castilla y León,2024,forestry-and-land-use:shrubgrass-fires,0
+Castilla y León,2025,forestry-and-land-use:shrubgrass-fires,0
+País Vasco,2021,forestry-and-land-use:shrubgrass-fires,0
+País Vasco,2022,forestry-and-land-use:shrubgrass-fires,8269.4193
+País Vasco,2023,forestry-and-land-use:shrubgrass-fires,0
+País Vasco,2024,forestry-and-land-use:shrubgrass-fires,0
+País Vasco,2025,forestry-and-land-use:shrubgrass-fires,0
+Andalucía,2021,forestry-and-land-use:water-reservoirs,101714.04330091794
+Andalucía,2022,forestry-and-land-use:water-reservoirs,74698.96945817037
+Andalucía,2023,forestry-and-land-use:water-reservoirs,67059.03047280105
+Andalucía,2024,forestry-and-land-use:water-reservoirs,94506.98076145045
+Andalucía,2025,forestry-and-land-use:water-reservoirs,18870.756335305778
+Extremadura,2021,forestry-and-land-use:water-reservoirs,176697.8375392491
+Extremadura,2022,forestry-and-land-use:water-reservoirs,144000.38201921707
+Extremadura,2023,forestry-and-land-use:water-reservoirs,211014.24974271294
+Extremadura,2024,forestry-and-land-use:water-reservoirs,207045.5993056285
+Extremadura,2025,forestry-and-land-use:water-reservoirs,40397.31363600103
+Cantabria,2021,forestry-and-land-use:water-reservoirs,22768.150479682503
+Cantabria,2022,forestry-and-land-use:water-reservoirs,16153.502144692498
+Cantabria,2023,forestry-and-land-use:water-reservoirs,13450.32436734
+Cantabria,2024,forestry-and-land-use:water-reservoirs,20361.56267270251
+Cantabria,2025,forestry-and-land-use:water-reservoirs,2956.0430547225
+Castilla-La Mancha,2021,forestry-and-land-use:water-reservoirs,52602.67823442744
+Castilla-La Mancha,2022,forestry-and-land-use:water-reservoirs,26302.08800157753
+Castilla-La Mancha,2023,forestry-and-land-use:water-reservoirs,32384.49631447501
+Castilla-La Mancha,2024,forestry-and-land-use:water-reservoirs,57663.38632882505
+Castilla-La Mancha,2025,forestry-and-land-use:water-reservoirs,8160.493260577502
+Galicia,2021,forestry-and-land-use:water-reservoirs,17913.863610675016
+Galicia,2022,forestry-and-land-use:water-reservoirs,18183.459823425026
+Galicia,2023,forestry-and-land-use:water-reservoirs,16144.850193120003
+Galicia,2024,forestry-and-land-use:water-reservoirs,21026.216098079993
+Galicia,2025,forestry-and-land-use:water-reservoirs,2910.196255162503
+Madrid,2021,forestry-and-land-use:water-reservoirs,30863.40334323748
+Madrid,2022,forestry-and-land-use:water-reservoirs,21108.334398997504
+Madrid,2023,forestry-and-land-use:water-reservoirs,18673.730978197502
+Madrid,2024,forestry-and-land-use:water-reservoirs,34622.90491986001
+Madrid,2025,forestry-and-land-use:water-reservoirs,5810.015580615002
+Murcia,2021,forestry-and-land-use:water-reservoirs,15007.443482024997
+Murcia,2022,forestry-and-land-use:water-reservoirs,13665.230041004987
+Murcia,2023,forestry-and-land-use:water-reservoirs,11942.818869037494
+Murcia,2024,forestry-and-land-use:water-reservoirs,12034.3975832475
+Murcia,2025,forestry-and-land-use:water-reservoirs,2377.4509444950027
+Navarra,2021,forestry-and-land-use:water-reservoirs,12040.965759441558
+Navarra,2022,forestry-and-land-use:water-reservoirs,9593.283910222966
+Navarra,2023,forestry-and-land-use:water-reservoirs,9071.168134979811
+Navarra,2024,forestry-and-land-use:water-reservoirs,10434.920757367503
+Navarra,2025,forestry-and-land-use:water-reservoirs,1683.5222326275007
+Castilla y León,2021,forestry-and-land-use:water-reservoirs,43835.27163887254
+Castilla y León,2022,forestry-and-land-use:water-reservoirs,26568.32536107002
+Castilla y León,2023,forestry-and-land-use:water-reservoirs,28934.189302545008
+Castilla y León,2024,forestry-and-land-use:water-reservoirs,37498.20606571499
+Castilla y León,2025,forestry-and-land-use:water-reservoirs,6914.7012231000035
+Asturias,2021,forestry-and-land-use:water-reservoirs,23856.836772442497
+Asturias,2022,forestry-and-land-use:water-reservoirs,15366.9299681925
+Asturias,2023,forestry-and-land-use:water-reservoirs,16771.692165412496
+Asturias,2024,forestry-and-land-use:water-reservoirs,21323.399544022486
+Asturias,2025,forestry-and-land-use:water-reservoirs,3535.390584
+Comunidad Valenciana,2021,forestry-and-land-use:water-reservoirs,16533.898486447506
+Comunidad Valenciana,2022,forestry-and-land-use:water-reservoirs,16217.130211807507
+Comunidad Valenciana,2023,forestry-and-land-use:water-reservoirs,13885.301783295
+Comunidad Valenciana,2024,forestry-and-land-use:water-reservoirs,15868.156263885001
+Comunidad Valenciana,2025,forestry-and-land-use:water-reservoirs,2909.1781095975025
+La Rioja,2021,forestry-and-land-use:water-reservoirs,8725.245648434999
+La Rioja,2022,forestry-and-land-use:water-reservoirs,7395.215013427503
+La Rioja,2023,forestry-and-land-use:water-reservoirs,5009.484931694997
+La Rioja,2024,forestry-and-land-use:water-reservoirs,8341.01064387
+La Rioja,2025,forestry-and-land-use:water-reservoirs,1239.4578406500004
+Aragón,2021,forestry-and-land-use:water-reservoirs,68061.43794139264
+Aragón,2022,forestry-and-land-use:water-reservoirs,62118.6156641191
+Aragón,2023,forestry-and-land-use:water-reservoirs,54521.41846238138
+Aragón,2024,forestry-and-land-use:water-reservoirs,73594.25570210285
+Aragón,2025,forestry-and-land-use:water-reservoirs,14318.735072685571
+Cataluña,2021,forestry-and-land-use:water-reservoirs,23315.035242555005
+Cataluña,2022,forestry-and-land-use:water-reservoirs,15401.12092551
+Cataluña,2023,forestry-and-land-use:water-reservoirs,10615.210958227502
+Cataluña,2024,forestry-and-land-use:water-reservoirs,16749.237482527507
+Cataluña,2025,forestry-and-land-use:water-reservoirs,3689.8377819299985
+País Vasco,2021,forestry-and-land-use:water-reservoirs,4382.95730859
+País Vasco,2022,forestry-and-land-use:water-reservoirs,6493.7386698975015
+País Vasco,2023,forestry-and-land-use:water-reservoirs,4567.161674925
+País Vasco,2024,forestry-and-land-use:water-reservoirs,7171.782696225
+País Vasco,2025,forestry-and-land-use:water-reservoirs,998.5571899875004
+Galicia,2021,forestry-and-land-use:wetland-fires,9.577809999999994
+Galicia,2022,forestry-and-land-use:wetland-fires,157.39963599999996
+Galicia,2023,forestry-and-land-use:wetland-fires,0
+Galicia,2024,forestry-and-land-use:wetland-fires,0
+Galicia,2025,forestry-and-land-use:wetland-fires,0
+Murcia,2021,forestry-and-land-use:wetland-fires,391.19172
+Murcia,2022,forestry-and-land-use:wetland-fires,0
+Murcia,2023,forestry-and-land-use:wetland-fires,0
+Murcia,2024,forestry-and-land-use:wetland-fires,0
+Murcia,2025,forestry-and-land-use:wetland-fires,0
+Asturias,2021,forestry-and-land-use:wetland-fires,0
+Asturias,2022,forestry-and-land-use:wetland-fires,0
+Asturias,2023,forestry-and-land-use:wetland-fires,0
+Asturias,2024,forestry-and-land-use:wetland-fires,0
+Asturias,2025,forestry-and-land-use:wetland-fires,0
+Extremadura,2021,forestry-and-land-use:wetland-fires,5.072955399999998
+Extremadura,2022,forestry-and-land-use:wetland-fires,0
+Extremadura,2023,forestry-and-land-use:wetland-fires,1.33716
+Extremadura,2024,forestry-and-land-use:wetland-fires,0
+Extremadura,2025,forestry-and-land-use:wetland-fires,0.08700000000000001
+Baleares,2021,forestry-and-land-use:wetland-fires,7.906661999999997
+Baleares,2022,forestry-and-land-use:wetland-fires,0
+Baleares,2023,forestry-and-land-use:wetland-fires,0
+Baleares,2024,forestry-and-land-use:wetland-fires,0
+Baleares,2025,forestry-and-land-use:wetland-fires,0
+Cataluña,2021,forestry-and-land-use:wetland-fires,20.175355999999994
+Cataluña,2022,forestry-and-land-use:wetland-fires,0
+Cataluña,2023,forestry-and-land-use:wetland-fires,0
+Cataluña,2024,forestry-and-land-use:wetland-fires,0
+Cataluña,2025,forestry-and-land-use:wetland-fires,0
+Cantabria,2021,forestry-and-land-use:wetland-fires,0
+Cantabria,2022,forestry-and-land-use:wetland-fires,0
+Cantabria,2023,forestry-and-land-use:wetland-fires,0
+Cantabria,2024,forestry-and-land-use:wetland-fires,0
+Cantabria,2025,forestry-and-land-use:wetland-fires,0
+Comunidad Valenciana,2021,forestry-and-land-use:wetland-fires,23.457082999999997
+Comunidad Valenciana,2022,forestry-and-land-use:wetland-fires,0
+Comunidad Valenciana,2023,forestry-and-land-use:wetland-fires,22.587480000000003
+Comunidad Valenciana,2024,forestry-and-land-use:wetland-fires,0
+Comunidad Valenciana,2025,forestry-and-land-use:wetland-fires,2.736
+Andalucía,2021,forestry-and-land-use:wetland-fires,13.786698799999986
+Andalucía,2022,forestry-and-land-use:wetland-fires,350.2503399999999
+Andalucía,2023,forestry-and-land-use:wetland-fires,0
+Andalucía,2024,forestry-and-land-use:wetland-fires,0
+Andalucía,2025,forestry-and-land-use:wetland-fires,0
+Castilla-La Mancha,2021,forestry-and-land-use:wetland-fires,0
+Castilla-La Mancha,2022,forestry-and-land-use:wetland-fires,0
+Castilla-La Mancha,2023,forestry-and-land-use:wetland-fires,0
+Castilla-La Mancha,2024,forestry-and-land-use:wetland-fires,0
+Castilla-La Mancha,2025,forestry-and-land-use:wetland-fires,0
+España,2021,forestry-and-land-use:wetland-fires,92.59714806829078
+Madrid,2021,forestry-and-land-use:wetland-fires,27.111690999999983
+Madrid,2022,forestry-and-land-use:wetland-fires,0
+Madrid,2023,forestry-and-land-use:wetland-fires,0
+Madrid,2024,forestry-and-land-use:wetland-fires,0
+Madrid,2025,forestry-and-land-use:wetland-fires,0
+Navarra,2021,forestry-and-land-use:wetland-fires,0
+Navarra,2022,forestry-and-land-use:wetland-fires,259.26356
+Navarra,2023,forestry-and-land-use:wetland-fires,0
+Navarra,2024,forestry-and-land-use:wetland-fires,0
+Navarra,2025,forestry-and-land-use:wetland-fires,0
+Aragón,2021,forestry-and-land-use:wetland-fires,0
+Aragón,2022,forestry-and-land-use:wetland-fires,14.061433999999998
+Aragón,2023,forestry-and-land-use:wetland-fires,0
+Aragón,2024,forestry-and-land-use:wetland-fires,0
+Aragón,2025,forestry-and-land-use:wetland-fires,0
+La Rioja,2021,forestry-and-land-use:wetland-fires,0
+La Rioja,2022,forestry-and-land-use:wetland-fires,0
+La Rioja,2023,forestry-and-land-use:wetland-fires,0
+La Rioja,2024,forestry-and-land-use:wetland-fires,0
+La Rioja,2025,forestry-and-land-use:wetland-fires,0
+Canarias,2021,forestry-and-land-use:wetland-fires,789.8419999999996
+Canarias,2022,forestry-and-land-use:wetland-fires,0
+Canarias,2023,forestry-and-land-use:wetland-fires,143.93142
+Canarias,2024,forestry-and-land-use:wetland-fires,0
+Canarias,2025,forestry-and-land-use:wetland-fires,0
+Castilla y León,2021,forestry-and-land-use:wetland-fires,12.213939999999992
+Castilla y León,2022,forestry-and-land-use:wetland-fires,177.60968499999993
+Castilla y León,2023,forestry-and-land-use:wetland-fires,0
+Castilla y León,2024,forestry-and-land-use:wetland-fires,0
+Castilla y León,2025,forestry-and-land-use:wetland-fires,0
+España,2022,forestry-and-land-use:wetland-fires,0
+España,2023,forestry-and-land-use:wetland-fires,0
+País Vasco,2021,forestry-and-land-use:wetland-fires,0
+País Vasco,2022,forestry-and-land-use:wetland-fires,4.529117599999998
+País Vasco,2023,forestry-and-land-use:wetland-fires,0
+País Vasco,2024,forestry-and-land-use:wetland-fires,0
+País Vasco,2025,forestry-and-land-use:wetland-fires,0
+Asturias,2021,fossil-fuel-operations:coal-mining,33296.02582505532
+Asturias,2022,fossil-fuel-operations:coal-mining,33296.02582505532
+Asturias,2023,fossil-fuel-operations:coal-mining,33296.02582505532
+Asturias,2024,fossil-fuel-operations:coal-mining,33296.02582505532
+Asturias,2025,fossil-fuel-operations:coal-mining,11037.260687441783
+Castilla-La Mancha,2021,fossil-fuel-operations:oil-and-gas-production,18968.95035726737
+Castilla-La Mancha,2022,fossil-fuel-operations:oil-and-gas-production,14600.089826123378
+Castilla-La Mancha,2023,fossil-fuel-operations:oil-and-gas-production,11464.769389036413
+Castilla-La Mancha,2024,fossil-fuel-operations:oil-and-gas-production,11464.769389036413
+Castilla-La Mancha,2025,fossil-fuel-operations:oil-and-gas-production,3816.317653714496
+Cataluña,2021,fossil-fuel-operations:oil-and-gas-refining,2191328.508504801
+Cataluña,2022,fossil-fuel-operations:oil-and-gas-refining,2479667.0597116114
+Cataluña,2023,fossil-fuel-operations:oil-and-gas-refining,2446148.7689087563
+Cataluña,2024,fossil-fuel-operations:oil-and-gas-refining,2375747.269927189
+Cataluña,2025,fossil-fuel-operations:oil-and-gas-refining,815382.9229695853
+Comunidad Valenciana,2021,fossil-fuel-operations:oil-and-gas-refining,1141722.6469718732
+Comunidad Valenciana,2022,fossil-fuel-operations:oil-and-gas-refining,1271532.1095681805
+Comunidad Valenciana,2023,fossil-fuel-operations:oil-and-gas-refining,1241282.5825248163
+Comunidad Valenciana,2024,fossil-fuel-operations:oil-and-gas-refining,1278505.0710912042
+Comunidad Valenciana,2025,fossil-fuel-operations:oil-and-gas-refining,413760.86084160546
+Andalucía,2021,fossil-fuel-operations:oil-and-gas-refining,3613416.770689831
+Andalucía,2022,fossil-fuel-operations:oil-and-gas-refining,4383116.88930476
+Andalucía,2023,fossil-fuel-operations:oil-and-gas-refining,4304549.3351320345
+Andalucía,2024,fossil-fuel-operations:oil-and-gas-refining,4064484.725863009
+Andalucía,2025,fossil-fuel-operations:oil-and-gas-refining,1434849.778377345
+Extremadura,2021,fossil-fuel-operations:oil-and-gas-refining,1972066.390224723
+Extremadura,2022,fossil-fuel-operations:oil-and-gas-refining,2524372.5175868706
+Extremadura,2023,fossil-fuel-operations:oil-and-gas-refining,2469494.8537700195
+Extremadura,2024,fossil-fuel-operations:oil-and-gas-refining,2289692.266452505
+Extremadura,2025,fossil-fuel-operations:oil-and-gas-refining,823164.9512566732
+Galicia,2021,fossil-fuel-operations:oil-and-gas-refining,1317063.9216098168
+Galicia,2022,fossil-fuel-operations:oil-and-gas-refining,1492094.7857206992
+Galicia,2023,fossil-fuel-operations:oil-and-gas-refining,1473032.0185108723
+Galicia,2024,fossil-fuel-operations:oil-and-gas-refining,1424459.195877718
+Galicia,2025,fossil-fuel-operations:oil-and-gas-refining,491010.67283695727
+País Vasco,2021,fossil-fuel-operations:oil-and-gas-refining,2414617.1909501883
+País Vasco,2022,fossil-fuel-operations:oil-and-gas-refining,2735507.1066561025
+País Vasco,2023,fossil-fuel-operations:oil-and-gas-refining,2700558.7001060285
+País Vasco,2024,fossil-fuel-operations:oil-and-gas-refining,2611508.525766507
+País Vasco,2025,fossil-fuel-operations:oil-and-gas-refining,900186.2333686762
+Murcia,2021,fossil-fuel-operations:oil-and-gas-refining,2414617.1909501883
+Murcia,2022,fossil-fuel-operations:oil-and-gas-refining,2735507.1066561025
+Murcia,2023,fossil-fuel-operations:oil-and-gas-refining,2700558.7001060285
+Murcia,2024,fossil-fuel-operations:oil-and-gas-refining,2611508.525766507
+Murcia,2025,fossil-fuel-operations:oil-and-gas-refining,900186.2333686762
+Castilla-La Mancha,2021,fossil-fuel-operations:oil-and-gas-transport,9928.121711271948
+Castilla-La Mancha,2022,fossil-fuel-operations:oil-and-gas-transport,7641.512368594391
+Castilla-La Mancha,2023,fossil-fuel-operations:oil-and-gas-transport,6000.523157109714
+Castilla-La Mancha,2024,fossil-fuel-operations:oil-and-gas-transport,6000.523157109714
+Castilla-La Mancha,2025,fossil-fuel-operations:oil-and-gas-transport,1997.4150093153446
+Galicia,2021,manufacturing:aluminum,1676713.8125
+Galicia,2022,manufacturing:aluminum,1449409.19362
+Galicia,2023,manufacturing:aluminum,1272057.79398
+Galicia,2024,manufacturing:aluminum,1432269.6183
+Galicia,2025,manufacturing:aluminum,471721.431931975
+Extremadura,2021,manufacturing:cement,782170.4158798334
+Extremadura,2022,manufacturing:cement,734326.0396526398
+Extremadura,2023,manufacturing:cement,688495.300494406
+Extremadura,2024,manufacturing:cement,706716.676664374
+Extremadura,2025,manufacturing:cement,218377.75428267405
+Aragón,2021,manufacturing:cement,266676.9692197996
+Aragón,2022,manufacturing:cement,325306.1989447231
+Aragón,2023,manufacturing:cement,236495.3397765365
+Aragón,2024,manufacturing:cement,317242.74155327876
+Aragón,2025,manufacturing:cement,90145.44518879354
+Madrid,2021,manufacturing:cement,2689396.5314607564
+Madrid,2022,manufacturing:cement,2420813.314462982
+Madrid,2023,manufacturing:cement,2842263.348529111
+Madrid,2024,manufacturing:cement,3055126.832253604
+Madrid,2025,manufacturing:cement,1123108.9233961767
+Comunidad Valenciana,2021,manufacturing:cement,1585762.7387812072
+Comunidad Valenciana,2022,manufacturing:cement,1857222.0795755773
+Comunidad Valenciana,2023,manufacturing:cement,2222804.620866593
+Comunidad Valenciana,2024,manufacturing:cement,2012281.3277692029
+Comunidad Valenciana,2025,manufacturing:cement,706289.2962370506
+Murcia,2021,manufacturing:cement,1224809.3531185382
+Murcia,2022,manufacturing:cement,1132710.0772996042
+Murcia,2023,manufacturing:cement,906760.1369191981
+Murcia,2024,manufacturing:cement,1091957.7980647683
+Murcia,2025,manufacturing:cement,424513.7258173211
+Cataluña,2021,manufacturing:cement,829013.4572851113
+Cataluña,2022,manufacturing:cement,834073.0253409622
+Cataluña,2023,manufacturing:cement,750594.3956069187
+Cataluña,2024,manufacturing:cement,806555.1969125264
+Cataluña,2025,manufacturing:cement,240066.1574029868
+Andalucía,2021,manufacturing:cement,1294915.137780209
+Andalucía,2022,manufacturing:cement,1158513.6647753452
+Andalucía,2023,manufacturing:cement,1215964.8306495817
+Andalucía,2024,manufacturing:cement,1088739.1066085198
+Andalucía,2025,manufacturing:cement,364085.2146552328
+Asturias,2021,manufacturing:cement,1851091.430670048
+Asturias,2022,manufacturing:cement,2215271.0815658625
+Asturias,2023,manufacturing:cement,2020230.3061857196
+Asturias,2024,manufacturing:cement,1604072.1157791824
+Asturias,2025,manufacturing:cement,613520.8153486286
+Galicia,2021,manufacturing:cement,371609.807706458
+Galicia,2022,manufacturing:cement,338435.22526027396
+Galicia,2023,manufacturing:cement,362316.4724219179
+Galicia,2024,manufacturing:cement,300192.8794847775
+Galicia,2025,manufacturing:cement,108595.33393218054
+País Vasco,2021,manufacturing:cement,436673.81840222795
+País Vasco,2022,manufacturing:cement,451132.00462355395
+País Vasco,2023,manufacturing:cement,435703.32110481913
+País Vasco,2024,manufacturing:cement,457709.9145277544
+País Vasco,2025,manufacturing:cement,130364.14177643422
+Cantabria,2021,manufacturing:cement,183698.5836319033
+Cantabria,2022,manufacturing:cement,181287.46880977674
+Cantabria,2023,manufacturing:cement,271060.7910854804
+Cantabria,2024,manufacturing:cement,312510.4896232442
+Cantabria,2025,manufacturing:cement,119993.20052098433
+Castilla y León,2021,manufacturing:cement,161484.78548677106
+Castilla y León,2022,manufacturing:cement,214944.69360916756
+Castilla y León,2023,manufacturing:cement,225462.37442639953
+Castilla y León,2024,manufacturing:cement,320738.3921277722
+Castilla y León,2025,manufacturing:cement,94887.73347330211
+Navarra,2021,manufacturing:cement,536595.2882978837
+Navarra,2022,manufacturing:cement,630698.069420081
+Navarra,2023,manufacturing:cement,628443.9648783149
+Navarra,2024,manufacturing:cement,455607.0693122438
+Navarra,2025,manufacturing:cement,158296.07965475705
+Castilla-La Mancha,2021,manufacturing:chemicals,659651.491
+Castilla-La Mancha,2022,manufacturing:chemicals,659651.491
+Castilla-La Mancha,2023,manufacturing:chemicals,659651.491
+Castilla-La Mancha,2024,manufacturing:chemicals,659651.491
+Castilla-La Mancha,2025,manufacturing:chemicals,224957.95100000003
+Extremadura,2021,manufacturing:chemicals,698036.498
+Extremadura,2022,manufacturing:chemicals,698036.498
+Extremadura,2023,manufacturing:chemicals,698036.498
+Extremadura,2024,manufacturing:chemicals,698036.498
+Extremadura,2025,manufacturing:chemicals,238052.306
+Madrid,2021,manufacturing:chemicals,552346.1999999998
+Madrid,2022,manufacturing:chemicals,552346.1999999998
+Madrid,2023,manufacturing:chemicals,552346.1999999998
+Madrid,2024,manufacturing:chemicals,552346.1999999998
+Madrid,2025,manufacturing:chemicals,184115.4
+La Rioja,2021,manufacturing:food-beverage-tobacco,97366.83906531989
+La Rioja,2022,manufacturing:food-beverage-tobacco,97237.56088326241
+La Rioja,2023,manufacturing:food-beverage-tobacco,97237.56088326241
+La Rioja,2024,manufacturing:food-beverage-tobacco,97237.56088326241
+La Rioja,2025,manufacturing:food-beverage-tobacco,32408.815215280392
+Cataluña,2021,manufacturing:food-beverage-tobacco,1141311.4426016046
+Cataluña,2022,manufacturing:food-beverage-tobacco,1139808.1295691011
+Cataluña,2023,manufacturing:food-beverage-tobacco,1139808.1295691011
+Cataluña,2024,manufacturing:food-beverage-tobacco,1139808.1295691011
+Cataluña,2025,manufacturing:food-beverage-tobacco,379892.6126543543
+Extremadura,2021,manufacturing:food-beverage-tobacco,784901.449601372
+Extremadura,2022,manufacturing:food-beverage-tobacco,783867.224144913
+Extremadura,2023,manufacturing:food-beverage-tobacco,783867.224144913
+Extremadura,2024,manufacturing:food-beverage-tobacco,783867.224144913
+Extremadura,2025,manufacturing:food-beverage-tobacco,261259.20672903367
+Murcia,2021,manufacturing:food-beverage-tobacco,2046517.6341755502
+Murcia,2022,manufacturing:food-beverage-tobacco,2043826.9213812791
+Murcia,2023,manufacturing:food-beverage-tobacco,2043826.9213812791
+Murcia,2024,manufacturing:food-beverage-tobacco,2043826.9213812791
+Murcia,2025,manufacturing:food-beverage-tobacco,681197.763759034
+Andalucía,2021,manufacturing:food-beverage-tobacco,798472.9219038977
+Andalucía,2022,manufacturing:food-beverage-tobacco,797415.9648526113
+Andalucía,2023,manufacturing:food-beverage-tobacco,797415.9648526113
+Andalucía,2024,manufacturing:food-beverage-tobacco,797415.9648526113
+Andalucía,2025,manufacturing:food-beverage-tobacco,265774.9373788666
+Madrid,2021,manufacturing:food-beverage-tobacco,340783.9367286195
+Madrid,2022,manufacturing:food-beverage-tobacco,340331.4630914185
+Madrid,2023,manufacturing:food-beverage-tobacco,340331.4630914185
+Madrid,2024,manufacturing:food-beverage-tobacco,340331.4630914185
+Madrid,2025,manufacturing:food-beverage-tobacco,113430.85325348137
+Asturias,2021,manufacturing:food-beverage-tobacco,100275.9761440504
+Asturias,2022,manufacturing:food-beverage-tobacco,100146.69796199292
+Asturias,2023,manufacturing:food-beverage-tobacco,100146.69796199292
+Asturias,2024,manufacturing:food-beverage-tobacco,100146.69796199292
+Asturias,2025,manufacturing:food-beverage-tobacco,33378.416726919364
+Castilla y León,2021,manufacturing:food-beverage-tobacco,1311739.247071567
+Castilla y León,2022,manufacturing:food-beverage-tobacco,1309997.5938883808
+Castilla y León,2023,manufacturing:food-beverage-tobacco,1309997.5938883808
+Castilla y León,2024,manufacturing:food-beverage-tobacco,1309997.5938883808
+Castilla y León,2025,manufacturing:food-beverage-tobacco,436615.94930131955
+País Vasco,2021,manufacturing:food-beverage-tobacco,155885.17472264165
+País Vasco,2022,manufacturing:food-beverage-tobacco,155678.19920416625
+País Vasco,2023,manufacturing:food-beverage-tobacco,155678.19920416625
+País Vasco,2024,manufacturing:food-beverage-tobacco,155678.19920416625
+País Vasco,2025,manufacturing:food-beverage-tobacco,51886.80120342153
+Comunidad Valenciana,2021,manufacturing:food-beverage-tobacco,760352.4512596726
+Comunidad Valenciana,2022,manufacturing:food-beverage-tobacco,759342.8982787462
+Comunidad Valenciana,2023,manufacturing:food-beverage-tobacco,759342.8982787462
+Comunidad Valenciana,2024,manufacturing:food-beverage-tobacco,759342.8982787459
+Comunidad Valenciana,2025,manufacturing:food-beverage-tobacco,253085.3658998698
+Castilla-La Mancha,2021,manufacturing:food-beverage-tobacco,97366.83906531989
+Castilla-La Mancha,2022,manufacturing:food-beverage-tobacco,97237.56088326241
+Castilla-La Mancha,2023,manufacturing:food-beverage-tobacco,97237.56088326241
+Castilla-La Mancha,2024,manufacturing:food-beverage-tobacco,97237.56088326241
+Castilla-La Mancha,2025,manufacturing:food-beverage-tobacco,32408.815215280392
+Galicia,2021,manufacturing:food-beverage-tobacco,389467.3562612794
+Galicia,2022,manufacturing:food-beverage-tobacco,388950.24353304977
+Galicia,2023,manufacturing:food-beverage-tobacco,388950.24353304977
+Galicia,2024,manufacturing:food-beverage-tobacco,388950.24353304977
+Galicia,2025,manufacturing:food-beverage-tobacco,129635.26086112157
+Aragón,2021,manufacturing:food-beverage-tobacco,292100.51719595963
+Aragón,2022,manufacturing:food-beverage-tobacco,291712.6826497872
+Aragón,2023,manufacturing:food-beverage-tobacco,291712.6826497872
+Aragón,2024,manufacturing:food-beverage-tobacco,291712.6826497872
+Aragón,2025,manufacturing:food-beverage-tobacco,97226.44564584117
+Comunidad Valenciana,2021,manufacturing:glass,587850.6727795071
+Comunidad Valenciana,2022,manufacturing:glass,591883.3071875287
+Comunidad Valenciana,2023,manufacturing:glass,591883.3071875287
+Comunidad Valenciana,2024,manufacturing:glass,607344.5106446932
+Comunidad Valenciana,2025,manufacturing:glass,204224.57595930554
+País Vasco,2021,manufacturing:glass,246811.30250838146
+País Vasco,2022,manufacturing:glass,246863.7256819475
+País Vasco,2023,manufacturing:glass,246863.7256819475
+País Vasco,2024,manufacturing:glass,247090.20419579346
+País Vasco,2025,manufacturing:glass,83086.10894007955
+Extremadura,2021,manufacturing:glass,126243.15611771963
+Extremadura,2022,manufacturing:glass,126156.51889697672
+Extremadura,2023,manufacturing:glass,126156.51889697672
+Extremadura,2024,manufacturing:glass,125839.14890142129
+Extremadura,2025,manufacturing:glass,42314.44653413087
+Asturias,2021,manufacturing:glass,155096.18908952532
+Asturias,2022,manufacturing:glass,155211.55383371655
+Asturias,2023,manufacturing:glass,155211.55383371652
+Asturias,2024,manufacturing:glass,155668.6002930515
+Asturias,2025,manufacturing:glass,52344.84436400156
+Madrid,2021,manufacturing:glass,282745.63996748615
+Madrid,2022,manufacturing:glass,283493.66821286216
+Madrid,2023,manufacturing:glass,283493.66821286216
+Madrid,2024,manufacturing:glass,286371.6163431932
+Madrid,2025,manufacturing:glass,96294.80614287454
+Cataluña,2021,manufacturing:glass,188974.61040084594
+Cataluña,2022,manufacturing:glass,190620.24568296573
+Cataluña,2023,manufacturing:glass,190620.24568296573
+Cataluña,2024,manufacturing:glass,196924.07988467242
+Cataluña,2025,manufacturing:glass,66217.33794536792
+Murcia,2021,manufacturing:glass,135954.168126775
+Murcia,2022,manufacturing:glass,135860.86650443648
+Murcia,2023,manufacturing:glass,135860.86650443648
+Murcia,2024,manufacturing:glass,135519.08343229987
+Murcia,2025,manufacturing:glass,45569.403959833246
+Andalucía,2021,manufacturing:glass,70374.07890032476
+Andalucía,2022,manufacturing:glass,70991.19213111974
+Andalucía,2023,manufacturing:glass,70991.19213111974
+Andalucía,2024,manufacturing:glass,73355.12995675976
+Andalucía,2025,manufacturing:glass,24666.264446774832
+Navarra,2021,manufacturing:glass,126243.15611771963
+Navarra,2022,manufacturing:glass,126156.51889697672
+Navarra,2023,manufacturing:glass,126156.51889697672
+Navarra,2024,manufacturing:glass,125839.14890142129
+Navarra,2025,manufacturing:glass,42314.44653413087
+Cantabria,2021,manufacturing:glass,150780.18375216733
+Cantabria,2022,manufacturing:glass,150898.5104526233
+Cantabria,2023,manufacturing:glass,150898.5104526233
+Cantabria,2024,manufacturing:glass,151366.4071682166
+Cantabria,2025,manufacturing:glass,50898.19661924496
+Aragón,2021,manufacturing:glass,23458.026300108253
+Aragón,2022,manufacturing:glass,23663.730710373256
+Aragón,2023,manufacturing:glass,23663.730710373256
+Aragón,2024,manufacturing:glass,24451.709985586585
+Aragón,2025,manufacturing:glass,8222.088148924944
+Galicia,2021,manufacturing:glass,23458.026300108253
+Galicia,2022,manufacturing:glass,23663.730710373256
+Galicia,2023,manufacturing:glass,23663.730710373256
+Galicia,2024,manufacturing:glass,24451.709985586585
+Galicia,2025,manufacturing:glass,8222.088148924944
+Canarias,2021,manufacturing:glass,23458.026300108253
+Canarias,2022,manufacturing:glass,23663.730710373256
+Canarias,2023,manufacturing:glass,23663.730710373256
+Canarias,2024,manufacturing:glass,24451.709985586585
+Canarias,2025,manufacturing:glass,8222.088148924944
+Andalucía,2021,manufacturing:iron-and-steel,281738.0698005698
+Andalucía,2022,manufacturing:iron-and-steel,238760.37410968664
+Andalucía,2023,manufacturing:iron-and-steel,229030.81819800573
+Andalucía,2024,manufacturing:iron-and-steel,277859.5347222223
+Andalucía,2025,manufacturing:iron-and-steel,83395.82059795072
+Asturias,2021,manufacturing:iron-and-steel,2992537.6635148623
+Asturias,2022,manufacturing:iron-and-steel,2858351.69053327
+Asturias,2023,manufacturing:iron-and-steel,3038892.3243375923
+Asturias,2024,manufacturing:iron-and-steel,2965152.19805668
+Asturias,2025,manufacturing:iron-and-steel,1061778.6226617417
+Navarra,2021,manufacturing:iron-and-steel,163408.08048433048
+Navarra,2022,manufacturing:iron-and-steel,138481.01698361823
+Navarra,2023,manufacturing:iron-and-steel,132837.87455484332
+Navarra,2024,manufacturing:iron-and-steel,161158.53013888892
+Navarra,2025,manufacturing:iron-and-steel,48369.576001471425
+País Vasco,2021,manufacturing:iron-and-steel,421480.15242165263
+País Vasco,2022,manufacturing:iron-and-steel,357185.5196680913
+País Vasco,2023,manufacturing:iron-and-steel,342630.1040242167
+País Vasco,2024,manufacturing:iron-and-steel,415677.8639444443
+País Vasco,2025,manufacturing:iron-and-steel,124760.14761572628
+Cataluña,2021,manufacturing:iron-and-steel,281738.0698005698
+Cataluña,2022,manufacturing:iron-and-steel,238760.37410968659
+Cataluña,2023,manufacturing:iron-and-steel,229030.81819800567
+Cataluña,2024,manufacturing:iron-and-steel,277859.53472222225
+Cataluña,2025,manufacturing:iron-and-steel,83395.82059495072
+Cantabria,2021,manufacturing:iron-and-steel,84521.42094017095
+Cantabria,2022,manufacturing:iron-and-steel,71628.11223290597
+Cantabria,2023,manufacturing:iron-and-steel,68709.24545940173
+Cantabria,2024,manufacturing:iron-and-steel,83357.86041666666
+Cantabria,2025,manufacturing:iron-and-steel,25018.746179485217
+Madrid,2021,manufacturing:iron-and-steel,67617.13675213676
+Madrid,2022,manufacturing:iron-and-steel,57302.48978632479
+Madrid,2023,manufacturing:iron-and-steel,54967.396367521374
+Madrid,2024,manufacturing:iron-and-steel,66686.28833333334
+Madrid,2025,manufacturing:iron-and-steel,20014.996943988175
+Extremadura,2021,manufacturing:iron-and-steel,146503.79629629626
+Extremadura,2022,manufacturing:iron-and-steel,124155.39453703703
+Extremadura,2023,manufacturing:iron-and-steel,119096.02546296293
+Extremadura,2024,manufacturing:iron-and-steel,144486.9580555556
+Extremadura,2025,manufacturing:iron-and-steel,43365.826710974376
+Galicia,2021,manufacturing:iron-and-steel,78886.65954415957
+Galicia,2022,manufacturing:iron-and-steel,66852.90475071226
+Galicia,2023,manufacturing:iron-and-steel,64128.629095441596
+Galicia,2024,manufacturing:iron-and-steel,77800.66972222223
+Galicia,2025,manufacturing:iron-and-steel,23350.829767986204
+Aragón,2021,manufacturing:iron-and-steel,56347.61396011396
+Aragón,2022,manufacturing:iron-and-steel,47752.07482193731
+Aragón,2023,manufacturing:iron-and-steel,45806.16363960114
+Aragón,2024,manufacturing:iron-and-steel,55571.90694444444
+Aragón,2025,manufacturing:iron-and-steel,16679.164119990142
+Cataluña,2021,manufacturing:lime,109468.39814585059
+Cataluña,2022,manufacturing:lime,109443.95996614076
+Cataluña,2023,manufacturing:lime,109471.70746367458
+Cataluña,2024,manufacturing:lime,109442.38526532969
+Cataluña,2025,manufacturing:lime,36298.8114271337
+Aragón,2021,manufacturing:lime,596979.088983205
+Aragón,2022,manufacturing:lime,587719.7550754424
+Aragón,2023,manufacturing:lime,587868.7605798081
+Aragón,2024,manufacturing:lime,626666.0038169052
+Aragón,2025,manufacturing:lime,207846.63131379496
+Asturias,2021,manufacturing:lime,580483.7993422169
+Asturias,2022,manufacturing:lime,580354.2097287097
+Asturias,2023,manufacturing:lime,580501.3478348983
+Asturias,2024,manufacturing:lime,580345.8594803722
+Asturias,2025,manufacturing:lime,192483.60554938787
+Asturias,2021,manufacturing:other-metals,117999.99997572145
+Asturias,2022,manufacturing:other-metals,117999.99997572145
+Asturias,2023,manufacturing:other-metals,117999.99997572145
+Asturias,2024,manufacturing:other-metals,117999.99997572145
+Asturias,2025,manufacturing:other-metals,39379.03060572088
+Galicia,2021,manufacturing:other-metals,1015999.9997909573
+Galicia,2022,manufacturing:other-metals,1015999.9997909573
+Galicia,2023,manufacturing:other-metals,1015999.9997909573
+Galicia,2024,manufacturing:other-metals,1015999.9997909573
+Galicia,2025,manufacturing:other-metals,339060.12792722386
+País Vasco,2021,manufacturing:other-metals,367999.99992428377
+País Vasco,2022,manufacturing:other-metals,367999.99992428377
+País Vasco,2023,manufacturing:other-metals,367999.99992428377
+País Vasco,2024,manufacturing:other-metals,367999.99992428377
+País Vasco,2025,manufacturing:other-metals,122809.18019411257
+Cantabria,2021,manufacturing:other-metals,266999.99994506466
+Cantabria,2022,manufacturing:other-metals,266999.99994506466
+Cantabria,2023,manufacturing:other-metals,266999.99994506466
+Cantabria,2024,manufacturing:other-metals,266999.99994506466
+Cantabria,2025,manufacturing:other-metals,89103.39976040233
+Cataluña,2021,manufacturing:petrochemical-steam-cracking,1822774.1449859983
+Cataluña,2022,manufacturing:petrochemical-steam-cracking,1581049.1683295998
+Cataluña,2023,manufacturing:petrochemical-steam-cracking,1592181.2899238
+Cataluña,2024,manufacturing:petrochemical-steam-cracking,1730302.1885409497
+Cataluña,2025,manufacturing:petrochemical-steam-cracking,530727.0966412665
+Andalucía,2021,manufacturing:petrochemical-steam-cracking,132375.09010851991
+Andalucía,2022,manufacturing:petrochemical-steam-cracking,114820.32850959992
+Andalucía,2023,manufacturing:petrochemical-steam-cracking,115628.77512217998
+Andalucía,2024,manufacturing:petrochemical-steam-cracking,125659.51125054501
+Andalucía,2025,manufacturing:petrochemical-steam-cracking,38542.92504072666
+Asturias,2021,manufacturing:pulp-and-paper,255254.85657847734
+Asturias,2022,manufacturing:pulp-and-paper,255568.03331753932
+Asturias,2023,manufacturing:pulp-and-paper,255568.03331753932
+Asturias,2024,manufacturing:pulp-and-paper,255860.73418659822
+Asturias,2025,manufacturing:pulp-and-paper,84022.36711809512
+Navarra,2021,manufacturing:pulp-and-paper,206812.3290526349
+Navarra,2022,manufacturing:pulp-and-paper,207066.07079012314
+Navarra,2023,manufacturing:pulp-and-paper,207066.07079012314
+Navarra,2024,manufacturing:pulp-and-paper,207303.2225891417
+Navarra,2025,manufacturing:pulp-and-paper,68076.51642415006
+Cataluña,2021,manufacturing:pulp-and-paper,70800.61715315428
+Cataluña,2022,manufacturing:pulp-and-paper,70887.48369391603
+Cataluña,2023,manufacturing:pulp-and-paper,70887.48369391603
+Cataluña,2024,manufacturing:pulp-and-paper,70968.67079628272
+Cataluña,2025,manufacturing:pulp-and-paper,23305.47409115047
+Aragón,2021,manufacturing:pulp-and-paper,86451.27989227259
+Aragón,2022,manufacturing:pulp-and-paper,86557.34851046588
+Aragón,2023,manufacturing:pulp-and-paper,86557.34851046588
+Aragón,2024,manufacturing:pulp-and-paper,86656.482235461
+Aragón,2025,manufacturing:pulp-and-paper,28457.210469194262
+Cataluña,2021,manufacturing:textiles-leather-apparel,148216.6260656097
+Cataluña,2022,manufacturing:textiles-leather-apparel,143549.0904280788
+Cataluña,2023,manufacturing:textiles-leather-apparel,143549.0904280788
+Cataluña,2024,manufacturing:textiles-leather-apparel,143549.0904280788
+Cataluña,2025,manufacturing:textiles-leather-apparel,47791.45638078054
+Comunidad Valenciana,2021,manufacturing:textiles-leather-apparel,80845.43239942349
+Comunidad Valenciana,2022,manufacturing:textiles-leather-apparel,78299.50386986119
+Comunidad Valenciana,2023,manufacturing:textiles-leather-apparel,78299.50386986119
+Comunidad Valenciana,2024,manufacturing:textiles-leather-apparel,78299.50386986119
+Comunidad Valenciana,2025,manufacturing:textiles-leather-apparel,26068.067116789367
+Murcia,2021,manufacturing:textiles-leather-apparel,107793.90986589801
+Murcia,2022,manufacturing:textiles-leather-apparel,104399.33849314824
+Murcia,2023,manufacturing:textiles-leather-apparel,104399.33849314824
+Murcia,2024,manufacturing:textiles-leather-apparel,104399.33849314824
+Murcia,2025,manufacturing:textiles-leather-apparel,34757.42282238582
+La Rioja,2021,manufacturing:textiles-leather-apparel,26948.477466474487
+La Rioja,2022,manufacturing:textiles-leather-apparel,26099.83462328706
+La Rioja,2023,manufacturing:textiles-leather-apparel,26099.83462328706
+La Rioja,2024,manufacturing:textiles-leather-apparel,26099.83462328706
+La Rioja,2025,manufacturing:textiles-leather-apparel,8689.355705596456
+Madrid,2021,manufacturing:textiles-leather-apparel,26948.477466474487
+Madrid,2022,manufacturing:textiles-leather-apparel,26099.83462328706
+Madrid,2023,manufacturing:textiles-leather-apparel,26099.83462328706
+Madrid,2024,manufacturing:textiles-leather-apparel,26099.83462328706
+Madrid,2025,manufacturing:textiles-leather-apparel,8689.355705596456
+Andalucía,2021,manufacturing:textiles-leather-apparel,13474.238733237244
+Andalucía,2022,manufacturing:textiles-leather-apparel,13049.917311643529
+Andalucía,2023,manufacturing:textiles-leather-apparel,13049.917311643529
+Andalucía,2024,manufacturing:textiles-leather-apparel,13049.917311643529
+Andalucía,2025,manufacturing:textiles-leather-apparel,4344.677852798228
+Castilla y León,2021,manufacturing:textiles-leather-apparel,13474.238733237244
+Castilla y León,2022,manufacturing:textiles-leather-apparel,13049.917311643529
+Castilla y León,2023,manufacturing:textiles-leather-apparel,13049.917311643529
+Castilla y León,2024,manufacturing:textiles-leather-apparel,13049.917311643529
+Castilla y León,2025,manufacturing:textiles-leather-apparel,4344.677852798228
+Extremadura,2021,mineral-extraction:copper-mining,100884.00000932065
+Extremadura,2022,mineral-extraction:copper-mining,51829.000004788475
+Extremadura,2023,mineral-extraction:copper-mining,41660.000003848974
+Extremadura,2024,mineral-extraction:copper-mining,41660.000003848974
+Extremadura,2025,mineral-extraction:copper-mining,13870.323696817142
+Andalucía,2021,mineral-extraction:copper-mining,5750.000000531243
+Andalucía,2022,mineral-extraction:copper-mining,4594.00000042444
+Andalucía,2023,mineral-extraction:copper-mining,3638.0000003361147
+Andalucía,2024,mineral-extraction:copper-mining,3638.0000003361147
+Andalucía,2025,mineral-extraction:copper-mining,1211.2395009366483
+Asturias,2021,mineral-extraction:copper-mining,16698.000001542732
+Asturias,2022,mineral-extraction:copper-mining,18102.000001672444
+Asturias,2023,mineral-extraction:copper-mining,27380.00000252964
+Asturias,2024,mineral-extraction:copper-mining,27380.00000252964
+Asturias,2025,mineral-extraction:copper-mining,9115.925655757403
+Andalucía,2021,mineral-extraction:iron-mining,243324.0000224807
+Andalucía,2022,mineral-extraction:iron-mining,325060.0000300323
+Andalucía,2023,mineral-extraction:iron-mining,267216.0000246881
+Andalucía,2024,mineral-extraction:iron-mining,267216.0000246881
+Andalucía,2025,mineral-extraction:iron-mining,88967.17275488934
+Madrid,2021,power:electricity-generation,984821
+Madrid,2022,power:electricity-generation,1084652
+Madrid,2023,power:electricity-generation,873082
+Madrid,2024,power:electricity-generation,915475
+Madrid,2025,power:electricity-generation,277393
+La Rioja,2021,power:electricity-generation,843074
+La Rioja,2022,power:electricity-generation,1008734
+La Rioja,2023,power:electricity-generation,746985
+La Rioja,2024,power:electricity-generation,749161
+La Rioja,2025,power:electricity-generation,250689
+Comunidad Valenciana,2021,power:electricity-generation,3264291
+Comunidad Valenciana,2022,power:electricity-generation,3572903
+Comunidad Valenciana,2023,power:electricity-generation,2964769.3
+Comunidad Valenciana,2024,power:electricity-generation,2986928.6
+Comunidad Valenciana,2025,power:electricity-generation,994410.2
+País Vasco,2021,power:electricity-generation,2186892
+País Vasco,2022,power:electricity-generation,2445323
+País Vasco,2023,power:electricity-generation,1939228
+País Vasco,2024,power:electricity-generation,1944878
+País Vasco,2025,power:electricity-generation,650807
+Castilla y León,2021,power:electricity-generation,129555
+Castilla y León,2022,power:electricity-generation,149497
+Castilla y León,2023,power:electricity-generation,114837
+Castilla y León,2024,power:electricity-generation,115172
+Castilla y León,2025,power:electricity-generation,38540
+Canarias,2021,power:electricity-generation,2752335
+Canarias,2022,power:electricity-generation,2950964
+Canarias,2023,power:electricity-generation,2506051
+Canarias,2024,power:electricity-generation,2513352
+Canarias,2025,power:electricity-generation,841042
+Asturias,2021,power:electricity-generation,2224650
+Asturias,2022,power:electricity-generation,4442704
+Asturias,2023,power:electricity-generation,2059885
+Asturias,2024,power:electricity-generation,1859886
+Asturias,2025,power:electricity-generation,834633
+Baleares,2021,power:electricity-generation,2179850
+Baleares,2022,power:electricity-generation,2698910
+Baleares,2023,power:electricity-generation,2063780
+Baleares,2024,power:electricity-generation,2069800
+Baleares,2025,power:electricity-generation,692610
+Andalucía,2021,power:electricity-generation,5403884
+Andalucía,2022,power:electricity-generation,6679935
+Andalucía,2023,power:electricity-generation,4423090
+Andalucía,2024,power:electricity-generation,4342878
+Andalucía,2025,power:electricity-generation,1453244
+Galicia,2021,power:electricity-generation,2847367.3
+Galicia,2022,power:electricity-generation,2665659.5
+Galicia,2023,power:electricity-generation,1985790.9
+Galicia,2024,power:electricity-generation,1081442.2
+Galicia,2025,power:electricity-generation,413561.9
+Cataluña,2021,power:electricity-generation,4245299
+Cataluña,2022,power:electricity-generation,4770631
+Cataluña,2023,power:electricity-generation,3906941
+Cataluña,2024,power:electricity-generation,3946897
+Cataluña,2025,power:electricity-generation,1303098
+Murcia,2021,power:electricity-generation,4427367
+Murcia,2022,power:electricity-generation,4004630
+Murcia,2023,power:electricity-generation,3245995
+Murcia,2024,power:electricity-generation,3256222
+Murcia,2025,power:electricity-generation,1084425
+Aragón,2021,power:electricity-generation,2704451
+Aragón,2022,power:electricity-generation,3022272
+Aragón,2023,power:electricity-generation,2493307.1999999993
+Aragón,2024,power:electricity-generation,2619631.1999999993
+Aragón,2025,power:electricity-generation,829027.8
+Extremadura,2021,power:electricity-generation,1622349
+Extremadura,2022,power:electricity-generation,1951157
+Extremadura,2023,power:electricity-generation,1437293
+Extremadura,2024,power:electricity-generation,1441476
+Extremadura,2025,power:electricity-generation,482348
+Navarra,2021,power:electricity-generation,1469324
+Navarra,2022,power:electricity-generation,1648820
+Navarra,2023,power:electricity-generation,1414333
+Navarra,2024,power:electricity-generation,1396256
+Navarra,2025,power:electricity-generation,419118
+Castilla-La Mancha,2021,power:electricity-generation,23861
+Castilla-La Mancha,2022,power:electricity-generation,27351
+Castilla-La Mancha,2023,power:electricity-generation,21153
+Castilla-La Mancha,2024,power:electricity-generation,21215
+Castilla-La Mancha,2025,power:electricity-generation,7098
+Cantabria,2021,power:electricity-generation,180540
+Cantabria,2022,power:electricity-generation,241826
+Cantabria,2023,power:electricity-generation,174528
+Cantabria,2024,power:electricity-generation,175037
+Cantabria,2025,power:electricity-generation,58572
+Galicia,2021,transportation:domestic-aviation,112214.88330227636
+Galicia,2022,transportation:domestic-aviation,176691.17311585313
+Galicia,2023,transportation:domestic-aviation,189613.3131810474
+Galicia,2024,transportation:domestic-aviation,185743.45147527693
+Galicia,2025,transportation:domestic-aviation,55442.93645831975
+Madrid,2021,transportation:domestic-aviation,421629.633531301
+Madrid,2022,transportation:domestic-aviation,574965.6823917725
+Madrid,2023,transportation:domestic-aviation,614381.6051738193
+Madrid,2024,transportation:domestic-aviation,658716.4478625071
+Madrid,2025,transportation:domestic-aviation,210575.36066522897
+Murcia,2021,transportation:domestic-aviation,47876.38489979957
+Murcia,2022,transportation:domestic-aviation,75155.56946788444
+Murcia,2023,transportation:domestic-aviation,79293.91741933352
+Murcia,2024,transportation:domestic-aviation,90934.57260459446
+Murcia,2025,transportation:domestic-aviation,27909.538432667097
+Asturias,2021,transportation:domestic-aviation,39380.01263962015
+Asturias,2022,transportation:domestic-aviation,57845.71518062287
+Asturias,2023,transportation:domestic-aviation,65069.17195836253
+Asturias,2024,transportation:domestic-aviation,65169.03899288063
+Asturias,2025,transportation:domestic-aviation,18130.582646252074
+Extremadura,2021,transportation:domestic-aviation,2178.061711016529
+Extremadura,2022,transportation:domestic-aviation,2836.8164637207674
+Extremadura,2023,transportation:domestic-aviation,3390.0056098169316
+Extremadura,2024,transportation:domestic-aviation,3483.41825541083
+Extremadura,2025,transportation:domestic-aviation,1390.493087718358
+País Vasco,2021,transportation:domestic-aviation,87237.7019309862
+País Vasco,2022,transportation:domestic-aviation,132192.2851243049
+País Vasco,2023,transportation:domestic-aviation,140947.15552486904
+País Vasco,2024,transportation:domestic-aviation,141696.91225351134
+País Vasco,2025,transportation:domestic-aviation,43124.073980065106
+Cantabria,2021,transportation:domestic-aviation,13107.572603927314
+Cantabria,2022,transportation:domestic-aviation,21116.764390565917
+Cantabria,2023,transportation:domestic-aviation,22104.698063839827
+Cantabria,2024,transportation:domestic-aviation,18858.16427814564
+Cantabria,2025,transportation:domestic-aviation,5717.670743603713
+Comunidad Valenciana,2021,transportation:domestic-aviation,52990.3420826169
+Comunidad Valenciana,2022,transportation:domestic-aviation,82353.78534031505
+Comunidad Valenciana,2023,transportation:domestic-aviation,89299.27788081043
+Comunidad Valenciana,2024,transportation:domestic-aviation,89853.81619862627
+Comunidad Valenciana,2025,transportation:domestic-aviation,28778.71193204479
+Andalucía,2023,transportation:domestic-aviation,331602.46669807576
+Andalucía,2024,transportation:domestic-aviation,351781.7240304047
+Andalucía,2025,transportation:domestic-aviation,110083.67102745248
+Castilla-La Mancha,2021,transportation:domestic-aviation,0
+Castilla-La Mancha,2022,transportation:domestic-aviation,0
+Castilla-La Mancha,2023,transportation:domestic-aviation,0
+Castilla-La Mancha,2024,transportation:domestic-aviation,0
+Castilla-La Mancha,2025,transportation:domestic-aviation,0
+Canarias,2021,transportation:domestic-aviation,579523.2623904092
+Canarias,2022,transportation:domestic-aviation,763958.1641011871
+Canarias,2023,transportation:domestic-aviation,799068.86227304
+Canarias,2024,transportation:domestic-aviation,868828.0703527757
+Canarias,2025,transportation:domestic-aviation,286074.34633489634
+Andalucía,2021,transportation:domestic-aviation,202359.6591722448
+Andalucía,2022,transportation:domestic-aviation,298737.346499699
+Cataluña,2021,transportation:domestic-aviation,296577.08870051475
+Cataluña,2022,transportation:domestic-aviation,406233.60006194917
+Cataluña,2023,transportation:domestic-aviation,437017.0844286615
+Cataluña,2024,transportation:domestic-aviation,448359.2080552191
+Cataluña,2025,transportation:domestic-aviation,142769.10536450084
+Aragón,2021,transportation:domestic-aviation,8373.380144416755
+Aragón,2022,transportation:domestic-aviation,11309.018387375938
+Aragón,2023,transportation:domestic-aviation,11898.898674692657
+Aragón,2024,transportation:domestic-aviation,9736.472762746098
+Aragón,2025,transportation:domestic-aviation,3443.128792026546
+Baleares,2021,transportation:domestic-aviation,254602.51212958357
+Baleares,2022,transportation:domestic-aviation,339781.20314884523
+Baleares,2023,transportation:domestic-aviation,347539.55456537014
+Baleares,2024,transportation:domestic-aviation,349171.57179449336
+Baleares,2025,transportation:domestic-aviation,94522.58126374052
+La Rioja,2021,transportation:domestic-aviation,136.16055800688483
+La Rioja,2022,transportation:domestic-aviation,413.81589949379764
+La Rioja,2023,transportation:domestic-aviation,533.0900860394311
+La Rioja,2024,transportation:domestic-aviation,578.6823715292605
+La Rioja,2025,transportation:domestic-aviation,220.6344932395392
+Navarra,2021,transportation:domestic-aviation,11372.603091158393
+Navarra,2022,transportation:domestic-aviation,20856.647534581894
+Navarra,2023,transportation:domestic-aviation,24138.395590632514
+Navarra,2024,transportation:domestic-aviation,23839.90478378371
+Navarra,2025,transportation:domestic-aviation,7423.646633761826
+Castilla y León,2021,transportation:domestic-aviation,4072.383432729678
+Castilla y León,2022,transportation:domestic-aviation,6580.729349826691
+Castilla y León,2023,transportation:domestic-aviation,7892.340736582106
+Castilla y León,2024,transportation:domestic-aviation,6946.669265174574
+Castilla y León,2025,transportation:domestic-aviation,1223.999547096621
+Galicia,2021,transportation:domestic-shipping,662329.608236478
+Galicia,2022,transportation:domestic-shipping,738541.2373513303
+Galicia,2023,transportation:domestic-shipping,774610.9090440689
+Galicia,2024,transportation:domestic-shipping,756567.6953388669
+Galicia,2025,transportation:domestic-shipping,207109.02330786464
+Baleares,2021,transportation:domestic-shipping,1063982.945574146
+Baleares,2022,transportation:domestic-shipping,1479757.0688077507
+Baleares,2023,transportation:domestic-shipping,1794039.9650091038
+Baleares,2024,transportation:domestic-shipping,1725557.6723089903
+Baleares,2025,transportation:domestic-shipping,303976.69250922825
+Andalucía,2021,transportation:domestic-shipping,1485754.7988960985
+Andalucía,2022,transportation:domestic-shipping,1627971.5915389743
+Andalucía,2023,transportation:domestic-shipping,1697066.8007460004
+Andalucía,2024,transportation:domestic-shipping,1732484.8737296222
+Andalucía,2025,transportation:domestic-shipping,477185.50830606994
+Murcia,2021,transportation:domestic-shipping,706834.9416435946
+Murcia,2022,transportation:domestic-shipping,857364.4403455424
+Murcia,2023,transportation:domestic-shipping,946634.6456509393
+Murcia,2024,transportation:domestic-shipping,986495.9829141857
+Murcia,2025,transportation:domestic-shipping,221453.39147751319
+Comunidad Valenciana,2021,transportation:domestic-shipping,1027595.3631294648
+Comunidad Valenciana,2022,transportation:domestic-shipping,1313680.8210825738
+Comunidad Valenciana,2023,transportation:domestic-shipping,1540510.1724499865
+Comunidad Valenciana,2024,transportation:domestic-shipping,1459753.8243389332
+Comunidad Valenciana,2025,transportation:domestic-shipping,388577.1696736936
+Cataluña,2021,transportation:domestic-shipping,1286551.4088955584
+Cataluña,2022,transportation:domestic-shipping,1653259.941217211
+Cataluña,2023,transportation:domestic-shipping,1860751.773611874
+Cataluña,2024,transportation:domestic-shipping,1884356.3119607053
+Cataluña,2025,transportation:domestic-shipping,468290.4714574402
+País Vasco,2021,transportation:domestic-shipping,204866.81519438376
+País Vasco,2022,transportation:domestic-shipping,244439.7887078377
+País Vasco,2023,transportation:domestic-shipping,268537.4407273118
+País Vasco,2024,transportation:domestic-shipping,294416.8841212457
+País Vasco,2025,transportation:domestic-shipping,80711.90391482337
+Canarias,2021,transportation:domestic-shipping,2605887.536055932
+Canarias,2022,transportation:domestic-shipping,2322704.733258465
+Canarias,2023,transportation:domestic-shipping,2269674.512133025
+Canarias,2024,transportation:domestic-shipping,2329714.0461840457
+Canarias,2025,transportation:domestic-shipping,847020.5265027403
+Extremadura,2021,transportation:domestic-shipping,338353.77669154905
+Extremadura,2022,transportation:domestic-shipping,368529.1047842137
+Extremadura,2023,transportation:domestic-shipping,355281.85386285454
+Extremadura,2024,transportation:domestic-shipping,398188.94018073176
+Extremadura,2025,transportation:domestic-shipping,109444.0292979426
+Asturias,2021,transportation:domestic-shipping,156314.97095201345
+Asturias,2022,transportation:domestic-shipping,163906.509258806
+Asturias,2023,transportation:domestic-shipping,183490.63628204277
+Asturias,2024,transportation:domestic-shipping,165965.19757908693
+Asturias,2025,transportation:domestic-shipping,43277.18854557198
+Cantabria,2021,transportation:domestic-shipping,92235.68376070778
+Cantabria,2022,transportation:domestic-shipping,132536.38624369295
+Cantabria,2023,transportation:domestic-shipping,97907.4720105407
+Cantabria,2024,transportation:domestic-shipping,106526.41761502139
+Cantabria,2025,transportation:domestic-shipping,26640.91196182738
+Navarra,2021,transportation:domestic-shipping,44159.41680632791
+Navarra,2022,transportation:domestic-shipping,48083.25054747992
+Navarra,2023,transportation:domestic-shipping,54260.643007009996
+Navarra,2024,transportation:domestic-shipping,64117.15101034855
+Navarra,2025,transportation:domestic-shipping,14366.930906503498
+Aragón,2021,transportation:domestic-shipping,16915.290186703558
+Aragón,2022,transportation:domestic-shipping,11072.522584968841
+Aragón,2023,transportation:domestic-shipping,20051.55159935616
+Aragón,2024,transportation:domestic-shipping,24420.686780516764
+Aragón,2025,transportation:domestic-shipping,2708.8661379699797
+Galicia,2021,transportation:international-aviation,16560.186279774676
+Galicia,2022,transportation:international-aviation,46561.64557839454
+Galicia,2023,transportation:international-aviation,51710.09044659629
+Galicia,2024,transportation:international-aviation,45790.72279322168
+Galicia,2025,transportation:international-aviation,9391.013383181198
+Madrid,2021,transportation:international-aviation,2982058.8046781477
+Madrid,2022,transportation:international-aviation,5494336.698607223
+Madrid,2023,transportation:international-aviation,6525632.001739043
+Madrid,2024,transportation:international-aviation,7442811.833517984
+Madrid,2025,transportation:international-aviation,2414801.4494011
+Murcia,2021,transportation:international-aviation,409393.4845966131
+Murcia,2022,transportation:international-aviation,791042.6862030271
+Murcia,2023,transportation:international-aviation,860178.1924382348
+Murcia,2024,transportation:international-aviation,959909.6921011474
+Murcia,2025,transportation:international-aviation,278040.4014493448
+Asturias,2021,transportation:international-aviation,481.62456523410964
+Asturias,2022,transportation:international-aviation,5608.6304326046575
+Asturias,2023,transportation:international-aviation,20862.002059002087
+Asturias,2024,transportation:international-aviation,21481.433205635265
+Asturias,2025,transportation:international-aviation,6218.9949307354145
+Extremadura,2021,transportation:international-aviation,0
+Extremadura,2022,transportation:international-aviation,103.65877541659584
+Extremadura,2023,transportation:international-aviation,19.685508677128304
+Extremadura,2024,transportation:international-aviation,10.128606809621248
+Extremadura,2025,transportation:international-aviation,59.03483244895043
+País Vasco,2021,transportation:international-aviation,39375.32179640594
+País Vasco,2022,transportation:international-aviation,104367.5181544974
+País Vasco,2023,transportation:international-aviation,139140.80284933888
+País Vasco,2024,transportation:international-aviation,150246.62344097666
+País Vasco,2025,transportation:international-aviation,41214.48789166128
+Cantabria,2021,transportation:international-aviation,12283.671908757093
+Cantabria,2022,transportation:international-aviation,26329.39516524421
+Cantabria,2023,transportation:international-aviation,28138.896037530383
+Cantabria,2024,transportation:international-aviation,25447.510808155872
+Cantabria,2025,transportation:international-aviation,6541.414632179605
+Comunidad Valenciana,2021,transportation:international-aviation,170998.26440973152
+Comunidad Valenciana,2022,transportation:international-aviation,304727.95471019024
+Comunidad Valenciana,2023,transportation:international-aviation,373840.6037335036
+Comunidad Valenciana,2024,transportation:international-aviation,410311.57860581833
+Comunidad Valenciana,2025,transportation:international-aviation,130658.95328068861
+Andalucía,2021,transportation:international-aviation,692991.1613262991
+Andalucía,2022,transportation:international-aviation,1281520.0506343064
+Andalucía,2023,transportation:international-aviation,1461762.470584269
+Andalucía,2024,transportation:international-aviation,1646591.7695428245
+Andalucía,2025,transportation:international-aviation,494297.58464882965
+Castilla-La Mancha,2021,transportation:international-aviation,0
+Castilla-La Mancha,2022,transportation:international-aviation,0
+Castilla-La Mancha,2023,transportation:international-aviation,0
+Castilla-La Mancha,2024,transportation:international-aviation,0
+Canarias,2021,transportation:international-aviation,1372903.1856082883
+Canarias,2022,transportation:international-aviation,2547830.3506695465
+Canarias,2023,transportation:international-aviation,2689216.384602307
+Canarias,2024,transportation:international-aviation,2889220.250972325
+Canarias,2025,transportation:international-aviation,1135763.6589516138
+Cataluña,2021,transportation:international-aviation,1050538.2519082748
+Cataluña,2022,transportation:international-aviation,2462744.2217381094
+Cataluña,2023,transportation:international-aviation,2951979.5777276596
+Cataluña,2024,transportation:international-aviation,3490113.9380231346
+Cataluña,2025,transportation:international-aviation,1021014.9484330848
+Aragón,2021,transportation:international-aviation,167147.51242621767
+Aragón,2022,transportation:international-aviation,153032.27133830573
+Aragón,2023,transportation:international-aviation,136595.60649438712
+Aragón,2024,transportation:international-aviation,182794.00593617136
+Aragón,2025,transportation:international-aviation,36243.841804798874
+Baleares,2021,transportation:international-aviation,835050.3296322437
+Baleares,2022,transportation:international-aviation,1467740.3658979952
+Baleares,2023,transportation:international-aviation,1504320.5280288171
+Baleares,2024,transportation:international-aviation,1590688.3767888448
+Baleares,2025,transportation:international-aviation,237260.3667498487
+La Rioja,2021,transportation:international-aviation,0
+La Rioja,2022,transportation:international-aviation,114.5686656535119
+La Rioja,2023,transportation:international-aviation,130.08796780592775
+La Rioja,2024,transportation:international-aviation,0
+La Rioja,2025,transportation:international-aviation,9.086085878633565
+Navarra,2021,transportation:international-aviation,0
+Navarra,2022,transportation:international-aviation,333.8886637889859
+Navarra,2023,transportation:international-aviation,579.0957878436966
+Navarra,2024,transportation:international-aviation,1128.73196489072
+Navarra,2025,transportation:international-aviation,154.17826824943785
+Castilla y León,2021,transportation:international-aviation,0
+Castilla y León,2022,transportation:international-aviation,158.07494066896757
+Castilla y León,2023,transportation:international-aviation,294.26096196149
+Castilla y León,2024,transportation:international-aviation,97.02839582540147
+Castilla y León,2025,transportation:international-aviation,16.121766124651252
+Galicia,2021,transportation:international-shipping,795835.6034836818
+Galicia,2022,transportation:international-shipping,1024139.1141592765
+Galicia,2023,transportation:international-shipping,1022916.5320960436
+Galicia,2024,transportation:international-shipping,963498.4247029086
+Galicia,2025,transportation:international-shipping,284230.8175987881
+Baleares,2021,transportation:international-shipping,143807.7430062504
+Baleares,2022,transportation:international-shipping,265937.10430236347
+Baleares,2023,transportation:international-shipping,387501.3509336205
+Baleares,2024,transportation:international-shipping,287449.8051670245
+Baleares,2025,transportation:international-shipping,37943.66204333544
+Andalucía,2021,transportation:international-shipping,2209590.807937021
+Andalucía,2022,transportation:international-shipping,2494696.4009852824
+Andalucía,2023,transportation:international-shipping,2347352.8745284006
+Andalucía,2024,transportation:international-shipping,2529226.367500401
+Andalucía,2025,transportation:international-shipping,700472.2800810593
+Murcia,2021,transportation:international-shipping,667421.3326824448
+Murcia,2022,transportation:international-shipping,882140.3569185211
+Murcia,2023,transportation:international-shipping,867835.9612693744
+Murcia,2024,transportation:international-shipping,710049.3892490815
+Murcia,2025,transportation:international-shipping,229155.37197212968
+Comunidad Valenciana,2021,transportation:international-shipping,1781074.2509745676
+Comunidad Valenciana,2022,transportation:international-shipping,2051265.30075954
+Comunidad Valenciana,2023,transportation:international-shipping,1840327.3024054007
+Comunidad Valenciana,2024,transportation:international-shipping,2803240.3816920263
+Comunidad Valenciana,2025,transportation:international-shipping,787615.463171652
+Cataluña,2021,transportation:international-shipping,1836656.616641394
+Cataluña,2022,transportation:international-shipping,2128070.1834279285
+Cataluña,2023,transportation:international-shipping,2194287.1211033147
+Cataluña,2024,transportation:international-shipping,2154630.866435982
+Cataluña,2025,transportation:international-shipping,561789.22175367
+País Vasco,2021,transportation:international-shipping,591308.5336931825
+País Vasco,2022,transportation:international-shipping,725411.614138308
+País Vasco,2023,transportation:international-shipping,718812.4612491938
+País Vasco,2024,transportation:international-shipping,628863.1492622679
+País Vasco,2025,transportation:international-shipping,211484.24796403013
+Canarias,2021,transportation:international-shipping,2733973.757180786
+Canarias,2022,transportation:international-shipping,3183967.509162158
+Canarias,2023,transportation:international-shipping,2932049.6518769404
+Canarias,2024,transportation:international-shipping,4402595.910657668
+Canarias,2025,transportation:international-shipping,1349593.0935519363
+Extremadura,2021,transportation:international-shipping,580812.175670821
+Extremadura,2022,transportation:international-shipping,664649.823531227
+Extremadura,2023,transportation:international-shipping,622376.3364077675
+Extremadura,2024,transportation:international-shipping,518336.60700659954
+Extremadura,2025,transportation:international-shipping,137262.04449658486
+Asturias,2021,transportation:international-shipping,338653.7784551259
+Asturias,2022,transportation:international-shipping,373468.005494555
+Asturias,2023,transportation:international-shipping,337926.3700113479
+Asturias,2024,transportation:international-shipping,316869.2030791268
+Asturias,2025,transportation:international-shipping,89476.1803569102
+Cantabria,2021,transportation:international-shipping,278002.78716455953
+Cantabria,2022,transportation:international-shipping,333259.56955164945
+Cantabria,2023,transportation:international-shipping,301631.87527655216
+Cantabria,2024,transportation:international-shipping,252255.73535093444
+Cantabria,2025,transportation:international-shipping,75505.85078207302
+Navarra,2021,transportation:international-shipping,71613.68432408947
+Navarra,2022,transportation:international-shipping,94336.21818623024
+Navarra,2023,transportation:international-shipping,81606.09662507212
+Navarra,2024,transportation:international-shipping,75086.58575820863
+Navarra,2025,transportation:international-shipping,22443.61993070109
+Aragón,2021,transportation:international-shipping,8711.05776846492
+Aragón,2022,transportation:international-shipping,385.7805041695
+Aragón,2023,transportation:international-shipping,3105.1466201648204
+Aragón,2024,transportation:international-shipping,1251.5817600734802
+Aragón,2025,transportation:international-shipping,0
+Castilla-La Mancha,2021,transportation:international-shipping,10897.59947847044
+Castilla-La Mancha,2022,transportation:international-shipping,0
+Castilla-La Mancha,2023,transportation:international-shipping,0
+Castilla-La Mancha,2024,transportation:international-shipping,0
+Castilla-La Mancha,2025,transportation:international-shipping,0
+Galicia,2021,transportation:road-transportation,7125959.346094127
+Galicia,2022,transportation:road-transportation,7114253.685333273
+Galicia,2023,transportation:road-transportation,7183561.200895393
+Galicia,2024,transportation:road-transportation,7234346.62680883
+Galicia,2025,transportation:road-transportation,2409174.0258224737
+España,2021,transportation:road-transportation,32588605.3063429
+España,2022,transportation:road-transportation,32898195.20781932
+España,2023,transportation:road-transportation,33021143.081426747
+España,2024,transportation:road-transportation,33228255.80596466
+España,2025,transportation:road-transportation,10837639.12709594
+Murcia,2021,transportation:road-transportation,8185015.239332218
+Murcia,2022,transportation:road-transportation,8122525.98035527
+Murcia,2023,transportation:road-transportation,8136367.439136325
+Murcia,2024,transportation:road-transportation,8284664.847018809
+Murcia,2025,transportation:road-transportation,2676907.619517639
+Asturias,2021,transportation:road-transportation,3154232.1590525527
+Asturias,2022,transportation:road-transportation,3155804.160139963
+Asturias,2023,transportation:road-transportation,3177955.7948999703
+Asturias,2024,transportation:road-transportation,3229059.51995642
+Asturias,2025,transportation:road-transportation,1071578.8087992833
+Extremadura,2021,transportation:road-transportation,3015183.6947757616
+Extremadura,2022,transportation:road-transportation,3058118.578605485
+Extremadura,2023,transportation:road-transportation,3082311.152744259
+Extremadura,2024,transportation:road-transportation,3098308.807487489
+Extremadura,2025,transportation:road-transportation,1008146.1725487723
+Baleares,2021,transportation:road-transportation,1295049.2188785833
+Baleares,2022,transportation:road-transportation,1311407.5401870818
+Baleares,2023,transportation:road-transportation,1317344.4345647057
+Baleares,2024,transportation:road-transportation,1312084.9077672677
+Baleares,2025,transportation:road-transportation,432689.35499693034
+Cataluña,2021,transportation:road-transportation,8140916.95659958
+Cataluña,2022,transportation:road-transportation,8372150.687821079
+Cataluña,2023,transportation:road-transportation,8385657.500521422
+Cataluña,2024,transportation:road-transportation,8408143.448349537
+Cataluña,2025,transportation:road-transportation,2737311.8448049366
+Cantabria,2021,transportation:road-transportation,2429905.350937455
+Cantabria,2022,transportation:road-transportation,2460476.4895370007
+Cantabria,2023,transportation:road-transportation,2465795.067569446
+Cantabria,2024,transportation:road-transportation,2474840.5273518176
+Cantabria,2025,transportation:road-transportation,822568.5870358539
+Comunidad Valenciana,2021,transportation:road-transportation,4211917.952639951
+Comunidad Valenciana,2022,transportation:road-transportation,4312552.613235494
+Comunidad Valenciana,2023,transportation:road-transportation,4366459.63014153
+Comunidad Valenciana,2024,transportation:road-transportation,4437975.944008993
+Comunidad Valenciana,2025,transportation:road-transportation,1438498.4379377356
+Andalucía,2021,transportation:road-transportation,9384873.012986941
+Andalucía,2022,transportation:road-transportation,9357521.683032058
+Andalucía,2023,transportation:road-transportation,9376940.36581413
+Andalucía,2024,transportation:road-transportation,9392487.696893426
+Andalucía,2025,transportation:road-transportation,3037701.8465027125
+Castilla-La Mancha,2021,transportation:road-transportation,2307320.388874159
+Castilla-La Mancha,2022,transportation:road-transportation,2328001.587802373
+Castilla-La Mancha,2023,transportation:road-transportation,2326859.4477823973
+Castilla-La Mancha,2024,transportation:road-transportation,2336526.19495956
+Castilla-La Mancha,2025,transportation:road-transportation,762343.6807550488
+Madrid,2021,transportation:road-transportation,9365834.391752517
+Madrid,2022,transportation:road-transportation,9439156.531488998
+Madrid,2023,transportation:road-transportation,9384992.15690075
+Madrid,2024,transportation:road-transportation,9412716.762562886
+Madrid,2025,transportation:road-transportation,3052123.024876065
+Navarra,2021,transportation:road-transportation,2009911.6530129756
+Navarra,2022,transportation:road-transportation,2013054.264067473
+Navarra,2023,transportation:road-transportation,2029322.2386705843
+Navarra,2024,transportation:road-transportation,1995081.1688191541
+Navarra,2025,transportation:road-transportation,654749.8155059745
+Aragón,2021,transportation:road-transportation,3345439.0596526656
+Aragón,2022,transportation:road-transportation,3418074.4473014204
+Aragón,2023,transportation:road-transportation,3447042.9255748237
+Aragón,2024,transportation:road-transportation,3425007.1559003675
+Aragón,2025,transportation:road-transportation,1107711.5589700495
+La Rioja,2021,transportation:road-transportation,1257478.1235671472
+La Rioja,2022,transportation:road-transportation,1254047.328293744
+La Rioja,2023,transportation:road-transportation,1266284.4380426737
+La Rioja,2024,transportation:road-transportation,1248770.9951071946
+La Rioja,2025,transportation:road-transportation,412596.9484056063
+Canarias,2021,transportation:road-transportation,2367346.6045443797
+Canarias,2022,transportation:road-transportation,2347414.5527461492
+Canarias,2023,transportation:road-transportation,2359936.547979553
+Canarias,2024,transportation:road-transportation,2348586.0720501905
+Canarias,2025,transportation:road-transportation,782072.6225933428
+Castilla y León,2021,transportation:road-transportation,4794424.685985266
+Castilla y León,2022,transportation:road-transportation,4860062.102911041
+Castilla y León,2023,transportation:road-transportation,4870737.696279009
+Castilla y León,2024,transportation:road-transportation,4875468.99940888
+Castilla y León,2025,transportation:road-transportation,1610735.2996673966
+País Vasco,2021,transportation:road-transportation,1555183.3492742663
+País Vasco,2022,transportation:road-transportation,1549721.6890298438
+País Vasco,2023,transportation:road-transportation,1565315.5030979936
+País Vasco,2024,transportation:road-transportation,1555308.8919383844
+País Vasco,2025,transportation:road-transportation,513196.9471552038
+Galicia,2021,waste:domestic-wastewater-treatment-and-discharge,204799.35527999946
+Galicia,2022,waste:domestic-wastewater-treatment-and-discharge,205173.90269940876
+Galicia,2023,waste:domestic-wastewater-treatment-and-discharge,205536.5022449975
+Galicia,2024,waste:domestic-wastewater-treatment-and-discharge,206453.8110787052
+Galicia,2025,waste:domestic-wastewater-treatment-and-discharge,67770.1185665692
+Murcia,2021,waste:domestic-wastewater-treatment-and-discharge,424965.9001235588
+Murcia,2022,waste:domestic-wastewater-treatment-and-discharge,425743.09926257055
+Murcia,2023,waste:domestic-wastewater-treatment-and-discharge,426495.50613263366
+Murcia,2024,waste:domestic-wastewater-treatment-and-discharge,428398.9543777456
+Murcia,2025,waste:domestic-wastewater-treatment-and-discharge,140625.39112283522
+La Rioja,2021,waste:domestic-wastewater-treatment-and-discharge,46671.28348009952
+La Rioja,2022,waste:domestic-wastewater-treatment-and-discharge,46756.638284678535
+La Rioja,2023,waste:domestic-wastewater-treatment-and-discharge,46839.27031203377
+La Rioja,2024,waste:domestic-wastewater-treatment-and-discharge,47048.31384766496
+La Rioja,2025,waste:domestic-wastewater-treatment-and-discharge,15443.986192145567
+Andalucía,2021,waste:domestic-wastewater-treatment-and-discharge,635710.7837450656
+Andalucía,2022,waste:domestic-wastewater-treatment-and-discharge,636873.4037846728
+Andalucía,2023,waste:domestic-wastewater-treatment-and-discharge,637998.9368286477
+Andalucía,2024,waste:domestic-wastewater-treatment-and-discharge,640846.3242860977
+Andalucía,2025,waste:domestic-wastewater-treatment-and-discharge,210362.9434246536
+Cataluña,2021,waste:domestic-wastewater-treatment-and-discharge,581966.8345283339
+Cataluña,2022,waste:domestic-wastewater-treatment-and-discharge,583031.1649204023
+Cataluña,2023,waste:domestic-wastewater-treatment-and-discharge,584061.5436993962
+Cataluña,2024,waste:domestic-wastewater-treatment-and-discharge,586668.2087207071
+Cataluña,2025,waste:domestic-wastewater-treatment-and-discharge,192578.54266059087
+Extremadura,2021,waste:domestic-wastewater-treatment-and-discharge,175757.30525653696
+Extremadura,2022,waste:domestic-wastewater-treatment-and-discharge,176078.7391026524
+Extremadura,2023,waste:domestic-wastewater-treatment-and-discharge,176389.9193839661
+Extremadura,2024,waste:domestic-wastewater-treatment-and-discharge,177177.14709174604
+Extremadura,2025,waste:domestic-wastewater-treatment-and-discharge,58159.81890991493
+Comunidad Valenciana,2021,waste:domestic-wastewater-treatment-and-discharge,544749.2778953012
+Comunidad Valenciana,2022,waste:domestic-wastewater-treatment-and-discharge,545745.5429378569
+Comunidad Valenciana,2023,waste:domestic-wastewater-treatment-and-discharge,546710.0276178148
+Comunidad Valenciana,2024,waste:domestic-wastewater-treatment-and-discharge,549149.9929259885
+Comunidad Valenciana,2025,waste:domestic-wastewater-treatment-and-discharge,180262.8875536474
+Canarias,2021,waste:domestic-wastewater-treatment-and-discharge,157151.1027387231
+Canarias,2022,waste:domestic-wastewater-treatment-and-discharge,157438.50863081135
+Canarias,2023,waste:domestic-wastewater-treatment-and-discharge,157716.7464111174
+Canarias,2024,waste:domestic-wastewater-treatment-and-discharge,158420.6358019819
+Canarias,2025,waste:domestic-wastewater-treatment-and-discharge,52002.84371438067
+Cantabria,2021,waste:domestic-wastewater-treatment-and-discharge,108626.12892433634
+Cantabria,2022,waste:domestic-wastewater-treatment-and-discharge,108824.78988277711
+Cantabria,2023,waste:domestic-wastewater-treatment-and-discharge,109017.11365859005
+Cantabria,2024,waste:domestic-wastewater-treatment-and-discharge,109503.65672986461
+Cantabria,2025,waste:domestic-wastewater-treatment-and-discharge,35945.4531800321
+Aragón,2021,waste:domestic-wastewater-treatment-and-discharge,130217.46272749586
+Aragón,2022,waste:domestic-wastewater-treatment-and-discharge,130455.61101767934
+Aragón,2023,waste:domestic-wastewater-treatment-and-discharge,130686.16249079187
+Aragón,2024,waste:domestic-wastewater-treatment-and-discharge,131269.41446049063
+Aragón,2025,waste:domestic-wastewater-treatment-and-discharge,43090.23764541669
+Castilla y León,2021,waste:domestic-wastewater-treatment-and-discharge,176933.08731877786
+Castilla y León,2022,waste:domestic-wastewater-treatment-and-discharge,177256.6714983901
+Castilla y León,2023,waste:domestic-wastewater-treatment-and-discharge,177569.93350848436
+Castilla y León,2024,waste:domestic-wastewater-treatment-and-discharge,178362.4276178011
+Castilla y León,2025,waste:domestic-wastewater-treatment-and-discharge,58548.896745606515
+Baleares,2021,waste:domestic-wastewater-treatment-and-discharge,114986.56814411767
+Baleares,2022,waste:domestic-wastewater-treatment-and-discharge,115196.86139345028
+Baleares,2023,waste:domestic-wastewater-treatment-and-discharge,115400.44639903995
+Baleares,2024,waste:domestic-wastewater-treatment-and-discharge,115915.47826962234
+Baleares,2025,waste:domestic-wastewater-treatment-and-discharge,38050.185001321996
+Castilla-La Mancha,2021,waste:domestic-wastewater-treatment-and-discharge,121609.68585692905
+Castilla-La Mancha,2022,waste:domestic-wastewater-treatment-and-discharge,121832.09179954465
+Castilla-La Mancha,2023,waste:domestic-wastewater-treatment-and-discharge,122047.40310788646
+Castilla-La Mancha,2024,waste:domestic-wastewater-treatment-and-discharge,122592.10032288953
+Castilla-La Mancha,2025,waste:domestic-wastewater-treatment-and-discharge,40241.83971710691
+Madrid,2021,waste:domestic-wastewater-treatment-and-discharge,558537.9260893739
+Madrid,2022,waste:domestic-wastewater-treatment-and-discharge,559559.4084967014
+Madrid,2023,waste:domestic-wastewater-treatment-and-discharge,560548.3061366861
+Madrid,2024,waste:domestic-wastewater-treatment-and-discharge,563050.031648448
+Madrid,2025,waste:domestic-wastewater-treatment-and-discharge,184825.68669683373
+Navarra,2021,waste:domestic-wastewater-treatment-and-discharge,176956.90139294986
+Navarra,2022,waste:domestic-wastewater-treatment-and-discharge,177280.52912115655
+Navarra,2023,waste:domestic-wastewater-treatment-and-discharge,177593.83329164993
+Navarra,2024,waste:domestic-wastewater-treatment-and-discharge,178386.4340708053
+Navarra,2025,waste:domestic-wastewater-treatment-and-discharge,58556.77705519261
+País Vasco,2021,waste:domestic-wastewater-treatment-and-discharge,179906.00395932794
+País Vasco,2022,waste:domestic-wastewater-treatment-and-discharge,180235.0251673144
+País Vasco,2023,waste:domestic-wastewater-treatment-and-discharge,180553.5507533952
+País Vasco,2024,waste:domestic-wastewater-treatment-and-discharge,181359.36074135575
+País Vasco,2025,waste:domestic-wastewater-treatment-and-discharge,59532.66406867237
+Asturias,2021,waste:domestic-wastewater-treatment-and-discharge,159411.85521701231
+Asturias,2022,waste:domestic-wastewater-treatment-and-discharge,159703.39568472136
+Asturias,2023,waste:domestic-wastewater-treatment-and-discharge,159985.63615501986
+Asturias,2024,waste:domestic-wastewater-treatment-and-discharge,160699.65159790247
+Asturias,2025,waste:domestic-wastewater-treatment-and-discharge,52750.94891906433
+Andalucía,2021,waste:industrial-wastewater-treatment-and-discharge,10900.843625279995
+Andalucía,2022,waste:industrial-wastewater-treatment-and-discharge,8959.954220280002
+Andalucía,2023,waste:industrial-wastewater-treatment-and-discharge,8787.752720284137
+Andalucía,2024,waste:industrial-wastewater-treatment-and-discharge,8959.954220280002
+Andalucía,2025,waste:industrial-wastewater-treatment-and-discharge,2945.7383737906844
+Navarra,2021,waste:industrial-wastewater-treatment-and-discharge,12549.341016240005
+Navarra,2022,waste:industrial-wastewater-treatment-and-discharge,11423.643261240002
+Navarra,2023,waste:industrial-wastewater-treatment-and-discharge,11323.737066242402
+Navarra,2024,waste:industrial-wastewater-treatment-and-discharge,11423.643261239999
+Navarra,2025,waste:industrial-wastewater-treatment-and-discharge,3755.7183324624657
+Aragón,2021,waste:industrial-wastewater-treatment-and-discharge,6888.838714379999
+Aragón,2022,waste:industrial-wastewater-treatment-and-discharge,6500.6712756299985
+Aragón,2023,waste:industrial-wastewater-treatment-and-discharge,6466.227469380827
+Aragón,2024,waste:industrial-wastewater-treatment-and-discharge,6500.6712756299985
+Aragón,2025,waste:industrial-wastewater-treatment-and-discharge,2137.206994727671
+Asturias,2021,waste:industrial-wastewater-treatment-and-discharge,27640.32880013999
+Asturias,2022,waste:industrial-wastewater-treatment-and-discharge,23004.747167639995
+Asturias,2023,waste:industrial-wastewater-treatment-and-discharge,22405.386752648825
+Asturias,2024,waste:industrial-wastewater-treatment-and-discharge,23004.747167640002
+Asturias,2025,waste:industrial-wastewater-treatment-and-discharge,7563.204548265205
+País Vasco,2021,waste:industrial-wastewater-treatment-and-discharge,15753.195753749998
+País Vasco,2022,waste:industrial-wastewater-treatment-and-discharge,12849.629520000006
+País Vasco,2023,waste:industrial-wastewater-treatment-and-discharge,12591.990270006194
+País Vasco,2024,waste:industrial-wastewater-treatment-and-discharge,12849.629520000008
+País Vasco,2025,waste:industrial-wastewater-treatment-and-discharge,4224.535732602741
+Extremadura,2021,waste:industrial-wastewater-treatment-and-discharge,5475.70125375
+Extremadura,2022,waste:industrial-wastewater-treatment-and-discharge,4466.4345862499995
+Extremadura,2023,waste:industrial-wastewater-treatment-and-discharge,4376.897010002152
+Extremadura,2024,waste:industrial-wastewater-treatment-and-discharge,4466.434586250001
+Extremadura,2025,waste:industrial-wastewater-treatment-and-discharge,1468.4168502739728
+Cataluña,2021,waste:industrial-wastewater-treatment-and-discharge,10530.202751249999
+Cataluña,2022,waste:industrial-wastewater-treatment-and-discharge,8589.31334625
+Cataluña,2023,waste:industrial-wastewater-treatment-and-discharge,8417.082712504138
+Cataluña,2024,waste:industrial-wastewater-treatment-and-discharge,8589.31334625
+Cataluña,2025,waste:industrial-wastewater-treatment-and-discharge,2823.8838398630137
+Madrid,2021,waste:industrial-wastewater-treatment-and-discharge,2527.25074875
+Madrid,2022,waste:industrial-wastewater-treatment-and-discharge,2061.43357875
+Madrid,2023,waste:industrial-wastewater-treatment-and-discharge,2020.1045175009936
+Madrid,2024,waste:industrial-wastewater-treatment-and-discharge,2061.4335787500004
+Madrid,2025,waste:industrial-wastewater-treatment-and-discharge,677.7315875342466
+Cantabria,2021,waste:industrial-wastewater-treatment-and-discharge,3159.0532837499995
+Cantabria,2022,waste:industrial-wastewater-treatment-and-discharge,2576.799225
+Cantabria,2023,waste:industrial-wastewater-treatment-and-discharge,2525.1131475012417
+Cantabria,2024,waste:industrial-wastewater-treatment-and-discharge,2576.799225
+Cantabria,2025,waste:industrial-wastewater-treatment-and-discharge,847.1668684931508
+Galicia,2021,waste:industrial-wastewater-treatment-and-discharge,2948.4505050000002
+Galicia,2022,waste:industrial-wastewater-treatment-and-discharge,2405.0126099999998
+Galicia,2023,waste:industrial-wastewater-treatment-and-discharge,2356.7924925011594
+Galicia,2024,waste:industrial-wastewater-treatment-and-discharge,2405.0126099999998
+Galicia,2025,waste:industrial-wastewater-treatment-and-discharge,790.689077260274
+Andalucía,2021,waste:solid-waste-disposal,933795.0002793475
+Andalucía,2022,waste:solid-waste-disposal,933795.0002793475
+Andalucía,2023,waste:solid-waste-disposal,941536.1608316618
+Andalucía,2024,waste:solid-waste-disposal,949341.4956049586
+Andalucía,2025,waste:solid-waste-disposal,316447.1652016531
+Baleares,2021,waste:solid-waste-disposal,97416.00006871825
+Baleares,2022,waste:solid-waste-disposal,97416.00006871825
+Baleares,2023,waste:solid-waste-disposal,98223.57870928793
+Baleares,2024,waste:solid-waste-disposal,99037.85217678777
+Baleares,2025,waste:solid-waste-disposal,33012.61739226263
+Extremadura,2021,waste:solid-waste-disposal,51110.99989396128
+Extremadura,2022,waste:solid-waste-disposal,51110.99989396128
+Extremadura,2023,waste:solid-waste-disposal,51534.710083082224
+Extremadura,2024,waste:solid-waste-disposal,51961.93282967095
+Extremadura,2025,waste:solid-waste-disposal,17320.644276556985
+La Rioja,2021,waste:solid-waste-disposal,44603.999936889115
+La Rioja,2022,waste:solid-waste-disposal,44603.999936889115
+La Rioja,2023,waste:solid-waste-disposal,44973.76709636591
+La Rioja,2024,waste:solid-waste-disposal,45346.59962559478
+La Rioja,2025,waste:solid-waste-disposal,15115.533208531597
+Madrid,2021,waste:solid-waste-disposal,571481.9998330063
+Madrid,2022,waste:solid-waste-disposal,571481.9998330063
+Madrid,2023,waste:solid-waste-disposal,576219.585611621
+Madrid,2024,waste:solid-waste-disposal,580996.4459763422
+Madrid,2025,waste:solid-waste-disposal,193665.48199211393
+Comunidad Valenciana,2021,waste:solid-waste-disposal,220859.99979943552
+Comunidad Valenciana,2022,waste:solid-waste-disposal,220859.99979943552
+Comunidad Valenciana,2023,waste:solid-waste-disposal,222690.92919777258
+Comunidad Valenciana,2024,waste:solid-waste-disposal,224537.037000822
+Comunidad Valenciana,2025,waste:solid-waste-disposal,74845.67900027407
+Cataluña,2021,waste:solid-waste-disposal,213597.00003227036
+Cataluña,2022,waste:solid-waste-disposal,213597.00003227036
+Cataluña,2023,waste:solid-waste-disposal,215367.71916253763
+Cataluña,2024,waste:solid-waste-disposal,217153.1175543955
+Cataluña,2025,waste:solid-waste-disposal,72384.37251813171
+Aragón,2021,waste:solid-waste-disposal,98225.99981773495
+Aragón,2022,waste:solid-waste-disposal,98225.99981773495
+Aragón,2023,waste:solid-waste-disposal,99040.29335622402
+Aragón,2024,waste:solid-waste-disposal,99861.33738814689
+Aragón,2025,waste:solid-waste-disposal,33287.11246271567
+Murcia,2021,waste:solid-waste-disposal,542618.9998854216
+Murcia,2022,waste:solid-waste-disposal,542618.9998854216
+Murcia,2023,waste:solid-waste-disposal,547117.3113944709
+Murcia,2024,waste:solid-waste-disposal,551652.9139059314
+Murcia,2025,waste:solid-waste-disposal,183884.30463531023
+Castilla y León,2021,waste:solid-waste-disposal,98495.99984493366
+Castilla y León,2022,waste:solid-waste-disposal,98495.99984493366
+Castilla y León,2023,waste:solid-waste-disposal,99312.53168364808
+Castilla y León,2024,waste:solid-waste-disposal,100135.83257130552
+Castilla y León,2025,waste:solid-waste-disposal,33378.61085710185
+Asturias,2021,waste:solid-waste-disposal,62154.0000419083
+Asturias,2022,waste:solid-waste-disposal,62154.0000419083
+Asturias,2023,waste:solid-waste-disposal,62669.25670225575
+Asturias,2024,waste:solid-waste-disposal,63188.7848403174
+Asturias,2025,waste:solid-waste-disposal,21062.928280105803
+Canarias,2021,waste:solid-waste-disposal,343278.0000254401
+Canarias,2022,waste:solid-waste-disposal,343278.0000254401
+Canarias,2023,waste:solid-waste-disposal,346123.77464565146
+Canarias,2024,waste:solid-waste-disposal,348993.14073746366
+Canarias,2025,waste:solid-waste-disposal,116331.0469124879
+Castilla-La Mancha,2021,waste:solid-waste-disposal,110510.99989124839
+Castilla-La Mancha,2022,waste:solid-waste-disposal,110510.99989124839
+Castilla-La Mancha,2023,waste:solid-waste-disposal,111427.1360803467
+Castilla-La Mancha,2024,waste:solid-waste-disposal,112350.86703845282
+Castilla-La Mancha,2025,waste:solid-waste-disposal,37450.289012817615
+Galicia,2021,waste:solid-waste-disposal,220157.9999282665
+Galicia,2022,waste:solid-waste-disposal,220157.9999282665
+Galicia,2023,waste:solid-waste-disposal,221983.1097476717
+Galicia,2024,waste:solid-waste-disposal,223823.34972747997
+Galicia,2025,waste:solid-waste-disposal,74607.78324249329
+Navarra,2021,waste:solid-waste-disposal,133326.00036035257
+Navarra,2022,waste:solid-waste-disposal,133326.00036035257
+Navarra,2023,waste:solid-waste-disposal,134431.27290334
+Navarra,2024,waste:solid-waste-disposal,135545.70815570877
+Navarra,2025,waste:solid-waste-disposal,45181.90271856959
+Cantabria,2021,waste:solid-waste-disposal,241380.00003735066
+Cantabria,2022,waste:solid-waste-disposal,241380.00003735066
+Cantabria,2023,waste:solid-waste-disposal,243381.0402376603
+Cantabria,2024,waste:solid-waste-disposal,245398.66906123047
+Cantabria,2025,waste:solid-waste-disposal,81799.5563537435
+País Vasco,2021,waste:solid-waste-disposal,97199.99998044329
+País Vasco,2022,waste:solid-waste-disposal,97199.99998044329
+País Vasco,2023,waste:solid-waste-disposal,98005.78798028127
+País Vasco,2024,waste:solid-waste-disposal,98818.25596263773
+País Vasco,2025,waste:solid-waste-disposal,32939.418654212575

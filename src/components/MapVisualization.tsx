@@ -172,13 +172,13 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
         })}
       </MapContainer>
 
-      <div className="absolute top-4 left-4 bg-white p-4 rounded-lg shadow">
+      <div className="absolute top-4 left-4 z-10 bg-white p-4 rounded-lg shadow">
         <h3 className="text-lg font-semibold text-gray-900">{sanitizeHtml(t('map.title'))}</h3>
         <p className="text-sm text-gray-600">
           {filteredData.length} registros • {Object.keys(regionEmissions).length} regiones
         </p>
       </div>
-        <div className="absolute bottom-4 left-4 bg-white p-3 rounded-lg shadow-lg">
+        <div className="absolute bottom-4 left-4 z-10 bg-white p-3 rounded-lg shadow-lg">
           <h4 className="text-sm font-semibold mb-2">{sanitizeHtml(t('map.legend'))}</h4>
           <div className="space-y-1">
             <div className="flex items-center space-x-2">
@@ -196,7 +196,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
           </div>
         </div>
 
-        <div className="absolute top-4 right-4 bg-white p-3 rounded-lg shadow-lg">
+        <div className="absolute top-4 right-4 z-10 bg-white p-3 rounded-lg shadow-lg">
           <div className="text-sm">
             <div className="font-semibold">Total Emisiones</div>
             <div className="text-2xl font-bold text-green-600">
@@ -207,7 +207,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
         </div>
 
         {(isLoading || error || filteredData.length === 0) && (
-          <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+          <div className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center">
             <div className="bg-white bg-opacity-80 px-4 py-2 rounded">
               <p className="text-gray-600 text-center">
                 {sanitizeHtml(
@@ -223,7 +223,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
         )}
 
         {statusMessage && (
-          <div className="pointer-events-none absolute top-2 left-2 bg-white bg-opacity-70 rounded px-2 py-1 shadow">
+          <div className="pointer-events-none absolute top-2 left-2 z-10 bg-white bg-opacity-70 rounded px-2 py-1 shadow">
             <p className="text-xs text-gray-700" dangerouslySetInnerHTML={{ __html: sanitizeHtml(statusMessage) }} />
           </div>
         )}

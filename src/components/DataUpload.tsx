@@ -1,4 +1,3 @@
-
 import React, { useState, useCallback } from 'react';
 import { useTranslation } from '../hooks/useTranslation';
 import { Button } from '@/components/ui/button';
@@ -32,7 +31,7 @@ const DataUpload: React.FC<DataUploadProps> = ({ onDataLoaded }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [processingProgress, setProcessingProgress] = useState(0);
 
-  const parseCSV = useCallback((csvText: string): CO2Data[] => {
+  const parseCSV = useCallback(async (csvText: string): Promise<CO2Data[]> => {
     const lines = csvText.trim().split('\n');
     
     // Enhanced validation
@@ -52,7 +51,6 @@ const DataUpload: React.FC<DataUploadProps> = ({ onDataLoaded }) => {
 
     const data: CO2Data[] = [];
     const batchSize = 1000;
-    let processedRows = 0;
 
     for (let i = 1; i < lines.length; i += batchSize) {
       const batch = lines.slice(i, Math.min(i + batchSize, lines.length));
@@ -99,7 +97,7 @@ const DataUpload: React.FC<DataUploadProps> = ({ onDataLoaded }) => {
         }
       }
 
-      processedRows += batch.length;
+      const processedRows = i + batch.length - 1;
       setProcessingProgress(Math.round((processedRows / (lines.length - 1)) * 100));
       
       // Allow UI to update

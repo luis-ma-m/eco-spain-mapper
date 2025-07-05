@@ -1,4 +1,3 @@
-
 import React, { useMemo, useState } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Tooltip, ZoomControl, useMapEvents } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -139,8 +138,8 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) =>
           <ZoomControl position="topright" />
           <ZoomListener onZoom={setZoom} />
           <TileLayer
-            attribution="&copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors"
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution="&copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors"
           />
           {spanishRegions.map((region) => {
             const emission = regionEmissions[region.name] || 0;

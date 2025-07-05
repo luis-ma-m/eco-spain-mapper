@@ -10,6 +10,8 @@ import { sanitizeHtml, sanitizeString } from '../utils/security';
 interface MapVisualizationProps {
   data: CO2Data[];
   filters: FilterState;
+  isLoading?: boolean;
+  error?: string | null;
 }
 
 const ZoomListener: React.FC<{ onZoom: (z: number) => void }> = ({ onZoom }) => {
@@ -21,7 +23,12 @@ const ZoomListener: React.FC<{ onZoom: (z: number) => void }> = ({ onZoom }) => 
   return null;
 };
 
-const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) => {
+const MapVisualization: React.FC<MapVisualizationProps> = ({
+  data,
+  filters,
+  isLoading = false,
+  error = null,
+}) => {
   const { t } = useTranslation();
   const [zoom, setZoom] = useState(6);
   const [screenHeight, setScreenHeight] = useState<number>(typeof window !== 'undefined' ? window.innerHeight : 800);
@@ -212,10 +219,18 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) =>
           </div>
         </div>
 
-        {filteredData.length === 0 && (
-          <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-90">
-            <div className="text-center">
-              <p className="text-gray-600">{sanitizeHtml(t('data.noData'))}</p>
+        {(isLoading || error || filteredData.length === 0) && (
+          <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+            <div className="bg-white bg-opacity-80 px-4 py-2 rounded">
+              <p className="text-gray-600 text-center">
+                {sanitizeHtml(
+                  isLoading
+                    ? t('data.loading')
+                    : error
+                    ? `${t('data.error')}: ${error}`
+                    : t('data.noData')
+                )}
+              </p>
             </div>
           </div>
         )}

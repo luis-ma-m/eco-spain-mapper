@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import MapVisualization from '../components/MapVisualization';
+import DataUpload from '../components/DataUpload';
+import FilterPanel from '../components/FilterPanel';
 import ErrorBoundary from '../components/ErrorBoundary';
 import type { CO2Data } from '../components/DataUpload';
 import type { FilterState } from '../components/FilterPanel';
@@ -62,8 +64,16 @@ const parseCSV = (csvText: string): CO2Data[] => {
 const Index = () => {
   const { t } = useTranslation();
   const [data, setData] = useState<CO2Data[]>([]);
-  const [filters] = useState<FilterState>({ region: null, year: null, sector: null });
+  const [filters, setFilters] = useState<FilterState>({ region: null, year: null, sector: null });
   const [isLoading, setIsLoading] = useState(true);
+
+  const handleDataLoaded = (loadedData: CO2Data[]) => {
+    setData(loadedData);
+  };
+
+  const handleFiltersChange = (newFilters: FilterState) => {
+    setFilters(newFilters);
+  };
 
   useEffect(() => {
     const loadData = async () => {
@@ -83,11 +93,22 @@ const Index = () => {
     loadData();
   }, []);
 
+  const availableRegions = Array.from(new Set(data.map(d => d.region))).sort();
+  const availableYears = Array.from(new Set(data.map(d => d.year))).sort((a, b) => a - b);
+  const availableSectors = Array.from(new Set(data.map(d => d.sector))).sort();
+
   return (
     <ErrorBoundary>
       <div className="flex flex-col min-h-screen">
         <Header />
-        <main className="flex-1">
+        <main className="flex-1 p-4 space-y-4">
+          <DataUpload onDataLoaded={handleDataLoaded} />
+          <FilterPanel
+            onFiltersChange={handleFiltersChange}
+            availableRegions={availableRegions}
+            availableYears={availableYears}
+            availableSectors={availableSectors}
+          />
           {isLoading ? (
             <div className="flex items-center justify-center h-full text-gray-600">
               {t('data.loading')}

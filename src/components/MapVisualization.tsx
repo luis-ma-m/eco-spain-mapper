@@ -74,10 +74,11 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
     return emissions;
   }, [filteredData]);
 
-  // Get max emission value for color scaling with safety check
-  const maxEmission = useMemo(() => {
+  // Get min and max emission values for scaling with safety check
+  const { minEmission, maxEmission } = useMemo(() => {
     const values = Object.values(regionEmissions).filter(v => isFinite(v) && v > 0);
-    return values.length > 0 ? Math.max(...values) : 1;
+    if (values.length === 0) return { minEmission: 0, maxEmission: 1 };
+    return { minEmission: Math.min(...values), maxEmission: Math.max(...values) };
   }, [regionEmissions]);
 
   // Color scale function with input validation
@@ -115,18 +116,24 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
 
   const getRadius = (emission: number) => {
     if (!isFinite(emission) || emission <= 0) return 8;
-    return Math.max(8, Math.min(50, Math.sqrt(emission / 1000))) * (zoom / 6);
+    if (maxEmission === minEmission) return 20 * (zoom / 6);
+
+    const minSize = 8;
+    const maxSize = 50;
+    const normalized = (emission - minEmission) / (maxEmission - minEmission);
+    const radius = minSize + normalized * (maxSize - minSize);
+    return radius * (zoom / 6);
   };
 
-  // Safe number formatting
+  // Safe number formatting in millions
   const formatNumber = (num: number): string => {
     if (!isFinite(num)) return '0';
-    return (num / 1000).toFixed(1);
+    return (num / 1_000_000).toFixed(2);
   };
 
   const formatTotalEmissions = (num: number): string => {
     if (!isFinite(num)) return '0.00';
-    return (num / 1000000).toFixed(2);
+    return (num / 1_000_000).toFixed(2);
   };
 
   return (
@@ -162,7 +169,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
                   <div className="text-xs font-medium" dangerouslySetInnerHTML={{ __html: sanitizedRegionName }} />
                   {emission > 0 && (
                     <div className="text-xs">
-                      {formatNumber(emission)}k {sanitizeHtml(t('map.unit'))}
+                      {formatNumber(emission)}M {sanitizeHtml(t('map.unit'))}
                     </div>
                   )}
                 </div>

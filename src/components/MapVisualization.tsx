@@ -75,8 +75,9 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
 
   // Group metrics by prefix (for dropdown headings)
   const groupedMetrics = useMemo(() => {
+    const metrics = Array.isArray(availableMetrics) ? availableMetrics : [];
     const groups: Record<string, string[]> = {};
-    availableMetrics.forEach(m => {
+    metrics.forEach(m => {
       const prefix = m.includes('_') ? m.split('_')[0] : 'metrics';
       if (!groups[prefix]) groups[prefix] = [];
       groups[prefix].push(m);

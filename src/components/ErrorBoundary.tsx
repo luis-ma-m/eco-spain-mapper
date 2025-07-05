@@ -50,6 +50,15 @@ class ErrorBoundary extends Component<Props, State> {
               <p className="text-center text-gray-600">
                 Ha ocurrido un error inesperado. Por favor, recarga la página.
               </p>
+              {this.state.error?.message && (
+                <p className="text-center text-red-600 text-sm">
+                  {this.state.error.message}
+                </p>
+              )}
+              <p className="text-center text-gray-500 text-sm">
+                Revisa la consola del navegador para ver el seguimiento completo
+                del error.
+              </p>
               <div className="flex justify-center space-x-2">
                 <Button onClick={this.handleReload} variant="default">
                   Recargar página

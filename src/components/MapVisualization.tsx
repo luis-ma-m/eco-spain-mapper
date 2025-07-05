@@ -131,7 +131,10 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
   }
 
   return (
-    <div className="w-full h-full relative">
+    <div
+      className="relative w-full"
+      style={{ height: 'calc(100vh - 4rem)' }}
+    >
       {/* Controls Panel */}
       <Card className="absolute top-4 left-4 z-10 w-80 bg-white/95 backdrop-blur-sm">
         <CardHeader className="pb-3">

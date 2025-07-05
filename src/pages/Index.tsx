@@ -1,4 +1,3 @@
-
 // pages/index.tsx
 import React, { useEffect, useState, useMemo } from 'react';
 import Papa from 'papaparse';
@@ -125,11 +124,12 @@ const Index: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [statusMsg, setStatusMsg] = useState<string>('');
   const [isDataModalOpen, setDataModalOpen] = useState(false);
-  const [selectedMetric, setSelectedMetric] = useState<string>(() => {
+  const [selectedMetrics, setSelectedMetrics] = useState<string[]>(() => {
     try {
-      return localStorage.getItem('selectedMetric') || 'emissions';
+      const saved = localStorage.getItem('selectedMetrics');
+      return saved ? JSON.parse(saved) : ['emissions'];
     } catch {
-      return 'emissions';
+      return ['emissions'];
     }
   });
 
@@ -145,11 +145,11 @@ const Index: React.FC = () => {
 
   useEffect(() => {
     try {
-      localStorage.setItem('selectedMetric', selectedMetric);
+      localStorage.setItem('selectedMetrics', JSON.stringify(selectedMetrics));
     } catch {
-      /* ignore */
+      // ignore
     }
-  }, [selectedMetric]);
+  }, [selectedMetrics]);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -163,13 +163,11 @@ const Index: React.FC = () => {
       try {
         console.info(`Fetching data from ${dataUrl}`);
         const res = await fetch(dataUrl, { signal: controller.signal });
-
         if (!res.ok) {
           throw new Error(`Failed to load data: ${res.status} ${res.statusText}`);
         }
 
         const text = await res.text();
-
         let parsedData: CO2Data[];
         try {
           parsedData = parseCSV(text);
@@ -189,20 +187,16 @@ const Index: React.FC = () => {
         console.error('Error loading CSV:', msg);
         setError(msg);
         setStatusMsg(`Error loading CSV: ${msg}`);
-        throw err;
       } finally {
         setIsLoading(false);
       }
     };
 
     loadData();
-
-    return () => {
-      controller.abort();
-    };
+    return () => { controller.abort(); };
   }, []);
 
-  // Memoize filter options so we only recompute when `data` changes
+  // Memoize filter options
   const availableRegions = useMemo(
     () => Array.from(new Set(data.map(d => d.region))).sort(),
     [data]
@@ -216,21 +210,27 @@ const Index: React.FC = () => {
     [data]
   );
 
+  // Discover numeric fields for metrics
   const availableMetrics = useMemo(() => {
     const metrics = new Set<string>();
     data.forEach(record => {
       Object.entries(record).forEach(([k, v]) => {
-        if (
-          typeof v === 'number' &&
-          isFinite(v) &&
-          !['year', 'lat', 'lng'].includes(k)
-        ) {
+        if (typeof v === 'number' && isFinite(v) && !['year', 'lat', 'lng'].includes(k)) {
           metrics.add(k);
         }
       });
     });
     return Array.from(metrics).sort();
   }, [data]);
+
+  // Ensure selectedMetrics stay valid as data changes
+  useEffect(() => {
+    if (availableMetrics.length === 0) return;
+    setSelectedMetrics(prev => {
+      const filtered = prev.filter(m => availableMetrics.includes(m));
+      return filtered.length > 0 ? filtered : [availableMetrics[0]];
+    });
+  }, [availableMetrics]);
 
   return (
     <ErrorBoundary>
@@ -241,9 +241,9 @@ const Index: React.FC = () => {
           <MapVisualization
             data={data}
             filters={filters}
-            selectedMetric={selectedMetric}
+            selectedMetrics={selectedMetrics}
             availableMetrics={availableMetrics}
-            onMetricChange={setSelectedMetric}
+            onMetricsChange={setSelectedMetrics}
             isLoading={isLoading}
             error={error}
             statusMessage={statusMsg}
@@ -252,9 +252,7 @@ const Index: React.FC = () => {
           <div className="absolute bottom-4 right-4 z-10 flex flex-col space-y-2">
             <Sheet>
               <SheetTrigger asChild>
-                <Button size="icon">
-                  <Upload className="w-4 h-4" />
-                </Button>
+                <Button size="icon"><Upload className="w-4 h-4" /></Button>
               </SheetTrigger>
               <SheetContent side="right" className="sm:w-96">
                 <DataUpload onDataLoaded={handleDataLoaded} />
@@ -263,9 +261,7 @@ const Index: React.FC = () => {
 
             <Sheet>
               <SheetTrigger asChild>
-                <Button size="icon">
-                  <FilterIcon className="w-4 h-4" />
-                </Button>
+                <Button size="icon"><FilterIcon className="w-4 h-4" /></Button>
               </SheetTrigger>
               <SheetContent side="right" className="sm:w-80">
                 <FilterPanel

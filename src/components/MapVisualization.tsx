@@ -15,20 +15,23 @@ import { useTranslation } from '../hooks/useTranslation';
 import { CO2Data } from './DataUpload';
 import { FilterState } from './FilterPanel';
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { Button } from '@/components/ui/button';
 import { sanitizeHtml, sanitizeString } from '../utils/security';
 
 interface MapVisualizationProps {
   data: CO2Data[];
   filters: FilterState;
-  selectedMetric: string;
+  selectedMetrics: string[];
   availableMetrics: string[];
-  onMetricChange: (m: string) => void;
+  onMetricsChange: (m: string[]) => void;
   isLoading?: boolean;
   error?: string | null;
   statusMessage?: string;
@@ -46,9 +49,9 @@ const ZoomListener: React.FC<{ onZoom: (z: number) => void }> = ({ onZoom }) => 
 const MapVisualization: React.FC<MapVisualizationProps> = ({
   data,
   filters,
-  selectedMetric,
+  selectedMetrics,
   availableMetrics,
-  onMetricChange,
+  onMetricsChange,
   isLoading = false,
   error = null,
   statusMessage,
@@ -70,19 +73,32 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
     });
   }, [data, filters]);
 
-  // Sum chosen metric by region
+  // Group metrics by prefix (for dropdown headings)
+  const groupedMetrics = useMemo(() => {
+    const groups: Record<string, string[]> = {};
+    availableMetrics.forEach(m => {
+      const prefix = m.includes('_') ? m.split('_')[0] : 'metrics';
+      if (!groups[prefix]) groups[prefix] = [];
+      groups[prefix].push(m);
+    });
+    return groups;
+  }, [availableMetrics]);
+
+  // Sum selected metrics by region
   const regionEmissions = useMemo(() => {
     const map: Record<string, number> = {};
     filteredData.forEach(item => {
       const region = sanitizeString(item.region);
       if (!region) return;
-      const raw = item[selectedMetric];
-      const val = typeof raw === 'number' ? Math.max(0, raw) : 0;
+      const val = selectedMetrics.reduce((sum, key) => {
+        const raw = item[key];
+        return typeof raw === 'number' ? sum + Math.max(0, raw) : sum;
+      }, 0);
       if (!isFinite(val)) return;
       map[region] = (map[region] || 0) + val;
     });
     return map;
-  }, [filteredData, selectedMetric]);
+  }, [filteredData, selectedMetrics]);
 
   // Compute min/max for scaling
   const { minEmission, maxEmission } = useMemo(() => {
@@ -91,7 +107,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
     return { minEmission: Math.min(...vals), maxEmission: Math.max(...vals) };
   }, [regionEmissions]);
 
-  // Color scale
+  // Color scale (green → red)
   const getEmissionColor = (em: number): string => {
     if (!isFinite(em) || em < 0) return '#e5e7eb';
     const intensity = Math.min(Math.max(em / maxEmission, 0), 1);
@@ -101,7 +117,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
     return `rgb(${red}, ${green}, ${blue})`;
   };
 
-  // Static centroids
+  // Static centroids for each comunidad
   const spanishRegions = [
     { name: 'Andalucía', coords: [37.7749, -4.7324] },
     { name: 'Aragón', coords: [41.5868, -0.8296] },
@@ -146,7 +162,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
       >
         <ZoomControl position="topright" />
         <ZoomListener onZoom={setZoom} />
-        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"} />
 
         {spanishRegions.map(region => {
           const em = regionEmissions[region.name] || 0;
@@ -210,22 +226,46 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
         </div>
       </div>
 
-      {/* Metric selector & Total */}
+      {/* Metric selection & Total */}
       <div className="absolute top-4 right-4 z-[1200] bg-white p-3 rounded-lg shadow-lg space-y-2">
-        <Select value={selectedMetric} onValueChange={onMetricChange}>
-          <SelectTrigger className="w-40">
-            <SelectValue />
-          </SelectTrigger>
-          <SelectContent className="bg-white z-50">
-            {availableMetrics.map(m => (
-              <SelectItem key={m} value={m} className="capitalize">
-                {m}
-              </SelectItem>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="outline" className="w-40 truncate">
+              {selectedMetrics.length > 0
+                ? selectedMetrics.join(', ')
+                : sanitizeHtml(t('map.selectMetrics'))}
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="max-h-60 overflow-y-auto">
+            {Object.entries(groupedMetrics).map(([group, metrics], gi, arr) => (
+              <DropdownMenuGroup key={group}>
+                {arr.length > 1 && (
+                  <DropdownMenuLabel className="capitalize">
+                    {group}
+                  </DropdownMenuLabel>
+                )}
+                {metrics.map(m => (
+                  <DropdownMenuCheckboxItem
+                    key={m}
+                    checked={selectedMetrics.includes(m)}
+                    onCheckedChange={checked => {
+                      if (checked) {
+                        onMetricsChange([...selectedMetrics, m]);
+                      } else {
+                        onMetricsChange(selectedMetrics.filter(x => x !== m));
+                      }
+                    }}
+                    className="capitalize"
+                  >
+                    {m}
+                  </DropdownMenuCheckboxItem>
+                ))}
+                {gi < arr.length - 1 && <DropdownMenuSeparator />}
+              </DropdownMenuGroup>
             ))}
-          </SelectContent>
-        </Select>
-        <div className="text-sm text-center">
-          <div className="font-semibold">{sanitizeHtml(t('map.total'))}</div>
+          </DropdownMenuContent>
+        </DropdownMenu>
+        <div className="text-center text-sm">
           <div className="text-2xl font-bold text-green-600">
             {formatNumber(totalMetric)} M
           </div>

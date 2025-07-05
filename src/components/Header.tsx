@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from '../hooks/useTranslation';
 import { MapPin } from 'lucide-react';
 
@@ -27,15 +28,15 @@ const Header = () => {
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-gray-700 hover:text-green-600 font-medium transition-colors">
+            <Link to="/" className="text-gray-700 hover:text-green-600 font-medium transition-colors">
               {t('nav.home')}
-            </a>
+            </Link>
             <a href="#" className="text-gray-700 hover:text-green-600 font-medium transition-colors">
               {t('nav.data')}
             </a>
-            <a href="#" className="text-gray-700 hover:text-green-600 font-medium transition-colors">
+            <Link to="/about" className="text-gray-700 hover:text-green-600 font-medium transition-colors">
               {t('nav.about')}
-            </a>
+            </Link>
           </nav>
 
           {/* Language Switcher */}

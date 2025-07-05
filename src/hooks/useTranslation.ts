@@ -42,6 +42,17 @@ const translations: Translations = {
   'upload.button': { es: 'Seleccionar archivo', en: 'Select file' },
   'upload.processing': { es: 'Procesando...', en: 'Processing...' },
   'upload.default': { es: 'Cargar datos ClimateTrace', en: 'Load ClimateTrace data' },
+
+  // About page
+  'about.purpose': {
+    es: 'Esta aplicaci\u00f3n muestra las emisiones de CO\u2082 en Espa\u00f1a utilizando datos de Climate Trace.',
+    en: 'This application displays CO\u2082 emissions in Spain using Climate Trace data.',
+  },
+  'about.author': { es: 'Autor: Luis Mart\u00edn Ma\u00edllo', en: 'Author: Luis Mart\u00edn Ma\u00edllo' },
+  'about.cc': {
+    es: 'Datos disponibles bajo licencia CC BY 4.0 de',
+    en: 'Data available under a CC BY 4.0 license from',
+  },
 };
 
 export const useTranslation = () => {

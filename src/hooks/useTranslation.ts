@@ -35,7 +35,7 @@ const translations: Translations = {
   // Map
   'map.title': { es: 'Mapa de Emisiones', en: 'Emissions Map' },
   'map.legend': { es: 'Leyenda', en: 'Legend' },
-  'map.unit': { es: 'Toneladas CO₂', en: 'CO₂ Tons' },
+  'map.unit': { es: 'Mt CO₂', en: 'Mt CO₂' },
   
   // Upload
   'upload.title': { es: 'Subir Archivo CSV', en: 'Upload CSV File' },

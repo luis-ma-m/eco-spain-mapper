@@ -14,11 +14,21 @@ import 'leaflet/dist/leaflet.css';
 import { useTranslation } from '../hooks/useTranslation';
 import { CO2Data } from './DataUpload';
 import { FilterState } from './FilterPanel';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { sanitizeHtml, sanitizeString } from '../utils/security';
 
 interface MapVisualizationProps {
   data: CO2Data[];
   filters: FilterState;
+  selectedMetric: string;
+  availableMetrics: string[];
+  onMetricChange: (m: string) => void;
   isLoading?: boolean;
   error?: string | null;
   statusMessage?: string;
@@ -36,6 +46,9 @@ const ZoomListener: React.FC<{ onZoom: (z: number) => void }> = ({ onZoom }) => 
 const MapVisualization: React.FC<MapVisualizationProps> = ({
   data,
   filters,
+  selectedMetric,
+  availableMetrics,
+  onMetricChange,
   isLoading = false,
   error = null,
   statusMessage,
@@ -59,18 +72,19 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
     });
   }, [data, filters]);
 
-  // Sum emissions by region
+  // Sum selected metric by region
   const regionEmissions = useMemo(() => {
     const map: Record<string, number> = {};
     filteredData.forEach(item => {
       const region = sanitizeString(item.region);
       if (!region) return;
-      const val = Math.max(0, item.emissions);
+      const valRaw = item[selectedMetric];
+      const val = typeof valRaw === 'number' ? Math.max(0, valRaw) : 0;
       if (!isFinite(val)) return;
       map[region] = (map[region] || 0) + val;
     });
     return map;
-  }, [filteredData]);
+  }, [filteredData, selectedMetric]);
 
   // Determine min/max for scaling
   const { minEmission, maxEmission } = useMemo(() => {
@@ -121,7 +135,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
   const formatNumber = (n: number) =>
     isFinite(n) ? (n / 1_000_000).toFixed(2) : '0.00';
 
-  const totalEmissions = Object.values(regionEmissions).reduce((a, b) => a + b, 0);
+  const totalMetric = Object.values(regionEmissions).reduce((a, b) => a + b, 0);
 
   return (
     <div className="relative w-full" style={{ height: 'calc(100vh - 4rem)' }}>
@@ -198,16 +212,25 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
         </div>
       </div>
 
-      {/* Total */}
-      <div className="absolute top-4 right-4 z-[1200] bg-white p-3 rounded-lg shadow-lg">
-        <div className="text-sm">
-          <div className="font-semibold">Total Emisiones</div>
+      {/* Metric selection */}
+      <div className="absolute top-4 right-4 z-[1200] bg-white p-3 rounded-lg shadow-lg space-y-2">
+        <Select value={selectedMetric} onValueChange={onMetricChange}>
+          <SelectTrigger className="w-40">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent className="bg-white z-50">
+            {availableMetrics.map(m => (
+              <SelectItem key={m} value={m} className="capitalize">
+                {m}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+        <div className="text-center text-sm">
           <div className="text-2xl font-bold text-green-600">
-            {formatNumber(totalEmissions)} M
+            {formatNumber(totalMetric)} M
           </div>
-          <div className="text-xs text-gray-600">
-            {sanitizeHtml(t('map.unit'))}
-          </div>
+          <div className="text-xs text-gray-600">{sanitizeHtml(t('map.unit'))}</div>
         </div>
       </div>
 

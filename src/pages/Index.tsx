@@ -34,42 +34,58 @@ const parseCSV = (csvText: string): CO2Data[] => {
 
   return rows.reduce<CO2Data[]>((acc, row, i) => {
     try {
-      // Build and sanitize each field exactly once
+      const sanitizedRow: Record<string, unknown> = {};
+      for (const [key, value] of Object.entries(row)) {
+        const cleanKey = sanitizeString(key);
+        if (value === undefined || value === '') continue;
+        if (!isNaN(Number(value))) {
+          sanitizedRow[cleanKey] = sanitizeNumber(value);
+        } else {
+          sanitizedRow[cleanKey] = sanitizeString(value);
+        }
+      }
+
       const region = sanitizeString(
-        row.region ||
-        row.Region ||
-        row.autonomous_community ||
-        row.comunidad_autonoma ||
+        (sanitizedRow.region as string) ||
+        (sanitizedRow.Region as string) ||
+        (sanitizedRow.autonomous_community as string) ||
+        (sanitizedRow.comunidad_autonoma as string) ||
         ''
       );
 
-      const yearRaw = row.year || row.Year || row.año || '';
+      const yearRaw =
+        sanitizedRow.year ||
+        sanitizedRow.Year ||
+        sanitizedRow.año ||
+        '';
       const year = sanitizeNumber(yearRaw) || 0;
 
       const sector = sanitizeString(
-        row.sector ||
-        row.Sector ||
-        row.industry ||
-        row.industria ||
+        (sanitizedRow.sector as string) ||
+        (sanitizedRow.Sector as string) ||
+        (sanitizedRow.industry as string) ||
+        (sanitizedRow.industria as string) ||
         ''
       );
 
-      const emissionsRaw = row.emissions || row.Emissions || row.emisiones || row.co2 || row.CO2 || '';
+      const emissionsRaw =
+        sanitizedRow.emissions ||
+        sanitizedRow.Emissions ||
+        sanitizedRow.emisiones ||
+        sanitizedRow.co2 ||
+        sanitizedRow.CO2 ||
+        '';
       const emissions = sanitizeNumber(emissionsRaw) || 0;
 
-      // Coordinates (optional)
-      const latRaw = row.lat || '';
-      const lngRaw = row.lng || '';
-      const lat = latRaw ? sanitizeNumber(latRaw) : undefined;
-      const lng = lngRaw ? sanitizeNumber(lngRaw) : undefined;
+      const lat = sanitizedRow.lat !== undefined ? sanitizeNumber(sanitizedRow.lat) : undefined;
+      const lng = sanitizedRow.lng !== undefined ? sanitizeNumber(sanitizedRow.lng) : undefined;
       const coordinates =
         lat !== undefined &&
         lng !== undefined &&
         validateCoordinates(lat, lng)
-          ? [lat, lng] as [number, number]
+          ? ([lat, lng] as [number, number])
           : undefined;
 
-      // Validate core fields
       if (
         region &&
         year >= 1900 &&
@@ -77,7 +93,17 @@ const parseCSV = (csvText: string): CO2Data[] => {
         emissions >= 0 &&
         Number.isFinite(emissions)
       ) {
-        acc.push({ region, year, sector, emissions, coordinates });
+        const record: CO2Data = { region, year, sector, emissions, coordinates };
+        for (const [k, v] of Object.entries(sanitizedRow)) {
+          if (
+            typeof v === 'number' &&
+            !['year', 'lat', 'lng'].includes(k) &&
+            !(k in record)
+          ) {
+            record[k] = v;
+          }
+        }
+        acc.push(record);
       }
     } catch (err) {
       console.warn(`Skipping row ${i + 2} (CSV line ${i + 2}):`, err);
@@ -99,6 +125,13 @@ const Index: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [statusMsg, setStatusMsg] = useState<string>('');
   const [isDataModalOpen, setDataModalOpen] = useState(false);
+  const [selectedMetric, setSelectedMetric] = useState<string>(() => {
+    try {
+      return localStorage.getItem('selectedMetric') || 'emissions';
+    } catch {
+      return 'emissions';
+    }
+  });
 
   const handleDataLoaded = (loadedData: CO2Data[]) => {
     setData(loadedData);
@@ -109,6 +142,14 @@ const Index: React.FC = () => {
   const handleFiltersChange = (newFilters: FilterState) => {
     setFilters(newFilters);
   };
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('selectedMetric', selectedMetric);
+    } catch {
+      /* ignore */
+    }
+  }, [selectedMetric]);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -175,6 +216,22 @@ const Index: React.FC = () => {
     [data]
   );
 
+  const availableMetrics = useMemo(() => {
+    const metrics = new Set<string>();
+    data.forEach(record => {
+      Object.entries(record).forEach(([k, v]) => {
+        if (
+          typeof v === 'number' &&
+          isFinite(v) &&
+          !['year', 'lat', 'lng'].includes(k)
+        ) {
+          metrics.add(k);
+        }
+      });
+    });
+    return Array.from(metrics).sort();
+  }, [data]);
+
   return (
     <ErrorBoundary>
       <div className="flex flex-col min-h-screen">
@@ -184,6 +241,9 @@ const Index: React.FC = () => {
           <MapVisualization
             data={data}
             filters={filters}
+            selectedMetric={selectedMetric}
+            availableMetrics={availableMetrics}
+            onMetricChange={setSelectedMetric}
             isLoading={isLoading}
             error={error}
           />

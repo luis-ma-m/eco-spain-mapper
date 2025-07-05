@@ -4,7 +4,11 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from '../hooks/useTranslation';
 import { MapPin } from 'lucide-react';
 
-const Header = () => {
+interface HeaderProps {
+  onOpenDataModal?: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onOpenDataModal }) => {
   const { t, language, changeLanguage } = useTranslation();
 
   return (
@@ -30,11 +34,16 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-gray-700 hover:text-green-600 font-medium transition-colors">
               {t('nav.home')}
-            </Link>
-            <a href="#" className="text-gray-700 hover:text-green-600 font-medium transition-colors">
-              {t('nav.data')}
             </a>
-            <Link to="/about" className="text-gray-700 hover:text-green-600 font-medium transition-colors">
+            <button
+              type="button"
+              onClick={onOpenDataModal}
+              className="text-gray-700 hover:text-green-600 font-medium transition-colors"
+            >
+              {t('nav.data')}
+            </button>
+            <a href="#" className="text-gray-700 hover:text-green-600 font-medium transition-colors">
+main
               {t('nav.about')}
             </Link>
           </nav>

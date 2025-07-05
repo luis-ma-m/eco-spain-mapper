@@ -26,6 +26,9 @@ const translations: Translations = {
   'filters.sector': { es: 'Sector', en: 'Sector' },
   'filters.reset': { es: 'Restablecer', en: 'Reset' },
   'filters.apply': { es: 'Aplicar', en: 'Apply' },
+  'filters.allRegions': { es: 'Todas las regiones', en: 'All regions' },
+  'filters.allYears': { es: 'Todos los años', en: 'All years' },
+  'filters.allSectors': { es: 'Todos los sectores', en: 'All sectors' },
   
   // Data
   'data.loading': { es: 'Cargando datos...', en: 'Loading data...' },
@@ -40,12 +43,17 @@ const translations: Translations = {
   'map.medium': { es: 'Media emisión', en: 'Medium emission' },
   'map.low': { es: 'Baja emisión', en: 'Low emission' },
   'map.total': { es: 'Total Emisiones', en: 'Total Emissions' },
+  'map.selectMetrics': { es: 'Seleccionar métricas', en: 'Select metrics' },
   
   // Upload
   'upload.title': { es: 'Subir Archivo CSV', en: 'Upload CSV File' },
   'upload.button': { es: 'Seleccionar archivo', en: 'Select file' },
   'upload.processing': { es: 'Procesando...', en: 'Processing...' },
   'upload.default': { es: 'Cargar datos ClimateTrace', en: 'Load ClimateTrace data' },
+  'upload.instructionsTitle': { es: 'Formato esperado del CSV:', en: 'Expected CSV format:' },
+  'upload.instruction.columns': { es: 'Columnas: region, year, sector, emissions', en: 'Columns: region, year, sector, emissions' },
+  'upload.instruction.optional': { es: 'Opcionalmente: lat, lng para coordenadas', en: 'Optional: lat, lng for coordinates' },
+  'upload.instruction.headers': { es: 'Primera fila debe contener los encabezados', en: 'First row must contain headers' },
 
   // About page
   'about.purpose': {
@@ -57,6 +65,19 @@ const translations: Translations = {
     es: 'Datos disponibles bajo licencia CC BY 4.0 de',
     en: 'Data available under a CC BY 4.0 license from',
   },
+
+  // Error Boundary
+  'errorBoundary.title': { es: 'Error de aplicación', en: 'Application error' },
+  'errorBoundary.message': {
+    es: 'Ha ocurrido un error inesperado. Por favor, recarga la página.',
+    en: 'An unexpected error occurred. Please reload the page.',
+  },
+  'errorBoundary.console': {
+    es: 'Revisa la consola del navegador para ver el seguimiento completo del error.',
+    en: 'Check the browser console for the full error trace.',
+  },
+  'errorBoundary.reload': { es: 'Recargar página', en: 'Reload page' },
+  'errorBoundary.retry': { es: 'Intentar de nuevo', en: 'Try again' },
 };
 
 export const useTranslation = () => {

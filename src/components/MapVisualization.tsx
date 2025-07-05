@@ -56,7 +56,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
   error = null,
   statusMessage,
 }) => {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
   const [zoom, setZoom] = useState(6);
   const centerCoords: LatLngExpression = [40.4165, -3.7026];
 
@@ -195,18 +195,65 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
         })}
       </MapContainer>
 
-      {/* Title & counts */}
-      <div className="absolute top-4 left-4 z-[1200] bg-white p-4 rounded-lg shadow">
-        <h3 className="text-lg font-semibold text-gray-900">
-          {sanitizeHtml(t('map.title'))}
-        </h3>
-        <p className="text-sm text-gray-600">
-          {filteredData.length} registros • {Object.keys(regionEmissions).length} regiones
-        </p>
+      {/* Left side containers */}
+      <div className="absolute top-4 left-4 z-[1200] w-60 space-y-2">
+        <div className="bg-white p-4 rounded-lg shadow">
+          <h3 className="text-lg font-semibold text-gray-900">
+            {sanitizeHtml(t('map.title'))}
+          </h3>
+          <p className="text-sm text-gray-600">
+            {language === 'es'
+              ? `${filteredData.length} registros • ${Object.keys(regionEmissions).length} regiones`
+              : `${filteredData.length} records • ${Object.keys(regionEmissions).length} regions`}
+          </p>
+        </div>
+        <div className="bg-white p-3 rounded-lg shadow-lg space-y-2">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" className="w-full truncate">
+                {selectedMetrics.length > 0
+                  ? selectedMetrics.join(', ')
+                  : sanitizeHtml(t('map.selectMetrics'))}
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="max-h-60 overflow-y-auto">
+              {Object.entries(groupedMetrics).map(([group, metrics], gi, arr) => (
+                <DropdownMenuGroup key={group}>
+                  {arr.length > 1 && (
+                    <DropdownMenuLabel className="capitalize">{group}</DropdownMenuLabel>
+                  )}
+                  {metrics.map(m => (
+                    <DropdownMenuCheckboxItem
+                      key={m}
+                      checked={selectedMetrics.includes(m)}
+                      onCheckedChange={checked => {
+                        if (checked) {
+                          onMetricsChange([...selectedMetrics, m]);
+                        } else {
+                          onMetricsChange(selectedMetrics.filter(x => x !== m));
+                        }
+                      }}
+                      className="capitalize"
+                    >
+                      {m}
+                    </DropdownMenuCheckboxItem>
+                  ))}
+                  {gi < arr.length - 1 && <DropdownMenuSeparator />}
+                </DropdownMenuGroup>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <div className="text-center text-sm">
+            <div className="text-2xl font-bold text-green-600">
+              {formatNumber(totalMetric)} M
+            </div>
+            <div className="text-xs text-gray-600">{sanitizeHtml(t('map.unit'))}</div>
+          </div>
+        </div>
       </div>
 
       {/* Legend */}
-      <div className="absolute bottom-4 left-4 z-[1200] bg-white p-3 rounded-lg shadow-lg">
+      <div className="absolute bottom-4 left-4 z-[1200] bg-white p-3 rounded-lg shadow-lg w-60">
         <h4 className="text-sm font-semibold mb-2">
           {sanitizeHtml(t('map.legend'))}
         </h4>
@@ -226,54 +273,6 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
         </div>
       </div>
 
-      {/* Metric selection & Total */}
-      <div className="absolute top-4 right-4 z-[1200] bg-white p-3 rounded-lg shadow-lg space-y-2">
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="w-40 truncate">
-              {selectedMetrics.length > 0
-                ? selectedMetrics.join(', ')
-                : sanitizeHtml(t('map.selectMetrics'))}
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="max-h-60 overflow-y-auto">
-            {Object.entries(groupedMetrics).map(([group, metrics], gi, arr) => (
-              <DropdownMenuGroup key={group}>
-                {arr.length > 1 && (
-                  <DropdownMenuLabel className="capitalize">
-                    {group}
-                  </DropdownMenuLabel>
-                )}
-                {metrics.map(m => (
-                  <DropdownMenuCheckboxItem
-                    key={m}
-                    checked={selectedMetrics.includes(m)}
-                    onCheckedChange={checked => {
-                      if (checked) {
-                        onMetricsChange([...selectedMetrics, m]);
-                      } else {
-                        onMetricsChange(selectedMetrics.filter(x => x !== m));
-                      }
-                    }}
-                    className="capitalize"
-                  >
-                    {m}
-                  </DropdownMenuCheckboxItem>
-                ))}
-                {gi < arr.length - 1 && <DropdownMenuSeparator />}
-              </DropdownMenuGroup>
-            ))}
-          </DropdownMenuContent>
-        </DropdownMenu>
-        <div className="text-center text-sm">
-          <div className="text-2xl font-bold text-green-600">
-            {formatNumber(totalMetric)} M
-          </div>
-          <div className="text-xs text-gray-600">
-            {sanitizeHtml(t('map.unit'))}
-          </div>
-        </div>
-      </div>
 
       {/* Loading / error / no-data overlay */}
       {(isLoading || error || filteredData.length === 0) && (

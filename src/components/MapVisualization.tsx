@@ -13,7 +13,6 @@ interface MapVisualizationProps {
   isLoading?: boolean;
   error?: string | null;
   statusMessage?: string;
-  main
 }
 
 const ZoomListener: React.FC<{ onZoom: (z: number) => void }> = ({ onZoom }) => {
@@ -30,9 +29,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
   filters,
   isLoading = false,
   error = null,
-  jv2608-codex/buscar-errores-de-arranque-del-sitio-web
   statusMessage,
-  main
 }) => {
   const { t } = useTranslation();
   const [zoom, setZoom] = useState(6);

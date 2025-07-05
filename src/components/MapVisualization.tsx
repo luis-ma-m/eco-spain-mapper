@@ -22,7 +22,7 @@ const ZoomListener: React.FC<{ onZoom: (z: number) => void }> = ({ onZoom }) => 
 
 const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) => {
   const { t } = useTranslation();
-  const [zoom, setZoom] = useState(6);
+  const [zoom, setZoom] = useState(5);
   const center: [number, number] = [40.4165, -3.7026];
 
   // Filter data based on current filters
@@ -82,10 +82,10 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) =>
     { name: 'La Rioja', coords: [42.2871, -2.5396] }
   ];
 
-  const getRadius = (emission: number) => Math.max(8, Math.sqrt(emission / 1000)) * (zoom / 6);
+  const getRadius = (emission: number) => Math.max(8, Math.sqrt(emission / 1000)) * (zoom / 5);
 
   return (
-    <div className="w-full h-full bg-gray-50 overflow-hidden">
+    <div className="w-full h-[600px] md:h-full bg-gray-50 overflow-hidden">
       <div className="bg-white p-4 border-b border-gray-200">
         <h3 className="text-lg font-semibold text-gray-900">{t('map.title')}</h3>
         <p className="text-sm text-gray-600">
@@ -96,9 +96,10 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) =>
         <MapContainer
           center={center}
           zoom={zoom}
-          whenCreated={(m) => setZoom(m.getZoom())}
           zoomControl={false}
+          bounds={[[35.5, -10], [44, 5]]}
           className="w-full h-full"
+          style={{ height: '100%', width: '100%' }}
           scrollWheelZoom
         >
           <ZoomControl position="topright" />

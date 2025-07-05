@@ -52,7 +52,7 @@ const DataUpload: React.FC<DataUploadProps> = ({ onDataLoaded }) => {
       const values = lines[i].split(',').map(v => v.trim().replace(/"/g, ''));
       if (values.length !== headers.length) continue;
 
-      const row: any = {};
+      const row: Record<string, string | number> = {};
       headers.forEach((header, index) => {
         const value = values[index];
         

@@ -57,53 +57,51 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
   const [zoom, setZoom] = useState(6);
   const centerCoords: LatLngExpression = [40.4165, -3.7026];
 
-  // Filter out any invalid rows and apply user‐selected filters
+  // Filter & validate rows
   const filteredData = useMemo(() => {
     return data.filter(item => {
       if (!item || typeof item !== 'object') return false;
       if (!item.region || !item.year || typeof item.emissions !== 'number') return false;
       if (item.emissions < 0 || !isFinite(item.emissions)) return false;
-
       if (filters.region && sanitizeString(item.region) !== sanitizeString(filters.region)) return false;
       if (filters.year && item.year !== filters.year) return false;
       if (filters.sector && sanitizeString(item.sector) !== sanitizeString(filters.sector)) return false;
-
       return true;
     });
   }, [data, filters]);
 
-  // Sum selected metric by region
+  // Sum chosen metric by region
   const regionEmissions = useMemo(() => {
     const map: Record<string, number> = {};
     filteredData.forEach(item => {
       const region = sanitizeString(item.region);
       if (!region) return;
-      const valRaw = item[selectedMetric];
-      const val = typeof valRaw === 'number' ? Math.max(0, valRaw) : 0;
+      const raw = item[selectedMetric];
+      const val = typeof raw === 'number' ? Math.max(0, raw) : 0;
       if (!isFinite(val)) return;
       map[region] = (map[region] || 0) + val;
     });
     return map;
   }, [filteredData, selectedMetric]);
 
-  // Determine min/max for scaling
+  // Compute min/max for scaling
   const { minEmission, maxEmission } = useMemo(() => {
     const vals = Object.values(regionEmissions).filter(v => isFinite(v) && v > 0);
     if (vals.length === 0) return { minEmission: 0, maxEmission: 1 };
     return { minEmission: Math.min(...vals), maxEmission: Math.max(...vals) };
   }, [regionEmissions]);
 
-  // Color scale from green (low) to red (high)
+  // Color scale
   const getEmissionColor = (em: number): string => {
     if (!isFinite(em) || em < 0) return '#e5e7eb';
     const intensity = Math.min(Math.max(em / maxEmission, 0), 1);
-    const red = Math.floor(255 * intensity);
+    const red   = Math.floor(255 * intensity);
     const green = Math.floor(255 * (1 - intensity * 0.8));
-    const blue = Math.floor(100 * (1 - intensity));
+    const blue  = Math.floor(100 * (1 - intensity));
     return `rgb(${red}, ${green}, ${blue})`;
   };
 
-  // Static centroids for each Comunidad
+  // Static centroids
   const spanishRegions = [
     { name: 'Andalucía', coords: [37.7749, -4.7324] },
     { name: 'Aragón', coords: [41.5868, -0.8296] },
@@ -199,20 +197,20 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
         <div className="space-y-1">
           <div className="flex items-center space-x-2">
             <div className="w-4 h-4 rounded-full bg-red-500" />
-            <span className="text-xs">Alta emisión</span>
+            <span className="text-xs">{sanitizeHtml(t('map.high'))}</span>
           </div>
           <div className="flex items-center space-x-2">
             <div className="w-4 h-4 rounded-full bg-yellow-500" />
-            <span className="text-xs">Media emisión</span>
+            <span className="text-xs">{sanitizeHtml(t('map.medium'))}</span>
           </div>
           <div className="flex items-center space-x-2">
             <div className="w-4 h-4 rounded-full bg-green-500" />
-            <span className="text-xs">Baja emisión</span>
+            <span className="text-xs">{sanitizeHtml(t('map.low'))}</span>
           </div>
         </div>
       </div>
 
-      {/* Metric selection */}
+      {/* Metric selector & Total */}
       <div className="absolute top-4 right-4 z-[1200] bg-white p-3 rounded-lg shadow-lg space-y-2">
         <Select value={selectedMetric} onValueChange={onMetricChange}>
           <SelectTrigger className="w-40">
@@ -226,11 +224,14 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
             ))}
           </SelectContent>
         </Select>
-        <div className="text-center text-sm">
+        <div className="text-sm text-center">
+          <div className="font-semibold">{sanitizeHtml(t('map.total'))}</div>
           <div className="text-2xl font-bold text-green-600">
             {formatNumber(totalMetric)} M
           </div>
-          <div className="text-xs text-gray-600">{sanitizeHtml(t('map.unit'))}</div>
+          <div className="text-xs text-gray-600">
+            {sanitizeHtml(t('map.unit'))}
+          </div>
         </div>
       </div>
 

@@ -68,7 +68,7 @@ const Index = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const res = await fetch('/climatetrace_aggregated.csv');
+        const res = await fetch(`${import.meta.env.BASE_URL}climatetrace_aggregated.csv`);
         if (!res.ok) throw new Error('Failed to load data');
         const text = await res.text();
         const parsedData = parseCSV(text);

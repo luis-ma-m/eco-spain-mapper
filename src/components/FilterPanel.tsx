@@ -70,7 +70,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
             <SelectTrigger>
               <SelectValue placeholder={`${t('filters.region')}...`} />
             </SelectTrigger>
-            <SelectContent className="bg-white z-50">
+            <SelectContent className="bg-white">
               <SelectItem value={ALL_VALUE}>{t('filters.allRegions')}</SelectItem>
               {availableRegions.map((region) => (
                 <SelectItem key={region} value={region}>
@@ -96,7 +96,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
             <SelectTrigger>
               <SelectValue placeholder={`${t('filters.year')}...`} />
             </SelectTrigger>
-            <SelectContent className="bg-white z-50">
+            <SelectContent className="bg-white">
               <SelectItem value={ALL_VALUE}>{t('filters.allYears')}</SelectItem>
               {availableYears.sort((a, b) => b - a).map((year) => (
                 <SelectItem key={year} value={year.toString()}>
@@ -121,7 +121,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
             <SelectTrigger>
               <SelectValue placeholder={`${t('filters.sector')}...`} />
             </SelectTrigger>
-            <SelectContent className="bg-white z-50">
+            <SelectContent className="bg-white">
               <SelectItem value={ALL_VALUE}>{t('filters.allSectors')}</SelectItem>
               {availableSectors.map((sector) => (
                 <SelectItem key={sector} value={sector}>

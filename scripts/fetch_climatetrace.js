@@ -51,16 +51,22 @@ function closestRegion(lat, lon) {
   return best.name;
 }
 
-import { exec } from 'child_process';
+import https from 'https';
 async function downloadZip() {
   if (!fs.existsSync(TMP_DIR)) fs.mkdirSync(TMP_DIR);
   return new Promise((resolve, reject) => {
-    exec(`wget -O ${ZIP_PATH} ${DATA_URL}`, (error, stdout, stderr) => {
-      if (error) return reject(error);
-      console.log(stdout.toString());
-      console.error(stderr.toString());
-      resolve();
-    });
+    https
+      .get(DATA_URL, res => {
+        if (res.statusCode !== 200) {
+          reject(new Error(`Request failed with status ${res.statusCode}`));
+          res.resume();
+          return;
+        }
+        streamPipeline(res, fs.createWriteStream(ZIP_PATH))
+          .then(resolve)
+          .catch(reject);
+      })
+      .on('error', reject);
   });
 }
 

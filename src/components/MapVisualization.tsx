@@ -14,6 +14,28 @@ import { Loader2, MapPin } from 'lucide-react';
 import type { CO2Data } from './DataUpload';
 import type { FilterState } from './FilterPanel';
 
+// Fallback coordinates for Spanish autonomous communities
+const REGION_COORDS: Record<string, [number, number]> = {
+  'Andalucía': [37.7749, -4.7324],
+  'Aragón': [41.5868, -0.8296],
+  'Asturias': [43.3619, -5.8494],
+  'Baleares': [39.6953, 3.0176],
+  'Canarias': [28.2916, -16.6291],
+  'Cantabria': [43.1828, -3.9878],
+  'Castilla-La Mancha': [39.5663, -2.9908],
+  'Castilla y León': [41.6523, -4.7245],
+  'Cataluña': [41.8019, 1.8734],
+  'Comunidad Valenciana': [39.484, -0.7532],
+  'Extremadura': [39.1622, -6.3432],
+  'Galicia': [42.5751, -8.1339],
+  'Madrid': [40.4165, -3.7026],
+  'Murcia': [37.9922, -1.1307],
+  'Navarra': [42.6954, -1.6761],
+  'País Vasco': [43.263, -2.934],
+  'La Rioja': [42.2871, -2.5396],
+  'España': [40.4168, -3.7038]
+};
+
 interface MapVisualizationProps {
   data: CO2Data[];
   filters: FilterState;
@@ -51,9 +73,8 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
   const aggregatedData = useMemo(() => {
     const map = new Map<string, CO2Data & { count: number }>();
     filteredData.forEach(item => {
-      const key = item.coordinates
-        ? `${item.coordinates[0]},${item.coordinates[1]}`
-        : item.region;
+      const coords = item.coordinates ?? REGION_COORDS[item.region];
+      const key = coords ? `${coords[0]},${coords[1]}` : item.region;
       if (map.has(key)) {
         const existing = map.get(key)!;
         selectedMetrics.forEach(metric => {
@@ -64,7 +85,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
         });
         existing.count++;
       } else {
-        map.set(key, { ...item, count: 1 });
+        map.set(key, { ...item, coordinates: coords, count: 1 });
       }
     });
     return Array.from(map.values());
@@ -131,9 +152,12 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
   }
 
   return (
-    <div className="w-full h-full relative">
+    <div
+      className="relative w-full"
+      style={{ height: 'calc(100vh - 4rem)' }}
+    >
       {/* Controls Panel */}
-      <Card className="absolute top-4 left-4 z-10 w-80 bg-white/95 backdrop-blur-sm">
+      <Card className="absolute top-4 left-4 z-[1000] w-80 bg-white/95 backdrop-blur-sm">
         <CardHeader className="pb-3">
           <CardTitle className="flex items-center space-x-2 text-lg">
             <MapPin className="h-5 w-5 text-green-600" />
@@ -212,7 +236,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
           aggregatedData.map((item, idx) => {
             const coords =
               item.coordinates ??
-              [
+              REGION_COORDS[item.region] ?? [
                 centerCoords[0] + Math.random() * 0.1 - 0.05,
                 centerCoords[1] + Math.random() * 0.1 - 0.05,
               ];
@@ -263,7 +287,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
 
       {/* Status Message */}
       {statusMessage && (
-        <div className="absolute bottom-4 left-4 z-10">
+        <div className="absolute bottom-4 left-4 z-[1000]">
           <Badge variant="outline" className="bg-white/95 backdrop-blur-sm">
             {statusMessage}
           </Badge>

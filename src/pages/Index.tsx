@@ -124,7 +124,6 @@ const handleDataLoaded = (loadedData: CO2Data[]) => {
         }
 
         const text = await res.text();
-     jv2608-codex/buscar-errores-de-arranque-del-sitio-web
 
         let parsedData: CO2Data[];
         try {
@@ -146,7 +145,6 @@ const handleDataLoaded = (loadedData: CO2Data[]) => {
         setError(msg);
         setStatusMsg(`Error loading CSV: ${msg}`);
         throw err;
-        main
       } finally {
         setIsLoading(false);
       }
@@ -214,7 +212,6 @@ const handleDataLoaded = (loadedData: CO2Data[]) => {
               </SheetContent>
             </Sheet>
           </div>
-         main
         </main>
       </div>
     </ErrorBoundary>

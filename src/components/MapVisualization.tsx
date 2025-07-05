@@ -71,7 +71,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) =>
   ];
 
   return (
-    <div className="w-full h-full bg-gray-50 rounded-lg overflow-hidden">
+    <div className="w-full h-full bg-gray-50 overflow-hidden">
       {/* Map Header */}
       <div className="bg-white p-4 border-b border-gray-200">
         <h3 className="text-lg font-semibold text-gray-900">{t('map.title')}</h3>
@@ -81,7 +81,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) =>
       </div>
 
       {/* Map Content */}
-      <div ref={mapRef} className="relative w-full h-96 bg-blue-50">
+      <div ref={mapRef} className="relative w-full h-full bg-blue-50">
         {/* SVG Map Placeholder - Spain outline */}
         <svg 
           viewBox="0 0 800 600" 

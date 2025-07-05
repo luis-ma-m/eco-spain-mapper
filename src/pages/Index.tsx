@@ -132,21 +132,12 @@ const Index = () => {
             availableYears={availableYears}
             availableSectors={availableSectors}
           />
-          {isLoading ? (
-            <div className="flex items-center justify-center h-full text-gray-600">
-              {t('data.loading')}
-            </div>
-          ) : error ? (
-            <div className="flex items-center justify-center h-full text-red-600">
-              {t('data.error')}: {error}
-            </div>
-          ) : data.length > 0 ? (
-            <MapVisualization data={data} filters={filters} />
-          ) : (
-            <div className="flex items-center justify-center h-full text-gray-600">
-              No hay datos disponibles
-            </div>
-          )}
+          <MapVisualization
+            data={data}
+            filters={filters}
+            isLoading={isLoading}
+            error={error}
+          />
         </main>
       </div>
     </ErrorBoundary>

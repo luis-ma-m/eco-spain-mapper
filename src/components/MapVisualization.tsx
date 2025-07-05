@@ -1,4 +1,3 @@
-
 import React, { useMemo, useState } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Tooltip, ZoomControl, useMapEvents } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -133,7 +132,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) =>
           zoom={zoom}
           zoomControl={false}
           className="w-full h-full"
-          scrollWheelZoom
+          scrollWheelZoom={true}
         >
           <ZoomControl position="topright" />
           <ZoomListener onZoom={setZoom} />
@@ -156,7 +155,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) =>
                   radius: getRadius(emission)
                 }}
               >
-                <Tooltip permanent>
+                <Tooltip>
                   <div className="text-center">
                     <div className="text-xs font-medium" dangerouslySetInnerHTML={{ __html: sanitizedRegionName }} />
                     {emission > 0 && (

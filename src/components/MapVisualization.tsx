@@ -14,11 +14,24 @@ import 'leaflet/dist/leaflet.css';
 import { useTranslation } from '../hooks/useTranslation';
 import { CO2Data } from './DataUpload';
 import { FilterState } from './FilterPanel';
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { Button } from '@/components/ui/button';
 import { sanitizeHtml, sanitizeString } from '../utils/security';
 
 interface MapVisualizationProps {
   data: CO2Data[];
   filters: FilterState;
+  selectedMetrics: string[];
+  availableMetrics: string[];
+  onMetricsChange: (m: string[]) => void;
   isLoading?: boolean;
   error?: string | null;
   statusMessage?: string;
@@ -36,6 +49,9 @@ const ZoomListener: React.FC<{ onZoom: (z: number) => void }> = ({ onZoom }) => 
 const MapVisualization: React.FC<MapVisualizationProps> = ({
   data,
   filters,
+  selectedMetrics,
+  availableMetrics,
+  onMetricsChange,
   isLoading = false,
   error = null,
   statusMessage,
@@ -59,18 +75,31 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
     });
   }, [data, filters]);
 
-  // Sum emissions by region
+  const groupedMetrics = useMemo(() => {
+    const groups: Record<string, string[]> = {};
+    availableMetrics.forEach(m => {
+      const prefix = m.includes('_') ? m.split('_')[0] : 'metrics';
+      if (!groups[prefix]) groups[prefix] = [];
+      groups[prefix].push(m);
+    });
+    return groups;
+  }, [availableMetrics]);
+
+  // Sum selected metrics by region
   const regionEmissions = useMemo(() => {
     const map: Record<string, number> = {};
     filteredData.forEach(item => {
       const region = sanitizeString(item.region);
       if (!region) return;
-      const val = Math.max(0, item.emissions);
+      const val = selectedMetrics.reduce((sum, key) => {
+        const raw = item[key];
+        return typeof raw === 'number' ? sum + Math.max(0, raw) : sum;
+      }, 0);
       if (!isFinite(val)) return;
       map[region] = (map[region] || 0) + val;
     });
     return map;
-  }, [filteredData]);
+  }, [filteredData, selectedMetrics]);
 
   // Determine min/max for scaling
   const { minEmission, maxEmission } = useMemo(() => {
@@ -121,7 +150,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
   const formatNumber = (n: number) =>
     isFinite(n) ? (n / 1_000_000).toFixed(2) : '0.00';
 
-  const totalEmissions = Object.values(regionEmissions).reduce((a, b) => a + b, 0);
+  const totalMetric = Object.values(regionEmissions).reduce((a, b) => a + b, 0);
 
   return (
     <div className="relative w-full" style={{ height: 'calc(100vh - 4rem)' }}>
@@ -198,16 +227,48 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
         </div>
       </div>
 
-      {/* Total */}
-      <div className="absolute top-4 right-4 z-[1200] bg-white p-3 rounded-lg shadow-lg">
-        <div className="text-sm">
-          <div className="font-semibold">Total Emisiones</div>
+      {/* Metric selection */}
+      <div className="absolute top-4 right-4 z-[1200] bg-white p-3 rounded-lg shadow-lg space-y-2">
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="outline" className="w-40 truncate">
+              {selectedMetrics.length > 0 ? selectedMetrics.join(', ') : 'Metricos'}
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="max-h-60 overflow-y-auto">
+            {Object.entries(groupedMetrics).map(([group, metrics], gi, arr) => (
+              <DropdownMenuGroup key={group}>
+                {arr.length > 1 && (
+                  <DropdownMenuLabel className="capitalize">
+                    {group}
+                  </DropdownMenuLabel>
+                )}
+                {metrics.map(m => (
+                  <DropdownMenuCheckboxItem
+                    key={m}
+                    checked={selectedMetrics.includes(m)}
+                    onCheckedChange={checked => {
+                      if (checked) {
+                        onMetricsChange([...selectedMetrics, m]);
+                      } else {
+                        onMetricsChange(selectedMetrics.filter(x => x !== m));
+                      }
+                    }}
+                    className="capitalize"
+                  >
+                    {m}
+                  </DropdownMenuCheckboxItem>
+                ))}
+                {gi < arr.length - 1 && <DropdownMenuSeparator />}
+              </DropdownMenuGroup>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+        <div className="text-center text-sm">
           <div className="text-2xl font-bold text-green-600">
-            {formatNumber(totalEmissions)} M
+            {formatNumber(totalMetric)} M
           </div>
-          <div className="text-xs text-gray-600">
-            {sanitizeHtml(t('map.unit'))}
-          </div>
+          <div className="text-xs text-gray-600">{sanitizeHtml(t('map.unit'))}</div>
         </div>
       </div>
 

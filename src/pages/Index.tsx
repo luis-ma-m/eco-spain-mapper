@@ -4,6 +4,9 @@ import Header from '../components/Header';
 import MapVisualization from '../components/MapVisualization';
 import DataUpload from '../components/DataUpload';
 import FilterPanel from '../components/FilterPanel';
+import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet';
+import { Button } from '@/components/ui/button';
+import { Upload, Filter as FilterIcon } from 'lucide-react';
 import ErrorBoundary from '../components/ErrorBoundary';
 import type { CO2Data } from '../components/DataUpload';
 import type { FilterState } from '../components/FilterPanel';
@@ -124,14 +127,7 @@ const Index = () => {
     <ErrorBoundary>
       <div className="flex flex-col min-h-screen">
         <Header />
-        <main className="flex-1 p-4 space-y-4">
-          <DataUpload onDataLoaded={handleDataLoaded} />
-          <FilterPanel
-            onFiltersChange={handleFiltersChange}
-            availableRegions={availableRegions}
-            availableYears={availableYears}
-            availableSectors={availableSectors}
-          />
+        <main className="relative flex-1">
           {isLoading ? (
             <div className="flex items-center justify-center h-full text-gray-600">
               {t('data.loading')}
@@ -147,6 +143,35 @@ const Index = () => {
               No hay datos disponibles
             </div>
           )}
+
+          <div className="absolute bottom-4 right-4 z-10 space-y-2 flex flex-col">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button size="icon">
+                  <Upload className="w-4 h-4" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="sm:w-96">
+                <DataUpload onDataLoaded={handleDataLoaded} />
+              </SheetContent>
+            </Sheet>
+
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button size="icon">
+                  <FilterIcon className="w-4 h-4" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="sm:w-80">
+                <FilterPanel
+                  onFiltersChange={handleFiltersChange}
+                  availableRegions={availableRegions}
+                  availableYears={availableYears}
+                  availableSectors={availableSectors}
+                />
+              </SheetContent>
+            </Sheet>
+          </div>
         </main>
       </div>
     </ErrorBoundary>

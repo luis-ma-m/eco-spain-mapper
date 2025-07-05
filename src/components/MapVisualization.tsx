@@ -1,5 +1,5 @@
 
-import React, { useMemo, useState, useEffect } from 'react';
+import React, { useMemo, useState } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Tooltip, ZoomControl, useMapEvents } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useTranslation } from '../hooks/useTranslation';
@@ -24,16 +24,7 @@ const ZoomListener: React.FC<{ onZoom: (z: number) => void }> = ({ onZoom }) => 
 const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) => {
   const { t } = useTranslation();
   const [zoom, setZoom] = useState(6);
-  const [screenHeight, setScreenHeight] = useState<number>(typeof window !== 'undefined' ? window.innerHeight : 800);
   const center: [number, number] = [40.4165, -3.7026];
-
-
-  useEffect(() => {
-    const updateHeight = () => setScreenHeight(window.innerHeight);
-    updateHeight();
-    window.addEventListener('resize', updateHeight);
-    return () => window.removeEventListener('resize', updateHeight);
-  }, []);
 
   // Filter data based on current filters
 
@@ -130,60 +121,54 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) =>
   };
 
   return (
-    <div className="w-full h-full bg-gray-50 overflow-hidden">
-      <div className="bg-white p-4 border-b border-gray-200">
+    <div className="relative w-full" style={{ height: 'calc(100vh - 4rem)' }}>
+      <MapContainer
+        center={center}
+        zoom={zoom}
+        zoomControl={false}
+        className="w-full h-full"
+        scrollWheelZoom={true}
+      >
+        <ZoomControl position="topright" />
+        <ZoomListener onZoom={setZoom} />
+        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        {spanishRegions.map((region) => {
+          const emission = regionEmissions[region.name] || 0;
+          const color = emission > 0 ? getEmissionColor(emission) : '#e5e7eb';
+          const sanitizedRegionName = sanitizeHtml(region.name);
+
+          return (
+            <CircleMarker
+              key={region.name}
+              center={region.coords as [number, number]}
+              pathOptions={{
+                color: '#333',
+                fillColor: color,
+                fillOpacity: 0.8,
+                radius: getRadius(emission),
+              }}
+            >
+              <Tooltip>
+                <div className="text-center">
+                  <div className="text-xs font-medium" dangerouslySetInnerHTML={{ __html: sanitizedRegionName }} />
+                  {emission > 0 && (
+                    <div className="text-xs">
+                      {formatNumber(emission)}k {sanitizeHtml(t('map.unit'))}
+                    </div>
+                  )}
+                </div>
+              </Tooltip>
+            </CircleMarker>
+          );
+        })}
+      </MapContainer>
+
+      <div className="absolute top-4 left-4 bg-white p-4 rounded-lg shadow">
         <h3 className="text-lg font-semibold text-gray-900">{sanitizeHtml(t('map.title'))}</h3>
         <p className="text-sm text-gray-600">
           {filteredData.length} registros • {Object.keys(regionEmissions).length} regiones
         </p>
       </div>
-      <div
-        className="relative w-full h-full min-h-[400px]"
-        style={{ minHeight: Math.max(screenHeight - 120, 400) }}
-      >
-        <MapContainer
-          center={center}
-          zoom={zoom}
-          zoomControl={false}
-          className="w-full h-full"
-          scrollWheelZoom={true}
-        >
-          <ZoomControl position="topright" />
-          <ZoomListener onZoom={setZoom} />
-          <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          {spanishRegions.map((region) => {
-            const emission = regionEmissions[region.name] || 0;
-            const color = emission > 0 ? getEmissionColor(emission) : '#e5e7eb';
-            const sanitizedRegionName = sanitizeHtml(region.name);
-            
-            return (
-              <CircleMarker
-                key={region.name}
-                center={region.coords as [number, number]}
-                pathOptions={{ 
-                  color: '#333', 
-                  fillColor: color, 
-                  fillOpacity: 0.8,
-                  radius: getRadius(emission)
-                }}
-              >
-                <Tooltip>
-                  <div className="text-center">
-                    <div className="text-xs font-medium" dangerouslySetInnerHTML={{ __html: sanitizedRegionName }} />
-                    {emission > 0 && (
-                      <div className="text-xs">
-                        {formatNumber(emission)}k {sanitizeHtml(t('map.unit'))}
-                      </div>
-                    )}
-                  </div>
-                </Tooltip>
-              </CircleMarker>
-            );
-          })}
-        </MapContainer>
-
         <div className="absolute bottom-4 left-4 bg-white p-3 rounded-lg shadow-lg">
           <h4 className="text-sm font-semibold mb-2">{sanitizeHtml(t('map.legend'))}</h4>
           <div className="space-y-1">
@@ -220,7 +205,6 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) =>
           </div>
         )}
       </div>
-    </div>
   );
 };
 

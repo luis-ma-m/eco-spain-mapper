@@ -1,4 +1,3 @@
-
 // pages/index.tsx
 import React, { useEffect, useState, useMemo } from 'react';
 import Papa from 'papaparse';
@@ -148,7 +147,7 @@ const Index: React.FC = () => {
     try {
       localStorage.setItem('selectedMetrics', JSON.stringify(selectedMetrics));
     } catch {
-      /* ignore */
+      // ignore
     }
   }, [selectedMetrics]);
 
@@ -164,13 +163,11 @@ const Index: React.FC = () => {
       try {
         console.info(`Fetching data from ${dataUrl}`);
         const res = await fetch(dataUrl, { signal: controller.signal });
-
         if (!res.ok) {
           throw new Error(`Failed to load data: ${res.status} ${res.statusText}`);
         }
 
         const text = await res.text();
-
         let parsedData: CO2Data[];
         try {
           parsedData = parseCSV(text);
@@ -190,20 +187,16 @@ const Index: React.FC = () => {
         console.error('Error loading CSV:', msg);
         setError(msg);
         setStatusMsg(`Error loading CSV: ${msg}`);
-        throw err;
       } finally {
         setIsLoading(false);
       }
     };
 
     loadData();
-
-    return () => {
-      controller.abort();
-    };
+    return () => { controller.abort(); };
   }, []);
 
-  // Memoize filter options so we only recompute when `data` changes
+  // Memoize filter options
   const availableRegions = useMemo(
     () => Array.from(new Set(data.map(d => d.region))).sort(),
     [data]
@@ -217,15 +210,12 @@ const Index: React.FC = () => {
     [data]
   );
 
+  // Discover numeric fields for metrics
   const availableMetrics = useMemo(() => {
     const metrics = new Set<string>();
     data.forEach(record => {
       Object.entries(record).forEach(([k, v]) => {
-        if (
-          typeof v === 'number' &&
-          isFinite(v) &&
-          !['year', 'lat', 'lng'].includes(k)
-        ) {
+        if (typeof v === 'number' && isFinite(v) && !['year', 'lat', 'lng'].includes(k)) {
           metrics.add(k);
         }
       });
@@ -233,6 +223,7 @@ const Index: React.FC = () => {
     return Array.from(metrics).sort();
   }, [data]);
 
+  // Ensure selectedMetrics stay valid as data changes
   useEffect(() => {
     if (availableMetrics.length === 0) return;
     setSelectedMetrics(prev => {
@@ -255,14 +246,13 @@ const Index: React.FC = () => {
             onMetricsChange={setSelectedMetrics}
             isLoading={isLoading}
             error={error}
+            statusMessage={statusMsg}
           />
 
           <div className="absolute bottom-4 right-4 z-10 flex flex-col space-y-2">
             <Sheet>
               <SheetTrigger asChild>
-                <Button size="icon">
-                  <Upload className="w-4 h-4" />
-                </Button>
+                <Button size="icon"><Upload className="w-4 h-4" /></Button>
               </SheetTrigger>
               <SheetContent side="right" className="sm:w-96">
                 <DataUpload onDataLoaded={handleDataLoaded} />
@@ -271,9 +261,7 @@ const Index: React.FC = () => {
 
             <Sheet>
               <SheetTrigger asChild>
-                <Button size="icon">
-                  <FilterIcon className="w-4 h-4" />
-                </Button>
+                <Button size="icon"><FilterIcon className="w-4 h-4" /></Button>
               </SheetTrigger>
               <SheetContent side="right" className="sm:w-80">
                 <FilterPanel

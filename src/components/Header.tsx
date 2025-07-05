@@ -3,7 +3,11 @@ import React from 'react';
 import { useTranslation } from '../hooks/useTranslation';
 import { MapPin } from 'lucide-react';
 
-const Header = () => {
+interface HeaderProps {
+  onOpenDataModal?: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onOpenDataModal }) => {
   const { t, language, changeLanguage } = useTranslation();
 
   return (
@@ -30,9 +34,13 @@ const Header = () => {
             <a href="#" className="text-gray-700 hover:text-green-600 font-medium transition-colors">
               {t('nav.home')}
             </a>
-            <a href="#" className="text-gray-700 hover:text-green-600 font-medium transition-colors">
+            <button
+              type="button"
+              onClick={onOpenDataModal}
+              className="text-gray-700 hover:text-green-600 font-medium transition-colors"
+            >
               {t('nav.data')}
-            </a>
+            </button>
             <a href="#" className="text-gray-700 hover:text-green-600 font-medium transition-colors">
               {t('nav.about')}
             </a>

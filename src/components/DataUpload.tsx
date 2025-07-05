@@ -22,23 +22,6 @@ const DataUpload: React.FC<DataUploadProps> = ({ onDataLoaded }) => {
   const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
 
-  const loadDefaultData = useCallback(async () => {
-    setIsLoading(true);
-    try {
-      const res = await fetch('/climatetrace_aggregated.csv');
-      if (!res.ok) throw new Error('Failed to load default data');
-      const text = await res.text();
-      const parsed = parseCSV(text);
-      onDataLoaded(parsed);
-      toast.success(`Datos cargados exitosamente: ${parsed.length} registros`);
-    } catch (error) {
-      console.error('Error loading default data:', error);
-      toast.error('Error al cargar datos predefinidos');
-    } finally {
-      setIsLoading(false);
-    }
-  }, [parseCSV, onDataLoaded]);
-
   const parseCSV = useCallback((csvText: string): CO2Data[] => {
     const lines = csvText.trim().split('\n');
     if (lines.length < 2) {
@@ -74,13 +57,30 @@ const DataUpload: React.FC<DataUploadProps> = ({ onDataLoaded }) => {
         ...row // Keep all original columns
       };
 
-      if (standardRow.region && standardRow.year && standardRow.emissions) {
-        data.push(standardRow);
-      }
+    if (standardRow.region && standardRow.year && standardRow.emissions) {
+      data.push(standardRow);
     }
+  }
 
-    return data;
+  return data;
   }, []);
+
+  const loadDefaultData = useCallback(async () => {
+    setIsLoading(true);
+    try {
+      const res = await fetch('/climatetrace_aggregated.csv');
+      if (!res.ok) throw new Error('Failed to load default data');
+      const text = await res.text();
+      const parsed = parseCSV(text);
+      onDataLoaded(parsed);
+      toast.success(`Datos cargados exitosamente: ${parsed.length} registros`);
+    } catch (error) {
+      console.error('Error loading default data:', error);
+      toast.error('Error al cargar datos predefinidos');
+    } finally {
+      setIsLoading(false);
+    }
+  }, [parseCSV, onDataLoaded]);
 
   const handleFileUpload = useCallback(async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];

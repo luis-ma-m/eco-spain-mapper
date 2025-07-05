@@ -9,6 +9,7 @@ import FilterPanel from '../components/FilterPanel';
 import ErrorBoundary from '../components/ErrorBoundary';
 
 import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet';
+import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Upload, Filter as FilterIcon } from 'lucide-react';
 
@@ -96,10 +97,12 @@ const Index: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [statusMsg, setStatusMsg] = useState<string>('');
+  const [isDataModalOpen, setDataModalOpen] = useState(false);
 
 const handleDataLoaded = (loadedData: CO2Data[]) => {
   setData(loadedData);
   setStatusMsg(`Loaded ${loadedData.length} records from upload`);
+  setDataModalOpen(false);
 };
 
   const handleFiltersChange = (newFilters: FilterState) => {
@@ -112,10 +115,10 @@ const handleDataLoaded = (loadedData: CO2Data[]) => {
     const loadData = async () => {
       setIsLoading(true);
       setError(null);
+      const url = `${import.meta.env.BASE_URL}climatetrace_aggregated.csv`;
       setStatusMsg(`Fetching default data from ${url}`);
 
       try {
-        const url = `${import.meta.env.BASE_URL}climatetrace_aggregated.csv`;
         console.info(`Fetching data from ${url}`);
         const res = await fetch(url, { signal: controller.signal });
 
@@ -174,7 +177,7 @@ const handleDataLoaded = (loadedData: CO2Data[]) => {
   return (
     <ErrorBoundary>
       <div className="flex flex-col min-h-screen">
-        <Header />
+        <Header onOpenDataModal={() => setDataModalOpen(true)} />
 
         <main className="relative flex-1">
           <MapVisualization
@@ -213,6 +216,12 @@ const handleDataLoaded = (loadedData: CO2Data[]) => {
             </Sheet>
           </div>
         </main>
+
+        <Dialog open={isDataModalOpen} onOpenChange={setDataModalOpen}>
+          <DialogContent className="sm:max-w-xl">
+            <DataUpload onDataLoaded={handleDataLoaded} />
+          </DialogContent>
+        </Dialog>
       </div>
     </ErrorBoundary>
   );

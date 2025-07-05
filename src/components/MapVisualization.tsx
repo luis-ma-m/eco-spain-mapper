@@ -185,15 +185,15 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
         <div className="space-y-1">
           <div className="flex items-center space-x-2">
             <div className="w-4 h-4 rounded-full bg-red-500" />
-            <span className="text-xs">Alta emisión</span>
+            <span className="text-xs">{sanitizeHtml(t('map.high'))}</span>
           </div>
           <div className="flex items-center space-x-2">
             <div className="w-4 h-4 rounded-full bg-yellow-500" />
-            <span className="text-xs">Media emisión</span>
+            <span className="text-xs">{sanitizeHtml(t('map.medium'))}</span>
           </div>
           <div className="flex items-center space-x-2">
             <div className="w-4 h-4 rounded-full bg-green-500" />
-            <span className="text-xs">Baja emisión</span>
+            <span className="text-xs">{sanitizeHtml(t('map.low'))}</span>
           </div>
         </div>
       </div>
@@ -201,7 +201,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
       {/* Total */}
       <div className="absolute top-4 right-4 z-[1200] bg-white p-3 rounded-lg shadow-lg">
         <div className="text-sm">
-          <div className="font-semibold">Total Emisiones</div>
+          <div className="font-semibold">{sanitizeHtml(t('map.total'))}</div>
           <div className="text-2xl font-bold text-green-600">
             {formatNumber(totalEmissions)} M
           </div>

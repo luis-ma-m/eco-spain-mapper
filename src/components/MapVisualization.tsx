@@ -14,11 +14,21 @@ import 'leaflet/dist/leaflet.css';
 import { useTranslation } from '../hooks/useTranslation';
 import { CO2Data } from './DataUpload';
 import { FilterState } from './FilterPanel';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { sanitizeHtml, sanitizeString } from '../utils/security';
 
 interface MapVisualizationProps {
   data: CO2Data[];
   filters: FilterState;
+  selectedMetric: string;
+  availableMetrics: string[];
+  onMetricChange: (m: string) => void;
   isLoading?: boolean;
   error?: string | null;
   statusMessage?: string;
@@ -36,6 +46,9 @@ const ZoomListener: React.FC<{ onZoom: (z: number) => void }> = ({ onZoom }) => 
 const MapVisualization: React.FC<MapVisualizationProps> = ({
   data,
   filters,
+  selectedMetric,
+  availableMetrics,
+  onMetricChange,
   isLoading = false,
   error = null,
   statusMessage,
@@ -44,52 +57,51 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
   const [zoom, setZoom] = useState(6);
   const centerCoords: LatLngExpression = [40.4165, -3.7026];
 
-  // Filter out any invalid rows and apply user‐selected filters
+  // Filter & validate rows
   const filteredData = useMemo(() => {
     return data.filter(item => {
       if (!item || typeof item !== 'object') return false;
       if (!item.region || !item.year || typeof item.emissions !== 'number') return false;
       if (item.emissions < 0 || !isFinite(item.emissions)) return false;
-
       if (filters.region && sanitizeString(item.region) !== sanitizeString(filters.region)) return false;
       if (filters.year && item.year !== filters.year) return false;
       if (filters.sector && sanitizeString(item.sector) !== sanitizeString(filters.sector)) return false;
-
       return true;
     });
   }, [data, filters]);
 
-  // Sum emissions by region
+  // Sum chosen metric by region
   const regionEmissions = useMemo(() => {
     const map: Record<string, number> = {};
     filteredData.forEach(item => {
       const region = sanitizeString(item.region);
       if (!region) return;
-      const val = Math.max(0, item.emissions);
+      const raw = item[selectedMetric];
+      const val = typeof raw === 'number' ? Math.max(0, raw) : 0;
       if (!isFinite(val)) return;
       map[region] = (map[region] || 0) + val;
     });
     return map;
-  }, [filteredData]);
+  }, [filteredData, selectedMetric]);
 
-  // Determine min/max for scaling
+  // Compute min/max for scaling
   const { minEmission, maxEmission } = useMemo(() => {
     const vals = Object.values(regionEmissions).filter(v => isFinite(v) && v > 0);
     if (vals.length === 0) return { minEmission: 0, maxEmission: 1 };
     return { minEmission: Math.min(...vals), maxEmission: Math.max(...vals) };
   }, [regionEmissions]);
 
-  // Color scale from green (low) to red (high)
+  // Color scale
   const getEmissionColor = (em: number): string => {
     if (!isFinite(em) || em < 0) return '#e5e7eb';
     const intensity = Math.min(Math.max(em / maxEmission, 0), 1);
-    const red = Math.floor(255 * intensity);
+    const red   = Math.floor(255 * intensity);
     const green = Math.floor(255 * (1 - intensity * 0.8));
-    const blue = Math.floor(100 * (1 - intensity));
+    const blue  = Math.floor(100 * (1 - intensity));
     return `rgb(${red}, ${green}, ${blue})`;
   };
 
-  // Static centroids for each Comunidad
+  // Static centroids
   const spanishRegions = [
     { name: 'Andalucía', coords: [37.7749, -4.7324] },
     { name: 'Aragón', coords: [41.5868, -0.8296] },
@@ -121,7 +133,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
   const formatNumber = (n: number) =>
     isFinite(n) ? (n / 1_000_000).toFixed(2) : '0.00';
 
-  const totalEmissions = Object.values(regionEmissions).reduce((a, b) => a + b, 0);
+  const totalMetric = Object.values(regionEmissions).reduce((a, b) => a + b, 0);
 
   return (
     <div className="relative w-full" style={{ height: 'calc(100vh - 4rem)' }}>
@@ -198,12 +210,24 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
         </div>
       </div>
 
-      {/* Total */}
-      <div className="absolute top-4 right-4 z-[1200] bg-white p-3 rounded-lg shadow-lg">
-        <div className="text-sm">
+      {/* Metric selector & Total */}
+      <div className="absolute top-4 right-4 z-[1200] bg-white p-3 rounded-lg shadow-lg space-y-2">
+        <Select value={selectedMetric} onValueChange={onMetricChange}>
+          <SelectTrigger className="w-40">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent className="bg-white z-50">
+            {availableMetrics.map(m => (
+              <SelectItem key={m} value={m} className="capitalize">
+                {m}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+        <div className="text-sm text-center">
           <div className="font-semibold">{sanitizeHtml(t('map.total'))}</div>
           <div className="text-2xl font-bold text-green-600">
-            {formatNumber(totalEmissions)} M
+            {formatNumber(totalMetric)} M
           </div>
           <div className="text-xs text-gray-600">
             {sanitizeHtml(t('map.unit'))}

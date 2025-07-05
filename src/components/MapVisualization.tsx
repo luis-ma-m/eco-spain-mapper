@@ -138,7 +138,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({ data, filters }) =>
         </p>
       </div>
       <div
-        className="relative w-full h-full"
+        className="relative w-full h-full min-h-[400px]"
         style={{ minHeight: Math.max(screenHeight - 120, 400) }}
       >
         <MapContainer

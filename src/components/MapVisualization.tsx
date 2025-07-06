@@ -1,5 +1,5 @@
 // components/MapVisualization.tsx
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Popup } from 'react-leaflet';
 import type { LatLngExpression } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -10,10 +10,14 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Loader2, MapPin } from 'lucide-react';
+import { Loader2, MapPin, ChevronUp, ChevronDown, Menu } from 'lucide-react';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 import type { CO2Data } from './DataUpload';
 import type { FilterState } from './FilterPanel';
+import DataUpload from './DataUpload';
+import FilterPanel from './FilterPanel';
+import MobileMenuSheet from './MobileMenuSheet';
 
 // Fallback coordinates for Spanish autonomous communities
 const REGION_COORDS: Record<string, [number, number]> = {
@@ -46,6 +50,11 @@ interface MapVisualizationProps {
   isLoading: boolean;
   error: string | null;
   statusMessage: string;
+  availableRegions: string[];
+  availableYears: number[];
+  availableSectors: string[];
+  onFiltersChange: (filters: FilterState) => void;
+  onDataLoaded: (data: CO2Data[]) => void;
 }
 
 const MapVisualization: React.FC<MapVisualizationProps> = ({
@@ -57,8 +66,15 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
   isLoading,
   error,
   statusMessage,
+  availableRegions,
+  availableYears,
+  availableSectors,
+  onFiltersChange,
+  onDataLoaded,
 }) => {
   const { t } = useTranslation();
+  const [isControlsCollapsed, setIsControlsCollapsed] = useState(false);
+  const [isLegendCollapsed, setIsLegendCollapsed] = useState(false);
 
   // Apply filters to data
   const filteredData = useMemo(
@@ -163,42 +179,91 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
       className="relative w-full"
       style={{ height: 'calc(100vh - 4rem)' }}
     >
-      {/* Controls Panel */}
-      <Card className="absolute top-4 left-4 z-[1000] w-80 bg-white/95 backdrop-blur-sm">
+      {/* Mobile Menu - Only visible on mobile */}
+      <div className="md:hidden absolute top-4 left-4 z-[1000]">
+        <MobileMenuSheet
+          selectedMetrics={selectedMetrics}
+          availableMetrics={availableMetrics}
+          onMetricsChange={onMetricsChange}
+          aggregatedData={aggregatedData}
+          availableRegions={availableRegions}
+          availableYears={availableYears}
+          availableSectors={availableSectors}
+          onFiltersChange={onFiltersChange}
+          onDataLoaded={onDataLoaded}
+        />
+      </div>
+
+      {/* Desktop Controls Panel - Hidden on mobile */}
+      <Card className="hidden md:block absolute top-4 left-4 z-[1000] w-80 bg-white/95 backdrop-blur-sm">
         <CardHeader className="pb-3">
-          <CardTitle className="flex items-center space-x-2 text-lg">
-            <MapPin className="h-5 w-5 text-green-600" />
-            <span>{t('map.title')}</span>
+          <CardTitle className="flex items-center justify-between text-lg">
+            <div className="flex items-center space-x-2">
+              <MapPin className="h-5 w-5 text-green-600" />
+              <span>{t('map.title')}</span>
+            </div>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setIsControlsCollapsed(!isControlsCollapsed)}
+            >
+              {isControlsCollapsed ? <ChevronDown className="h-4 w-4" /> : <ChevronUp className="h-4 w-4" />}
+            </Button>
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-4">
-          {/* Metric Selector */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              {t('map.selectMetrics')}
-            </label>
-            <Select
-              value={selectedMetrics[0] || ''}
-              onValueChange={value => onMetricsChange([value])}
-            >
-              <SelectTrigger>
-                <SelectValue placeholder="Select metric…" />
-              </SelectTrigger>
-              <SelectContent className="bg-white">
-                {availableMetrics.map(metric => (
-                  <SelectItem key={metric} value={metric}>
-                    {humanizeLabel(metric)}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
+        {!isControlsCollapsed && (
+          <CardContent className="space-y-4">
+            {/* Metric Selector */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                {t('map.selectMetrics')}
+              </label>
+              <Select
+                value={selectedMetrics[0] || ''}
+                onValueChange={value => onMetricsChange([value])}
+              >
+                <SelectTrigger>
+                  <SelectValue placeholder="Select metric…" />
+                </SelectTrigger>
+                <SelectContent className="bg-white z-[1400]">
+                  {availableMetrics.map(metric => (
+                    <SelectItem key={metric} value={metric}>
+                      {humanizeLabel(metric)}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
 
-          {/* Legend */}
-          <div>
-            <h4 className="text-sm font-medium text-gray-700 mb-2">
-              {t('map.legend')}
-            </h4>
+            {/* Stats */}
+            <div className="pt-2 border-t">
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-gray-600">{t('map.total')}:</span>
+                <Badge variant="secondary">
+                  {aggregatedData.length} regions
+                </Badge>
+              </div>
+            </div>
+          </CardContent>
+        )}
+      </Card>
+
+      {/* Desktop Legend Panel - Hidden on mobile */}
+      <Card className="hidden md:block absolute top-4 left-[22rem] z-[1000] w-48 bg-white/95 backdrop-blur-sm">
+        <CardHeader className="pb-3">
+          <CardTitle className="flex items-center justify-between text-sm">
+            <span>{t('map.legend')}</span>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setIsLegendCollapsed(!isLegendCollapsed)}
+            >
+              {isLegendCollapsed ? <ChevronDown className="h-3 w-3" /> : <ChevronUp className="h-3 w-3" />}
+            </Button>
+          </CardTitle>
+        </CardHeader>
+        {!isLegendCollapsed && (
+          <CardContent>
             <div className="space-y-1">
               <div className="flex items-center space-x-2">
                 <div className="w-4 h-4 rounded-full bg-red-600" />
@@ -213,18 +278,8 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
                 <span className="text-xs text-gray-600">{t('map.low')}</span>
               </div>
             </div>
-          </div>
-
-          {/* Stats */}
-          <div className="pt-2 border-t">
-            <div className="flex items-center justify-between">
-              <span className="text-sm text-gray-600">{t('map.total')}:</span>
-              <Badge variant="secondary">
-                {aggregatedData.length} regions
-              </Badge>
-            </div>
-          </div>
-        </CardContent>
+          </CardContent>
+        )}
       </Card>
 
       {/* The Map */}

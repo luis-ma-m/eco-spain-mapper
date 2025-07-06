@@ -1,3 +1,4 @@
+
 // pages/index.tsx
 import React, { useEffect, useState, useMemo } from 'react';
 import Papa from 'papaparse';
@@ -241,9 +242,15 @@ const Index: React.FC = () => {
             isLoading={isLoading}
             error={error}
             statusMessage={statusMsg}
+            availableRegions={availableRegions}
+            availableYears={availableYears}
+            availableSectors={availableSectors}
+            onFiltersChange={handleFiltersChange}
+            onDataLoaded={handleDataLoaded}
           />
 
-          <div className="absolute bottom-4 right-4 z-[1000] flex flex-col space-y-2">
+          {/* Desktop-only floating buttons */}
+          <div className="hidden md:flex absolute bottom-4 right-4 z-[1000] flex-col space-y-2">
             <Sheet>
               <SheetTrigger asChild>
                 <Button size="icon">

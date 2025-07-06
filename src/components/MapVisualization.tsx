@@ -1,3 +1,4 @@
+
 // components/MapVisualization.tsx
 import React, { useMemo, useState } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Popup } from 'react-leaflet';
@@ -10,13 +11,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Loader2, MapPin, ChevronUp, ChevronDown, Menu } from 'lucide-react';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Loader2, MapPin, ChevronUp, ChevronDown } from 'lucide-react';
 
 import type { CO2Data } from './DataUpload';
 import type { FilterState } from './FilterPanel';
-import DataUpload from './DataUpload';
-import FilterPanel from './FilterPanel';
 import MobileMenuSheet from './MobileMenuSheet';
 
 // Fallback coordinates for Spanish autonomous communities
@@ -288,7 +286,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
         zoom={6}
         zoomControl={false}
         className="w-full h-full"
-        scrollWheelZoom
+        scrollWheelZoom={true}
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

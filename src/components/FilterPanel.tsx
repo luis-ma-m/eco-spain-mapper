@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from '../hooks/useTranslation';
 import { humanizeLabel } from '@/utils/humanize';
 import { Filter } from 'lucide-react';
@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 interface FilterPanelProps {
+  filters: FilterState;
   onFiltersChange: (filters: FilterState) => void;
   availableRegions: string[];
   availableYears: number[];
@@ -23,27 +24,24 @@ export interface FilterState {
 const ALL_VALUE = '__all__'
 
 const FilterPanel: React.FC<FilterPanelProps> = ({
+  filters,
   onFiltersChange,
   availableRegions,
   availableYears,
   availableSectors
 }) => {
   const { t } = useTranslation();
-  const [filters, setFilters] = useState<FilterState>({
-    region: null,
-    year: null,
-    sector: null
-  });
 
-  const handleFilterChange = (key: keyof FilterState, value: string | number | null) => {
+  const handleFilterChange = (
+    key: keyof FilterState,
+    value: string | number | null,
+  ) => {
     const newFilters = { ...filters, [key]: value };
-    setFilters(newFilters);
     onFiltersChange(newFilters);
   };
 
   const resetFilters = () => {
     const resetState = { region: null, year: null, sector: null };
-    setFilters(resetState);
     onFiltersChange(resetState);
   };
 

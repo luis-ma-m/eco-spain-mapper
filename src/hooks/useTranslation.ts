@@ -101,9 +101,25 @@ const translations: Translations = {
   'errorBoundary.reload': { es: 'Recargar página', en: 'Reload page' },
   'errorBoundary.retry': { es: 'Intentar de nuevo', en: 'Try again' },
 
-  // Not Found page
-  'notFound.oops': { es: '¡Vaya! Página no encontrada', en: 'Oops! Page not found' },
-  'notFound.returnHome': { es: 'Volver al inicio', en: 'Return to Home' },
+codex/añadir-claves-de-traducción-y-reemplazar-cadenas-en-index.ts
+  // Index page status messages
+  'index.loadedUpload': {
+    es: 'Se cargaron {{count}} registros desde la subida',
+    en: 'Loaded {{count}} records from upload',
+  },
+  'index.loadingDefault': {
+    es: 'Cargando datos predeterminados desde {{url}}',
+    en: 'Fetching default data from {{url}}',
+  },
+  'index.loadedDefault': {
+    es: 'Se cargaron {{count}} registros del CSV predeterminado',
+    en: 'Loaded {{count}} records from default CSV',
+  },
+  'index.errorLoad': {
+    es: 'Error al cargar CSV: {{msg}}',
+    en: 'Error loading CSV: {{msg}}',
+  },
+    main
 };
 
 export const useTranslation = () => {

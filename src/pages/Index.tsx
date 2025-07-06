@@ -136,7 +136,12 @@ const Index: React.FC = () => {
 
   const handleDataLoaded = (loadedData: CO2Data[]) => {
     setData(loadedData);
-    setStatusMsg(`Loaded ${loadedData.length} records from upload`);
+    setStatusMsg(
+      t('index.loadedUpload').replace(
+        '{{count}}',
+        loadedData.length.toString()
+      )
+    );
     setDataModalOpen(false);
   };
 
@@ -169,7 +174,7 @@ const Index: React.FC = () => {
       setIsLoading(true);
       setError(null);
       const dataUrl = `${import.meta.env.BASE_URL}climatetrace_aggregated.csv`;
-      setStatusMsg(`Fetching default data from ${dataUrl}`);
+        setStatusMsg(t('index.loadingDefault').replace('{{url}}', dataUrl));
 
       try {
         const res = await fetch(dataUrl, { signal: controller.signal });
@@ -183,17 +188,25 @@ const Index: React.FC = () => {
         } catch (parseErr) {
           const msg = parseErr instanceof Error ? parseErr.message : String(parseErr);
           console.error('CSV parse error:', msg);
-          setStatusMsg(`CSV parse error: ${msg}`);
+          setStatusMsg(
+            t('index.errorLoad').replace(
+              '{{msg}}',
+              `CSV parse error: ${msg}`
+            )
+          );
           throw parseErr;
         }
         setData(parsedData);
-        const msgLoaded = `Loaded ${parsedData.length} records from default CSV`;
-        setStatusMsg(msgLoaded);
+          const msgLoaded = t('index.loadedDefault').replace(
+            '{{count}}',
+            parsedData.length.toString()
+          );
+          setStatusMsg(msgLoaded);
       } catch (err) {
         const msg = err instanceof Error ? err.message : String(err);
         console.error('Error loading CSV:', msg);
         setError(msg);
-        setStatusMsg(`Error loading CSV: ${msg}`);
+          setStatusMsg(t('index.errorLoad').replace('{{msg}}', msg));
       } finally {
         setIsLoading(false);
       }

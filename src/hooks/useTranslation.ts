@@ -80,6 +80,24 @@ const translations: Translations = {
   },
   'errorBoundary.reload': { es: 'Recargar página', en: 'Reload page' },
   'errorBoundary.retry': { es: 'Intentar de nuevo', en: 'Try again' },
+
+  // Index page status messages
+  'index.loadedUpload': {
+    es: 'Se cargaron {{count}} registros desde la subida',
+    en: 'Loaded {{count}} records from upload',
+  },
+  'index.loadingDefault': {
+    es: 'Cargando datos predeterminados desde {{url}}',
+    en: 'Fetching default data from {{url}}',
+  },
+  'index.loadedDefault': {
+    es: 'Se cargaron {{count}} registros del CSV predeterminado',
+    en: 'Loaded {{count}} records from default CSV',
+  },
+  'index.errorLoad': {
+    es: 'Error al cargar CSV: {{msg}}',
+    en: 'Error loading CSV: {{msg}}',
+  },
 };
 
 export const useTranslation = () => {

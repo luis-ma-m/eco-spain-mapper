@@ -88,6 +88,14 @@ const translations: Translations = {
     en: 'Data available under a CC BY 4.0 license from',
   },
 
+  // Not Found page
+  'notFound.title': { es: '404', en: '404' },
+  'notFound.message': {
+    es: '¡Vaya! Página no encontrada',
+    en: 'Oops! Page not found',
+  },
+  'notFound.back': { es: 'Volver al inicio', en: 'Return to Home' },
+
   // Error Boundary
   'errorBoundary.title': { es: 'Error de aplicación', en: 'Application error' },
   'errorBoundary.message': {

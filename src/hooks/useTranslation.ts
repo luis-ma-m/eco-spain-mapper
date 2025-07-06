@@ -1,4 +1,3 @@
-codex/añadir-claves-de-traducción-y-actualizar-componentes
 
 import { useState, useEffect } from 'react';
 
@@ -79,10 +78,10 @@ const translations: Translations = {
 
   // About page
   'about.purpose': {
-    es: 'Esta aplicaci\u00f3n muestra las emisiones de CO\u2082 en Espa\u00f1a utilizando datos de Climate Trace.',
-    en: 'This application displays CO\u2082 emissions in Spain using Climate Trace data.',
+    es: 'Esta aplicación muestra las emisiones de CO₂ en España utilizando datos de Climate Trace.',
+    en: 'This application displays CO₂ emissions in Spain using Climate Trace data.',
   },
-  'about.author': { es: 'Autor: Luis Mart\u00edn Ma\u00edllo', en: 'Author: Luis Mart\u00edn Ma\u00edllo' },
+  'about.author': { es: 'Autor: Luis Martín Maíllo', en: 'Author: Luis Martín Maíllo' },
   'about.cc': {
     es: 'Datos disponibles bajo licencia CC BY 4.0 de',
     en: 'Data available under a CC BY 4.0 license from',
@@ -109,7 +108,6 @@ const translations: Translations = {
   'errorBoundary.reload': { es: 'Recargar página', en: 'Reload page' },
   'errorBoundary.retry': { es: 'Intentar de nuevo', en: 'Try again' },
 
-codex/añadir-claves-de-traducción-y-reemplazar-cadenas-en-index.ts
   // Index page status messages
   'index.loadedUpload': {
     es: 'Se cargaron {{count}} registros desde la subida',
@@ -127,7 +125,6 @@ codex/añadir-claves-de-traducción-y-reemplazar-cadenas-en-index.ts
     es: 'Error al cargar CSV: {{msg}}',
     en: 'Error loading CSV: {{msg}}',
   },
-    main
 };
 
 export const useTranslation = () => {
@@ -167,5 +164,4 @@ export const useTranslation = () => {
   }, []);
 
   return { t, language, changeLanguage };
-  main
 };

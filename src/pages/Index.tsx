@@ -1,4 +1,3 @@
-
 // pages/index.tsx
 import React, { useEffect, useState, useMemo } from 'react';
 import Papa from 'papaparse';
@@ -114,7 +113,7 @@ const Index: React.FC = () => {
   const [data, setData] = useState<CO2Data[]>([]);
   const [filters, setFilters] = useState<FilterState>(() => {
     try {
-      const saved = localStorage.getItem('filters');
+      const saved = sessionStorage.getItem('filters');
       return saved
         ? (JSON.parse(saved) as FilterState)
         : { region: null, year: null, sector: null };
@@ -156,7 +155,7 @@ const Index: React.FC = () => {
 
   useEffect(() => {
     try {
-      localStorage.setItem('filters', JSON.stringify(filters));
+      sessionStorage.setItem('filters', JSON.stringify(filters));
     } catch {
       // ignore
     }

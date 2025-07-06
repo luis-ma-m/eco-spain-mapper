@@ -70,15 +70,15 @@ const MobileMenuSheet: React.FC<MobileMenuSheetProps> = ({
         <div className="flex flex-col h-full">
           {/* Header */}
           <div className="p-4 border-b">
-            <h2 className="text-lg font-semibold">Map Controls</h2>
+            <h2 className="text-lg font-semibold">{t('menu.mapControls')}</h2>
           </div>
 
           {/* Tab Navigation */}
           <div className="flex gap-1 p-2 border-b">
-            <TabButton id="metrics" icon={BarChart3} label="Metrics" />
-            <TabButton id="legend" icon={Info} label="Legend" />
-            <TabButton id="upload" icon={Upload} label="Upload" />
-            <TabButton id="filters" icon={Filter} label="Filters" />
+            <TabButton id="metrics" icon={BarChart3} label={t('menu.metrics')} />
+            <TabButton id="legend" icon={Info} label={t('menu.legend')} />
+            <TabButton id="upload" icon={Upload} label={t('menu.upload')} />
+            <TabButton id="filters" icon={Filter} label={t('menu.filters')} />
           </div>
 
           {/* Content Area */}
@@ -94,7 +94,7 @@ const MobileMenuSheet: React.FC<MobileMenuSheetProps> = ({
                     onValueChange={value => onMetricsChange([value])}
                   >
                     <SelectTrigger>
-                      <SelectValue placeholder="Select metric…" />
+                      <SelectValue placeholder={t('map.selectMetricPlaceholder')} />
                     </SelectTrigger>
                     <SelectContent className="bg-white">
                       {availableMetrics.map(metric => (
@@ -111,7 +111,7 @@ const MobileMenuSheet: React.FC<MobileMenuSheetProps> = ({
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-600">{t('map.total')}:</span>
                   <Badge variant="secondary">
-                    {aggregatedData.length} regions
+                    {aggregatedData.length} {t('map.regionsLabel')}
                   </Badge>
                 </div>
               </div>

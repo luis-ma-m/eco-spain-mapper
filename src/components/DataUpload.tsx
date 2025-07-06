@@ -119,24 +119,17 @@ const DataUpload: React.FC<DataUploadProps> = ({ onDataLoaded }) => {
       const parsed = await parseCSV(text);
       
       onDataLoaded(parsed);
-      toast.success(
-        language === 'es'
-          ? `Datos cargados exitosamente: ${parsed.length} registros`
-          : `Data loaded successfully: ${parsed.length} records`
-      );
+      toast.success(t('upload.success', { count: parsed.length }));
     } catch (error) {
       console.error('Error loading default data:', error);
-      const errorMessage = error instanceof Error ? error.message : language === 'es' ? 'Error desconocido' : 'Unknown error';
-      toast.error(
-        language === 'es'
-          ? `Error al cargar datos predefinidos: ${errorMessage}`
-          : `Error loading default data: ${errorMessage}`
-      );
+      const errorMessage =
+        error instanceof Error ? error.message : t('upload.unknownError');
+      toast.error(t('upload.loadError', { error: errorMessage }));
     } finally {
       setIsLoading(false);
       setProcessingProgress(0);
     }
-  }, [parseCSV, onDataLoaded]);
+  }, [parseCSV, onDataLoaded, t]);
 
   const handleFileUpload = useCallback(async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -144,21 +137,15 @@ const DataUpload: React.FC<DataUploadProps> = ({ onDataLoaded }) => {
 
     // Enhanced file validation
     if (!file.name.toLowerCase().endsWith('.csv')) {
-      toast.error(
-        language === 'es'
-          ? 'Por favor, selecciona un archivo CSV válido'
-          : 'Please select a valid CSV file'
-      );
+      toast.error(t('upload.invalidFile'));
       return;
     }
 
     if (!validateFileSize(file)) {
       toast.error(
-        language === 'es'
-          ? `El archivo es demasiado grande. Tamaño máximo: ${Math.round(
-              MAX_FILE_SIZE / (1024 * 1024)
-            )}MB`
-          : `File is too large. Max size: ${Math.round(MAX_FILE_SIZE / (1024 * 1024))}MB`
+        t('upload.fileTooLarge', {
+          size: Math.round(MAX_FILE_SIZE / (1024 * 1024))
+        })
       );
       return;
     }
@@ -171,29 +158,17 @@ const DataUpload: React.FC<DataUploadProps> = ({ onDataLoaded }) => {
       const parsedData = await parseCSV(text);
       
       if (parsedData.length === 0) {
-        throw new Error(
-          language === 'es'
-            ? 'No se encontraron datos válidos en el archivo CSV'
-            : 'No valid data found in the CSV file'
-        );
+        throw new Error(t('upload.noValidData'));
       }
 
       console.log(`Loaded ${parsedData.length} records from CSV`);
       onDataLoaded(parsedData);
-      toast.success(
-        language === 'es'
-          ? `Datos cargados exitosamente: ${parsedData.length} registros`
-          : `Data loaded successfully: ${parsedData.length} records`
-      );
+      toast.success(t('upload.success', { count: parsedData.length }));
       
     } catch (error) {
       console.error('Error parsing CSV:', error);
       const errorMessage =
-        error instanceof Error
-          ? error.message
-          : language === 'es'
-          ? 'Error desconocido al procesar CSV'
-          : 'Unknown error processing CSV';
+        error instanceof Error ? error.message : t('upload.parseUnknownError');
       toast.error(errorMessage);
     } finally {
       setIsLoading(false);
@@ -201,7 +176,7 @@ const DataUpload: React.FC<DataUploadProps> = ({ onDataLoaded }) => {
       // Clear the input
       event.target.value = '';
     }
-  }, [parseCSV, onDataLoaded]);
+  }, [parseCSV, onDataLoaded, t]);
 
   return (
     <Card className="w-full">
@@ -258,16 +233,8 @@ const DataUpload: React.FC<DataUploadProps> = ({ onDataLoaded }) => {
               <li>{t('upload.instruction.columns')}</li>
               <li>{t('upload.instruction.optional')}</li>
               <li>{t('upload.instruction.headers')}</li>
-              <li>
-                {language === 'es'
-                  ? `Tamaño máximo: ${Math.round(MAX_FILE_SIZE / (1024 * 1024))}MB`
-                  : `Max size: ${Math.round(MAX_FILE_SIZE / (1024 * 1024))}MB`}
-              </li>
-              <li>
-                {language === 'es'
-                  ? `Máximo ${MAX_CSV_ROWS.toLocaleString()} filas`
-                  : `Maximum ${MAX_CSV_ROWS.toLocaleString()} rows`}
-              </li>
+              <li>{t('upload.maxSize', { size: Math.round(MAX_FILE_SIZE / (1024 * 1024)) })}</li>
+              <li>{t('upload.maxRows', { rows: MAX_CSV_ROWS.toLocaleString() })}</li>
             </ul>
           </div>
         </div>

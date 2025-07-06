@@ -29,6 +29,8 @@ const translations: Translations = {
   'filters.allRegions': { es: 'Todas las regiones', en: 'All regions' },
   'filters.allYears': { es: 'Todos los años', en: 'All years' },
   'filters.allSectors': { es: 'Todos los sectores', en: 'All sectors' },
+  'filters.active': { es: 'Filtros activos', en: 'Active filters' },
+  'filters.none': { es: 'Ninguno', en: 'None' },
   
   // Data
   'data.loading': { es: 'Cargando datos...', en: 'Loading data...' },

@@ -4,6 +4,7 @@ import { useTranslation } from '../hooks/useTranslation';
 import { humanizeLabel } from '@/utils/humanize';
 import { Filter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
@@ -54,6 +55,33 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        {/* Active Filters Summary */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            {t('filters.active')}
+          </label>
+          <div className="flex flex-wrap gap-2">
+            {filters.region && (
+              <Badge variant="secondary">
+                {t('filters.region')}: {filters.region}
+              </Badge>
+            )}
+            {filters.year && (
+              <Badge variant="secondary">
+                {t('filters.year')}: {filters.year}
+              </Badge>
+            )}
+            {filters.sector && (
+              <Badge variant="secondary">
+                {t('filters.sector')}: {humanizeLabel(filters.sector)}
+              </Badge>
+            )}
+            {!filters.region && !filters.year && !filters.sector && (
+              <span className="text-sm text-gray-500">{t('filters.none')}</span>
+            )}
+          </div>
+        </div>
+
         {/* Region Filter */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">

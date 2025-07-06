@@ -1,4 +1,3 @@
-
 // pages/index.tsx
 import React, { useEffect, useState, useMemo } from 'react';
 import Papa from 'papaparse';

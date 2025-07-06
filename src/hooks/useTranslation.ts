@@ -56,6 +56,15 @@ const translations: Translations = {
   'upload.instruction.columns': { es: 'Columnas: region, year, sector, emissions', en: 'Columns: region, year, sector, emissions' },
   'upload.instruction.optional': { es: 'Opcionalmente: lat, lng para coordenadas', en: 'Optional: lat, lng for coordinates' },
   'upload.instruction.headers': { es: 'Primera fila debe contener los encabezados', en: 'First row must contain headers' },
+  'upload.invalidFile': { es: 'Por favor, selecciona un archivo CSV válido', en: 'Please select a valid CSV file' },
+  'upload.fileTooLarge': { es: 'El archivo es demasiado grande. Tamaño máximo: {size}MB', en: 'File is too large. Max size: {size}MB' },
+  'upload.noValidData': { es: 'No se encontraron datos válidos en el archivo CSV', en: 'No valid data found in the CSV file' },
+  'upload.success': { es: 'Datos cargados exitosamente: {count} registros', en: 'Data loaded successfully: {count} records' },
+  'upload.loadError': { es: 'Error al cargar datos predefinidos: {error}', en: 'Error loading default data: {error}' },
+  'upload.unknownError': { es: 'Error desconocido', en: 'Unknown error' },
+  'upload.parseUnknownError': { es: 'Error desconocido al procesar CSV', en: 'Unknown error processing CSV' },
+  'upload.maxSize': { es: 'Tamaño máximo: {size}MB', en: 'Max size: {size}MB' },
+  'upload.maxRows': { es: 'Máximo {rows} filas', en: 'Maximum {rows} rows' },
 
   // About page
   'about.purpose': {
@@ -85,8 +94,17 @@ const translations: Translations = {
 export const useTranslation = () => {
   const [language, setLanguage] = useState<Language>('es'); // Default to Spanish
 
-  const t = (key: string): string => {
-    return translations[key]?.[language] || key;
+  const t = (
+    key: string,
+    params?: Record<string, string | number>
+  ): string => {
+    let str = translations[key]?.[language] || key;
+    if (params) {
+      Object.entries(params).forEach(([k, v]) => {
+        str = str.replace(`{${k}}`, String(v));
+      });
+    }
+    return str;
   };
 
   const changeLanguage = (lang: Language) => {

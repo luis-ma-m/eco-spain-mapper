@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from '../hooks/useTranslation';
 import { humanizeLabel } from '@/utils/humanize';
 import { Filter } from 'lucide-react';
@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 interface FilterPanelProps {
+  filters: FilterState;
   onFiltersChange: (filters: FilterState) => void;
   availableRegions: string[];
   availableYears: number[];
@@ -18,32 +19,30 @@ export interface FilterState {
   region: string | null;
   year: number | null;
   sector: string | null;
+  healthy: string | null;
 }
 
 const ALL_VALUE = '__all__'
 
 const FilterPanel: React.FC<FilterPanelProps> = ({
+  filters,
   onFiltersChange,
   availableRegions,
   availableYears,
   availableSectors
 }) => {
   const { t } = useTranslation();
-  const [filters, setFilters] = useState<FilterState>({
-    region: null,
-    year: null,
-    sector: null
-  });
 
-  const handleFilterChange = (key: keyof FilterState, value: string | number | null) => {
+  const handleFilterChange = (
+    key: keyof FilterState,
+    value: string | number | null,
+  ) => {
     const newFilters = { ...filters, [key]: value };
-    setFilters(newFilters);
     onFiltersChange(newFilters);
   };
 
   const resetFilters = () => {
-    const resetState = { region: null, year: null, sector: null };
-    setFilters(resetState);
+    const resetState = { region: null, year: null, sector: null, healthy: null };
     onFiltersChange(resetState);
   };
 
@@ -128,6 +127,28 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
                   {humanizeLabel(sector)}
                 </SelectItem>
               ))}
+            </SelectContent>
+          </Select>
+        </div>
+
+        {/* Healthy Filter */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            {t('filters.healthy')}
+          </label>
+          <Select
+            value={filters.healthy || ''}
+            onValueChange={value =>
+              handleFilterChange('healthy', value === ALL_VALUE ? null : value)
+            }
+          >
+            <SelectTrigger>
+              <SelectValue placeholder={`${t('filters.healthy')}...`} />
+            </SelectTrigger>
+            <SelectContent className="bg-white">
+              <SelectItem value={ALL_VALUE}>{t('filters.allHealthy')}</SelectItem>
+              <SelectItem value="yes">{t('filters.healthyYes')}</SelectItem>
+              <SelectItem value="no">{t('filters.healthyNo')}</SelectItem>
             </SelectContent>
           </Select>
         </div>

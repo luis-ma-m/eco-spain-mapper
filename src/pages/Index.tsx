@@ -112,10 +112,15 @@ const Index: React.FC = () => {
   const { t } = useTranslation();
 
   const [data, setData] = useState<CO2Data[]>([]);
-  const [filters, setFilters] = useState<FilterState>({
-    region: null,
-    year: null,
-    sector: null,
+  const [filters, setFilters] = useState<FilterState>(() => {
+    try {
+      const saved = sessionStorage.getItem('filters');
+      return saved
+        ? (JSON.parse(saved) as FilterState)
+        : { region: null, year: null, sector: null, healthy: null };
+    } catch {
+      return { region: null, year: null, sector: null, healthy: null };
+    }
   });
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -148,6 +153,14 @@ const Index: React.FC = () => {
       // ignore
     }
   }, [selectedMetrics]);
+
+  useEffect(() => {
+    try {
+      sessionStorage.setItem('filters', JSON.stringify(filters));
+    } catch {
+      // ignore
+    }
+  }, [filters]);
 
   // Load default CSV on mount
   useEffect(() => {
@@ -270,6 +283,7 @@ const Index: React.FC = () => {
               </SheetTrigger>
               <SheetContent side="right" className="sm:w-80">
                 <FilterPanel
+                  filters={filters}
                   onFiltersChange={handleFiltersChange}
                   availableRegions={availableRegions}
                   availableYears={availableYears}

@@ -29,6 +29,10 @@ const translations: Translations = {
   'filters.allRegions': { es: 'Todas las regiones', en: 'All regions' },
   'filters.allYears': { es: 'Todos los años', en: 'All years' },
   'filters.allSectors': { es: 'Todos los sectores', en: 'All sectors' },
+  'filters.healthy': { es: 'Saludable', en: 'Healthy' },
+  'filters.allHealthy': { es: 'Todas', en: 'All' },
+  'filters.healthyYes': { es: 'Sí', en: 'Yes' },
+  'filters.healthyNo': { es: 'No', en: 'No' },
   
   // Data
   'data.loading': { es: 'Cargando datos...', en: 'Loading data...' },

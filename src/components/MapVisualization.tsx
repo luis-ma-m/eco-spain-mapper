@@ -81,6 +81,11 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
         if (filters.region && item.region !== filters.region) return false;
         if (filters.year && item.year !== filters.year) return false;
         if (filters.sector && item.sector !== filters.sector) return false;
+        if (
+          filters.healthy &&
+          String((item as Record<string, unknown>).healthy) !== filters.healthy
+        )
+          return false;
         return true;
       }),
     [data, filters]
@@ -187,6 +192,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
           availableRegions={availableRegions}
           availableYears={availableYears}
           availableSectors={availableSectors}
+          filters={filters}
           onFiltersChange={onFiltersChange}
           onDataLoaded={onDataLoaded}
         />

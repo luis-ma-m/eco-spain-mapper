@@ -23,6 +23,7 @@ interface MobileMenuSheetProps {
   availableRegions: string[];
   availableYears: number[];
   availableSectors: string[];
+  filters: FilterState;
   onFiltersChange: (filters: FilterState) => void;
   onDataLoaded: (data: CO2Data[]) => void;
 }
@@ -35,6 +36,7 @@ const MobileMenuSheet: React.FC<MobileMenuSheetProps> = ({
   availableRegions,
   availableYears,
   availableSectors,
+  filters,
   onFiltersChange,
   onDataLoaded,
 }) => {
@@ -141,6 +143,7 @@ const MobileMenuSheet: React.FC<MobileMenuSheetProps> = ({
 
             {activeTab === 'filters' && (
               <FilterPanel
+                filters={filters}
                 onFiltersChange={onFiltersChange}
                 availableRegions={availableRegions}
                 availableYears={availableYears}

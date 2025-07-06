@@ -187,6 +187,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
           availableRegions={availableRegions}
           availableYears={availableYears}
           availableSectors={availableSectors}
+          filters={filters}
           onFiltersChange={onFiltersChange}
           onDataLoaded={onDataLoaded}
         />

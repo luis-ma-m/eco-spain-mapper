@@ -46,6 +46,16 @@ const translations: Translations = {
   'map.low': { es: 'Baja emisión', en: 'Low emission' },
   'map.total': { es: 'Total Emisiones', en: 'Total Emissions' },
   'map.selectMetrics': { es: 'Seleccionar métricas', en: 'Select metrics' },
+  'map.selectMetricPlaceholder': { es: 'Seleccionar métrica…', en: 'Select metric…' },
+  'map.regionsLabel': { es: 'regiones', en: 'regions' },
+  'map.na': { es: 'N/D', en: 'N/A' },
+
+  // Mobile/Side menu labels
+  'menu.mapControls': { es: 'Controles del mapa', en: 'Map Controls' },
+  'menu.metrics': { es: 'Métricas', en: 'Metrics' },
+  'menu.legend': { es: 'Leyenda', en: 'Legend' },
+  'menu.upload': { es: 'Cargar', en: 'Upload' },
+  'menu.filters': { es: 'Filtros', en: 'Filters' },
   
   // Upload
   'upload.title': { es: 'Subir Archivo CSV', en: 'Upload CSV File' },
@@ -80,6 +90,10 @@ const translations: Translations = {
   },
   'errorBoundary.reload': { es: 'Recargar página', en: 'Reload page' },
   'errorBoundary.retry': { es: 'Intentar de nuevo', en: 'Try again' },
+
+  // Not Found page
+  'notFound.oops': { es: '¡Vaya! Página no encontrada', en: 'Oops! Page not found' },
+  'notFound.returnHome': { es: 'Volver al inicio', en: 'Return to Home' },
 };
 
 export const useTranslation = () => {

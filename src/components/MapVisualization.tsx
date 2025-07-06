@@ -222,7 +222,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
                 onValueChange={value => onMetricsChange([value])}
               >
                 <SelectTrigger>
-                  <SelectValue placeholder="Select metric…" />
+                  <SelectValue placeholder={t('map.selectMetricPlaceholder')} />
                 </SelectTrigger>
                 <SelectContent className="bg-white z-[1400]">
                   {availableMetrics.map(metric => (
@@ -239,7 +239,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
               <div className="flex items-center justify-between">
                 <span className="text-sm text-gray-600">{t('map.total')}:</span>
                 <Badge variant="secondary">
-                  {aggregatedData.length} regions
+                  {aggregatedData.length} {t('map.regionsLabel')}
                 </Badge>
               </div>
             </div>
@@ -325,19 +325,19 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
                         <span className="font-medium">{humanizeLabel(m)}:</span>{' '}
                         {typeof item[m] === 'number'
                           ? (item[m] as number).toLocaleString()
-                          : 'N/A'}{' '}
+                          : t('map.na')}{' '}
                         {t('map.unit')}
                       </div>
                     ))}
                     {item.sector && (
                       <div className="text-sm text-gray-600">
-                        <span className="font-medium">Sector:</span>{' '}
+                        <span className="font-medium">{t('filters.sector')}:</span>{' '}
                         {item.sector}
                       </div>
                     )}
                     {item.year && (
                       <div className="text-sm text-gray-600">
-                        <span className="font-medium">Year:</span> {item.year}
+                        <span className="font-medium">{t('filters.year')}:</span> {item.year}
                       </div>
                     )}
                   </div>

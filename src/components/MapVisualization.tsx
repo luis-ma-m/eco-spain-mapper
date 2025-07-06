@@ -1,4 +1,3 @@
-
 // components/MapVisualization.tsx
 import React, { useMemo, useState } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Popup } from 'react-leaflet';

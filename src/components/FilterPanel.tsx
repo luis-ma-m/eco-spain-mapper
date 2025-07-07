@@ -2,7 +2,7 @@
 import React from 'react';
 import { useTranslation } from '../hooks/useTranslation';
 import { humanizeLabel } from '@/utils/humanize';
-import { Filter } from 'lucide-react';
+import { Filter, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -15,6 +15,7 @@ interface FilterPanelProps {
   availableYears: number[];
   availableCategories: string[];
   availableValues: string[];
+  onClose?: () => void;
 }
 
 export interface FilterState {
@@ -32,7 +33,8 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
   availableRegions,
   availableYears,
   availableCategories,
-  availableValues
+  availableValues,
+  onClose
 }) => {
   const { t } = useTranslation();
 
@@ -52,9 +54,21 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
   return (
     <Card className="w-full">
       <CardHeader>
-        <CardTitle className="flex items-center space-x-2">
-          <Filter className="h-5 w-5 text-green-600" />
-          <span>{t('filters.title')}</span>
+        <CardTitle className="flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <Filter className="h-5 w-5 text-green-600" />
+            <span>{t('filters.title')}</span>
+          </div>
+          {onClose && (
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={onClose}
+              className="h-6 w-6"
+            >
+              <X className="h-4 w-4" />
+            </Button>
+          )}
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
@@ -173,45 +187,37 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
         </div>
 
         {/* Value Filter */}
-        <div
-          style={{
-            maxHeight: filters.sectorCategory ? '200px' : '0px',
-            overflow: 'hidden',
-            transition: 'max-height 0.3s ease',
-          }}
-        >
-          {filters.sectorCategory && (
-            <>
-              <label className="block text-sm font-medium text-gray-700 mb-2 mt-4">
-                {t('filters.value')}
-              </label>
-              <Select
-                value={filters.sector ?? ALL_VALUE}
-                onValueChange={(value) =>
-                  handleFilterChange('sector', value === ALL_VALUE ? null : value)
-                }
-              >
-                <SelectTrigger>
-                  <SelectValue placeholder={`${t('filters.value')}...`} />
-                </SelectTrigger>
-                <SelectContent className="bg-white">
-                  <SelectItem value={ALL_VALUE}>{t('filters.allValues')}</SelectItem>
-                  {availableValues.map((val) => (
-                    <SelectItem key={val} value={val}>
-                      {t(`value.${val}`)}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </>
-          )}
-        </div>
+        {filters.sectorCategory && (
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              {t('filters.value')}
+            </label>
+            <Select
+              value={filters.sector ?? ALL_VALUE}
+              onValueChange={(value) =>
+                handleFilterChange('sector', value === ALL_VALUE ? null : value)
+              }
+            >
+              <SelectTrigger>
+                <SelectValue placeholder={`${t('filters.value')}...`} />
+              </SelectTrigger>
+              <SelectContent className="bg-white">
+                <SelectItem value={ALL_VALUE}>{t('filters.allValues')}</SelectItem>
+                {availableValues.map((val) => (
+                  <SelectItem key={val} value={val}>
+                    {t(`value.${val}`)}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+        )}
 
         {/* Reset Button */}
         <Button 
           variant="outline" 
           onClick={resetFilters}
-          className="w-full mt-4"
+          className="w-full"
         >
           {t('filters.reset')}
         </Button>

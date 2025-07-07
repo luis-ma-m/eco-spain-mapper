@@ -44,6 +44,7 @@ const MobileMenuSheet: React.FC<MobileMenuSheetProps> = ({
 }) => {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<'metrics' | 'legend' | 'upload' | 'filters'>('metrics');
+  const [isOpen, setIsOpen] = useState(false);
 
   const TabButton: React.FC<{
     id: 'metrics' | 'legend' | 'upload' | 'filters';
@@ -62,7 +63,7 @@ const MobileMenuSheet: React.FC<MobileMenuSheetProps> = ({
   );
 
   return (
-    <Sheet>
+    <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
         <Button size="icon" className="rounded-full bg-green-600 hover:bg-green-700">
           <Menu className="h-5 w-5" />
@@ -151,6 +152,7 @@ const MobileMenuSheet: React.FC<MobileMenuSheetProps> = ({
                 availableYears={availableYears}
                 availableCategories={availableCategories}
                 availableValues={availableValues}
+                onClose={() => setIsOpen(false)}
               />
             )}
           </div>

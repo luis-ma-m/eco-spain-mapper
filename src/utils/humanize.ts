@@ -21,3 +21,32 @@ export const formatBillions = (
   toBillions(value).toLocaleString(undefined, {
     maximumFractionDigits: fractionDigits,
   });
+
+export const humanizeValue = (
+  value: number,
+  fractionDigits = 2
+): { value: string; unitKey: string } => {
+  const abs = Math.abs(value);
+  if (abs >= 1_000_000_000) {
+    return {
+      value: (value / 1_000_000_000).toLocaleString(undefined, {
+        maximumFractionDigits: fractionDigits,
+      }),
+      unitKey: 'map.unitBillions',
+    };
+  }
+  if (abs >= 1_000_000) {
+    return {
+      value: (value / 1_000_000).toLocaleString(undefined, {
+        maximumFractionDigits: fractionDigits,
+      }),
+      unitKey: 'map.unitMillions',
+    };
+  }
+  return {
+    value: value.toLocaleString(undefined, {
+      maximumFractionDigits: fractionDigits,
+    }),
+    unitKey: 'map.unitTonnes',
+  };
+};

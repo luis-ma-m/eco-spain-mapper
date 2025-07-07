@@ -5,7 +5,7 @@ import type { LatLngExpression } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
 import { useTranslation } from '../hooks/useTranslation';
-import { humanizeLabel, formatBillions } from '@/utils/humanize';
+import { humanizeLabel, humanizeValue } from '@/utils/humanize';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
@@ -218,6 +218,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
           availableMetrics={availableMetrics}
           onMetricsChange={onMetricsChange}
           aggregatedData={aggregatedData}
+          spainTotal={spainTotal}
           availableRegions={availableRegions}
           availableYears={availableYears}
           availableCategories={availableCategories}
@@ -230,10 +231,13 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
       {spainTotal > 0 && (
         <div className="md:hidden absolute top-4 left-16 right-4 z-[500]">
           <Badge variant="outline" className="bg-white/95 backdrop-blur-sm">
-            {t('map.spainTotal', {
-              value: formatBillions(spainTotal, 3),
-              unit: t('map.unit'),
-            })}
+            {(() => {
+              const hv = humanizeValue(spainTotal, 3);
+              return t('map.spainTotal', {
+                value: hv.value,
+                unit: t(hv.unitKey),
+              });
+            })()}
           </Badge>
         </div>
       )}
@@ -324,10 +328,13 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
             </div>
             {spainTotal > 0 && (
               <div className="pt-2 text-xs text-gray-700 border-t mt-2">
-                {t('map.spainTotal', {
-                  value: formatBillions(spainTotal, 3),
-                  unit: t('map.unit'),
-                })}
+                {(() => {
+                  const hv = humanizeValue(spainTotal, 3);
+                  return t('map.spainTotal', {
+                    value: hv.value,
+                    unit: t(hv.unitKey),
+                  });
+                })()}
               </div>
             )}
           </CardContent>
@@ -376,10 +383,11 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
                     {selectedMetrics.map(m => (
                       <div key={m} className="text-sm text-gray-600">
                         <span className="font-medium">{humanizeLabel(m)}:</span>{' '}
-                        {typeof item[m] === 'number'
-                          ? formatBillions(item[m] as number)
-                          : t('map.na')}{' '}
-                        {t('map.unit')}
+                        {(() => {
+                          if (typeof item[m] !== 'number') return t('map.na');
+                          const hv = humanizeValue(item[m] as number);
+                          return `${hv.value} ${t(hv.unitKey)}`;
+                        })()}
                       </div>
                     ))}
                     {item.sectorCategory && (

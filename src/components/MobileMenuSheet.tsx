@@ -9,7 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 
 import { useTranslation } from '../hooks/useTranslation';
-import { humanizeLabel } from '@/utils/humanize';
+import { humanizeLabel, humanizeValue } from '@/utils/humanize';
 import DataUpload from './DataUpload';
 import FilterPanel from './FilterPanel';
 import type { CO2Data } from './DataUpload';
@@ -20,6 +20,7 @@ interface MobileMenuSheetProps {
   availableMetrics: string[];
   onMetricsChange: (metrics: string[]) => void;
   aggregatedData: CO2Data[];
+  spainTotal: number;
   availableRegions: string[];
   availableYears: number[];
   availableCategories: string[];
@@ -34,6 +35,7 @@ const MobileMenuSheet: React.FC<MobileMenuSheetProps> = ({
   availableMetrics,
   onMetricsChange,
   aggregatedData,
+  spainTotal,
   availableRegions,
   availableYears,
   availableCategories,
@@ -123,22 +125,33 @@ const MobileMenuSheet: React.FC<MobileMenuSheetProps> = ({
             {activeTab === 'legend' && (
               <div className="space-y-4">
                 <h3 className="text-sm font-medium text-gray-700">{t('map.legend')}</h3>
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-6 h-6 rounded-full bg-red-600" />
-                    <span className="text-sm text-gray-600">{t('map.high')}</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-6 h-6 rounded-full bg-orange-500" />
-                    <span className="text-sm text-gray-600">{t('map.medium')}</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-6 h-6 rounded-full bg-green-600" />
-                    <span className="text-sm text-gray-600">{t('map.low')}</span>
-                  </div>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3">
+                  <div className="w-6 h-6 rounded-full bg-red-600" />
+                  <span className="text-sm text-gray-600">{t('map.high')}</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-6 h-6 rounded-full bg-orange-500" />
+                  <span className="text-sm text-gray-600">{t('map.medium')}</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-6 h-6 rounded-full bg-green-600" />
+                  <span className="text-sm text-gray-600">{t('map.low')}</span>
                 </div>
               </div>
-            )}
+              {spainTotal > 0 && (
+                <div className="pt-2 text-sm text-gray-700 border-t">
+                  {(() => {
+                    const hv = humanizeValue(spainTotal, 3);
+                    return t('map.spainTotal', {
+                      value: hv.value,
+                      unit: t(hv.unitKey),
+                    });
+                  })()}
+                </div>
+              )}
+            </div>
+          )}
 
             {activeTab === 'upload' && (
               <DataUpload onDataLoaded={onDataLoaded} />

@@ -21,6 +21,8 @@ export interface CO2Data {
   region: string;
   year: number;
   sector: string;
+  sectorCategory?: string;
+  sectorValue?: string;
   emissions: number;
   coordinates?: [number, number];
   [key: string]: unknown;
@@ -82,11 +84,22 @@ const DataUpload: React.FC<DataUploadProps> = ({ onDataLoaded }) => {
             ? [lat, lng]
             : undefined;
 
+        const sectorRaw = sanitizeString(
+          row.sector || row.Sector || row.industry || row.industria || ''
+        );
+        const [sectorCategory, sectorValue] = sectorRaw.split(':');
+
         const standardRow: CO2Data = {
-          region: sanitizeString(row.region || row.Region || row.autonomous_community || row.comunidad_autonoma || ''),
+          region: sanitizeString(
+            row.region || row.Region || row.autonomous_community || row.comunidad_autonoma || ''
+          ),
           year: sanitizeNumber(row.year || row.Year || row.año || 0),
-          sector: sanitizeString(row.sector || row.Sector || row.industry || row.industria || ''),
-          emissions: sanitizeNumber(row.emissions || row.Emissions || row.emisiones || row.co2 || row.CO2 || 0),
+          sector: sectorValue || sectorCategory,
+          sectorCategory,
+          sectorValue: sectorValue || sectorCategory,
+          emissions: sanitizeNumber(
+            row.emissions || row.Emissions || row.emisiones || row.co2 || row.CO2 || 0
+          ),
           coordinates,
           ...row
         };

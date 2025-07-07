@@ -49,7 +49,8 @@ interface MapVisualizationProps {
   statusMessage: string;
   availableRegions: string[];
   availableYears: number[];
-  availableSectors: string[];
+  availableCategories: string[];
+  availableValues: string[];
   onFiltersChange: (filters: FilterState) => void;
   onDataLoaded: (data: CO2Data[]) => void;
 }
@@ -65,7 +66,8 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
   statusMessage,
   availableRegions,
   availableYears,
-  availableSectors,
+  availableCategories,
+  availableValues,
   onFiltersChange,
   onDataLoaded,
 }) => {
@@ -81,6 +83,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
       data.filter(item => {
         if (filters.region && item.region !== filters.region) return false;
         if (filters.year && item.year !== filters.year) return false;
+        if (filters.sectorCategory && item.sectorCategory !== filters.sectorCategory) return false;
         if (filters.sector && item.sector !== filters.sector) return false;
         return true;
       }),
@@ -201,7 +204,8 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
           aggregatedData={aggregatedData}
           availableRegions={availableRegions}
           availableYears={availableYears}
-          availableSectors={availableSectors}
+          availableCategories={availableCategories}
+          availableValues={availableValues}
           filters={filters}
           onFiltersChange={onFiltersChange}
           onDataLoaded={onDataLoaded}
@@ -344,10 +348,16 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
                         {t('map.unit')}
                       </div>
                     ))}
+                    {item.sectorCategory && (
+                      <div className="text-sm text-gray-600">
+                        <span className="font-medium">{t('filters.category')}:</span>{' '}
+                        {t(`category.${item.sectorCategory}`)}
+                      </div>
+                    )}
                     {item.sector && (
                       <div className="text-sm text-gray-600">
-                        <span className="font-medium">{t('filters.sector')}:</span>{' '}
-                        {item.sector}
+                        <span className="font-medium">{t('filters.value')}:</span>{' '}
+                        {t(`value.${item.sector}`)}
                       </div>
                     )}
                     {item.year && (

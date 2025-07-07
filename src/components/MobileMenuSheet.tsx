@@ -22,7 +22,8 @@ interface MobileMenuSheetProps {
   aggregatedData: CO2Data[];
   availableRegions: string[];
   availableYears: number[];
-  availableSectors: string[];
+  availableCategories: string[];
+  availableValues: string[];
   filters: FilterState;
   onFiltersChange: (filters: FilterState) => void;
   onDataLoaded: (data: CO2Data[]) => void;
@@ -35,7 +36,8 @@ const MobileMenuSheet: React.FC<MobileMenuSheetProps> = ({
   aggregatedData,
   availableRegions,
   availableYears,
-  availableSectors,
+  availableCategories,
+  availableValues,
   filters,
   onFiltersChange,
   onDataLoaded,
@@ -147,7 +149,8 @@ const MobileMenuSheet: React.FC<MobileMenuSheetProps> = ({
                 onFiltersChange={onFiltersChange}
                 availableRegions={availableRegions}
                 availableYears={availableYears}
-                availableSectors={availableSectors}
+                availableCategories={availableCategories}
+                availableValues={availableValues}
               />
             )}
           </div>

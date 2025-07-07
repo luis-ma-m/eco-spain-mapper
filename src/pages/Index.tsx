@@ -55,13 +55,15 @@ const parseCSV = (csvText: string): CO2Data[] => {
       const yearRaw = sanitizedRow.year || sanitizedRow.Year || sanitizedRow.año || '';
       const year = sanitizeNumber(yearRaw) || 0;
 
-      const sector = sanitizeString(
+      const sectorRaw = sanitizeString(
         (sanitizedRow.sector as string) ||
         (sanitizedRow.Sector as string) ||
         (sanitizedRow.industry as string) ||
         (sanitizedRow.industria as string) ||
         ''
       );
+      const [sectorCategory, sectorValue] = sectorRaw.split(':');
+      const sector = sectorValue || sectorCategory;
 
       const emissionsRaw = 
         sanitizedRow.emissions ||
@@ -88,7 +90,15 @@ const parseCSV = (csvText: string): CO2Data[] => {
         emissions >= 0 &&
         Number.isFinite(emissions)
       ) {
-        const record: CO2Data = { region, year, sector, emissions, coordinates };
+        const record: CO2Data = {
+          region,
+          year,
+          sector,
+          sectorCategory,
+          sectorValue: sector,
+          emissions,
+          coordinates,
+        };
         for (const [k, v] of Object.entries(sanitizedRow)) {
           if (
             typeof v === 'number' &&
@@ -116,9 +126,9 @@ const Index: React.FC = () => {
       const saved = sessionStorage.getItem('filters');
       return saved
         ? (JSON.parse(saved) as FilterState)
-        : { region: null, year: null, sector: null };
+        : { region: null, year: null, sectorCategory: null, sector: null };
     } catch {
-      return { region: null, year: null, sector: null };
+      return { region: null, year: null, sectorCategory: null, sector: null };
     }
   });
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -225,9 +235,22 @@ const Index: React.FC = () => {
     () => Array.from(new Set(data.map(d => d.year))).sort((a, b) => a - b),
     [data]
   );
-  const availableSectors = useMemo(
-    () => Array.from(new Set(data.map(d => d.sector))).sort(),
+  const availableCategories = useMemo(
+    () => Array.from(new Set(data.map(d => d.sectorCategory))).sort(),
     [data]
+  );
+  const availableValues = useMemo(
+    () =>
+      filters.sectorCategory
+        ? Array.from(
+            new Set(
+              data
+                .filter(d => d.sectorCategory === filters.sectorCategory)
+                .map(d => d.sector)
+            )
+          ).sort()
+        : [],
+    [data, filters.sectorCategory]
   );
 
   // Discover numeric fields for metrics
@@ -269,7 +292,8 @@ const Index: React.FC = () => {
             statusMessage={statusMsg}
             availableRegions={availableRegions}
             availableYears={availableYears}
-            availableSectors={availableSectors}
+            availableCategories={availableCategories}
+            availableValues={availableValues}
             onFiltersChange={handleFiltersChange}
             onDataLoaded={handleDataLoaded}
           />
@@ -299,7 +323,8 @@ const Index: React.FC = () => {
                   onFiltersChange={handleFiltersChange}
                   availableRegions={availableRegions}
                   availableYears={availableYears}
-                  availableSectors={availableSectors}
+                  availableCategories={availableCategories}
+                  availableValues={availableValues}
                 />
               </SheetContent>
             </Sheet>

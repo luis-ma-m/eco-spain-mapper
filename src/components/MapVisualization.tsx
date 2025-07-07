@@ -233,7 +233,9 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
         <div className="md:hidden absolute top-4 left-16 right-4 z-[500]">
           <Badge variant="outline" className="bg-white/95 backdrop-blur-sm">
             {t('map.spainTotal', {
+
               value: formatBillions(spainTotal, 3),
+              main
               unit: t('map.unit'),
             })}
           </Badge>
@@ -328,6 +330,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
               <div className="pt-2 text-xs text-gray-700 border-t mt-2">
                 {t('map.spainTotal', {
                   value: formatBillions(spainTotal, 3),
+                  main
                   unit: t('map.unit'),
                 })}
               </div>

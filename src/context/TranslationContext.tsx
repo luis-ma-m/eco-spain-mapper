@@ -45,6 +45,16 @@ const translations: Translations = {
   'map.low': { es: 'Baja emisión', en: 'Low emission' },
   'map.total': { es: 'Total Emisiones', en: 'Total Emissions' },
   'map.selectMetrics': { es: 'Seleccionar métricas', en: 'Select metrics' },
+  'map.selectMetricPlaceholder': { es: 'Seleccionar métrica…', en: 'Select metric…' },
+  'map.regionsLabel': { es: 'regiones', en: 'regions' },
+  'map.na': { es: 'N/D', en: 'N/A' },
+
+  // Mobile/Side menu labels
+  'menu.mapControls': { es: 'Controles del mapa', en: 'Map Controls' },
+  'menu.metrics': { es: 'Métricas', en: 'Metrics' },
+  'menu.legend': { es: 'Leyenda', en: 'Legend' },
+  'menu.upload': { es: 'Cargar', en: 'Upload' },
+  'menu.filters': { es: 'Filtros', en: 'Filters' },
 
   // Upload
   'upload.title': { es: 'Subir Archivo CSV', en: 'Upload CSV File' },
@@ -55,6 +65,15 @@ const translations: Translations = {
   'upload.instruction.columns': { es: 'Columnas: region, year, sector, emissions', en: 'Columns: region, year, sector, emissions' },
   'upload.instruction.optional': { es: 'Opcionalmente: lat, lng para coordenadas', en: 'Optional: lat, lng for coordinates' },
   'upload.instruction.headers': { es: 'Primera fila debe contener los encabezados', en: 'First row must contain headers' },
+  'upload.invalidFile': { es: 'Por favor, selecciona un archivo CSV válido', en: 'Please select a valid CSV file' },
+  'upload.fileTooLarge': { es: 'El archivo es demasiado grande. Tamaño máximo: {size}MB', en: 'File is too large. Max size: {size}MB' },
+  'upload.noValidData': { es: 'No se encontraron datos válidos en el archivo CSV', en: 'No valid data found in the CSV file' },
+  'upload.success': { es: 'Datos cargados exitosamente: {count} registros', en: 'Data loaded successfully: {count} records' },
+  'upload.loadError': { es: 'Error al cargar datos predefinidos: {error}', en: 'Error loading default data: {error}' },
+  'upload.unknownError': { es: 'Error desconocido', en: 'Unknown error' },
+  'upload.parseUnknownError': { es: 'Error desconocido al procesar CSV', en: 'Unknown error processing CSV' },
+  'upload.maxSize': { es: 'Tamaño máximo: {size}MB', en: 'Max size: {size}MB' },
+  'upload.maxRows': { es: 'Máximo {rows} filas', en: 'Maximum {rows} rows' },
 
   // About page
   'about.purpose': {
@@ -66,6 +85,14 @@ const translations: Translations = {
     es: 'Datos disponibles bajo licencia CC BY 4.0 de',
     en: 'Data available under a CC BY 4.0 license from',
   },
+
+  // Not Found page
+  'notFound.title': { es: '404', en: '404' },
+  'notFound.message': {
+    es: '¡Vaya! Página no encontrada',
+    en: 'Oops! Page not found',
+  },
+  'notFound.back': { es: 'Volver al inicio', en: 'Return to Home' },
 
   // Error Boundary
   'errorBoundary.title': { es: 'Error de aplicación', en: 'Application error' },
@@ -79,10 +106,28 @@ const translations: Translations = {
   },
   'errorBoundary.reload': { es: 'Recargar página', en: 'Reload page' },
   'errorBoundary.retry': { es: 'Intentar de nuevo', en: 'Try again' },
+
+  // Index page status messages
+  'index.loadedUpload': {
+    es: 'Se cargaron {{count}} registros desde la subida',
+    en: 'Loaded {{count}} records from upload',
+  },
+  'index.loadingDefault': {
+    es: 'Cargando datos predeterminados desde {{url}}',
+    en: 'Fetching default data from {{url}}',
+  },
+  'index.loadedDefault': {
+    es: 'Se cargaron {{count}} registros del CSV predeterminado',
+    en: 'Loaded {{count}} records from default CSV',
+  },
+  'index.errorLoad': {
+    es: 'Error al cargar CSV: {{msg}}',
+    en: 'Error loading CSV: {{msg}}',
+  },
 };
 
 interface TranslationContextProps {
-  t: (key: string) => string;
+  t: (key: string, params?: Record<string, string | number>) => string;
   language: Language;
   changeLanguage: (lang: Language) => void;
 }
@@ -117,8 +162,16 @@ export const TranslationProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   const t = useCallback(
-    (key: string) => {
-      return translations[key]?.[language] || key;
+    (key: string, params?: Record<string, string | number>) => {
+      let str = translations[key]?.[language] || key;
+      if (params) {
+        Object.entries(params).forEach(([k, v]) => {
+          const val = String(v);
+          str = str.replace(new RegExp(`\\{\\{${k}\\}\\}`, 'g'), val);
+          str = str.replace(new RegExp(`\\{${k}\\}`, 'g'), val);
+        });
+      }
+      return str;
     },
     [language]
   );

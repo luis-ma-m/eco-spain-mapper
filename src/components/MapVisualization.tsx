@@ -1,5 +1,5 @@
 // components/MapVisualization.tsx
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Popup } from 'react-leaflet';
 import type { LatLngExpression } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -72,6 +72,8 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
   const { t } = useTranslation();
   const [isControlsCollapsed, setIsControlsCollapsed] = useState(false);
   const [isLegendCollapsed, setIsLegendCollapsed] = useState(false);
+  const [visibleStatus, setVisibleStatus] = useState(false);
+  const [displayStatus, setDisplayStatus] = useState('');
 
   // Apply filters to data
   const filteredData = useMemo(
@@ -141,6 +143,20 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
     return Math.max(5, Math.min(20, 5 + norm * 15));
   };
 
+  // Handle status message visibility with fade-out
+  useEffect(() => {
+    if (statusMessage) {
+      setDisplayStatus(statusMessage);
+      setVisibleStatus(true);
+      const hideTimer = setTimeout(() => setVisibleStatus(false), 10000);
+      const clearTimer = setTimeout(() => setDisplayStatus(''), 11000);
+      return () => {
+        clearTimeout(hideTimer);
+        clearTimeout(clearTimer);
+      };
+    }
+  }, [statusMessage]);
+
   // Default map center (Spain)
   const centerCoords: LatLngExpression = [40.4168, -3.7038];
 
@@ -198,7 +214,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
           <CardTitle className="flex items-center justify-between text-lg">
             <div className="flex items-center space-x-2">
               <MapPin className="h-5 w-5 text-green-600" />
-              <span>{t('map.title')}</span>
+              <span>{t('menu.mapControls')}</span>
             </div>
             <Button
               variant="ghost"
@@ -347,10 +363,14 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
       </MapContainer>
 
       {/* Status Message */}
-      {statusMessage && (
-        <div className="absolute bottom-4 left-4 z-[1000]">
+      {displayStatus && (
+        <div
+          className={`absolute bottom-4 left-4 z-[1000] transition-opacity duration-1000 ${
+            visibleStatus ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
           <Badge variant="outline" className="bg-white/95 backdrop-blur-sm">
-            {statusMessage}
+            {displayStatus}
           </Badge>
         </div>
       )}

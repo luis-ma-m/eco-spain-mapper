@@ -1,3 +1,4 @@
+
 // components/MapVisualization.tsx
 import React, { useMemo, useState, useEffect } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Popup } from 'react-leaflet';
@@ -379,7 +380,6 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
             visibleStatus ? 'opacity-100' : 'opacity-0'
           }`}
         >
-              main
           <Badge variant="outline" className="bg-white/95 backdrop-blur-sm">
             {displayStatus}
           </Badge>

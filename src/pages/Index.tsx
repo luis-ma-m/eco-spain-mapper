@@ -237,13 +237,14 @@ const Index: React.FC = () => {
     [data]
   );
 
-  // Set default year filter to most recent if none selected
+  // Keep all years selected unless a saved year exists and is valid
   useEffect(() => {
     if (availableYears.length === 0) return;
     setFilters(prev => {
-      if (prev.year !== null) return prev;
-      const maxYear = Math.max(...availableYears);
-      return { ...prev, year: maxYear };
+      if (prev.year === null) return prev;
+      return availableYears.includes(prev.year)
+        ? prev
+        : { ...prev, year: null };
     });
   }, [availableYears]);
   const availableCategories = useMemo(

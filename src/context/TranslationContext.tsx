@@ -50,6 +50,10 @@ const translations: Translations = {
   'map.selectMetrics': { es: 'Seleccionar métricas', en: 'Select metrics' },
   'map.selectMetricPlaceholder': { es: 'Seleccionar métrica…', en: 'Select metric…' },
   'map.regionsLabel': { es: 'regiones', en: 'regions' },
+  'map.spainTotal': {
+    es: 'Total España: {value} {unit}',
+    en: 'Spain total: {value} {unit}',
+  },
   'map.na': { es: 'N/D', en: 'N/A' },
 
   // Mobile/Side menu labels

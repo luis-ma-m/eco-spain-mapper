@@ -92,10 +92,26 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
     [data, filters]
   );
 
+  const filteredWithoutSpain = useMemo(
+    () => filteredData.filter(item => item.region !== 'España'),
+    [filteredData]
+  );
+
+  const spainTotal = useMemo(() => {
+    const metric = selectedMetrics[0];
+    if (!metric) return 0;
+    return filteredData
+      .filter(item => item.region === 'España')
+      .reduce((sum, item) => {
+        const v = item[metric];
+        return typeof v === 'number' && isFinite(v) ? sum + v : sum;
+      }, 0);
+  }, [filteredData, selectedMetrics]);
+
   // Aggregate values per region/coords
   const aggregatedData = useMemo(() => {
     const map = new Map<string, CO2Data & { count: number }>();
-    filteredData.forEach(item => {
+    filteredWithoutSpain.forEach(item => {
       const coords = item.coordinates ?? REGION_COORDS[item.region];
       const key = coords ? `${coords[0]},${coords[1]}` : item.region;
       if (map.has(key)) {
@@ -112,7 +128,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
       }
     });
     return Array.from(map.values());
-  }, [filteredData, selectedMetrics]);
+  }, [filteredWithoutSpain, selectedMetrics]);
 
   // Compute min/max for each selected metric
   const metricRanges = useMemo(() => {
@@ -213,6 +229,16 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
           onDataLoaded={onDataLoaded}
         />
       </div>
+      {spainTotal > 0 && (
+        <div className="md:hidden absolute top-4 left-16 right-4 z-[500]">
+          <Badge variant="outline" className="bg-white/95 backdrop-blur-sm">
+            {t('map.spainTotal', {
+              value: spainTotal.toLocaleString(),
+              unit: t('map.unit'),
+            })}
+          </Badge>
+        </div>
+      )}
 
       {/* Desktop Controls Panel - Hidden on mobile */}
       <Card className="hidden md:block absolute top-4 left-4 z-[500] w-80 bg-white/95 backdrop-blur-sm">
@@ -298,6 +324,14 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
                 <span className="text-xs text-gray-600">{t('map.low')}</span>
               </div>
             </div>
+            {spainTotal > 0 && (
+              <div className="pt-2 text-xs text-gray-700 border-t mt-2">
+                {t('map.spainTotal', {
+                  value: spainTotal.toLocaleString(),
+                  unit: t('map.unit'),
+                })}
+              </div>
+            )}
           </CardContent>
         )}
       </Card>

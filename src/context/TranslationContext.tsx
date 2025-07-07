@@ -42,7 +42,7 @@ const translations: Translations = {
   // Map
   'map.title': { es: 'Mapa de Emisiones', en: 'Emissions Map' },
   'map.legend': { es: 'Leyenda', en: 'Legend' },
-  'map.unit': { es: 'Mt CO₂', en: 'Mt CO₂' },
+  'map.unit': { es: 'billones t CO₂', en: 'bn t CO₂' },
   'map.high': { es: 'Alta emisión', en: 'High emission' },
   'map.medium': { es: 'Media emisión', en: 'Medium emission' },
   'map.low': { es: 'Baja emisión', en: 'Low emission' },

@@ -7,7 +7,7 @@ import type { LatLngExpression } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
 import { useTranslation } from '../hooks/useTranslation';
-import { humanizeLabel } from '@/utils/humanize';
+import { humanizeLabel, formatBillions } from '@/utils/humanize';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
@@ -233,7 +233,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
         <div className="md:hidden absolute top-4 left-16 right-4 z-[500]">
           <Badge variant="outline" className="bg-white/95 backdrop-blur-sm">
             {t('map.spainTotal', {
-              value: spainTotal.toLocaleString(),
+              value: formatBillions(spainTotal),
               unit: t('map.unit'),
             })}
           </Badge>
@@ -327,7 +327,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
             {spainTotal > 0 && (
               <div className="pt-2 text-xs text-gray-700 border-t mt-2">
                 {t('map.spainTotal', {
-                  value: spainTotal.toLocaleString(),
+                  value: formatBillions(spainTotal),
                   unit: t('map.unit'),
                 })}
               </div>
@@ -379,7 +379,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
                       <div key={m} className="text-sm text-gray-600">
                         <span className="font-medium">{humanizeLabel(m)}:</span>{' '}
                         {typeof item[m] === 'number'
-                          ? (item[m] as number).toLocaleString()
+                          ? formatBillions(item[m] as number)
                           : t('map.na')}{' '}
                         {t('map.unit')}
                       </div>

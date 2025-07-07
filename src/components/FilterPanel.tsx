@@ -88,7 +88,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
             {t('filters.region')}
           </label>
           <Select
-            value={filters.region || ""}
+            value={filters.region ?? ALL_VALUE}
             onValueChange={(value) =>
               handleFilterChange('region', value === ALL_VALUE ? null : value)
             }
@@ -113,10 +113,16 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
             {t('filters.year')}
           </label>
           <Select
-            value={filters.year?.toString() || ""}
+            value={
+              filters.year !== null && filters.year !== undefined
+                ? filters.year.toString()
+                : ALL_VALUE
+            }
             onValueChange={(value) =>
-              handleFilterChange('year',
-                value === ALL_VALUE ? null : value ? parseInt(value) : null)
+              handleFilterChange(
+                'year',
+                value === ALL_VALUE ? null : value ? parseInt(value) : null
+              )
             }
           >
             <SelectTrigger>
@@ -139,7 +145,7 @@ const FilterPanel: React.FC<FilterPanelProps> = ({
             {t('filters.sector')}
           </label>
           <Select
-            value={filters.sector || ""}
+            value={filters.sector ?? ALL_VALUE}
             onValueChange={(value) =>
               handleFilterChange('sector', value === ALL_VALUE ? null : value)
             }

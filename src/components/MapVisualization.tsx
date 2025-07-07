@@ -177,7 +177,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
       style={{ height: 'calc(100vh - 4rem)' }}
     >
       {/* Mobile Menu - Only visible on mobile */}
-      <div className="md:hidden absolute top-4 left-4 z-[1000]">
+      <div className="md:hidden absolute top-4 left-4 z-[500]">
         <MobileMenuSheet
           selectedMetrics={selectedMetrics}
           availableMetrics={availableMetrics}
@@ -193,7 +193,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
       </div>
 
       {/* Desktop Controls Panel - Hidden on mobile */}
-      <Card className="hidden md:block absolute top-4 left-4 z-[1000] w-80 bg-white/95 backdrop-blur-sm">
+      <Card className="hidden md:block absolute top-4 left-4 z-[500] w-80 bg-white/95 backdrop-blur-sm">
         <CardHeader className="pb-3">
           <CardTitle className="flex items-center justify-between text-lg">
             <div className="flex items-center space-x-2">
@@ -247,7 +247,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
       </Card>
 
       {/* Desktop Legend Panel - Hidden on mobile */}
-      <Card className="hidden md:block absolute top-4 left-[22rem] z-[1000] w-48 bg-white/95 backdrop-blur-sm">
+      <Card className="hidden md:block absolute top-4 left-[22rem] z-[500] w-48 bg-white/95 backdrop-blur-sm">
         <CardHeader className="pb-3">
           <CardTitle className="flex items-center justify-between text-sm">
             <span>{t('map.legend')}</span>
@@ -348,7 +348,7 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
 
       {/* Status Message */}
       {statusMessage && (
-        <div className="absolute bottom-4 left-4 z-[1000]">
+        <div className="absolute bottom-4 left-4 z-[500]">
           <Badge variant="outline" className="bg-white/95 backdrop-blur-sm">
             {statusMessage}
           </Badge>

@@ -174,7 +174,6 @@ const DataUpload: React.FC<DataUploadProps> = ({ onDataLoaded }) => {
         throw new Error(t('upload.noValidData'));
       }
 
-      console.log(`Loaded ${parsedData.length} records from CSV`);
       onDataLoaded(parsedData);
       toast.success(t('upload.success', { count: parsedData.length }));
       

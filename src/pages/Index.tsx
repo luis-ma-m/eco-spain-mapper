@@ -1,3 +1,4 @@
+
 // pages/index.tsx
 import React, { useEffect, useState, useMemo } from 'react';
 import Papa from 'papaparse';
@@ -9,7 +10,7 @@ import FilterPanel from '../components/FilterPanel';
 import ErrorBoundary from '../components/ErrorBoundary';
 
 import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Upload, Filter as FilterIcon } from 'lucide-react';
 
@@ -343,6 +344,10 @@ const Index: React.FC = () => {
 
         <Dialog open={isDataModalOpen} onOpenChange={setDataModalOpen}>
           <DialogContent className="sm:max-w-xl">
+            <DialogTitle>{t('menu.upload')}</DialogTitle>
+            <DialogDescription>
+              Upload your CSV data file to visualize CO2 emissions data on the map.
+            </DialogDescription>
             <DataUpload onDataLoaded={handleDataLoaded} />
           </DialogContent>
         </Dialog>

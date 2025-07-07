@@ -1,3 +1,4 @@
+
 export const humanizeLabel = (label: string): string => {
   if (!label) return label;
   return label
@@ -16,7 +17,6 @@ export const toBillions = (value: number): number => value / 1_000_000_000_000;
 export const formatBillions = (
   value: number,
   fractionDigits = 6
-  main
 ): string =>
   toBillions(value).toLocaleString(undefined, {
     maximumFractionDigits: fractionDigits,

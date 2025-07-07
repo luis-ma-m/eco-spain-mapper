@@ -235,6 +235,16 @@ const Index: React.FC = () => {
     () => Array.from(new Set(data.map(d => d.year))).sort((a, b) => a - b),
     [data]
   );
+
+  // Set default year filter to most recent if none selected
+  useEffect(() => {
+    if (availableYears.length === 0) return;
+    setFilters(prev => {
+      if (prev.year !== null) return prev;
+      const maxYear = Math.max(...availableYears);
+      return { ...prev, year: maxYear };
+    });
+  }, [availableYears]);
   const availableCategories = useMemo(
     () => Array.from(new Set(data.map(d => d.sectorCategory))).sort(),
     [data]

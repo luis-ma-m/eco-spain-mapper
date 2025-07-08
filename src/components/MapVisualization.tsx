@@ -108,10 +108,19 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
 
   // Aggregate values per region/coords
   const aggregatedData = useMemo(() => {
-    const map = new Map<string, CO2Data & { count: number }>();
+    const map = new Map<
+      string,
+      CO2Data & {
+        count: number;
+        categories: Set<string>;
+        sectors: Set<string>;
+      }
+    >();
+
     filteredWithoutSpain.forEach(item => {
       const coords = item.coordinates ?? REGION_COORDS[item.region];
       const key = coords ? `${coords[0]},${coords[1]}` : item.region;
+
       if (map.has(key)) {
         const existing = map.get(key)!;
         selectedMetrics.forEach(metric => {
@@ -120,12 +129,29 @@ const MapVisualization: React.FC<MapVisualizationProps> = ({
             existing[metric] = (existing[metric] as number) + raw;
           }
         });
+        if (item.sectorCategory) existing.categories.add(item.sectorCategory);
+        if (item.sector) existing.sectors.add(item.sector);
         existing.count++;
       } else {
-        map.set(key, { ...item, coordinates: coords, count: 1 });
+        map.set(key, {
+          ...item,
+          coordinates: coords,
+          count: 1,
+          categories: new Set(item.sectorCategory ? [item.sectorCategory] : []),
+          sectors: new Set(item.sector ? [item.sector] : []),
+        });
       }
     });
-    return Array.from(map.values());
+
+    return Array.from(map.values()).map(entry => {
+      const { categories, sectors, ...rest } = entry;
+      return {
+        ...rest,
+        sectorCategory:
+          categories.size === 1 ? Array.from(categories)[0] : null,
+        sector: sectors.size === 1 ? Array.from(sectors)[0] : null,
+      } as CO2Data & { count: number };
+    });
   }, [filteredWithoutSpain, selectedMetrics]);
 
   // Compute min/max for each selected metric

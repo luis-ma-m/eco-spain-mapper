@@ -1,62 +1,30 @@
-module.exports = function(grunt) {
-  const path      = require('path');
-  const https     = require('https');
-  const fs        = require('fs');
-  const unzipper  = require('unzipper');
+name: Update ClimateTrace dataset
 
-  // ─── Your new constants ──────────────────────────────────────
-  const DATA_URL   = 'https://downloads.climatetrace.org/v4.4.0/country_packages/co2e_100yr/ESP.zip';
-  const OUTPUT_CSV = path.join('public', 'climatetrace_aggregated.csv');
-  // ─────────────────────────────────────────────────────────────
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
-  grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
-  });
-
-  // Download → extract → write CSV
-  grunt.registerTask('download_climatetrace', 'Fetch & aggregate Climatetrace CO₂ data', function() {
-    const done = this.async();
-
-    https.get(DATA_URL, res => {
-      if (res.statusCode !== 200) {
-        grunt.log.error(`Failed to download: HTTP ${res.statusCode}`);
-        return done(false);
-      }
-
-      let csvData = '';
-      res
-        .pipe(unzipper.Parse({ forceStream: true }))
-        .on('entry', entry => {
-          // grab the first .csv file inside the ZIP
-          if (path.extname(entry.path) === '.csv') {
-            entry.on('data', chunk => csvData += chunk.toString());
-          } else {
-            entry.autodrain();
-          }
-        })
-        .on('close', () => {
-          try {
-            fs.mkdirSync(path.dirname(OUTPUT_CSV), { recursive: true });
-            fs.writeFileSync(OUTPUT_CSV, csvData, 'utf8');
-            grunt.log.writeln(`✔ Wrote aggregated data to ${OUTPUT_CSV}`);
-            done();
-          } catch (err) {
-            grunt.log.error(err);
-            done(false);
-          }
-        })
-        .on('error', err => {
-          grunt.log.error(err);
-          done(false);
-        });
-    }).on('error', err => {
-      grunt.log.error(err);
-      done(false);
-    });
-  });
-
-  grunt.registerTask('default', [
-    'download_climatetrace',
-    // ...other tasks will be here
-  ]);
-};
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - run: npm ci
+      - run: npm run fetch-climatetrace
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add public/climatetrace_aggregated.csv
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "chore: update ClimateTrace dataset"
+          git push
